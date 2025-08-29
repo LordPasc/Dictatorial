@@ -81,8 +81,10 @@
         const canciones = data.split('\n').filter(linea => linea.trim() !== '');
         const aleatoria = canciones[Math.floor(Math.random() * canciones.length)];
 
-        // Abrir YouTube con búsqueda de Artista + Canción
-        window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(aleatoria)}`, '_blank');
+        // Abrir solo el primer video en YouTube
+        const busqueda = aleatoria;
+        const url = `https://www.youtube.com/results?search_query=${encodeURIComponent(busqueda)}&sp=EgIQAQ%3D%3D`;
+        window.open(url, '_blank');
       })
       .catch(error => console.error('Error al cargar las canciones:', error));
   }
