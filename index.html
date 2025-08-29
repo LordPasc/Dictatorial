@@ -2,39 +2,38 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Rockeros del Asfalto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rockeros del Averno</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #eee;
-      text-align: center;
+    body { 
+      font-family: Arial, sans-serif; 
+      background-color: #111; 
+      color: #eee; 
+      text-align: center; 
     }
     header {
-      background: #222;
-      padding: 20px;
+      background-color: #222; 
+      padding: 1em; 
     }
     nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #f33;
-      font-weight: bold;
+      color: #f00; 
+      margin: 0 1em; 
+      text-decoration: none; 
     }
-    section {
-      margin: 40px auto;
-      max-width: 800px;
-      padding: 20px;
-      background: #1b1b1b;
-      border-radius: 8px;
+    section { 
+      margin: 2em auto; 
+      max-width: 800px; 
+      background: #222; 
+      padding: 1em; 
+      border-radius: 10px; 
     }
     button {
-      background: #f33;
-      border: none;
+      background: #f00;
       color: #fff;
+      border: none;
       padding: 10px 20px;
-      cursor: pointer;
-      font-size: 16px;
       border-radius: 5px;
+      cursor: pointer;
     }
     button:hover {
       background: #c00;
@@ -43,7 +42,7 @@
 </head>
 <body>
   <header>
-    <h1>Rockeros del Asfalto</h1>
+    <h1>🔥 Rockeros del Averno 🔥</h1>
     <nav>
       <a href="#musica">Música</a>
       <a href="#libros">Libros</a>
@@ -53,46 +52,36 @@
 
   <section id="musica">
     <h2>Música</h2>
-    <p>Descubre nuestra propuesta musical al azar:</p>
+    <p>Aquí te proponemos temazos inmortales del rock.</p>
     <button onclick="propuestaMusical()">Propuesta Musical</button>
   </section>
 
   <section id="libros">
     <h2>Libros</h2>
-    <p>Próximamente reseñas y recomendaciones de libros rockeros.</p>
+    <p>Recomendaciones de libros que todo rockero debe leer.</p>
   </section>
 
   <section id="consultorio">
     <h2>Consultorio</h2>
-    <p>¿Tienes dudas existenciales rockeras? Escríbenos y las resolveremos con actitud.</p>
+    <p>Envíanos tus dudas existenciales de rock y vida.</p>
   </section>
 
   <script>
-    let canciones = [];
-
-    // Cargar canciones.txt desde la raíz del repo
+  function propuestaMusical() {
     fetch('canciones.txt')
       .then(response => {
         if (!response.ok) {
-          throw new Error("No se pudo cargar canciones.txt");
+          throw new Error("No se pudo cargar el archivo de canciones");
         }
         return response.text();
       })
       .then(data => {
-        canciones = data.split('\n').map(line => line.trim()).filter(line => line);
+        const canciones = data.split('\n').filter(linea => linea.trim() !== '');
+        const aleatoria = canciones[Math.floor(Math.random() * canciones.length)];
+        window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(aleatoria)}`, '_blank');
       })
-      .catch(error => {
-        console.error("Error cargando canciones:", error);
-      });
-
-    function propuestaMusical() {
-      if (canciones.length === 0) {
-        alert("La lista de canciones aún no está disponible.");
-        return;
-      }
-      const random = canciones[Math.floor(Math.random() * canciones.length)];
-      window.open(random, "_blank");
-    }
+      .catch(error => console.error('Error al cargar las canciones:', error));
+  }
   </script>
 </body>
 </html>
