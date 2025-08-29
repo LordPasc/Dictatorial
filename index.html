@@ -80,18 +80,9 @@
       .then(data => {
         const canciones = data.split('\n').filter(linea => linea.trim() !== '');
         const aleatoria = canciones[Math.floor(Math.random() * canciones.length)];
-        
-        // Separar artista, canción y link
-        const partes = aleatoria.split(' - ');
-        
-        // Abrir directamente el link de YouTube si existe
-        if (partes[2]) {
-          window.open(partes[2], '_blank');
-        } else {
-          // Si no hay link, buscar en YouTube por artista + canción
-          const busqueda = partes.slice(0, 2).join(' ');
-          window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(busqueda)}`, '_blank');
-        }
+
+        // Abrir YouTube con búsqueda de Artista + Canción
+        window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(aleatoria)}`, '_blank');
       })
       .catch(error => console.error('Error al cargar las canciones:', error));
   }
