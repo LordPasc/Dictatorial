@@ -71,23 +71,29 @@
   </section>
 
   <script>
-  function propuestaMusical() {
-    fetch('canciones.txt')
-      .then(response => {
-        if (!response.ok) throw new Error("No se pudo cargar el archivo de canciones");
-        return response.text();
-      })
-      .then(data => {
-        const canciones = data.split('\n').filter(linea => linea.trim() !== '');
-        const aleatoria = canciones[Math.floor(Math.random() * canciones.length)];
+    function propuestaMusical() {
+      fetch('canciones.txt')
+        .then(response => {
+          if (!response.ok) throw new Error("No se pudo cargar el archivo de canciones");
+          return response.text();
+        })
+        .then(data => {
+          // Dividir por líneas y eliminar vacías
+          const lineas = data.split('\n').filter(linea => linea.trim() !== '');
+          // Elegir línea aleatoria
+          const aleatoria = lineas[Math.floor(Math.random() * lineas.length)];
+          // Separar Artista y Canción por tabulación
+          const partes = aleatoria.split('\t');
+          const artista = partes[0].trim();
+          const cancion = partes[1].trim();
+          const busqueda = `${artista} - ${cancion}`;
 
-        // Abrir solo el primer video en YouTube
-        const busqueda = aleatoria;
-        const url = `https://www.youtube.com/results?search_query=${encodeURIComponent(busqueda)}&sp=EgIQAQ%3D%3D`;
-        window.open(url, '_blank');
-      })
-      .catch(error => console.error('Error al cargar las canciones:', error));
-  }
+          // Abrir solo el primer video en YouTube
+          const url = `https://www.youtube.com/results?search_query=${encodeURIComponent(busqueda)}&sp=EgIQAQ%3D%3D`;
+          window.open(url, '_blank');
+        })
+        .catch(error => console.error('Error al cargar las canciones:', error));
+    }
   </script>
 </body>
 </html>
