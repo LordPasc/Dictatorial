@@ -10,6 +10,8 @@
       background-color: #111; 
       color: #eee; 
       text-align: center; 
+      margin: 0;
+      padding: 0;
     }
     header {
       background-color: #222; 
@@ -19,6 +21,7 @@
       color: #f00; 
       margin: 0 1em; 
       text-decoration: none; 
+      font-weight: bold;
     }
     section { 
       margin: 2em auto; 
@@ -34,6 +37,7 @@
       padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 16px;
     }
     button:hover {
       background: #c00;
@@ -70,15 +74,24 @@
   function propuestaMusical() {
     fetch('canciones.txt')
       .then(response => {
-        if (!response.ok) {
-          throw new Error("No se pudo cargar el archivo de canciones");
-        }
+        if (!response.ok) throw new Error("No se pudo cargar el archivo de canciones");
         return response.text();
       })
       .then(data => {
         const canciones = data.split('\n').filter(linea => linea.trim() !== '');
         const aleatoria = canciones[Math.floor(Math.random() * canciones.length)];
-        window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(aleatoria)}`, '_blank');
+        
+        // Separar artista, canción y link
+        const partes = aleatoria.split(' - ');
+        
+        // Abrir directamente el link de YouTube si existe
+        if (partes[2]) {
+          window.open(partes[2], '_blank');
+        } else {
+          // Si no hay link, buscar en YouTube por artista + canción
+          const busqueda = partes.slice(0, 2).join(' ');
+          window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(busqueda)}`, '_blank');
+        }
       })
       .catch(error => console.error('Error al cargar las canciones:', error));
   }
