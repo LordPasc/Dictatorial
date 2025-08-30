@@ -155,7 +155,7 @@ section.active {
 
 <section id="libros">
   <h2>Libros</h2>
-  <p>Sección de libros. Es posible que aquí se añada una busqueda aleatoria entre 1000 párrafos. Serán seleccionados con la misma y estricta condicionalidad que las propuestas musicales. Aquí tendrán mucho que decir los integrantes de Proyecto Librvs</p>
+  <p>Sección de libros. Es posible que aquí se añada una búsqueda aleatoria entre 1000 párrafos. Serán seleccionados con la misma y estricta condicionalidad que las propuestas musicales. Aquí tendrán mucho que decir los integrantes de Proyecto Librvs</p>
 </section>
 
 <section id="consultorio">
@@ -187,34 +187,23 @@ function mostrarSeccion(id) {
   document.getElementById(id).classList.add('active');
 }
 
-/* --- Propuesta Musical sin API --- */
+/* --- Propuesta Musical para GitHub Pages --- */
 function propuestaMusical() {
   fetch('canciones.txt')
-    .then(response => response.text())
+    .then(res => res.text())
     .then(data => {
       const lineas = data.split('\n').filter(l => l.trim() !== '');
       const random = lineas[Math.floor(Math.random() * lineas.length)];
       const partes = random.split('\t');
-      const artista = partes[0] ? partes[0].trim() : '';
-      const cancion = partes[1] ? partes[1].trim() : '';
+      const artista = partes[0]?.trim() || '';
+      const cancion = partes[1]?.trim() || '';
       const query = encodeURIComponent(`${artista} ${cancion}`);
 
-      // Abrir el primer vídeo usando búsqueda de YouTube
+      // Abrir búsqueda en YouTube (funciona totalmente online)
       const url = `https://www.youtube.com/results?search_query=${query}`;
-      // Usamos un truco para abrir directamente el primer vídeo
-      fetch(url)
-        .then(resp => resp.text())
-        .then(html => {
-          const videoIdMatch = html.match(/"videoId":"([a-zA-Z0-9_-]{11})"/);
-          if (videoIdMatch) {
-            const videoUrl = `https://www.youtube.com/watch?v=${videoIdMatch[1]}`;
-            window.open(videoUrl, '_blank');
-          } else {
-            alert('No se encontró ningún vídeo.');
-          }
-        });
+      window.open(url, '_blank');
     })
-    .catch(err => alert('No se pudo cargar la lista de canciones: ' + err));
+    .catch(err => alert('No se pudo cargar canciones.txt: ' + err));
 }
 
 /* --- Consultorio --- */
@@ -257,14 +246,12 @@ function abrirFollar() {
       </li>
     </ol>
     <h3>Firma</h3>
-    <p>He leído y comprendido todos los términos de este documento y doy mi consentimiento libre y voluntario para participar en relaciones sexuales explícitas bajo las condiciones aquí descritas.</p>
     <ul>
       <li>Parte A: Nombre: <input type="text" placeholder="                "> DNI: <input type="text" placeholder="     "> <input type="checkbox" checked> Consiento(✓)</li>
       <li>Parte B: Nombre: <input type="text" placeholder="                "> DNI: <input type="text" placeholder="     "> <input type="checkbox" checked> Consiento(✓)</li>
       <li>Parte C: Nombre: <input type="text" placeholder="                "> DNI: <input type="text" placeholder="     "> <input type="checkbox" checked> Consiento(✓)</li>
     </ul>
   `;
-
   const ventana = window.open("", "Consentimiento", "width=900,height=700,scrollbars=yes");
   ventana.document.write(contenido);
   ventana.document.close();
