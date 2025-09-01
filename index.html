@@ -99,10 +99,30 @@ function propuestaMusical() {
     .catch(err=>alert('No se pudo cargar la lista de canciones: '+err));
 }
 
-/* --- Búsqueda de libros aleatoria --- */
+/* --- Búsqueda de libros aleatoria con ventana lateral y Open Library --- */
 document.getElementById('buscar-libro-btn').addEventListener('click', async () => {
     const resultado = document.getElementById('resultado-libro');
     resultado.innerHTML = 'Cargando...';
+    let ventanaDerecha = document.getElementById('ventana-derecha-libro');
+    if(!ventanaDerecha){
+        ventanaDerecha = document.createElement('div');
+        ventanaDerecha.id = 'ventana-derecha-libro';
+        ventanaDerecha.style.position = 'fixed';
+        ventanaDerecha.style.top = '100px';
+        ventanaDerecha.style.right = '20px';
+        ventanaDerecha.style.width = '300px';
+        ventanaDerecha.style.height = '400px';
+        ventanaDerecha.style.padding = '15px';
+        ventanaDerecha.style.backgroundColor = 'rgba(26,19,19,0.95)';
+        ventanaDerecha.style.color = '#fff';
+        ventanaDerecha.style.border = '2px solid #d02121';
+        ventanaDerecha.style.borderRadius = '10px';
+        ventanaDerecha.style.overflowY = 'auto';
+        ventanaDerecha.style.boxShadow = '0 4px 20px rgba(208,30,61,0.7)';
+        document.body.appendChild(ventanaDerecha);
+    }
+    ventanaDerecha.innerHTML = '';
+
     try {
         const response = await fetch('libros.txt');
         if(!response.ok) throw new Error('No se pudo cargar el archivo');
@@ -112,7 +132,30 @@ document.getElementById('buscar-libro-btn').addEventListener('click', async () =
         const partes = libroAleatorio.split('\t');
         const autor = partes[0] || '';
         const titulo = partes[1] || '';
+        const sinopsisLocal = partes[2] || 'Sinopsis no disponible';
+        const bioLocal = partes[3] || 'Bio del autor no disponible';
+
         resultado.innerHTML = `<div class="libro-item"><span class="autor">${autor}</span><span class="titulo">${titulo}</span></div>`;
+        ventanaDerecha.innerHTML = `<h3>${titulo}</h3><p><strong>Autor:</strong> ${autor}</p><p><strong>Sinopsis:</strong> ${sinopsisLocal}</p><p><strong>Bio del autor:</strong> ${bioLocal}</p>`;
+
+        // Buscar en Open Library
+        const query = encodeURIComponent(titulo + ' ' + autor);
+        const apiURL = `https://openlibrary.org/search.json?q=${query}&limit=1`;
+        const apiResp = await fetch(apiURL);
+        if(apiResp.ok){
+            const data = await apiResp.json();
+            if(data.numFound > 0){
+                const doc = data.docs[0];
+                let sinopsisOnline = doc.first_sentence?.[0] || doc.subtitle || doc.title || sinopsisLocal;
+                let autorOnline = doc.author_name?.[0] || autor;
+                let bioOnline = doc.author_key ? `Más info: https://openlibrary.org/authors/${doc.author_key[0]}` : bioLocal;
+
+                ventanaDerecha.innerHTML = `<h3>${titulo}</h3>
+                    <p><strong>Autor:</strong> ${autorOnline}</p>
+                    <p><strong>Sinopsis:</strong> ${sinopsisOnline}</p>
+                    <p><strong>Bio del autor:</strong> ${bioOnline}</p>`;
+            }
+        }
     } catch(err){
         resultado.textContent='Error al cargar el libro';
         console.error(err);
