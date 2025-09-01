@@ -49,7 +49,7 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
 
 <section id="libros">
 <h2>Libros</h2>
-<p>Sección de libros. Posible búsqueda aleatoria entre 1000 párrafos con estricta condicionalidad.</p>
+<p>Sección de libros. Posible búsqueda aleatoria entre libros almacenados en libros.txt.</p>
 <button id="buscar-libro-btn">Buscar libro</button>
 <div id="resultado-libro"></div>
 </section>
@@ -99,10 +99,11 @@ function propuestaMusical() {
     .catch(err=>alert('No se pudo cargar la lista de canciones: '+err));
 }
 
-/* --- Búsqueda de libros aleatoria con ventana lateral y Open Library --- */
+/* --- Búsqueda de libros solo desde libros.txt --- */
 document.getElementById('buscar-libro-btn').addEventListener('click', async () => {
     const resultado = document.getElementById('resultado-libro');
     resultado.innerHTML = 'Cargando...';
+
     let ventanaDerecha = document.getElementById('ventana-derecha-libro');
     if(!ventanaDerecha){
         ventanaDerecha = document.createElement('div');
@@ -135,27 +136,11 @@ document.getElementById('buscar-libro-btn').addEventListener('click', async () =
         const sinopsisLocal = partes[2] || 'Sinopsis no disponible';
         const bioLocal = partes[3] || 'Bio del autor no disponible';
 
-        resultado.innerHTML = `<div class="libro-item"><span class="autor">${autor}</span><span class="titulo">${titulo}</span></div>`;
-        ventanaDerecha.innerHTML = `<h3>${titulo}</h3><p><strong>Autor:</strong> ${autor}</p><p><strong>Sinopsis:</strong> ${sinopsisLocal}</p><p><strong>Bio del autor:</strong> ${bioLocal}</p>`;
-
-        // Buscar en Open Library
-        const query = encodeURIComponent(titulo + ' ' + autor);
-        const apiURL = `https://openlibrary.org/search.json?q=${query}&limit=1`;
-        const apiResp = await fetch(apiURL);
-        if(apiResp.ok){
-            const data = await apiResp.json();
-            if(data.numFound > 0){
-                const doc = data.docs[0];
-                let sinopsisOnline = doc.first_sentence?.[0] || doc.subtitle || doc.title || sinopsisLocal;
-                let autorOnline = doc.author_name?.[0] || autor;
-                let bioOnline = doc.author_key ? `Más info: https://openlibrary.org/authors/${doc.author_key[0]}` : bioLocal;
-
-                ventanaDerecha.innerHTML = `<h3>${titulo}</h3>
-                    <p><strong>Autor:</strong> ${autorOnline}</p>
-                    <p><strong>Sinopsis:</strong> ${sinopsisOnline}</p>
-                    <p><strong>Bio del autor:</strong> ${bioOnline}</p>`;
-            }
-        }
+        resultado.innerHTML = `<div class="libro-item"><span class="autor">${autor}</span> - <span class="titulo">${titulo}</span></div>`;
+        ventanaDerecha.innerHTML = `<h3>${titulo}</h3>
+            <p><strong>Autor:</strong> ${autor}</p>
+            <p><strong>Sinopsis:</strong> ${sinopsisLocal}</p>
+            <p><strong>Bio del autor:</strong> ${bioLocal}</p>`;
     } catch(err){
         resultado.textContent='Error al cargar el libro';
         console.error(err);
@@ -260,7 +245,6 @@ function abrirFollar() {
   const ventana = window.open("", "Consentimiento", "width=" + screen.width + ",height=" + screen.height + ",scrollbars=yes,resizable=yes");
   ventana.document.write(contenido);
   ventana.document.close();
-}
-</script>
+}</script>
 </body>
 </html>
