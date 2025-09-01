@@ -1,487 +1,488 @@
-Camilo José Cela 	 La familia de Pascual Duarte				
-Miguel de Unamuno 	 Niebla				
-Ernest Hemingway 	 Adiós a las armas				
-William Faulkner 	 Mientras agonizo				
-John Steinbeck 	 Tortilla Flat				
-Sherwood Anderson 	 Winesburg, Ohio				
-Luis Berenguer 	 El mundo de Juan Lobón				
-Umberto Eco 	 El nombre de la rosa				
-Julio Cortázar 	 Rayuela				
-Gabriel García Márquez 	 Cien años de soledad				
-Mario Vargas Llosa 	 La guerra del fin del mundo				
-Richard Matheson 	 La casa infernal				
-Octave Mirbeau 	 El jardín de los suplicios				
-Iceberg Slim 	 Pimp				
-Charles Bukowski 	 Factotum				
-Antonio Muñoz Molina 	 La lluvia amarilla				
-Juan Benet 	 Volverás a Región				
-José Saramago 	 Ensayo sobre la ceguera				
-José Luis Sampedro 	 La sonrisa etrusca				
-Pío Baroja 	 Las noches del Buen Retiro				
-Ian Gibson 	 El vicio inglés				
-Jim Goad 	 Manifiesto redneck				
-Gonzalo Torrente Ballester 	 Crónica del rey pasmado				
-Mario Cavattore 	 El inseminador				
-David Mazzucchelli 	 Asterios Polyp				
-Hari Kunzru 	 El transformista				
-Li Yu 	 La alfombrilla de los goces y los rezos				
-Niccolò Machiavelli 	 El príncipe				
-Ryu Murakami 	 Sopa de miso				
-Wenceslao Fernández Flórez 	 El bosque animado				
-Cela, Camilo José 	 Madera de boj				
-Cela, Camilo José 	 La colmena				
-Driss Amed 	 Una vida llena de agujeros				
-Antonio Pigafetta 	 Primer viaje en torno del globo				
-Octave Mirbeau 	 El abate Caire				
-William Faulkner 	 Luz de agosto				
-John Fante 	 Pregúntale al polvo				
-Hubert Selby Jr. 	 Última salida: Brooklyn				
-Henry Miller 	 Trópico de Cáncer				
-Ana María Matute 	 Los hijos muertos				
-Juan Goytisolo 	 Señas de identidad				
-José Donoso 	 El obsceno pájaro de la noche				
-Alfredo Bryce Echenique 	 Un mundo para Julius				
-Juan Rulfo 	 Pedro Páramo				
-Clarice Lispector 	 La hora de la estrella				
-Patrick Süskind 	 El perfume				
-Truman Capote 	 A sangre fría				
-Flannery O’Connor 	 Un hombre bueno es difícil de encontrar				
-Carson McCullers 	 El corazón es un cazador solitario				
-Michel Houellebecq 	 Sumisión				
-Bret Easton Ellis 	 American Psycho				
-Chuck Palahniuk 	 El club de la lucha				
-Thomas Pynchon 	 El arco iris de gravedad				
-Don DeLillo 	 Ruido de fondo				
-William Golding 	 El señor de las moscas				
-José Luis Peixoto 	 Cuerpo limpio				
-Javier Marías 	 Corazón tan blanco				
-Enrique Anderson Imbert 	 La casa del ángel				
-Horacio Quiroga 	 Cuentos de la selva				
-Juan José Millás 	 El mundo				
-Robert Musil 	 El hombre sin atributos				
-Albert Camus 	 El extranjero				
-Fyodor Dostoyevsky 	 Crimen y castigo				
-F. Scott Fitzgerald 	 El gran Gatsby				
-Jack London 	 Colmillo blanco				
-Herman Melville 	 Bartleby, el escribiente				
-Edgar Allan Poe 	 Cuentos completos				
-Nathanael West 	 El día de la langosta				
-Richard Wright 	 Hijo nativo				
-Ralph Ellison 	 El hombre invisible				
-James Baldwin 	 Otra vez la misma historia				
-Toni Morrison 	 Beloved				
-Zora Neale Hurston 	 Sus ojos miraban a Dios				
-Carson McCullers 	 Reflejos en un ojo dorado				
-Graham Greene 	 El poder y la gloria				
-Evelyn Waugh 	 Retorno a Brideshead				
-William Styron 	 La decisión de Sophie				
-Anthony Burgess 	 La naranja mecánica				
-Flannery O’Connor 	 El río				
-Saul Bellow 	 Henderson el rainero				
-Norman Mailer 	 Los desnudos y los muertos				
-John Cheever 	 Falconer				
-Vladimir Nabokov 	 Lolita				
-Ian McEwan 	 Expiación				
-Kazuo Ishiguro 	 Los restos del día				
-Haruki Murakami 	 Tokio blues (Norwegian Wood)				
-Don DeLillo 	 Submundo				
-Thomas Mann 	 La montaña mágica				
-H. P. Lovecraft 	 La llamada de Cthulhu				
-Richard Wright 	 La clave del negro				
-Ralph Ellison 	 Shadow and Act				
-William Faulkner 	 El ruido y la furia				
-Albert Camus 	 La peste				
-Franz Kafka 	 El proceso				
-Franz Kafka 	 La metamorfosis				
-George Orwell 	1984				
-Aldous Huxley 	 Un mundo feliz				
-Miguel Delibes 	 Los santos inocentes				
-Juan García Ponce 	 La casa en la playa				
-Juan José Saer 	 El entenado				
-Roberto Arlt 	 Los siete locos				
-Manuel Vázquez Montalbán 	 Los mares del Sur				
-Antonio Di Benedetto 	 Zama				
-Juan Carlos Onetti 	 El astillero				
-Adolfo Bioy Casares 	 La invención de Morel				
-Julio Ramón Ribeyro 	 Los gallinazos sin plumas				
-José Revueltas 	 El apando				
-Carlos Monsiváis 	 Días de guardar				
-Manuel Mujica Lainez 	 Bomarzo				
-Ricardo Piglia 	 Plata quemada				
-Juan Benet 	 Una meditación				
-José Donoso 	 Coronación				
-Ana María Matute 	 Primera memoria				
-Carmen Martín Gaite 	 Entre visillos				
-Rosa Montero 	 La loca de la casa				
-Juan José Millás 	 El desorden de tu nombre				
-Javier Marías 	 Mañana en la batalla piensa en mí				
-César Aira 	 El tilo				
-Alberto Méndez 	 Los girasoles ciegos				
-Luis Mateo Díez 	 La fuente de la edad				
-Francisco Umbral 	 Mortal y rosa				
-Luis Goytisolo 	 Antagonía				
-Juan Rulfo 	 El llano en llamas				
-Carlos Fuentes 	 La muerte de Artemio Cruz				
-José Luis Sampedro 	 El río que nos lleva				
-José María Merino 	 La mujer de sombra				
-Rosa Montero 	 Crónica del desamor				
-Antonio Gala 	 La pasión turca				
-Camilo José Cela 	 Viaje a la Alcarria				
-Miguel Delibes 	 El camino				
-Rafael Sánchez Ferlosio 	 El Jarama				
-Ignacio Martínez de Pisón 	 Enterrar a los muertos				
-Manuel Chaves Nogales 	 A sangre y fuego				
-Luis Mateo Díez 	 El espíritu del páramo				
-Julio Cortázar 	 Bestiario				
-Juan José Millás 	 El mundo				
-Juan Goytisolo 	 Paisajes después de la batalla				
-Javier Tomeo 	 La estupidez				
-César Mallorquí 	 La catedral				
-Juan José Saer 	 Cicatrices				
-Antonio Tabucchi 	 Sostiene Pereira				
-José Lezama Lima 	 Paradiso				
-Roberto Bolaño 	 Los detectives salvajes				
-Roberto Bolaño 	2666				
-Jorge Luis Borges 	 Ficciones				
-Jorge Luis Borges 	 El Aleph				
-Adolfo Bioy Casares 	 Dormir al sol				
-Manuel Mujica Lainez 	 El laberinto				
-Ricardo Piglia 	 Crítica y ficción				
-César Aira 	 Una novela china				
-Juan José Saer 	 La mayor				
-Juan Carlos Onetti 	 Juntacadáveres				
-Alejo Carpentier 	 El reino de este mundo				
-Gabriel García Márquez 	 El otoño del patriarca				
-Mario Vargas Llosa 	 La ciudad y los perros				
-Carlos Fuentes 	 Terra Nostra				
-Juan Rulfo 	 Pedro Páramo				
-Isabel Allende 	 La casa de los espíritus				
-Laura Esquivel 	 Como agua para chocolate				
-José Saramago 	 El año de la muerte de Ricardo Reis				
-José Saramago 	 Ensayo sobre la lucidez				
-José Luis Peixoto 	 Cuerpo presente				
-Ricardo Piglia 	 El camino de Ida				
-César Aira 	 El llanto				
-Antonio Muñoz Molina 	 Plenilunio				
-Luis Mateo Díez 	 Los vivos y los muertos				
-Francisco Umbral 	 Las ninfas				
-Camilo José Cela 	 Mazurca para dos muertos				
-Juan Benet 	 Herrumbrosas lanzas				
-Julio Ramón Ribeyro 	 La palabra del mudo				
-José Donoso 	 El lugar sin límites				
-Ana María Matute 	 Olvidado rey Gudú				
-Carmen Martín Gaite 	 El cuarto de atrás				
-Javier Marías 	 Los enamoramientos				
-César Mallorquí 	 El sueño de Berlín				
-Juan José Millás 	 Dos mujeres en Praga				
-Juan Goytisolo 	 Campos de Níjar				
-Ricardo Piglia 	 Blanco nocturno				
-Juan José Saer 	 Glosa				
-Antonio Tabucchi 	 Requiem				
-José María Merino 	 El lugar sin límites				
-Luis Mateo Díez 	 La ruina del cielo				
-José Luis Peixoto 	 Nadie como tú				
-César Aira 	 La prueba				
-Manuel Mujica Lainez 	 Bomarzo				
-Roberto Arlt 	 El juguete rabioso				
-Juan Carlos Onetti 	 La vida breve				
-Adolfo Bioy Casares 	 El sueño de los héroes				
-Julio Cortázar 	 Final del juego				
-Gabriel García Márquez 	 Crónica de una muerte anunciada				
-Mario Vargas Llosa 	 Pantaleón y las visitadoras				
-Carlos Fuentes 	 Gringo viejo				
-Isabel Allende 	 Eva Luna				
-Laura Esquivel 	 La ley del amor				
-José Saramago 	 El evangelio según Jesucristo				
-Juan José Millás 	 El mundo				
-César Aira 	 La prueba				
-Juan Benet 	 Herrumbrosas lanzas				
-Roberto Bolaño 	 Estrella distante				
-Roberto Bolaño 	 Nocturno de Chile				
-Ricardo Piglia 	 Respiración artificial				
-José Luis Sampedro 	 El río que nos lleva				
-Luis Mateo Díez 	 La ruina del cielo				
-Camilo José Cela 	 Viaje a la Alcarria				
-Miguel Delibes 	 El camino				
-Rafael Sánchez Ferlosio 	 El Jarama				
-Manuel Chaves Nogales 	 A sangre y fuego				
-Javier Marías 	 Corazón tan blanco				
-Juan Goytisolo 	 Señas de identidad				
-Ana María Matute 	 Los hijos muertos				
-Carmen Martín Gaite 	 Entre visillos				
-Rosa Montero 	 La loca de la casa				
-Juan Carlos Onetti 	 El astillero				
-Juan Rulfo 	 Pedro Páramo				
-Adolfo Bioy Casares 	 La invención de Morel				
-Manuel Mujica Lainez 	 Bomarzo				
-José Donoso 	 El obsceno pájaro de la noche				
-Roberto Arlt 	 Los lanzallamas				
-Julio Ramón Ribeyro 	 Los gallinazos sin plumas				
-Juan Carlos Onetti 	 La vida breve				
-Alejo Carpentier 	 El siglo de las luces				
-Gabriel García Márquez 	 El coronel no tiene quien le escriba				
-Mario Vargas Llosa 	 La tía Julia y el escribidor				
-Carlos Fuentes 	 La muerte de Artemio Cruz				
-José Saramago 	 El año de la muerte de Ricardo Reis				
-José Saramago 	 Ensayo sobre la lucidez				
-Isabel Allende 	 La casa de los espíritus				
-Laura Esquivel 	 Como agua para chocolate				
-Juan José Saer 	 El entenado				
-César Aira 	 El llanto				
-Antonio Muñoz Molina 	 El invierno en Lisboa				
-Francisco Umbral 	 Mortal y rosa				
-Camilo José Cela 	 La colmena				
-William Faulkner 	 El ruido y la furia				
-Ernest Hemingway 	 Por quién doblan las campanas				
-John Steinbeck 	 Al este del Edén				
-Sherwood Anderson 	 Winesburg, Ohio				
-Ryu Murakami 	 Sopa de miso				
-Octave Mirbeau 	 El jardín de los suplicios				
-Iceberg Slim 	 Pimp				
-Li Yu 	 La alfombrilla de los goces y los rezos				
-Niccolò Machiavelli 	 El príncipe				
-Richard Matheson 	 La casa infernal				
-Driss Amed 	 Una vida llena de agujeros				
-Antonio Pigafetta 	 Primer viaje en torno del globo				
-Pío Baroja 	 Las noches del Buen Retiro				
-Ian Gibson 	 El vicio inglés				
-Jim Goad 	 Manifiesto redneck				
-Gonzalo Torrente Ballester 	 Crónica del rey pasmado				
-Mario Cavattore 	 El inseminador				
-David Mazzucchelli 	 Asterios Polyp				
-Hari Kunzru 	 El transformista				
-Wenceslao Fernández Flórez 	 El bosque animado				
-Camilo José Cela 	 Madera de boj				
-Miguel Delibes 	 Los santos inocentes				
-Francisco Umbral 	 Las ninfas				
-John Fante 	 Pregúntale al polvo				
-Hubert Selby Jr. 	 Última salida: Brooklyn				
-Henry Miller 	 Trópico de Cáncer				
-Ana María Matute 	 Primera memoria				
-Juan José Millás 	 El desorden de tu nombre				
-Javier Cercas 	 Soldados de Salamina				
-Carlos Ruiz Zafón 	 La sombra del viento				
-José Luis Martín Descalzo 	 El regreso				
-Juan José Flores 	 La casa de Adela				
-Juan Benet 	 Volverás a Región				
-José Donoso 	 Coronación				
-Rosa Montero 	 Crónica del desamor				
-Antonio Gala 	 La pasión turca				
-Enrique Anderson Imbert 	 La casa del ángel				
-Horacio Quiroga 	 Cuentos de la selva				
-Robert Musil 	 El hombre sin atributos				
-Albert Camus 	 El extranjero				
-Fyodor Dostoyevsky 	 Crimen y castigo				
-F. Scott Fitzgerald 	 El gran Gatsby				
-Jack London 	 Colmillo blanco				
-Herman Melville 	 Bartleby, el escribiente				
-Edgar Allan Poe 	 Cuentos completos				
-Nathanael West 	 El día de la langosta				
-Richard Wright 	 Hijo nativo				
-Ralph Ellison 	 El hombre invisible				
-James Baldwin 	 Otra vez la misma historia				
-Toni Morrison 	 Beloved				
-Zora Neale Hurston 	 Sus ojos miraban a Dios				
-Carson McCullers 	 El corazón es un cazador solitario				
-Graham Greene 	 El poder y la gloria				
-Evelyn Waugh 	 Retorno a Brideshead				
-William Styron 	 La decisión de Sophie				
-Anthony Burgess 	 La naranja mecánica				
-Saul Bellow 	 Henderson el rainero				
-Norman Mailer 	 Los desnudos y los muertos				
-John Cheever 	 Falconer				
-Vladimir Nabokov 	 Lolita				
-Ian McEwan 	 Expiación				
-Kazuo Ishiguro 	 Los restos del día				
-Haruki Murakami 	 Tokio blues (Norwegian Wood)				
-Don DeLillo 	 Submundo				
-Thomas Mann 	 La montaña mágica				
-H. P. Lovecraft 	 La llamada de Cthulhu				
-George Orwell 	1984				
-Aldous Huxley 	 Un mundo feliz				
-Miguel Delibes 	 El hereje				
-Juan José Millás 	 Dos mujeres en Praga				
-César Aira 	 El tilo				
-Antonio Muñoz Molina 	 Plenilunio				
-Luis Mateo Díez 	 La fuente de la edad				
-Francisco Umbral 	 Las ninfas				
-Camilo José Cela 	 Mazurca para dos muertos				
-Juan Benet 	 Una meditación				
-Julio Ramón Ribeyro 	 La palabra del mudo				
-José Donoso 	 El lugar sin límites				
-Ana María Matute 	 Olvidado rey Gudú				
-Carmen Martín Gaite 	 El cuarto de atrás				
-Javier Marías 	 Los enamoramientos				
-César Mallorquí 	 La catedral				
-Antonio Tabucchi 	 Sostiene Pereira				
-José Lezama Lima 	 Paradiso				
-Roberto Bolaño 	 Los detectives salvajes				
-Roberto Bolaño 	2666				
-Jorge Luis Borges 	 Ficciones				
-Jorge Luis Borges 	 El Aleph				
-Adolfo Bioy Casares 	 Dormir al sol				
-Manuel Mujica Lainez 	 El laberinto				
-Ricardo Piglia 	 Crítica y ficción				
-César Aira 	 Una novela china				
-Juan José Saer 	 La mayor				
-Juan Carlos Onetti 	 Juntacadáveres				
-Alejo Carpentier 	 El reino de este mundo				
-Gabriel García Márquez 	 El otoño del patriarca				
-Mario Vargas Llosa 	 Conversación en La Catedral				
-Carlos Fuentes 	 Terra Nostra				
-Isabel Allende 	 Eva Luna				
-Laura Esquivel 	 La ley del amor				
-José Saramago 	 El evangelio según Jesucristo				
-José Saramago 	 Todos los nombres				
-Juan José Millás 	 El mundo				
-César Aira 	 La prueba				
-Juan Benet 	 Herrumbrosas lanzas				
-Roberto Arlt 	 El juguete rabioso				
-Manuel Chaves Nogales 	 A sangre y fuego				
-Javier Marías 	 Mañana en la batalla piensa en mí				
-Juan Goytisolo 	 Paisajes después de la batalla				
-Ricardo Piglia 	 Blanco nocturno				
-Juan José Saer 	 Glosa				
-Antonio Tabucchi 	 Requiem				
-José María Merino 	 El lugar sin límites				
-Luis Mateo Díez 	 Los vivos y los muertos				
-José Luis Peixoto 	 Nadie como tú				
-César Aira 	 El llanto				
-Manuel Mujica Lainez 	 Bomarzo				
-Roberto Arlt 	 Los siete locos				
-Juan Carlos Onetti 	 La vida breve				
-Adolfo Bioy Casares 	 El sueño de los héroes				
-Julio Cortázar 	 Final del juego				
-Gabriel García Márquez 	 Crónica de una muerte anunciada				
-Mario Vargas Llosa 	 Pantaleón y las visitadoras				
-Carlos Fuentes 	 Gringo viejo				
-Isabel Allende 	 Paula				
-Laura Esquivel 	 Tan veloz como el deseo				
-José Saramago 	 La balsa de piedra				
-Juan José Millás 	 El mundo				
-César Aira 	 La prueba				
-Juan Benet 	 Herrumbrosas lanzas				
-Roberto Bolaño 	 Estrella distante				
-Roberto Bolaño 	 Nocturno de Chile				
-Ricardo Piglia 	 Respiración artificial				
-José Luis Sampedro 	 La sonrisa etrusca				
-Luis Mateo Díez 	 La ruina del cielo				
-Camilo José Cela 	 Viaje a la Alcarria				
-Miguel Delibes 	 El camino				
-Rafael Sánchez Ferlosio 	 El Jarama				
-Manuel Chaves Nogales 	 A sangre y fuego				
-Javier Marías 	 Corazón tan blanco				
-Juan Goytisolo 	 Señas de identidad				
-Ana María Matute 	 Los hijos muertos				
-Carmen Martín Gaite 	 Entre visillos				
-Rosa Montero 	 La loca de la casa				
-Juan Carlos Onetti 	 El astillero				
-Juan Rulfo 	 El llano en llamas				
-Adolfo Bioy Casares 	 La invención de Morel				
-Manuel Mujica Lainez 	 Bomarzo				
-José Donoso 	 El obsceno pájaro de la noche				
-Roberto Arlt 	 Los lanzallamas				
-Julio Ramón Ribeyro 	 La palabra del mudo				
-Juan Carlos Onetti 	 La muerte y la niña				
-Alejo Carpentier 	 El siglo de las luces				
-Gabriel García Márquez 	 Memoria de mis putas tristes				
-Mario Vargas Llosa 	 Travesuras de la niña mala				
-Carlos Fuentes 	 Cristóbal Nonato				
-Isabel Allende 	 Inés del alma mía				
-Laura Esquivel 	 Como agua para chocolate				k
-José Saramago 	 Ensayo sobre la ceguera				
-José Saramago 	 Ensayo sobre la lucidez				
-Juan José Millás 	 El mundo				
-César Aira 	 Una novela china				
-Juan Benet 	 Volverás a Región				
-Roberto Bolaño 	 Los detectives salvajes				
-Roberto Bolaño 	2666				
-Ricardo Piglia 	 Blanco nocturno				
-Juan José Saer 	 Glosa				
-Antonio Tabucchi 	 Sostiene Pereira				
-José María Merino 	 El lugar sin límites				
-Luis Mateo Díez 	 Los vivos y los muertos				
-José Luis Peixoto 	 Nadie como tú				
-César Aira 	 El llanto				
-Manuel Mujica Lainez 	 Bomarzo				
-Roberto Arlt 	 El juguete rabioso				
-Juan Carlos Onetti 	 La vida breve				
-Adolfo Bioy Casares 	 El sueño de los héroes				
-Julio Cortázar 	 Final del juego				
-Gabriel García Márquez 	 Crónica de una muerte anunciada				
-Mario Vargas Llosa 	 Pantaleón y las visitadoras				
-Carlos Fuentes 	 Gringo viejo				
-Isabel Allende 	 Paula				
-Laura Esquivel 	 Tan veloz como el deseo				
-José Saramago 	 La balsa de piedra				
-Juan José Millás 	 Dos mujeres en Praga				
-César Aira 	 El tilo				
-Antonio Muñoz Molina 	 El invierno en Lisboa				
-Luis Mateo Díez 	 La fuente de la edad				
-Francisco Umbral 	 Mortal y rosa				
-Camilo José Cela 	 La colmena				
-William Faulkner 	 El ruido y la furia				
-Ernest Hemingway 	 Adiós a las armas				
-John Steinbeck 	 Tortilla Flat				
-Sherwood Anderson 	 Winesburg, Ohio				
-Ryu Murakami 	 Sopa de miso				
-Octave Mirbeau 	 El jardín de los suplicios				
-Iceberg Slim 	 Pimp				
-Li Yu 	 La alfombrilla de los goces y los rezos				
-Niccolò Machiavelli 	 El príncipe				
-Richard Matheson 	 La casa infernal				
-Driss Amed 	 Una vida llena de agujeros				
-Antonio Pigafetta 	 Primer viaje en torno del globo				
-Pío Baroja 	 Las noches del Buen Retiro				
-Ian Gibson 	 El vicio inglés				
-Jim Goad 	 Manifiesto redneck				
-Gonzalo Torrente Ballester 	 Crónica del rey pasmado				
-Mario Cavattore 	 El inseminador				
-David Mazzucchelli 	 Asterios Polyp				
-Hari Kunzru 	 El transformista				
-Wenceslao Fernández Flórez 	 El bosque animado				
-Camilo José Cela 	 Madera de boj				
-Miguel Delibes 	 Los santos inocentes				
-Francisco Umbral 	 Las ninfas				
-John Fante 	 Pregúntale al polvo				
-Hubert Selby Jr. 	 Última salida: Brooklyn				
-Henry Miller 	 Trópico de Cáncer				
-Ana María Matute 	 Primera memoria				
-Juan José Millás 	 El desorden de tu nombre				
-Javier Cercas 	 Soldados de Salamina				
-Carlos Ruiz Zafón 	 La sombra del viento				
-José Luis Martín Descalzo 	 El regreso				
-Juan José Flores 	 La casa de Adela				
-Juan Benet 	 Volverás a Región				
-José Donoso 	 Coronación				
-Rosa Montero 	 Crónica del desamor				
-Antonio Gala 	 La pasión turca				
-Enrique Anderson Imbert 	 La casa del ángel				
-Horacio Quiroga 	 Cuentos de la selva				
-Robert Musil 	 El hombre sin atributos				
-Albert Camus 	 El extranjero				
-Fyodor Dostoyevsky 	 Crimen y castigo				
-F. Scott Fitzgerald 	 El gran Gatsby				
-Jack London 	 Colmillo blanco				
-Herman Melville 	 Bartleby, el escribiente				
-Edgar Allan Poe 	 Cuentos completos				
-Nathanael West 	 El día de la langosta				
-Richard Wright 	 Hijo nativo				
-Ralph Ellison 	 El hombre invisible				
-James Baldwin 	 Otra vez la misma historia				
-Toni Morrison 	 Beloved				
-Zora Neale Hurston 	 Sus ojos miraban a Dios				
-Carson McCullers 	 El corazón es un cazador solitario				
-Graham Greene 	 El poder y la gloria				
-Evelyn Waugh 	 Retorno a Brideshead				
-William Styron 	 La decisión de Sophie				
-Anthony Burgess 	 La naranja mecánica				
-Saul Bellow 	 Henderson el rainero				
-Norman Mailer 	 Los desnudos y los muertos				
-John Cheever 	 Falconer				
-Vladimir Nabokov 	 Ada o el ardor				
-Ian McEwan 	 Chesil Beach				
-Kazuo Ishiguro 	 Nunca me abandones				
-Haruki Murakami 	 Kafka en la orilla				
-Don DeLillo 	 Libra				
-Thomas Mann 	 Muerte en Venecia				
+Camilo José Cela	La familia de Pascual Duarte	Tragedia rural que narra la vida de un hombre violento y condenado.	Escritor español, Premio Nobel de Literatura 1989, conocido por su estilo crudo y directo.
+Miguel de Unamuno	Niebla	Explora la existencia y la relación entre autor y personaje.	Filósofo y escritor español, destacado en la Generación del 98.
+Ernest Hemingway	Adiós a las armas	Historia de amor y guerra durante la Primera Guerra Mundial.	Escritor estadounidense, Nobel de Literatura 1954, maestro del estilo conciso.
+William Faulkner	Mientras agonizo	Relato de una familia transportando el cuerpo de la madre a su entierro.	Novelista estadounidense, Nobel 1949, conocido por su narrativa compleja y innovadora.
+John Steinbeck	Tortilla Flat	Comedia sobre amigos y su vida sencilla en California.	Escritor estadounidense, Premio Nobel 1962, centrado en lo social y lo humano.
+Sherwood Anderson	Winesburg, Ohio	Historias cortas sobre la vida interior de los habitantes de un pueblo.	Escritor estadounidense, influyente en la narrativa moderna de cuentos cortos.
+Luis Berenguer	El mundo de Juan Lobón	Retrato de la vida rural en Andalucía a través de un hombre libre y salvaje.	Escritor español con enfoque en la vida rural y las tradiciones.
+Umberto Eco	El nombre de la rosa	Misterio medieval que combina crimen, filosofía y teología.	Filósofo y escritor italiano, especialista en semiótica y narrativa histórica.
+Julio Cortázar	Rayuela	Novela experimental que permite múltiples lecturas y recorridos.	Escritor argentino, maestro del cuento y la narrativa innovadora.
+Gabriel García Márquez	Cien años de soledad	Crónica de varias generaciones de la familia Buendía en Macondo.	Escritor colombiano, Nobel 1982, máximo exponente del realismo mágico.
+Mario Vargas Llosa	La guerra del fin del mundo	Novela histórica sobre la revolución de Canudos en Brasil.	Escritor peruano, Nobel 2010, reconocido por sus novelas políticas e históricas.
+Richard Matheson	La casa infernal	Una mansión embrujada y sus secretos terroríficos.	Escritor estadounidense, maestro de la ciencia ficción y el terror.
+Octave Mirbeau	El jardín de los suplicios	Exploración de perversión, deseo y decadencia en la sociedad.	Escritor francés, crítico de la moral y la hipocresía social.
+Iceberg Slim	Pimp	Autobiografía del mundo de la prostitución masculina en Chicago.	Escritor estadounidense, ex proxeneta, influyente en literatura urbana.
+Charles Bukowski	Factotum	Relato semiautobiográfico de trabajos y sobrevivencia en Los Ángeles.	Escritor estadounidense, estilo directo y crudo, poeta y novelista urbano.
+Antonio Muñoz Molina	La lluvia amarilla	Historia de la despoblación rural narrada con nostalgia y memoria.	Escritor español contemporáneo, con atención al paisaje y la memoria.
+Juan Benet	Volverás a Región	Novela fragmentaria sobre la vida y la historia de una región ficticia.	Escritor español, experimental y denso, influyente en narrativa contemporánea.
+José Saramago	Ensayo sobre la ceguera	Exploración alegórica de la sociedad ante una epidemia de ceguera.	Escritor portugués, Nobel 1998, conocido por su estilo único y crítico social.
+José Luis Sampedro	La sonrisa etrusca	Historia emotiva sobre la relación entre abuelo y nieto.	Escritor y economista español, con narrativa cercana y humana.
+Pío Baroja	Las noches del Buen Retiro	Crónica costumbrista y narrativa de la vida madrileña.	Escritor español de la Generación del 98, prolífico y crítico social.
+Ian Gibson	El vicio inglés	Biografía de los aspectos oscuros y culturales de Inglaterra.	Historiador y escritor británico-español, especializado en historia y cultura.
+Jim Goad	Manifiesto redneck	Crítica social y cultural de la clase trabajadora estadounidense.	Periodista y escritor estadounidense, provocador y satírico.
+Gonzalo Torrente Ballester	Crónica del rey pasmado	Historia divertida y crítica sobre Felipe IV de España.	Escritor español, conocido por sus novelas históricas y humorísticas.
+Mario Cavattore	El inseminador	Novela urbana y transgresora con tintes contemporáneos.	Escritor contemporáneo, enfoque en sociedad y relaciones humanas complejas.
+David Mazzucchelli	Asterios Polyp	Novela gráfica sobre identidad, destino y relaciones personales.	Ilustrador y escritor estadounidense, reconocido en cómic y narrativa gráfica.
+Hari Kunzru	El transformista	Explora la identidad y la transformación en la sociedad moderna.	Escritor británico contemporáneo, enfocado en política y cultura.
+Li Yu	La alfombrilla de los goces y los rezos	Obra clásica china sobre erotismo y rituales sociales.	Escritor chino, destacado en literatura erótica y cultural.
+Niccolò Machiavelli	El príncipe	Manual político sobre poder y estrategia en el Estado.	Filósofo y escritor italiano del Renacimiento, influyente en política y filosofía.
+Ryu Murakami	Sopa de miso	Relato urbano japonés sobre alienación y violencia cotidiana.	Escritor japonés contemporáneo, conocido por novela urbana y transgresora.
+Wenceslao Fernández Flórez	El bosque animado	Novela costumbrista con elementos fantásticos y humorísticos.	Escritor español, maestro de la narrativa ligera y rural.
+Cela, Camilo José	Madera de boj	Historia sobre la soledad y la decadencia en un pueblo español.	Escritor español, Nobel 1989, reconocido por realismo social y estilo intenso.
+Cela, Camilo José	La colmena	Retrato coral de la sociedad madrileña de posguerra.	Escritor español, estilo crudo y directo, crítico social.
+Driss Amed	Una vida llena de agujeros	Memorias de pobreza y lucha en entornos duros.	Escritor marroquí contemporáneo, centrado en la experiencia social y humana.
+Antonio Pigafetta	Primer viaje en torno del globo	Crónica de la primera circunnavegación del mundo.	Navegante y cronista italiano del Renacimiento, testigo histórico de exploraciones.
+Octave Mirbeau	El abate Caire	Novela sobre intriga y crítica social en la Francia decimonónica.	Escritor francés, crítico de la moral y la hipocresía social.
+William Faulkner	Luz de agosto	Tragedia y tensión racial en un pueblo del sur de EE.UU.	Novelista estadounidense, Nobel 1949, estilo complejo y poético.
+John Fante	Pregúntale al polvo	Historia de amor y desilusión en Los Ángeles.	Escritor estadounidense, influyente en literatura urbana y narrativa directa.
+Hubert Selby Jr.	Última salida: Brooklyn	Crónica de marginalidad y desesperanza en Nueva York.	Escritor estadounidense, estilo provocador y crudo, centrado en la marginalidad urbana.
+Henry Miller	Trópico de Cáncer	Novela autobiográfica de vida bohemia y sexual en París.	Escritor estadounidense, controvertido, conocido por estilo explícito y confesional.
+Ana María Matute	Los hijos muertos	Historia de la posguerra española desde la perspectiva infantil.	Escritora española, reconocida por su narrativa social y poética.
+Juan Goytisolo	Señas de identidad	Reflexión sobre exilio, identidad y sociedad española.	Escritor español, centrado en temas políticos y culturales.
+José Donoso	El obsceno pájaro de la noche	Novela experimental y onírica sobre Chile y la sociedad.	Escritor chileno, maestro del realismo mágico y lo surreal.
+Alfredo Bryce Echenique	Un mundo para Julius	Historia de un niño aristocrático en Lima, con humor y crítica.	Escritor peruano, conocido por sátira y narrativa detallada.
+Juan Rulfo	Pedro Páramo	Novela sobre fantasmas, muerte y el México rural.	Escritor mexicano, referente del realismo mágico y literatura breve.
+Clarice Lispector	La hora de la estrella	Relato sobre la marginalidad y la búsqueda de identidad femenina.	Escritora brasileña, considerada una de las más importantes de la literatura latinoamericana.
+Patrick Süskind	El perfume	Historia de obsesión y asesinato centrada en el olfato.	Escritor alemán, conocido por novela histórica y psicológica.
+Truman Capote	A sangre fría	Crónica novelada sobre un asesinato real en Kansas.	Escritor estadounidense, precursor del true crime y la narrativa de no ficción.
+Flannery O’Connor	Un hombre bueno es difícil de encontrar	Cuentos sobre moralidad y crueldad en el sur de EE.UU.	Escritora estadounidense, maestra del relato corto y lo grotesco.
+Carson McCullers	El corazón es un cazador solitario	Explora la soledad y las relaciones humanas en un pueblo sureño.	Escritora estadounidense, narrativa profunda y psicológica.
+Michel Houellebecq	Sumisión	Novela satírica y política sobre Francia y el islamismo.	Escritor francés contemporáneo, crítico social y provocador.
+Bret Easton Ellis	American Psycho	Crítica de la superficialidad y violencia en Nueva York.	Escritor estadounidense, conocido por estilo irónico y controvertido.
+Chuck Palahniuk	El club de la lucha	Novela sobre alienación, violencia y cultura contemporánea.	Escritor estadounidense, narrador de culto, estilo urbano y provocador.
+Thomas Pynchon	El arco iris de gravedad	Novela compleja sobre conspiraciones y cultura estadounidense.	Escritor estadounidense, maestro del postmodernismo literario.
+Don DeLillo	Ruido de fondo	Reflexiona sobre comunicación, medios y aislamiento en la sociedad moderna.	Escritor estadounidense contemporáneo, centrado en la cultura y política.
+William Golding	El señor de las moscas	Niños aislados crean su propia sociedad con caos y violencia.	Escritor británico, Nobel 1983, reconocido por crítica social y psicológica.
+José Luis Peixoto	Cuerpo limpio	Explora la adolescencia y la vida en la sociedad portuguesa contemporánea.	Escritor portugués joven, estilo introspectivo y poético.
+Javier Marías	Corazón tan blanco	Historia de secretos, matrimonio y moralidad en España.	Escritor español contemporáneo, conocido por narrativa psicológica y elegante.
+Enrique Anderson Imbert	La casa del ángel	Novela gótica argentina con misterio y ambiente oscuro.	Escritor argentino, maestro del cuento y novela breve.
+Horacio Quiroga	Cuentos de la selva	Relatos cortos con animales y naturaleza en la selva misionera.	Escritor uruguayo-argentino, pionero del cuento latinoamericano.
+Juan José Millás	El mundo	Explora la mente humana y la percepción de la realidad cotidiana.	Escritor español contemporáneo, centrado en la psicología y lo cotidiano.
+Robert Musil	El hombre sin atributos	Crónica de la decadencia del Imperio Austrohúngaro.	Escritor austriaco, considerado uno de los grandes novelistas del siglo XX.
+Albert Camus	El extranjero	Historia de un hombre indiferente ante la sociedad y la muerte.	Filósofo y escritor francés, Nobel 1957, referente del existencialismo.
+Fyodor Dostoyevsky	Crimen y castigo	Relata la culpa y redención de un joven asesino en San Petersburgo.	Escritor ruso, maestro de la psicología y la moralidad humana.
+F. Scott Fitzgerald	El gran Gatsby	Crónica de amor, ambición y decadencia en Nueva York.	Escritor estadounidense, representante del jazz age y crítico social.
+Jack London	Colmillo blanco	Historia de un lobo domesticado y su supervivencia.	Escritor estadounidense, especializado en aventuras y vida salvaje.
+Herman Melville	Bartleby, el escribiente	Reflexión sobre alienación y pasividad en el mundo laboral.	Escritor estadounidense, maestro de la narrativa simbólica.
+Edgar Allan Poe	Cuentos completos	Recopilación de relatos de terror, misterio y lo macabro.	Escritor estadounidense, padre del relato corto y la literatura de terror.
+Nathanael West	El día de la langosta	Sátira sobre Hollywood y la decadencia de sus sueños.	Escritor estadounidense, irónico y crítico de la sociedad moderna.
+Richard Wright	Hijo nativo	Novela sobre racismo y opresión en Estados Unidos.	Escritor estadounidense, destacado en literatura afroamericana.
+Ralph Ellison	El hombre invisible	Explora la identidad negra y la invisibilidad social.	Escritor estadounidense, influyente en literatura afroamericana y crítica social.
+James Baldwin	Otra vez la misma historia	Ensayos y relatos sobre racismo y sociedad estadounidense.	Escritor estadounidense, activista y referente en derechos civiles.
+Toni Morrison	Beloved	Historia de esclavitud, memoria y trauma familiar.	Escritora estadounidense, Nobel 1993, centrada en la identidad afroamericana.
+Zora Neale Hurston	Sus ojos miraban a Dios	Relato de crecimiento y amor de una mujer afroamericana.	Escritora estadounidense, antropóloga y figura clave del Harlem Renaissance.
+Carson McCullers	Reflejos en un ojo dorado	Relatos de obsesión, poder y relaciones humanas.	Escritora estadounidense, narración psicológica y sutil.
+Graham Greene	El poder y la gloria	Relato sobre un sacerdote perseguido en México.	Escritor británico, reconocido por sus novelas morales y políticas.
+Evelyn Waugh	Retorno a Brideshead	Novela sobre nostalgia, religión y decadencia aristocrática.	Escritor británico, maestro de la sátira social.
+William Styron	La decisión de Sophie	Historia trágica de amor y supervivencia durante el nazismo.	Escritor estadounidense, ganador del Pulitzer, centrado en la psicología.
+Anthony Burgess	La naranja mecánica	Distopía sobre violencia juvenil y control social.	Escritor británico, conocido por su lenguaje inventivo y crítica social.
+Flannery O’Connor	El río	Cuento sobre revelación espiritual y conflicto moral en el sur de EE.UU.	Escritora estadounidense, maestra del relato corto y lo grotesco.
+Saul Bellow	Henderson el rainero	Novela sobre vida intelectual y crisis existencial en EE.UU.	Escritor estadounidense, Nobel 1976, reconocido por su narrativa psicológica.
+Norman Mailer	Los desnudos y los muertos	Crónica de la Segunda Guerra Mundial y experiencia humana.	Escritor estadounidense, polémico y prolífico, centrado en historia y política.
+John Cheever	Falconer	Novela sobre prisión, homosexualidad y alienación.	Escritor estadounidense, maestro del relato suburbano y psicológico.
+Vladimir Nabokov	Lolita	Historia controvertida de obsesión y deseo.	Escritor ruso-estadounidense, maestro del lenguaje y la narrativa psicológica.
+Ian McEwan	Expiación	Novela sobre culpa, amor y reconciliación familiar.	Escritor británico contemporáneo, reconocido por narrativa emocional y precisa.
+Kazuo Ishiguro	Los restos del día	Drama de mayordomo y dignidad en la Inglaterra de entreguerras.	Escritor británico, Nobel 2017, especializado en introspección y memoria.
+Haruki Murakami	Tokio blues (Norwegian Wood)	Historia de amor y pérdida en el Japón de los 60.	Escritor japonés contemporáneo, conocido por realismo mágico y cultura pop.
+Don DeLillo	Submundo	Relato fragmentado sobre cultura, política y sociedad americana.	Escritor estadounidense contemporáneo, influyente en postmodernismo.
+Thomas Mann	La montaña mágica	Novela filosófica sobre enfermedad, tiempo y sociedad europea.	Escritor alemán, Nobel 1929, centrado en psicología y crítica social.
+H. P. Lovecraft	La llamada de Cthulhu	Relato de horror cósmico y seres ancestrales.	Escritor estadounidense, influyente en literatura de terror y fantasía.
+Richard Wright	La clave del negro	Explora racismo y desigualdad en la sociedad estadounidense.	Escritor estadounidense, referente en narrativa afroamericana.
+Ralph Ellison	Shadow and Act	Recopilación de ensayos sobre raza, cultura y sociedad.	Escritor estadounidense, crítico social y cultural.
+William Faulkner	El ruido y la furia	Historia de la decadencia familiar con técnicas narrativas innovadoras.	Novelista estadounidense, Nobel 1949, maestro de la complejidad narrativa.
+Albert Camus	La peste	Alusión a la ocupación y resistencia, reflexionando sobre humanidad y sufrimiento.	Filósofo y escritor francés, Nobel 1957, centrado en existencialismo.
+Franz Kafka	El proceso	Novela sobre alienación, burocracia y culpa en la sociedad.	Escritor checo-alemán, referente de la literatura moderna y surreal.
+Franz Kafka	La metamorfosis	Relato de transformación y aislamiento de un hombre convertido en insecto.	Escritor checo-alemán, maestro del absurdo y lo inquietante.
+George Orwell	1984	Distopía sobre vigilancia totalitaria y control social.	Escritor británico, crítico político y social.
+Aldous Huxley	Un mundo feliz	Sociedad futurista de control y felicidad artificial.	Escritor británico, ensayista y crítico social.
+Miguel Delibes	Los santos inocentes	Crítica social a través de la vida rural y la pobreza.	Escritor español, especialista en retrato social y rural.
+Juan García Ponce	La casa en la playa	Novela sobre relaciones humanas y tensiones en ambientes aislados.	Escritor mexicano, centrado en narrativa psicológica.
+Juan José Saer	El entenado	Historia de descubrimiento y choque cultural en el Río de la Plata.	Escritor argentino, reconocido por estilo preciso y detallista.			
+Roberto Arlt	Los siete locos	Novela urbana sobre conspiraciones y decadencia social en Buenos Aires.	Escritor argentino, pionero de la literatura moderna argentina y crítica social.
+Manuel Vázquez Montalbán	Los mares del Sur	Novela policiaca con crítica social y política en España.	Escritor español, periodista y creador del detective Carvalho.
+Antonio Di Benedetto	Zama	Relato existencial de un funcionario colonial aislado en América del Sur.	Escritor argentino, maestro de la narrativa psicológica y modernista.
+Juan Carlos Onetti	El astillero	Historia de corrupción y desesperanza en un puerto ficticio uruguayo.	Escritor uruguayo, innovador de la narrativa moderna y existencial.
+Adolfo Bioy Casares	La invención de Morel	Ficción científica sobre amor y realidad duplicada en una isla.	Escritor argentino, colaborador de Borges, especialista en ciencia ficción y fantástico.
+Julio Ramón Ribeyro	Los gallinazos sin plumas	Relatos de pobreza y marginalidad en Lima.	Escritor peruano, maestro del cuento realista y social.
+José Revueltas	El apando	Historia sobre la vida y violencia en una cárcel mexicana.	Escritor y activista mexicano, comprometido con temas sociales y políticos.
+Carlos Monsiváis	Días de guardar	Crónicas y ensayos sobre la cultura y sociedad mexicana.	Escritor y periodista mexicano, referente en crítica cultural.
+Manuel Mujica Lainez	Bomarzo	Novela histórica y fantástica sobre un castillo italiano y sus secretos.	Escritor argentino, especialista en historia, mito y fantasía.
+Ricardo Piglia	Plata quemada	Novela policial basada en crímenes reales en Argentina.	Escritor argentino contemporáneo, narrador y crítico literario.
+Juan Benet	Una meditación	Reflexión sobre la historia y la percepción de la realidad.	Escritor español, narrador experimental e introspectivo.
+José Donoso	Coronación	Novela sobre soledad y decadencia social en Chile.	Escritor chileno, maestro del realismo mágico y psicológico.
+Ana María Matute	Primera memoria	Historia de la infancia y el descubrimiento de la vida adulta.	Escritora española, centrada en la memoria, infancia y posguerra.
+Carmen Martín Gaite	Entre visillos	Novela sobre la vida de jóvenes mujeres en una ciudad española.	Escritora española, experta en costumbrismo y psicología femenina.
+Rosa Montero	La loca de la casa	Historias mezclando realidad, memoria y locura creativa.	Escritora española contemporánea, periodista y novelista.
+Juan José Millás	El desorden de tu nombre	Relato sobre identidad, memoria y obsesión.	Escritor español, especialista en introspección y narrativa psicológica.
+Javier Marías	Mañana en la batalla piensa en mí	Novela sobre culpa, secretos y traiciones personales.	Escritor español contemporáneo, estilo elegante y reflexivo.
+César Aira	El tilo	Relato fantástico y surrealista con humor e ironía.	Escritor argentino, conocido por su narrativa breve y experimental.
+Alberto Méndez	Los girasoles ciegos	Historias sobre la posguerra española y supervivencia.	Escritor español, reconocido por su narrativa breve y conmovedora.
+Luis Mateo Díez	La fuente de la edad	Novela poética sobre la memoria y el tiempo en un pueblo.	Escritor español, especialista en narrativa rural y existencial.
+Francisco Umbral	Mortal y rosa	Reflexión autobiográfica sobre la pérdida y la muerte.	Escritor español, periodista y novelista, estilo personal e intenso.
+Luis Goytisolo	Antagonía	Novela experimental sobre historia, sociedad y memoria.	Escritor español, innovador y complejo en su narrativa.
+Juan Rulfo	El llano en llamas	Relatos sobre vida rural, violencia y pobreza en México.	Escritor mexicano, maestro del cuento y del realismo mágico.
+Carlos Fuentes	La muerte de Artemio Cruz	Novela sobre corrupción, poder y conciencia en México.	Escritor mexicano, destacado por narrativa histórica y social.
+José Luis Sampedro	El río que nos lleva	Historia rural sobre trabajo, vida y sociedad en España.	Escritor y economista español, con narrativa poética y humanista.
+José María Merino	La mujer de sombra	Novela de misterio y elementos fantásticos.	Escritor español contemporáneo, especializado en narrativa breve y onírica.
+Rosa Montero	Crónica del desamor	Reflexión sobre relaciones y pérdida amorosa.	Escritora española, periodismo y narrativa emocional.
+Antonio Gala	La pasión turca	Novela sobre amor, obsesión y deseo en la vida adulta.	Escritor español, dramaturgo y novelista reconocido por su estilo elegante.
+Camilo José Cela	Viaje a la Alcarria	Relato de viajes y personajes en la Alcarria española.	Escritor español, Nobel 1989, maestro de narrativa directa y descriptiva.
+Miguel Delibes	El camino	Historia de la infancia y paso a la adultez en un pueblo rural.	Escritor español, costumbrista y observador de la vida rural.
+Rafael Sánchez Ferlosio	El Jarama	Crónica realista de jóvenes en excursión junto al río.	Escritor español, novelista realista, observador de la sociedad.
+Ignacio Martínez de Pisón	Enterrar a los muertos	Relato histórico y social de la posguerra española.	Escritor español contemporáneo, centrado en historia y sociedad.
+Manuel Chaves Nogales	A sangre y fuego	Crónicas y testimonios de conflictos bélicos y políticos.	Periodista y escritor español, reconocido por su objetividad y narrativa histórica.
+Luis Mateo Díez	El espíritu del páramo	Novela poética y existencial ambientada en un pueblo aislado.	Escritor español, especialista en narrativa rural y simbolismo.
+Julio Cortázar	Bestiario	Colección de cuentos con elementos fantásticos y surrealistas.	Escritor argentino, innovador y maestro del cuento breve.
+Juan José Millás	El mundo	Explora la percepción, la obsesión y la realidad subjetiva.	Escritor español contemporáneo, estilo introspectivo y psicológico.
+Juan Goytisolo	Paisajes después de la batalla	Novela sobre memoria, exilio y sociedad española.	Escritor español, innovador y crítico social.
+Javier Tomeo	La estupidez	Relato sobre la absurda condición humana con humor negro.	Escritor español contemporáneo, reconocido por narrativa breve y satírica.
+César Mallorquí	La catedral	Novela de misterio y aventura histórica.	Escritor español, especialista en literatura juvenil y narrativa fantástica.
+Juan José Saer	Cicatrices	Explora memoria, tiempo y relaciones humanas en Argentina.	Escritor argentino, estilo detallista y preciso.
+Antonio Tabucchi	Sostiene Pereira	Relato sobre censura, resistencia y vida en Portugal.	Escritor italiano, reconocido por narrativa política y existencial.
+José Lezama Lima	Paradiso	Novela experimental sobre la vida, el arte y la identidad cubana.	Escritor cubano, poeta y novelista barroco.
+Roberto Bolaño	Los detectives salvajes	Novela sobre juventud, poesía y búsqueda de identidad en Latinoamérica.	Escritor chileno, influyente en literatura contemporánea.
+Roberto Bolaño	2666	Novela monumental sobre violencia, literatura y misterio global.	Escritor chileno, reconocido por narrativa compleja y ambiciosa.
+Jorge Luis Borges	Ficciones	Relatos breves sobre infinitud, laberintos y literatura fantástica.	Escritor argentino, maestro del cuento y la literatura universal.
+Jorge Luis Borges	El Aleph	Relatos sobre universo, tiempo y percepción infinita.	Escritor argentino, poeta y narrador universalmente reconocido.
+Adolfo Bioy Casares	Dormir al sol	Novela fantástica y poética sobre la realidad y el sueño.	Escritor argentino, colaborador de Borges, especializado en ficción fantástica.
+Manuel Mujica Lainez	El laberinto	Novela histórica y fantástica con ambientes exóticos y misteriosos.	Escritor argentino, especialista en narrativa barroca y descriptiva.
+Ricardo Piglia	Crítica y ficción	Reflexiones sobre literatura, narrativa y sociedad argentina.	Escritor y crítico literario argentino, influyente en narrativa contemporánea.
+César Aira	Una novela china	Historia surrealista y breve, con humor y absurdo.	Escritor argentino, maestro del relato corto y experimental.
+Juan José Saer	La mayor	Relato introspectivo sobre memoria y emociones humanas.	Escritor argentino, estilo preciso y reflexivo.
+Juan Carlos Onetti	Juntacadáveres	Novela oscura sobre marginalidad y decadencia en Uruguay.	Escritor uruguayo, innovador en narrativa moderna y existencial.
+Alejo Carpentier	El reino de este mundo	Novela histórica sobre el periodo colonial en Haití.	Escritor cubano, representante del realismo mágico y la historia latinoamericana.
+Gabriel García Márquez	El otoño del patriarca	Historia de dictadura, poder y soledad en un país latinoamericano.	Escritor colombiano, Nobel 1982, máximo exponente del realismo mágico.
+Mario Vargas Llosa	La ciudad y los perros	Novela sobre violencia, disciplina y vida en una academia militar peruana.	Escritor peruano, Nobel 2010, centrado en sociedad y política.
+Carlos Fuentes	Terra Nostra	Novela histórica compleja sobre España y Latinoamérica.	Escritor mexicano, conocido por narrativa histórica y barroca.
+Juan Rulfo	Pedro Páramo	Novela sobre fantasmas y memoria en un pueblo mexicano.	Escritor mexicano, maestro del realismo mágico y del cuento breve.
+Isabel Allende	La casa de los espíritus	Novela familiar con elementos mágicos y políticos en Chile.	Escritora chilena, referente del realismo mágico contemporáneo.
+Laura Esquivel	Como agua para chocolate	Historia de amor y cocina en México con realismo mágico.	Escritora mexicana, conocida por narrativa emotiva y popular.
+José Saramago	El año de la muerte de Ricardo Reis	Novela filosófica sobre identidad y época en Portugal.	Escritor portugués, Nobel 1998, con estilo único y crítico social.
+José Saramago	Ensayo sobre la lucidez	Reflexión política sobre democracia y sociedad en crisis.	Escritor portugués, estilo alegórico y crítico.
+José Luis Peixoto	Cuerpo presente	Relato sobre la vida cotidiana y relaciones humanas en Portugal.	Escritor portugués contemporáneo, estilo introspectivo y poético.
+Ricardo Piglia	El camino de Ida	Novela sobre investigación, memoria y crimen en Argentina.	Escritor argentino, especialista en narrativa contemporánea y crítica.
+César Aira	El llanto	Historia breve y surrealista con reflexiones absurdas.	Escritor argentino, maestro del relato corto experimental.
+Antonio Muñoz Molina	Plenilunio	Novela sobre crimen, sociedad y memoria en España.	Escritor español contemporáneo, reconocido por estilo descriptivo y psicológico.
+Luis Mateo Díez	Los vivos y los muertos	Historia sobre vida y muerte en un entorno rural.	Escritor español, centrado en narrativa poética y rural.
+Francisco Umbral	Las ninfas	Crónica social y literaria sobre mujeres y deseo.	Escritor español, periodista y novelista intenso.
+Camilo José Cela	Mazurca para dos muertos	Novela sobre decadencia y personajes marginales.	Escritor español, Nobel 1989, reconocido por realismo social.
+Juan Benet	Herrumbrosas lanzas	Relato experimental sobre memoria y conflictos internos.	Escritor español, narrador innovador y complejo.
+Julio Ramón Ribeyro	La palabra del mudo	Cuentos sobre marginalidad, pobreza y vida urbana en Lima.	Escritor peruano, maestro del cuento realista.
+José Donoso	El lugar sin límites	Novela sobre poder, marginalidad y obsesión en Chile.	Escritor chileno, destacado en realismo psicológico y social.
+Ana María Matute	Olvidado rey Gudú	Novela fantástica sobre un reino medieval y sus conflictos.	Escritora española, experta en literatura infantil y juvenil, así como en realismo mágico.
+Carmen Martín Gaite	El cuarto de atrás	Novela sobre memoria, guerra y literatura en España.	Escritora española, especializada en introspección y narrativa femenina.
+Javier Marías	Los enamoramientos	Historia de amor, muerte y percepción en la sociedad contemporánea.	Escritor español contemporáneo, reflexivo y elegante.
+César Mallorquí	El sueño de Berlín	Novela histórica sobre espionaje y Segunda Guerra Mundial.	Escritor español, centrado en narrativa juvenil y fantástica.
+Juan José Millás	Dos mujeres en Praga	Relato sobre identidad, relaciones y memoria.	Escritor español, introspectivo y psicológico.
+Juan Goytisolo	Campos de Níjar	Novela sobre pobreza, represión y paisaje español.	Escritor español, crítico social y político.
+Ricardo Piglia	Blanco nocturno	Novela sobre crimen, memoria y sociedad en Argentina.	Escritor argentino contemporáneo, especialista en narrativa y crítica literaria.
+Juan José Saer	Glosa	Relato sobre memoria, historia y percepción en Argentina.	Escritor argentino, maestro del detalle y la introspección.
+Antonio Tabucchi	Requiem	Novela sobre memoria, identidad y tiempo en Portugal.	Escritor italiano, especialista en narrativa existencial y política.
+José María Merino	El lugar sin límites	Relato de misterio, memoria y vida rural.	Escritor español contemporáneo, narrativa poética y onírica.
+Luis Mateo Díez	La ruina del cielo	Novela sobre decadencia, memoria y vida rural.	Escritor español, especialista en narrativa poética y simbólica.
+José Luis Peixoto	Nadie como tú	Historia de relaciones humanas, pérdida y soledad.	Escritor portugués contemporáneo, estilo introspectivo y poético.
+César Aira	La prueba	Historia breve y surrealista, explorando la condición humana.	Escritor argentino, maestro del relato corto experimental.
+Manuel Mujica Lainez	Bomarzo	Novela histórica y fantástica sobre un castillo italiano y sus secretos.	Escritor argentino, especialista en narrativa barroca y descriptiva.
+Roberto Arlt	El juguete rabioso	Relato sobre juventud, marginalidad y rebelión urbana.	Escritor argentino, pionero de la literatura moderna argentina.
+Juan Carlos Onetti	La vida breve	Novela sobre fracaso, amor y desesperanza en Uruguay.	Escritor uruguayo, innovador en narrativa moderna y existencial.
+Adolfo Bioy Casares	El sueño de los héroes	Ficción fantástica y existencial sobre identidad y realidad.	Escritor argentino, colaborador de Borges, especialista en ciencia ficción.
+Julio Cortázar	Final del juego	Cuentos sobre infancia, descubrimiento y transformación.	Escritor argentino, maestro del cuento y la narrativa experimental.
+Gabriel García Márquez	Crónica de una muerte anunciada	Novela sobre honor, destino y justicia en un pueblo colombiano.	Escritor colombiano, Nobel 1982, realismo mágico y narrativa social.
+Mario Vargas Llosa	Pantaleón y las visitadoras	Novela humorística sobre la burocracia militar en Perú.	Escritor peruano, Nobel 2010, centrado en sociedad y política.
+Carlos Fuentes	Gringo viejo	Historia sobre vejez, guerra y memoria en México.	Escritor mexicano, reconocido por narrativa histórica y social.
+Isabel Allende	Eva Luna	Novela sobre vida, amor y política en Latinoamérica.	Escritora chilena, especialista en realismo mágico y narrativa femenina.
+Laura Esquivel	La ley del amor	Historia de amor, destino y realismo mágico en México.	Escritora mexicana, conocida por narrativa emotiva y popular.
+José Saramago	El evangelio según Jesucristo	Interpretación literaria y crítica del relato bíblico.	Escritor portugués, Nobel 1998, estilo alegórico y crítico.
+Juan José Millás	El mundo	Explora la percepción, la obsesión y la realidad subjetiva.	Escritor español contemporáneo, estilo introspectivo y psicológico.
+César Aira	La prueba	Historia breve y surrealista, explorando la condición humana.	Escritor argentino, maestro del relato corto experimental.
+Juan Benet	Herrumbrosas lanzas	Relato experimental sobre memoria y conflictos internos.	Escritor español, narrador innovador y complejo.
+Roberto Bolaño	Estrella distante	Novela sobre literatura, sociedad y dictadura en Chile.	Escritor chileno, influyente en literatura contemporánea.
+Roberto Bolaño	Nocturno de Chile	Relato sobre represión, dictadura y la vida intelectual en Chile.	Escritor chileno, destacado en narrativa histórica y social.		
+Ricardo Piglia	Respiración artificial	Novela sobre la memoria, la literatura y la vida en Buenos Aires.	Escritor argentino, influyente en narrativa contemporánea y crítica literaria.
+José Luis Sampedro	El río que nos lleva	Historia rural sobre la vida en el río Duero y sus gentes.	Escritor y economista español, con narrativa poética y humanista.
+Luis Mateo Díez	La ruina del cielo	Novela sobre decadencia, memoria y vida rural en un pueblo.	Escritor español, centrado en narrativa poética y simbólica.
+Camilo José Cela	Viaje a la Alcarria	Relato de viajes y personajes en la Alcarria española.	Escritor español, Nobel 1989, maestro de narrativa directa y descriptiva.
+Miguel Delibes	El camino	Historia de la infancia y paso a la adultez en un pueblo rural.	Escritor español, costumbrista y observador de la vida rural.
+Rafael Sánchez Ferlosio	El Jarama	Crónica realista de jóvenes en excursión junto al río.	Escritor español, novelista realista, observador de la sociedad.
+Manuel Chaves Nogales	A sangre y fuego	Crónicas y testimonios de conflictos bélicos y políticos.	Periodista y escritor español, reconocido por su objetividad y narrativa histórica.
+Javier Marías	Corazón tan blanco	Novela sobre secretos, culpa y relaciones humanas complejas.	Escritor español contemporáneo, estilo elegante y reflexivo.
+Juan Goytisolo	Señas de identidad	Exploración de la identidad y sociedad española.	Escritor español, crítico social y narrador innovador.
+Ana María Matute	Los hijos muertos	Historias de posguerra sobre infancia, muerte y memoria.	Escritora española, especialista en realismo y memoria histórica.
+Carmen Martín Gaite	Entre visillos	Novela sobre la vida de jóvenes mujeres en una ciudad española.	Escritora española, experta en costumbrismo y psicología femenina.
+Rosa Montero	La loca de la casa	Historias mezclando realidad, memoria y locura creativa.	Escritora española contemporánea, periodista y novelista.
+Juan Carlos Onetti	El astillero	Historia de corrupción y desesperanza en un puerto uruguayo.	Escritor uruguayo, innovador de la narrativa moderna y existencial.
+Juan Rulfo	Pedro Páramo	Novela sobre fantasmas y memoria en un pueblo mexicano.	Escritor mexicano, maestro del realismo mágico y del cuento breve.
+Adolfo Bioy Casares	La invención de Morel	Ficción científica sobre amor y realidad duplicada en una isla.	Escritor argentino, colaborador de Borges, especialista en ciencia ficción y fantástico.
+Manuel Mujica Lainez	Bomarzo	Novela histórica y fantástica sobre un castillo italiano y sus secretos.	Escritor argentino, especialista en narrativa barroca y descriptiva.
+José Donoso	El obsceno pájaro de la noche	Novela sobre soledad, marginalidad y obsesión en Chile.	Escritor chileno, maestro del realismo psicológico y social.
+Roberto Arlt	Los lanzallamas	Novela sobre juventud, marginalidad y violencia urbana.	Escritor argentino, pionero de la literatura moderna argentina.
+Julio Ramón Ribeyro	Los gallinazos sin plumas	Relatos sobre pobreza y marginalidad en Lima.	Escritor peruano, maestro del cuento realista y social.
+Juan Carlos Onetti	La vida breve	Novela sobre fracaso, amor y desesperanza en Uruguay.	Escritor uruguayo, innovador en narrativa moderna y existencial.
+Alejo Carpentier	El siglo de las luces	Novela histórica sobre la Revolución Francesa y Latinoamérica.	Escritor cubano, representante del realismo mágico y de la historia latinoamericana.
+Gabriel García Márquez	El coronel no tiene quien le escriba	Novela sobre la espera, la soledad y la pobreza en un pueblo colombiano.	Escritor colombiano, Nobel 1982, realismo mágico y narrativa social.
+Mario Vargas Llosa	La tía Julia y el escribidor	Novela semi-autobiográfica sobre amor y creación literaria.	Escritor peruano, Nobel 2010, centrado en sociedad y política.
+Carlos Fuentes	La muerte de Artemio Cruz	Novela sobre poder, corrupción y conciencia en México.	Escritor mexicano, destacado por narrativa histórica y social.
+José Saramago	El año de la muerte de Ricardo Reis	Novela filosófica sobre identidad y época en Portugal.	Escritor portugués, Nobel 1998, estilo único y crítico social.
+José Saramago	Ensayo sobre la lucidez	Reflexión política sobre democracia y sociedad en crisis.	Escritor portugués, estilo alegórico y crítico.
+Isabel Allende	La casa de los espíritus	Novela familiar con elementos mágicos y políticos en Chile.	Escritora chilena, referente del realismo mágico contemporáneo.
+Laura Esquivel	Como agua para chocolate	Historia de amor y cocina en México con realismo mágico.	Escritora mexicana, conocida por narrativa emotiva y popular.
+Juan José Saer	El entenado	Novela histórica y reflexiva sobre la colonización y la memoria.	Escritor argentino, especialista en narrativa introspectiva y detallista.
+César Aira	El llanto	Historia breve y surrealista con humor y absurdo.	Escritor argentino, maestro del relato corto y experimental.
+Antonio Muñoz Molina	El invierno en Lisboa	Novela sobre crimen, memoria y sociedad en España.	Escritor español contemporáneo, reconocido por estilo descriptivo y psicológico.
+Francisco Umbral	Mortal y rosa	Reflexión autobiográfica sobre la pérdida y la muerte.	Escritor español, periodista y novelista intenso.
+Camilo José Cela	La colmena	Novela sobre la vida urbana y la sociedad española de posguerra.	Escritor español, Nobel 1989, maestro del realismo social.
+William Faulkner	El ruido y la furia	Novela experimental sobre familia, tiempo y memoria en el sur de EE.UU.	Escritor estadounidense, Nobel 1949, innovador en narrativa moderna.
+Ernest Hemingway	Por quién doblan las campanas	Novela sobre amor, guerra y sacrificio durante la Guerra Civil Española.	Escritor estadounidense, Nobel 1954, maestro del estilo sobrio y directo.
+John Steinbeck	Al este del Edén	Historia familiar sobre conflictos morales y sociales en California.	Escritor estadounidense, Nobel 1962, centrado en sociedad y valores humanos.
+Sherwood Anderson	Winesburg, Ohio	Cuentos sobre la vida y soledad en un pueblo estadounidense.	Escritor estadounidense, precursor de la narrativa moderna y psicológica.
+Ryu Murakami	Sopa de miso	Novela oscura y transgresora sobre la sociedad japonesa contemporánea.	Escritor japonés, especializado en crítica social y narrativa provocadora.
+Octave Mirbeau	El jardín de los suplicios	Novela sobre perversión, violencia y decadencia en la sociedad.	Escritor francés, crítico social y autor de novelas provocadoras.
+Iceberg Slim	Pimp	Autobiografía novelada sobre prostitución y vida criminal en EE.UU.	Escritor estadounidense, ex proxeneta, influyente en literatura urbana.
+Li Yu	La alfombrilla de los goces y los rezos	Novela erótica y filosófica de la China antigua.	Escritor chino, conocido por literatura erótica y narrativa popular.
+Niccolò Machiavelli	El príncipe	Tratado político sobre poder, gobierno y estrategia.	Filósofo y político italiano, autor de teorías sobre poder y política.
+Richard Matheson	La casa infernal	Novela de terror sobre casa embrujada y fenómenos sobrenaturales.	Escritor estadounidense, especialista en terror y ciencia ficción.
+Driss Amed	Una vida llena de agujeros	Relato sobre pobreza, marginalidad y supervivencia.	Escritor contemporáneo, centrado en experiencias urbanas y sociales.
+Antonio Pigafetta	Primer viaje en torno del globo	Crónica histórica de la primera circunnavegación del mundo.	Navegante y cronista italiano del siglo XVI.
+Pío Baroja	Las noches del Buen Retiro	Novela costumbrista sobre la vida urbana en Madrid.	Escritor español, destacado en narrativa realista y crítica social.
+Ian Gibson	El vicio inglés	Estudio biográfico y social sobre personajes ingleses en España.	Historiador y escritor español, especializado en biografía y análisis cultural.
+Jim Goad	Manifiesto redneck	Ensayo crítico y provocador sobre la cultura estadounidense marginal.	Escritor estadounidense, periodista y provocador cultural.
+Gonzalo Torrente Ballester	Crónica del rey pasmado	Novela histórica y satírica sobre la corte española.	Escritor español, destacado por narrativa histórica y humorística.
+Mario Cavattore	El inseminador	Novela erótica y controvertida con elementos provocadores.	Escritor contemporáneo, especialista en narrativa provocadora.
+David Mazzucchelli	Asterios Polyp	Novela gráfica sobre identidad, arquitectura y relaciones humanas.	Ilustrador y escritor estadounidense, reconocido en cómic y narrativa visual.
+Hari Kunzru	El transformista	Novela sobre identidad, cultura y adaptación social.	Escritor británico contemporáneo, reflexivo y crítico.
+Wenceslao Fernández Flórez	El bosque animado	Novela humorística y fantástica ambientada en Galicia.	Escritor español, conocido por narrativa humorística y costumbrista.
+Camilo José Cela	Madera de boj	Relato histórico y familiar en España.	Escritor español, Nobel 1989, maestro de narrativa directa y descriptiva.
+Miguel Delibes	Los santos inocentes	Novela sobre desigualdad y vida rural en España.	Escritor español, crítico social y observador de la vida rural.
+Francisco Umbral	Las ninfas	Crónica social y literaria sobre mujeres y deseo.	Escritor español, periodista y novelista intenso.
+John Fante	Pregúntale al polvo	Novela sobre juventud, fracaso y amor en Los Ángeles.	Escritor estadounidense, precursor de la narrativa urbana y existencial.
+Hubert Selby Jr.	Última salida: Brooklyn	Novela sobre marginación, violencia y vida urbana en EE.UU.	Escritor estadounidense, especialista en narrativa cruda y realista.
+Henry Miller	Trópico de Cáncer	Novela autobiográfica sobre vida bohemia y sexualidad.	Escritor estadounidense, controvertido y pionero de narrativa explícita.
+Ana María Matute	Primera memoria	Historia de la infancia y descubrimiento de la vida adulta.	Escritora española, centrada en memoria y posguerra.
+Juan José Millás	El desorden de tu nombre	Relato sobre identidad, memoria y obsesión.	Escritor español, especialista en narrativa introspectiva y psicológica.
+Javier Cercas	Soldados de Salamina	Novela histórica sobre memoria y resistencia en la Guerra Civil Española.	Escritor español contemporáneo, reconocido por narrativa histórica.
+Carlos Ruiz Zafón	La sombra del viento	Novela de misterio y aventuras literarias en la Barcelona de posguerra.	Escritor español, conocido por narrativa de intriga y fantasía urbana.
+José Luis Martín Descalzo	El regreso	Novela religiosa y reflexiva sobre fe y vida.	Escritor español, periodista y narrador de temática espiritual.
+Juan José Flores	La casa de Adela	Novela sobre familia, secretos y relaciones humanas.	Escritor contemporáneo español, centrado en narrativa intimista.
+Juan Benet	Volverás a Región	Novela experimental sobre memoria, tiempo y vida rural.	Escritor español, narrador innovador y complejo.
+José Donoso	Coronación	Novela sobre soledad y decadencia social en Chile.	Escritor chileno, maestro del realismo psicológico y social.
+Rosa Montero	Crónica del desamor	Reflexión sobre relaciones y pérdida amorosa.	Escritora española, periodista y novelista.
+Antonio Gala	La pasión turca	Novela sobre amor, obsesión y deseo en la vida adulta.	Escritor español, dramaturgo y novelista reconocido por estilo elegante.
+Enrique Anderson Imbert	La casa del ángel	Relato fantástico sobre infancia y familia.	Escritor argentino, especialista en narrativa breve y fantástica.
+Horacio Quiroga	Cuentos de la selva	Cuentos sobre naturaleza, animales y vida en la selva.	Escritor uruguayo, maestro del cuento y la narrativa breve.
+Robert Musil	El hombre sin atributos	Novela filosófica y social sobre la Austria de entreguerras.	Escritor austríaco, reconocido por narrativa compleja y psicológica.
+Albert Camus	El extranjero	Novela existencial sobre absurdo, muerte y sociedad.	Filósofo y escritor francés, Nobel 1957, referente del existencialismo.
+Fyodor Dostoyevsky	Crimen y castigo	Novela sobre culpa, moralidad y crimen en la Rusia del siglo XIX.	Escritor ruso, maestro de la narrativa psicológica y filosófica.
+F. Scott Fitzgerald	El gran Gatsby	Novela sobre amor, ambición y decadencia en EE.UU. de los años 20.	Escritor estadounidense, referente del modernismo y crítica social.
+Jack London	Colmillo blanco	Relato de supervivencia y adaptación de un lobo-híbrido en Alaska.	Escritor estadounidense, conocido por aventuras y naturaleza.
+Herman Melville	Bartleby, el escribiente	Cuento sobre alienación, trabajo y resistencia pasiva.	Escritor estadounidense, maestro de la narrativa breve y crítica social.
+Edgar Allan Poe	Cuentos completos	Colección de cuentos de terror, misterio y fantasía.	Escritor estadounidense, pionero del relato gótico y detectivesco.
+Nathanael West	El día de la langosta	Novela sobre decadencia y desilusión en Hollywood.	Escritor estadounidense, crítico social y narrador irónico.
+Richard Wright	Hijo nativo	Novela sobre racismo y vida de afroamericanos en EE.UU.	Escritor estadounidense, destacado por narrativa social y crítica racial.
+Ralph Ellison	El hombre invisible	Novela sobre identidad, racismo y alienación en EE.UU.	Escritor estadounidense, premio nacional de literatura y crítico social.
+James Baldwin	Otra vez la misma historia	Relato sobre racismo, sexualidad y sociedad estadounidense.	Escritor estadounidense, referente en derechos civiles y narrativa social.
+Toni Morrison	Beloved	Novela sobre esclavitud, memoria y trauma familiar.	Escritora estadounidense, Nobel 1993, especialista en narrativa afroamericana.
+Zora Neale Hurston	Sus ojos miraban a Dios	Historia de amor y emancipación femenina en el sur de EE.UU.	Escritora estadounidense, antropóloga y novelista del Harlem Renaissance.
+Carson McCullers	El corazón es un cazador solitario	Novela sobre soledad, amistad y marginalidad en EE.UU.	Escritora estadounidense, especialista en narrativa introspectiva.
+Graham Greene	El poder y la gloria	Novela sobre moralidad, fe y persecución en México.	Escritor británico, maestro de narrativa moral y política.
+Evelyn Waugh	Retorno a Brideshead	Novela sobre religión, nostalgia y decadencia aristocrática inglesa.	Escritor británico, conocido por sátira y narrativa social.
+William Styron	La decisión de Sophie	Novela sobre amor, culpa y tragedia durante el Holocausto.	Escritor estadounidense, maestro de narrativa psicológica y emotiva.
+Anthony Burgess	La naranja mecánica	Novela distópica sobre violencia y control social.	Escritor británico, reconocido por ficción provocadora y lingüística.
+Saul Bellow	Henderson el rainero	Relato sobre la vida urbana y conflictos personales en EE.UU.	Escritor canadiense-estadounidense, Nobel 1976, experto en narrativa psicológica.
+Norman Mailer	Los desnudos y los muertos	Novela bélica sobre la Segunda Guerra Mundial y la condición humana.	Escritor estadounidense, conocido por narrativa histórica y social.
+John Cheever	Falconer	Novela sobre prisión, libertad y sociedad estadounidense.	Escritor estadounidense, maestro del relato y crítica social.
+Vladimir Nabokov	Lolita	Novela sobre obsesión, deseo y moralidad controvertida.	Escritor ruso-estadounidense, famoso por estilo literario y narrativo innovador.
+Ian McEwan	Expiación	Novela sobre culpa, amor y percepción de la realidad.	Escritor británico contemporáneo, reconocido por narrativa psicológica.
+Kazuo Ishiguro	Los restos del día	Novela sobre memoria, deber y vida de un mayordomo inglés.	Escritor británico, Nobel 2017, especializado en narrativa introspectiva.
+Haruki Murakami	Tokio blues (Norwegian Wood)	Novela sobre amor, pérdida y juventud en Japón.	Escritor japonés contemporáneo, conocido por narrativa introspectiva y realismo mágico.
+Don DeLillo	Submundo	Novela sobre sociedad, cultura y política estadounidense.	Escritor estadounidense contemporáneo, especialista en narrativa compleja.
+Thomas Mann	La montaña mágica	Novela sobre tiempo, enfermedad y sociedad europea.	Escritor alemán, Nobel 1929, destacado en narrativa filosófica.
+H. P. Lovecraft	La llamada de Cthulhu	Relato de terror cósmico y misterio sobrenatural.	Escritor estadounidense, pionero del horror cósmico y fantástico.
+George Orwell	1984	Novela distópica sobre totalitarismo, vigilancia y control social.	Escritor británico, conocido por sátira política y distopías.			
+Aldous Huxley	Un mundo feliz	Novela distópica sobre control social, tecnología y felicidad.	Escritor británico, filósofo y crítico social, conocido por visión futurista.
+Miguel Delibes	El hereje	Novela histórica sobre persecución religiosa en la España del siglo XVI.	Escritor español, especialista en narrativa histórica y social.
+Juan José Millás	Dos mujeres en Praga	Relato sobre identidad, memoria y relaciones humanas complejas.	Escritor español, centrado en narrativa introspectiva y psicológica.
+César Aira	El tilo	Relato breve con elementos fantásticos y cotidianos en Argentina.	Escritor argentino, maestro del relato breve y experimental.
+Antonio Muñoz Molina	Plenilunio	Novela de suspense sobre crimen, memoria y sociedad española.	Escritor español contemporáneo, experto en narrativa psicológica y descriptiva.
+Luis Mateo Díez	La fuente de la edad	Novela sobre historia y memoria de un pueblo y sus habitantes.	Escritor español, narrador costumbrista y poético.
+Francisco Umbral	Las ninfas	Relato sobre deseo, juventud y sociedad urbana española.	Escritor español, periodista y novelista de estilo intenso.
+Camilo José Cela	Mazurca para dos muertos	Novela sobre amor, muerte y violencia en la España rural.	Escritor español, Nobel 1989, destacado en narrativa directa y descriptiva.
+Juan Benet	Una meditación	Novela experimental y filosófica sobre memoria y tiempo.	Escritor español, innovador en narrativa compleja.
+Julio Ramón Ribeyro	La palabra del mudo	Cuentos sobre marginalidad, pobreza y vida urbana en Perú.	Escritor peruano, maestro del relato realista y social.
+José Donoso	El lugar sin límites	Novela sobre decadencia, marginalidad y sexualidad en Chile.	Escritor chileno, especialista en realismo psicológico y social.
+Ana María Matute	Olvidado rey Gudú	Novela fantástica sobre poder, guerra y destino en un reino ficticio.	Escritora española, conocida por narrativa poética y realismo mágico.
+Carmen Martín Gaite	El cuarto de atrás	Novela sobre memoria, guerra y experiencia femenina.	Escritora española, destacada en narrativa introspectiva y costumbrista.
+Javier Marías	Los enamoramientos	Novela sobre amor, obsesión y percepción de la realidad.	Escritor español contemporáneo, especialista en narrativa psicológica.
+César Mallorquí	La catedral	Novela histórica y fantástica sobre misterio y sociedad.	Escritor español, reconocido en narrativa juvenil y fantástica.
+Antonio Tabucchi	Sostiene Pereira	Novela sobre censura, compromiso y literatura en Portugal.	Escritor italiano, especialista en narrativa reflexiva y política.
+José Lezama Lima	Paradiso	Novela experimental sobre vida, identidad y literatura en Cuba.	Escritor cubano, maestro del estilo barroco y poético.
+Roberto Bolaño	Los detectives salvajes	Novela sobre juventud, literatura y búsqueda de identidad en México.	Escritor chileno, influyente en narrativa contemporánea latinoamericana.
+Roberto Bolaño	2666	Novela sobre crimen, literatura y sociedad en el siglo XX.	Escritor chileno, reconocido por narrativa compleja y expansiva.
+Jorge Luis Borges	Ficciones	Antología de relatos fantásticos y filosóficos.	Escritor argentino, maestro de la narrativa breve, fantástico y ensayo literario.
+Jorge Luis Borges	El Aleph	Relatos sobre infinito, memoria y misterio.	Escritor argentino, referente de literatura universal y fantástico.
+Adolfo Bioy Casares	Dormir al sol	Relato fantástico y filosófico sobre existencia y sueños.	Escritor argentino, colaborador de Borges, especialista en fantástico.
+Manuel Mujica Lainez	El laberinto	Novela histórica y fantástica sobre poder y deseo.	Escritor argentino, experto en narrativa barroca y detallista.
+Ricardo Piglia	Crítica y ficción	Ensayos y reflexiones sobre literatura y narrativa argentina.	Escritor argentino, influyente en teoría literaria y narrativa contemporánea.
+César Aira	Una novela china	Relato breve con elementos históricos y fantásticos.	Escritor argentino, maestro del relato experimental y surreal.
+Juan José Saer	La mayor	Novela introspectiva sobre vida, memoria y relaciones humanas.	Escritor argentino, reconocido por estilo meticuloso y detallista.
+Juan Carlos Onetti	Juntacadáveres	Novela sobre marginalidad, soledad y decadencia urbana.	Escritor uruguayo, innovador en narrativa moderna y existencial.
+Alejo Carpentier	El reino de este mundo	Novela histórica sobre revolución y realismo mágico en Haití.	Escritor cubano, maestro del realismo mágico y narrativa histórica.
+Gabriel García Márquez	El otoño del patriarca	Novela sobre poder, soledad y corrupción en dictadura ficticia.	Escritor colombiano, Nobel 1982, referente del realismo mágico.
+Mario Vargas Llosa	Conversación en La Catedral	Novela sobre política, sociedad y corrupción en Perú.	Escritor peruano, Nobel 2010, especialista en narrativa social y política.
+Carlos Fuentes	Terra Nostra	Novela histórica y simbólica sobre España y Latinoamérica.	Escritor mexicano, destacado por narrativa compleja y erudita.
+Isabel Allende	Eva Luna	Novela sobre vida, amor y sociedad en Latinoamérica con realismo mágico.	Escritora chilena, referente del realismo mágico contemporáneo.
+Laura Esquivel	La ley del amor	Novela romántica y fantástica ambientada en México.	Escritora mexicana, conocida por narrativa emotiva y popular.
+José Saramago	El evangelio según Jesucristo	Novela sobre religión, moralidad y visión crítica de la Biblia.	Escritor portugués, Nobel 1998, narrador alegórico y reflexivo.
+José Saramago	Todos los nombres	Novela sobre burocracia, memoria y soledad.	Escritor portugués, estilo alegórico y crítico social.
+Juan José Millás	El mundo	Novela sobre percepción, memoria y vida urbana.	Escritor español, especialista en narrativa psicológica y reflexiva.
+César Aira	La prueba	Relato breve y surrealista sobre el absurdo y la vida cotidiana.	Escritor argentino, maestro del relato experimental.
+Juan Benet	Herrumbrosas lanzas	Novela experimental sobre memoria y vida rural.	Escritor español, innovador en narrativa compleja.
+Roberto Arlt	El juguete rabioso	Novela sobre juventud, marginalidad y ambición urbana.	Escritor argentino, pionero de la narrativa moderna.
+Manuel Chaves Nogales	A sangre y fuego	Crónicas sobre conflictos bélicos y políticos en España.	Periodista y escritor español, experto en narrativa histórica.
+Javier Marías	Mañana en la batalla piensa en mí	Novela sobre culpa, amor y relaciones humanas complejas.	Escritor español contemporáneo, estilo elegante y reflexivo.
+Juan Goytisolo	Paisajes después de la batalla	Novela sobre identidad, historia y sociedad española.	Escritor español, crítico social e innovador narrativo.
+Ricardo Piglia	Blanco nocturno	Novela policial y social ambientada en Buenos Aires.	Escritor argentino, especialista en narrativa urbana y crítica social.
+Juan José Saer	Glosa	Novela experimental sobre memoria, tiempo y sociedad argentina.	Escritor argentino, narrador meticuloso y reflexivo.
+Antonio Tabucchi	Requiem	Novela breve sobre memoria, muerte y Portugal.	Escritor italiano, especialista en narrativa reflexiva y filosófica.
+José María Merino	El lugar sin límites	Relato sobre marginalidad, memoria y sociedad española.	Escritor español contemporáneo, especialista en narrativa breve.
+Luis Mateo Díez	Los vivos y los muertos	Novela sobre vida rural, muerte y memoria en un pueblo español.	Escritor español, costumbrista y poético.
+José Luis Peixoto	Nadie como tú	Novela sobre amor, pérdida y memoria familiar.	Escritor portugués contemporáneo, narrador poético e introspectivo.
+César Aira	El llanto	Relato surrealista sobre vida cotidiana y absurdos sociales.	Escritor argentino, maestro del relato breve y experimental.
+Manuel Mujica Lainez	Bomarzo	Novela histórica y fantástica sobre un castillo italiano y sus secretos.	Escritor argentino, especialista en narrativa barroca.
+Roberto Arlt	Los siete locos	Novela sobre corrupción, marginalidad y conspiración urbana.	Escritor argentino, pionero de la narrativa moderna.
+Juan Carlos Onetti	La vida breve	Novela sobre fracaso, amor y desesperanza en Uruguay.	Escritor uruguayo, innovador de la narrativa moderna y existencial.
+Adolfo Bioy Casares	El sueño de los héroes	Novela fantástica y filosófica sobre sueños y amor imposible.	Escritor argentino, colaborador de Borges, especialista en fantástico.
+Julio Cortázar	Final del juego	Cuentos sobre infancia, descubrimiento y destino.	Escritor argentino, maestro del relato y literatura experimental.
+Gabriel García Márquez	Crónica de una muerte anunciada	Novela sobre honor, destino y crimen en un pueblo colombiano.	Escritor colombiano, Nobel 1982, referente del realismo mágico.
+Mario Vargas Llosa	Pantaleón y las visitadoras	Novela humorística sobre ejército y sociedad peruana.	Escritor peruano, Nobel 2010, especialista en narrativa social y política.
+Carlos Fuentes	Gringo viejo	Novela histórica sobre la Revolución Mexicana y personajes reales.	Escritor mexicano, destacado por narrativa histórica y compleja.
+Isabel Allende	Paula	Memorias y relato familiar sobre enfermedad y muerte de su hija.	Escritora chilena, referente del realismo mágico contemporáneo.
+Laura Esquivel	Tan veloz como el deseo	Novela romántica y fantástica sobre destino y amor.	Escritora mexicana, conocida por narrativa emotiva y popular.
+José Saramago	La balsa de piedra	Novela alegórica sobre ruptura y transformación social.	Escritor portugués, Nobel 1998, estilo crítico y reflexivo.
+Juan José Millás	El mundo	Relato sobre percepción, memoria y vida urbana.	Escritor español, especialista en narrativa introspectiva.
+César Aira	La prueba	Relato breve y surrealista sobre absurdo y cotidiano.	Escritor argentino, maestro del relato experimental.
+Juan Benet	Herrumbrosas lanzas	Novela experimental sobre memoria y vida rural.	Escritor español, innovador narrativo.
+Roberto Bolaño	Estrella distante	Novela sobre arte, sociedad y dictadura en Chile.	Escritor chileno, influyente en narrativa contemporánea latinoamericana.
+Roberto Bolaño	Nocturno de Chile	Novela sobre represión, memoria y literatura en Chile.	Escritor chileno, reconocido por narrativa compleja y expansiva.
+Ricardo Piglia	Respiración artificial	Novela sobre literatura, memoria y vida en Buenos Aires.	Escritor argentino, influyente en narrativa y crítica literaria.
+José Luis Sampedro	La sonrisa etrusca	Novela sobre familia, vejez y relaciones humanas.	Escritor español, economista y novelista humanista.
+Luis Mateo Díez	La ruina del cielo	Novela sobre decadencia y memoria en la vida rural española.	Escritor español, narrador poético y costumbrista.
+Camilo José Cela	Viaje a la Alcarria	Relato de viajes y personajes en la Alcarria española.	Escritor español, Nobel 1989, maestro de narrativa directa.
+Miguel Delibes	El camino	Historia de la infancia y paso a la adultez en un pueblo rural.	Escritor español, costumbrista y observador de la vida rural.
+Rafael Sánchez Ferlosio	El Jarama	Crónica realista de jóvenes en excursión junto al río.	Escritor español, novelista realista.
+Manuel Chaves Nogales	A sangre y fuego	Crónicas sobre conflictos bélicos y políticos en España.	Periodista y escritor español.
+Javier Marías	Corazón tan blanco	Novela sobre secretos, culpa y relaciones humanas complejas.	Escritor español contemporáneo, especialista en narrativa psicológica.
+Juan Goytisolo	Señas de identidad	Exploración de la identidad y sociedad española.	Escritor español, crítico social e innovador.
+Ana María Matute	Los hijos muertos	Historias de posguerra sobre infancia y muerte.	Escritora española, especialista en realismo y memoria histórica.
+Carmen Martín Gaite	Entre visillos	Novela sobre la vida de jóvenes mujeres en una ciudad española.	Escritora española, experta en costumbrismo y psicología femenina.
+Rosa Montero	La loca de la casa	Historias mezclando realidad, memoria y locura creativa.	Escritora española contemporánea.
+Juan Carlos Onetti	El astillero	Historia de corrupción y desesperanza en un puerto uruguayo.	Escritor uruguayo, innovador en narrativa moderna y existencial.
+Juan Rulfo	El llano en llamas	Cuentos sobre vida rural, pobreza y marginalidad en México.	Escritor mexicano, maestro del realismo mágico y cuento breve.
+Adolfo Bioy Casares	La invención de Morel	Ficción científica sobre amor y realidad duplicada en una isla.	Escritor argentino, colaborador de Borges, especialista en fantástico.
+Manuel Mujica Lainez	Bomarzo	Novela histórica y fantástica sobre un castillo italiano.	Escritor argentino, especialista en narrativa barroca.
+José Donoso	El obsceno pájaro de la noche	Novela sobre soledad, marginalidad y obsesión en Chile.	Escritor chileno, maestro del realismo psicológico y social.
+Roberto Arlt	Los lanzallamas	Novela sobre juventud, marginalidad y violencia urbana.	Escritor argentino, pionero de la narrativa moderna.
+Julio Ramón Ribeyro	La palabra del mudo	Cuentos sobre pobreza y marginalidad en Lima.	Escritor peruano, maestro del cuento realista.
+Juan Carlos Onetti	La muerte y la niña	Novela sobre memoria, pérdida y desesperanza.	Escritor uruguayo, innovador en narrativa moderna.
+Alejo Carpentier	El siglo de las luces	Novela histórica sobre la Revolución Francesa y Latinoamérica.	Escritor cubano, referente del realismo mágico.
+Gabriel García Márquez	Memoria de mis putas tristes	Novela sobre amor tardío y reflexión sobre la vida.	Escritor colombiano, Nobel 1982, referente del realismo mágico.
+Mario Vargas Llosa	Travesuras de la niña mala	Novela romántica y social sobre relaciones complejas.	Escritor peruano, Nobel 2010, especialista en narrativa social.
+Carlos Fuentes	Cristóbal Nonato	Novela histórica sobre México colonial y sociedad.	Escritor mexicano, destacado en narrativa histórica.
+Isabel Allende	Inés del alma mía	Novela histórica sobre conquista de Chile y vida de Inés Suárez.	Escritora chilena, referente del realismo mágico contemporáneo.
+Laura Esquivel	Como agua para chocolate	Historia de amor y cocina en México con realismo mágico.	Escritora mexicana, conocida por narrativa emotiva y popular.
+José Saramago	Ensayo sobre la ceguera	Novela alegórica sobre sociedad y comportamiento humano.	Escritor portugués, Nobel 1998, estilo crítico y reflexivo.
+José Saramago	Ensayo sobre la lucidez	Reflexión política sobre democracia y sociedad en crisis.	Escritor portugués, estilo alegórico y crítico.
+Juan José Millás	El mundo	Novela sobre percepción, memoria y vida urbana.	Escritor español, especialista en narrativa introspectiva.
+César Aira	Una novela china	Relato breve con elementos históricos y fantásticos.	Escritor argentino, maestro del relato experimental.
+Juan Benet	Volverás a Región	Novela experimental sobre memoria, tiempo y vida rural.	Escritor español, narrador innovador.
+Roberto Bolaño	Los detectives salvajes	Novela sobre juventud, literatura y búsqueda de identidad en México.	Escritor chileno, influyente en narrativa contemporánea.
+Roberto Bolaño	2666	Novela sobre crimen, literatura y sociedad en el siglo XX.	Escritor chileno, reconocido por narrativa compleja y expansiva.
+Ricardo Piglia	Blanco nocturno	Novela policial y social ambientada en Buenos Aires.	Escritor argentino, especialista en narrativa urbana y crítica social.	
+Juan José Saer	Glosa	Novela experimental sobre memoria, tiempo y sociedad argentina.	Escritor argentino, narrador meticuloso y reflexivo.
+Antonio Tabucchi	Sostiene Pereira	Novela sobre censura, compromiso y literatura en Portugal.	Escritor italiano, especialista en narrativa reflexiva y filosófica.
+José María Merino	El lugar sin límites	Relato sobre marginalidad, memoria y sociedad española.	Escritor español contemporáneo, especialista en narrativa breve.
+Luis Mateo Díez	Los vivos y los muertos	Novela sobre vida rural, muerte y memoria en un pueblo español.	Escritor español, costumbrista y poético.
+José Luis Peixoto	Nadie como tú	Novela sobre amor, pérdida y memoria familiar.	Escritor portugués contemporáneo, narrador poético e introspectivo.
+César Aira	El llanto	Relato surrealista sobre vida cotidiana y absurdos sociales.	Escritor argentino, maestro del relato breve y experimental.
+Manuel Mujica Lainez	Bomarzo	Novela histórica y fantástica sobre un castillo italiano.	Escritor argentino, especialista en narrativa barroca.
+Roberto Arlt	El juguete rabioso	Novela sobre juventud, marginalidad y ambición urbana.	Escritor argentino, pionero de la narrativa moderna.
+Juan Carlos Onetti	La vida breve	Novela sobre fracaso, amor y desesperanza en Uruguay.	Escritor uruguayo, innovador de la narrativa moderna y existencial.
+Adolfo Bioy Casares	El sueño de los héroes	Novela fantástica y filosófica sobre sueños y amor imposible.	Escritor argentino, colaborador de Borges, especialista en fantástico.
+Julio Cortázar	Final del juego	Cuentos sobre infancia, descubrimiento y destino.	Escritor argentino, maestro del relato y literatura experimental.
+Gabriel García Márquez	Crónica de una muerte anunciada	Novela sobre honor, destino y crimen en un pueblo colombiano.	Escritor colombiano, Nobel 1982, referente del realismo mágico.
+Mario Vargas Llosa	Pantaleón y las visitadoras	Novela humorística sobre ejército y sociedad peruana.	Escritor peruano, Nobel 2010, especialista en narrativa social y política.
+Carlos Fuentes	Gringo viejo	Novela histórica sobre la Revolución Mexicana y personajes reales.	Escritor mexicano, destacado en narrativa histórica.
+Isabel Allende	Paula	Memorias y relato familiar sobre enfermedad y muerte de su hija.	Escritora chilena, referente del realismo mágico contemporáneo.
+Laura Esquivel	Tan veloz como el deseo	Novela romántica y fantástica sobre destino y amor.	Escritora mexicana, conocida por narrativa emotiva y popular.
+José Saramago	La balsa de piedra	Novela alegórica sobre ruptura y transformación social.	Escritor portugués, Nobel 1998, estilo crítico y reflexivo.
+Juan José Millás	Dos mujeres en Praga	Relato sobre identidad, memoria y relaciones humanas complejas.	Escritor español, centrado en narrativa introspectiva y psicológica.
+César Aira	El tilo	Relato breve con elementos fantásticos y cotidianos en Argentina.	Escritor argentino, maestro del relato breve y experimental.
+Antonio Muñoz Molina	El invierno en Lisboa	Novela de suspense y memoria ambientada en Portugal.	Escritor español contemporáneo, especialista en narrativa psicológica.
+Luis Mateo Díez	La fuente de la edad	Novela sobre historia y memoria de un pueblo y sus habitantes.	Escritor español, narrador costumbrista y poético.
+Francisco Umbral	Mortal y rosa	Novela intensa sobre duelo, pérdida y vida urbana española.	Escritor español, periodista y novelista de estilo intenso.
+Camilo José Cela	La colmena	Novela coral sobre la vida cotidiana en Madrid de posguerra.	Escritor español, Nobel 1989, destacado en narrativa directa y descriptiva.
+William Faulkner	El ruido y la furia	Novela experimental sobre decadencia familiar y tiempo.	Escritor estadounidense, Nobel 1949, maestro del modernismo literario.
+Ernest Hemingway	Adiós a las armas	Novela bélica sobre amor y desilusión durante la Primera Guerra Mundial.	Escritor estadounidense, Nobel 1954, estilo directo y minimalista.
+John Steinbeck	Tortilla Flat	Novela humorística sobre amistad y vida en California.	Escritor estadounidense, Nobel 1962, observador de la vida rural y urbana.
+Sherwood Anderson	Winesburg, Ohio	Cuentos sobre soledad, secretos y vida en un pueblo americano.	Escritor estadounidense, innovador en el relato corto moderno.
+Ryu Murakami	Sopa de miso	Novela japonesa sobre vida urbana, violencia y marginalidad.	Escritor japonés contemporáneo, especialista en narrativa urbana y transgresora.
+Octave Mirbeau	El jardín de los suplicios	Novela crítica sobre sociedad, deseo y crueldad.	Escritor francés, crítico social y provocador literario.
+Iceberg Slim	Pimp	Autobiografía sobre la vida en el crimen y la prostitución en EE.UU.	Escritor estadounidense, influyente en narrativa urbana y realista.
+Li Yu	La alfombrilla de los goces y los rezos	Novela china sobre deseo, poder y sociedad de la época.	Escritor chino clásico, especialista en literatura erótica y satírica.
+Niccolò Machiavelli	El príncipe	Tratado político sobre poder, estrategia y gobernantes.	Filósofo y escritor italiano, maestro de la teoría política moderna.
+Richard Matheson	La casa infernal	Novela de terror gótico sobre misterio y casas encantadas.	Escritor estadounidense, especialista en ciencia ficción y terror.
+Driss Amed	Una vida llena de agujeros	Novela sobre marginalidad y supervivencia en Marruecos.	Escritor marroquí contemporáneo.
+Antonio Pigafetta	Primer viaje en torno del globo	Relato histórico sobre exploración y descubrimientos.	Navegante y cronista italiano del siglo XVI.
+Pío Baroja	Las noches del Buen Retiro	Novela sobre vida urbana, marginalidad y relaciones humanas.	Escritor español, destacado en narrativa realista y costumbrista.
+Ian Gibson	El vicio inglés	Estudio histórico sobre personajes y sociedad española.	Historiador y escritor británico, especialista en historia española contemporánea.
+Jim Goad	Manifiesto redneck	Ensayo provocador sobre cultura y marginalidad americana.	Escritor estadounidense, crítico social y polémico.
+Gonzalo Torrente Ballester	Crónica del rey pasmado	Novela histórica con humor sobre política y sociedad española.	Escritor español, especialista en narrativa histórica y satírica.
+Mario Cavattore	El inseminador	Novela contemporánea con tintes eróticos y satíricos.	Escritor italiano contemporáneo.
+David Mazzucchelli	Asterios Polyp	Novela gráfica sobre arte, identidad y familia.	Ilustrador y guionista estadounidense, reconocido en cómic literario.
+Hari Kunzru	El transformista	Novela sobre identidad, juventud y cambio social.	Escritor británico contemporáneo, mezcla narrativa y experimentación.
+Wenceslao Fernández Flórez	El bosque animado	Novela humorística y fantástica sobre Galicia y sus personajes.	Escritor español, especialista en narrativa costumbrista.
+Camilo José Cela	Madera de boj	Novela experimental sobre obsesión, violencia y muerte.	Escritor español, Nobel 1989, maestro de narrativa directa.
+Miguel Delibes	Los santos inocentes	Novela sobre vida rural, injusticia y opresión en España.	Escritor español, costumbrista y observador de la vida rural.
+Francisco Umbral	Las ninfas	Relato sobre deseo, juventud y sociedad urbana española.	Escritor español, periodista y novelista de estilo intenso.
+John Fante	Pregúntale al polvo	Novela sobre frustración, ambición y vida en Los Ángeles.	Escritor estadounidense, precursor del realismo urbano.
+Hubert Selby Jr.	Última salida: Brooklyn	Novela sobre marginalidad, adicción y violencia urbana.	Escritor estadounidense, influyente en literatura urbana.
+Henry Miller	Trópico de Cáncer	Novela semi-autobiográfica sobre vida bohemia y sexualidad.	Escritor estadounidense, pionero del realismo literario transgresor.
+Ana María Matute	Primera memoria	Historias sobre infancia, posguerra y vida rural.	Escritora española, especialista en realismo y memoria histórica.
+Juan José Millás	El desorden de tu nombre	Novela sobre obsesión, identidad y relaciones humanas.	Escritor español, experto en narrativa introspectiva y psicológica.
+Javier Cercas	Soldados de Salamina	Novela histórica sobre Guerra Civil Española y memoria.	Escritor español contemporáneo, narrador histórico y reflexivo.
+Carlos Ruiz Zafón	La sombra del viento	Novela de misterio y aventuras en la Barcelona de posguerra.	Escritor español, maestro del thriller literario y narrativa urbana.
+José Luis Martín Descalzo	El regreso	Novela sobre redención, fe y relaciones humanas.	Escritor español, sacerdote y narrador.
+Juan José Flores	La casa de Adela	Novela sobre memoria, soledad y relaciones familiares.	Escritor español contemporáneo.
+Juan Benet	Volverás a Región	Novela experimental sobre memoria y vida rural.	Escritor español, innovador en narrativa compleja.
+José Donoso	Coronación	Novela sobre obsesión, decadencia y sociedad chilena.	Escritor chileno, maestro del realismo psicológico y social.
+Rosa Montero	Crónica del desamor	Relato sobre relaciones, amor y pérdida en sociedad urbana.	Escritora española contemporánea.
+Antonio Gala	La pasión turca	Novela romántica sobre amor, deseo y conflicto cultural.	Escritor español, dramaturgo y novelista reconocido.
+Enrique Anderson Imbert	La casa del ángel	Novela sobre juventud, opresión y sociedad argentina.	Escritor argentino, maestro del relato breve.
+Horacio Quiroga	Cuentos de la selva	Cuentos sobre naturaleza, animales y vida rural en Misiones.	Escritor uruguayo-argentino, especialista en cuentos.
+Robert Musil	El hombre sin atributos	Novela filosófica y psicológica sobre sociedad y crisis de Austria.	Escritor austríaco, autor modernista.
+Albert Camus	El extranjero	Novela sobre absurdo, muerte y alienación en Argelia.	Escritor francés, Nobel 1957, especialista en existencialismo.
+Fyodor Dostoyevsky	Crimen y castigo	Novela sobre culpa, moral y justicia en San Petersburgo.	Escritor ruso, maestro del realismo psicológico.
+F. Scott Fitzgerald	El gran Gatsby	Novela sobre amor, decadencia y sociedad en EE.UU. durante los años 20.	Escritor estadounidense, referente del modernismo literario.
+Jack London	Colmillo blanco	Novela de aventuras sobre supervivencia y naturaleza en Alaska.	Escritor estadounidense, especialista en aventuras y vida salvaje.
+Herman Melville	Bartleby, el escribiente	Relato sobre burocracia, alienación y resistencia pasiva.	Escritor estadounidense, destacado en narrativa filosófica.
+Edgar Allan Poe	Cuentos completos	Colección de relatos de terror, misterio y suspenso.	Escritor estadounidense, pionero del relato gótico y detective.
+Nathanael West	El día de la langosta	Novela sobre Hollywood y decadencia americana.	Escritor estadounidense, crítico social y satírico.
+Richard Wright	Hijo nativo	Novela sobre racismo y desigualdad en EE.UU.	Escritor estadounidense, referente del realismo social.
+Ralph Ellison	El hombre invisible	Novela sobre identidad, racismo y búsqueda de sentido.	Escritor estadounidense, influyente en literatura afroamericana.
+James Baldwin	Otra vez la misma historia	Ensayo sobre raza, sociedad y vida en EE.UU.	Escritor estadounidense, referente de derechos civiles y narrativa crítica.
+Toni Morrison	Beloved	Novela sobre esclavitud, memoria y trauma familiar.	Escritora estadounidense, Nobel 1993, especialista en narrativa afroamericana.
+Zora Neale Hurston	Sus ojos miraban a Dios	Novela sobre independencia, amor y sociedad afroamericana.	Escritora estadounidense, antropóloga y narradora.
+Carson McCullers	El corazón es un cazador solitario	Novela sobre soledad, marginalidad y vida en el sur de EE.UU.	Escritora estadounidense, especialista en narrativa psicológica.
+Graham Greene	El poder y la gloria	Novela sobre fe, moral y corrupción en México.	Escritor británico, especialista en narrativa política y moral.
+Evelyn Waugh	Retorno a Brideshead	Novela sobre aristocracia, memoria y religión en Inglaterra.	Escritor británico, conocido por sátira social y crítica.
+William Styron	La decisión de Sophie	Novela sobre amor, culpa y memoria durante el Holocausto.	Escritor estadounidense, especialista en narrativa histórica y emocional.
+Anthony Burgess	La naranja mecánica	Novela distópica sobre violencia y sociedad futura.	Escritor británico, famoso por narrativa experimental y lingüística.
+Saul Bellow	Henderson el rainero	Novela sobre vida urbana, identidad y supervivencia.	Escritor canadiense-estadounidense, Nobel 1976, especialista en narrativa contemporánea.
+Norman Mailer	Los desnudos y los muertos	Novela bélica sobre Segunda Guerra Mundial y experiencia humana.	Escritor estadounidense, reconocido en narrativa bélica y ensayo.
+John Cheever	Falconer	Novela sobre prisión, marginalidad y redención.	Escritor estadounidense, especialista en narrativa psicológica.
+Vladimir Nabokov	Ada o el ardor	Novela romántica y filosófica sobre amor, obsesión y memoria.	Escritor ruso-estadounidense, maestro del lenguaje literario.
+Ian McEwan	Chesil Beach	Novela sobre amor, sexualidad y incomunicación.	Escritor británico contemporáneo, especializado en narrativa psicológica.
+Kazuo Ishiguro	Nunca me abandones	Novela distópica sobre amor, memoria y ética.	Escritor británico, Nobel 2017, experto en narrativa emocional y filosófica.
+Haruki Murakami	Kafka en la orilla	Novela surrealista sobre identidad, destino y búsqueda personal.	Escritor japonés contemporáneo, especialista en realismo mágico moderno.
+Don DeLillo	Libra	Novela histórica y conspirativa sobre asesinato de Kennedy.	Escritor estadounidense, especialista en narrativa compleja y social.
+Thomas Mann	Muerte en Venecia	Novela sobre deseo, arte y decadencia en la sociedad europea.	Escritor alemán, Nobel 1929, maestro del relato psicológico y filosófico.
+	
