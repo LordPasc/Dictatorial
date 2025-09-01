@@ -150,28 +150,58 @@ document.addEventListener('DOMContentLoaded', cargarConsultas);
 
 /* --- Follar --- */
 function abrirFollar() {
-  const contenido=`
+  const contenido = `
     <h2>Documento de Consentimiento</h2>
     <p>Este documento asegura que todas las partes involucradas en cualquier acto sexual explícito lo hacen de manera consensuada, libre y voluntaria, conforme a la Ley Orgánica 10/2022, de 6 de septiembre, conocida como la "Ley del Sí es Sí".</p>
+    
     <h3>Declaración de Consentimiento</h3>
     <ol>
       <li><strong>Identificación de las Partes:</strong><br>
-        Parte A: <input type="text" placeholder="Nombre Parte A"><br>
-        Parte B: <input type="text" placeholder="Nombre Parte B"><br>
-        Parte C (si hubiese trío): <input type="text" placeholder="Nombre Parte C">
+        Parte A: <input type="text" maxlength="25" placeholder="Nombre Parte A" style="width:250px;"><br>
+        Parte B: <input type="text" maxlength="25" placeholder="Nombre Parte B" style="width:250px;"><br>
+        Parte C (si hubiese trío): <input type="text" maxlength="25" placeholder="Nombre Parte C" style="width:250px;">
       </li>
       <li><strong>Mayoría de Edad:</strong><br>Todas las partes declaran ser mayores de 18 años.</li>
       <li><strong>Consentimiento Libre y Voluntario:</strong><br>Todas las partes participan libre y voluntariamente, sin coacción o presión.</li>
       <li><strong>Entendimiento de la Ley del Sí es Sí:</strong><br>Las partes han leído y entendido la Ley Orgánica 10/2022 y actuarán conforme a ella.</li>
     </ol>
+    
     <h3>Firma</h3>
     <ul>
-      <li>Parte A: Nombre: <input type="text" placeholder="                "> DNI: <input type="text" placeholder="     "> <input type="checkbox" checked> Consiento(✓)</li>
-      <li>Parte B: Nombre: <input type="text" placeholder="                "> DNI: <input type="text" placeholder="     "> <input type="checkbox" checked> Consiento(✓)</li>
-      <li>Parte C: Nombre: <input type="text" placeholder="                "> DNI: <input type="text" placeholder="     "> <input type="checkbox" checked> Consiento(✓)</li>
+      <li>Parte A: Nombre: <input type="text" maxlength="25" style="width:250px;"> DNI: <input type="text" maxlength="9" style="width:110px;"> Consiento <input type="checkbox" style="transform:scale(1.3); margin-left:5px;"></li>
+      <li>Parte B: Nombre: <input type="text" maxlength="25" style="width:250px;"> DNI: <input type="text" maxlength="9" style="width:110px;"> Consiento <input type="checkbox" style="transform:scale(1.3); margin-left:5px;"></li>
+      <li>Parte C: Nombre: <input type="text" maxlength="25" style="width:250px;"> DNI: <input type="text" maxlength="9" style="width:110px;"> Consiento <input type="checkbox" style="transform:scale(1.3); margin-left:5px;"></li>
     </ul>
+
+    <h3>Enviar a otro correo electrónico</h3>
+    <label for="emailDestino">Enviar a la siguiente dirección de correo electrónico:</label><br>
+    <input type="email" id="emailDestino" placeholder="correo@ejemplo.com" style="width: calc(100% - 120px); display:inline-block; margin-right:6px;">
+    <button type="button" id="btnEnviarEmail" style="display:inline-block; padding:6px 12px; font-size:1em;">Enviar</button>
+
+    <script>
+      document.getElementById('btnEnviarEmail').addEventListener('click', function() {
+        const email = document.getElementById('emailDestino').value.trim();
+        if(!email) {
+          alert('Introduce un correo electrónico válido.');
+          return;
+        }
+
+        const partes = [];
+        document.querySelectorAll('ul li').forEach((li, index) => {
+          const nombre = li.querySelectorAll('input[type="text"]')[0]?.value.trim() || '-';
+          const dni = li.querySelectorAll('input[type="text"]')[1]?.value.trim() || '-';
+          const consent = li.querySelector('input[type="checkbox"]').checked ? 'Sí' : 'No';
+          partes.push(\`Parte \${String.fromCharCode(65+index)}: Nombre: \${nombre}, DNI: \${dni}, Consiento: \${consent}\`);
+        });
+
+        const cuerpo = encodeURIComponent('Documento de Consentimiento:\\n\\n' + partes.join('\\n'));
+        const asunto = encodeURIComponent('Documento de Consentimiento');
+        window.location.href = 'mailto:' + email + '?subject=' + asunto + '&body=' + cuerpo;
+      });
+    <\/script>
   `;
-  const ventana=window.open("","Consentimiento","width=900,height=700,scrollbars=yes");
+
+  const ventana = window.open("", "Consentimiento", "width=" + screen.width + ",height=" + screen.height + ",scrollbars=yes,resizable=yes");
   ventana.document.write(contenido);
   ventana.document.close();
 }
