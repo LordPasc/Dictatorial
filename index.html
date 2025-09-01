@@ -1,98 +1,300 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Rockeros del Asfalto</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Evento Musical Nº8</title>
+  <link href="https://fonts.googleapis.com/css?family=Metal+Mania:400|Roboto:400,700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #eee;
-      text-align: center;
+    /* --- Estilos originales (sin tocar) --- */
+    body { font-family: 'Roboto', Arial, sans-serif; background: linear-gradient(135deg, #18191a 75%, #330505 100%); color: #f4f4f4; margin: 0; padding: 0; min-height: 100vh; }
+    header { background: linear-gradient(90deg,#1a1a1a 70%, #960909 100%); padding: 26px 0 18px 0; text-align: center; box-shadow: 0 6px 32px rgba(80,0,0,0.16); border-bottom: 4px solid #c10d0d; margin-bottom: 0; position: relative; }
+    header h1 { font-family: 'Metal Mania', cursive, Arial, sans-serif; margin: 0; font-size: 2.8em; color: #fff; letter-spacing: 1.5px; text-shadow: 0 4px 22px #d02121, 1px 1px 0 #000; }
+    nav { margin-top: 16px; margin-bottom: -5px; }
+    nav button { font-family: 'Metal Mania', Arial, sans-serif; font-size: 1.1em; background: #300606; color: #fff; border: 1px solid #aa2b2b; border-radius: 22px; margin: 0 8px; padding: 10px 22px; cursor: pointer; transition: background 0.2s, color 0.18s, border 0.15s; box-shadow: 0 2px 10px #d6262699; outline: none; }
+    nav button:hover, nav button:active { background: #c10d0d; color: #fff; border: 1.5px solid #c10d0d; box-shadow: 0 5px 20px #fa757599; }
+    section { padding: 27px 24px; border-bottom: 1px solid #201113; border-radius: 10px; background: rgba(26,19,19,0.83); max-width: 700px; margin: 28px auto 33px auto; box-shadow: 0 7px 40px rgba(145,15,15,0.095); display: none; animation: fadeIn 0.7s; }
+    section.active { display: block; }
+    section h2 { font-family: 'Metal Mania', cursive, Arial, sans-serif; color: #d02121; font-size: 2em; margin-top: 0; text-shadow: 0 1px 13px #a31634, 1px 1px 0 #222; border-bottom: 1.5px solid #d02121; padding-bottom: 7px; margin-bottom: 23px; }
+    section p, section label, section textarea, section input, section select { font-family: 'Roboto', Arial, sans-serif; font-size: 1em; line-height: 1.6; }
+    input, textarea, select { margin: 5px 0 13px 0; padding: 7px 9px; width: 100%; border: 1.8px solid #a21221; border-radius: 6px; background: #211111; color: #fff; font-size: 1em; font-family: 'Roboto', Arial, sans-serif; box-shadow: 0 2px 7px #d01e3dad inset; transition: border .2s, box-shadow .2s; }
+    input:focus, textarea:focus, select:focus { border: 2px solid #fff; box-shadow: 0 0 12px #e04242cc; outline: none; }
+    button, input[type='submit'] { background: #d02121; color: #fff; border: none; border-radius: 7px; box-shadow: 0 2px 14px #e04242cc; font-size: 1.1em; letter-spacing: 1.2px; font-family: 'Metal Mania', Arial, sans-serif; padding: 12px 24px; cursor: pointer; margin-top: 6px; transition: all 0.22s; }
+    button:hover, input[type='submit']:hover { background: #fff; color: #d02121; border: 1.5px solid #d02121; box-shadow: 0 5px 24px #e04242cc; }
+    #respuestasConsultorio ul { padding-left: 1.5em; max-height: 40vh; overflow:auto; }
+    #respuestasConsultorio li { margin-bottom: 10px; word-wrap: break-word; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+
+    /* small tweaks for mobile */
+    @media (max-width:480px){
+      header h1 { font-size: 1.8em; }
+      nav button { padding: 8px 12px; margin: 4px; font-size: 0.95em; }
+      section { padding: 18px; margin: 18px 12px; }
+      #respuestasConsultorio ul { max-height: 50vh; }
     }
-    header {
-      background: #222;
-      padding: 20px;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #f33;
-      font-weight: bold;
-    }
-    section {
-      margin: 40px auto;
-      max-width: 800px;
-      padding: 20px;
-      background: #1b1b1b;
-      border-radius: 8px;
-    }
-    button {
-      background: #f33;
-      border: none;
-      color: #fff;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 16px;
-      border-radius: 5px;
-    }
-    button:hover {
-      background: #c00;
-    }
+
+    /* status line */
+    #consultorioStatus { margin-top: 8px; font-size: .95em; color: #ffd7d7; }
+    #consultorioStatus.success { color: #b2ffd3; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Rockeros del Asfalto</h1>
-    <nav>
-      <a href="#musica">Música</a>
-      <a href="#libros">Libros</a>
-      <a href="#consultorio">Consultorio</a>
-    </nav>
-  </header>
 
-  <section id="musica">
-    <h2>Música</h2>
-    <p>Descubre nuestra propuesta musical al azar:</p>
-    <button onclick="propuestaMusical()">Propuesta Musical</button>
-  </section>
+<header>
+  <h1>Web Rockera</h1>
+  <nav>
+    <button onclick="mostrarSeccion('musica')">Música</button>
+    <button onclick="mostrarSeccion('libros')">Libros</button>
+    <button onclick="mostrarSeccion('consultorio')">Consultorio</button>
+    <button onclick="mostrarSeccion('Follar')">Follar</button>
+  </nav>
+</header>
 
-  <section id="libros">
-    <h2>Libros</h2>
-    <p>Próximamente reseñas y recomendaciones de libros rockeros.</p>
-  </section>
+<section id="musica" class="active">
+  <h2>Música</h2>
+  <p>Hartos de tanta mierda como nos meten por los ojos, oídos y demás orificios, Evento Musical Nº8 se ha tomado la molestia de seleccionar 1000 canciones de Rock. La excelencia en la selección ha sido exquisita.</p>
+  <button onclick="propuestaMusical()">Propuesta Musical</button>
+</section>
 
-  <section id="consultorio">
-    <h2>Consultorio</h2>
-    <p>¿Tienes dudas existenciales rockeras? Escríbenos y las resolveremos con actitud.</p>
-  </section>
+<section id="libros">
+  <h2>Libros</h2>
+  <p>Sección de libros. Posible búsqueda aleatoria entre 1000 párrafos con estricta condicionalidad.</p>
+</section>
 
-  <script>
-    let canciones = [];
+<!-- CONSULTORIO (solo esta sección fue modificada) -->
+<section id="consultorio">
+  <h2>Consultorio</h2>
 
-    // Cargar canciones.txt desde la raíz del repo
-    fetch('canciones.txt')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("No se pudo cargar canciones.txt");
-        }
-        return response.text();
-      })
-      .then(data => {
-        canciones = data.split('\n').map(line => line.trim()).filter(line => line);
-      })
-      .catch(error => {
-        console.error("Error cargando canciones:", error);
-      });
+  <form id="formConsultorio" onsubmit="enviarConsultorio(event)" autocomplete="off">
+    <label>Nombre:</label>
+    <input type="text" name="nombre" id="nombre" required>
+    <label>Email:</label>
+    <input type="email" name="email" id="email" required>
+    <label>Consulta:</label>
+    <textarea name="consulta" id="consulta" rows="5" required></textarea>
+    <button type="submit" id="submitBtn">Enviar Consulta</button>
+  </form>
 
-    function propuestaMusical() {
-      if (canciones.length === 0) {
-        alert("La lista de canciones aún no está disponible.");
-        return;
-      }
-      const random = canciones[Math.floor(Math.random() * canciones.length)];
-      window.open(random, "_blank");
+  <div id="consultorioStatus" aria-live="polite"></div>
+
+  <div id="respuestasConsultorio">
+    <h3>Consultas recibidas</h3>
+    <ul id="listaConsultas" role="list"></ul>
+  </div>
+</section>
+
+<section id="Follar">
+  <h2>Consentimiento</h2>
+  <p>Documento de consentimiento según Ley Orgánica 10/2022.</p>
+  <button onclick="abrirFollar()">Abrir Documento de Consentimiento</button>
+</section>
+
+<script>
+/* ================= CONFIGURA AQUÍ tu URL del Web App ================= */
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbxj8s8I5y0oa6ym4Wvw0TB6vfEWneKVRLWI2tFynRYsoXeIDtG-Shy3LEBlGeyNregj/exec'; // <-- reemplaza por tu /exec
+/* =================================================================== */
+
+/* --- Mostrar Sección (no tocar resto de secciones) --- */
+function mostrarSeccion(id) {
+  document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+  const sec = document.getElementById(id);
+  if (sec) sec.classList.add('active');
+
+  if (id === 'consultorio') {
+    cargarConsultas();
+  }
+}
+
+/* --- Util: normalizar objeto recibido (varias formas posibles) --- */
+function _field(obj, ...names) {
+  for (const n of names) if (obj && obj[n] !== undefined) return obj[n];
+  return '';
+}
+
+/* --- Crear elemento de consulta de forma segura (sin innerHTML directo) --- */
+function crearLiConsulta(c) {
+  const li = document.createElement('li');
+
+  // normalizamos posibles nombres de campo devueltos por distintos doGet
+  const nombre = _field(c, 'nombre', 'Nombre', 'NOMBRE') || '(sin nombre)';
+  const email = _field(c, 'email', 'Email', 'EMAIL') || '';
+  const consulta = _field(c, 'consulta', 'Consulta', 'CONSULTA') || _field(c, 'mensaje', 'Mensaje') || '';
+
+  const strong = document.createElement('strong');
+  strong.textContent = nombre + (email ? ` (${email})` : '') + ': ';
+  li.appendChild(strong);
+
+  const text = document.createTextNode(consulta);
+  li.appendChild(text);
+
+  // si hay fecha, intentar mostrarla
+  const fechaVal = _field(c, 'fecha', 'Fecha');
+  if (fechaVal) {
+    const span = document.createElement('div');
+    span.style.fontSize = '0.85em';
+    span.style.opacity = '0.85';
+    try {
+      const d = new Date(fechaVal);
+      if (!isNaN(d.getTime())) span.textContent = '— ' + d.toLocaleString();
+      else span.textContent = '— ' + String(fechaVal);
+    } catch (e) {
+      span.textContent = '— ' + String(fechaVal);
     }
-  </script>
+    li.appendChild(span);
+  }
+
+  return li;
+}
+
+/* --- Mostrar estado en la UI --- */
+function setStatus(msg, ok=false) {
+  const s = document.getElementById('consultorioStatus');
+  s.textContent = msg;
+  s.classList.toggle('success', ok);
+}
+
+/* --- Cargar consultas desde la Sheet (GET) --- */
+async function cargarConsultas() {
+  setStatus('Cargando consultas…');
+  try {
+    const resp = await fetch(GAS_URL, { method: 'GET', cache: 'no-store' });
+    // intenta parsear JSON seguro
+    const json = await resp.json();
+
+    // json puede venir en dos formas:
+    // 1) {status:"OK", consultas: [...]}
+    // 2) [...] (array directo)
+    // 3) {error: "..."} -> manejar
+    let listas = [];
+    if (Array.isArray(json)) listas = json;
+    else if (json && Array.isArray(json.consultas)) listas = json.consultas;
+    else if (json && json.status === 'OK' && Array.isArray(json.consultas)) listas = json.consultas;
+    else if (json && json.error) throw new Error(json.error);
+    else if (json && typeof json === 'object' && Object.keys(json).length === 0) listas = [];
+    else {
+      // intentamos soportar formato de filas simples
+      console.warn('Formato JSON inesperado de doGet:', json);
+      if (Array.isArray(json)) listas = json;
+      else listas = [];
+    }
+
+    const ul = document.getElementById('listaConsultas');
+    ul.innerHTML = '';
+    if (listas.length === 0) {
+      setStatus('No hay consultas aún.', true);
+      return;
+    }
+
+    listas.forEach(item => {
+      ul.appendChild(crearLiConsulta(item));
+    });
+
+    setStatus('Consultas cargadas.', true);
+  } catch (err) {
+    console.error('Error al cargar consultas:', err);
+    setStatus('No se pudieron cargar las consultas. Reintenta.', false);
+  }
+}
+
+/* --- Enviar nueva consulta (POST con JSON) --- */
+async function enviarConsultorio(event) {
+  event.preventDefault();
+  setStatus('');
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  const nombre = document.getElementById('nombre').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const consulta = document.getElementById('consulta').value.trim();
+
+  if (!nombre || !consulta) {
+    setStatus('Rellena nombre y consulta.', false);
+    btn.disabled = false;
+    return;
+  }
+
+  try {
+    // Enviamos JSON; Apps Script debe leer e.postData.contents y JSON.parse
+    const res = await fetch(GAS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nombre, email, consulta })
+    });
+
+    // algunos deployments devuelven {status:"OK"} o array; se intenta parsear
+    const j = await res.json();
+    if (j && (j.status === 'OK' || j.status === 'ok' || j.status === 'success')) {
+      setStatus('Consulta enviada. Actualizando lista…', true);
+      // recargamos desde la Sheet para garantizar coherencia
+      await cargarConsultas();
+      // limpiar formulario
+      document.getElementById('formConsultorio').reset();
+    } else if (j && j.error) {
+      throw new Error(j.error);
+    } else {
+      // si la respuesta no sigue formato, igual recargamos y notificamos
+      await cargarConsultas();
+      setStatus('Consulta enviada (respuesta inesperada, revisa logs).', true);
+      document.getElementById('formConsultorio').reset();
+    }
+  } catch (err) {
+    console.error('Error al enviar consulta:', err);
+    setStatus('Error al enviar la consulta. Inténtalo de nuevo.', false);
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+/* --- Follar (no lo tocamos) --- */
+function abrirFollar() {
+  const contenido = `
+    <h2>Documento de Consentimiento</h2>
+    <p>Este documento asegura que todas las partes involucradas en cualquier acto sexual explícito lo hacen de manera consensuada, libre y voluntaria, conforme a la Ley Orgánica 10/2022, de 6 de septiembre, conocida como la "Ley del Sí es Sí".</p>
+    <h3>Declaración de Consentimiento</h3>
+    <ol>
+      <li><strong>Identificación de las Partes:</strong><br>
+        Parte A: <input type="text" placeholder="Nombre Parte A"><br>
+        Parte B: <input type="text" placeholder="Nombre Parte B"><br>
+        Parte C (si hubiese trío): <input type="text" placeholder="Nombre Parte C"></li>
+      <li><strong>Mayoría de Edad:</strong><br>Todas las partes declaran ser mayores de 18 años.</li>
+      <li><strong>Consentimiento Libre y Voluntario:</strong><br>Todas las partes participan libre y voluntariamente, sin coacción o presión.</li>
+      <li><strong>Entendimiento de la Ley del Sí es Sí:</strong><br>Las partes han leído y entendido la Ley Orgánica 10/2022 y actuarán conforme a ella.</li>
+    </ol>
+    <h3>Firma</h3>
+    <ul>
+      <li>Parte A: Nombre: <input type="text" placeholder="                "> DNI: <input type="text" placeholder="     "> <input type="checkbox" checked> Consiento(✓)</li>
+      <li>Parte B: Nombre: <input type="text" placeholder="                "> DNI: <input type="text" placeholder="     "> <input type="checkbox" checked> Consiento(✓)</li>
+      <li>Parte C: Nombre: <input type="text" placeholder="                "> DNI: <input type="text" placeholder="     "> <input type="checkbox" checked> Consiento(✓)</li>
+    </ul>
+  `;
+  const ventana = window.open("", "Consentimiento", "width=900,height=700,scrollbars=yes");
+  ventana.document.write(contenido);
+  ventana.document.close();
+}
+
+/* --- Propuesta Musical (igual que antes) --- */
+function propuestaMusical() {
+  fetch('canciones.txt')
+    .then(response => response.text())
+    .then(data => {
+      const lineas = data.split('\n').filter(l => l.trim() !== '');
+      const random = lineas[Math.floor(Math.random() * lineas.length)];
+      const partes = random.split('\t');
+      const artista = partes[0] || '';
+      const cancion = partes[1] || '';
+      const query = encodeURIComponent(artista + ' ' + cancion);
+      window.open('https://www.youtube.com/results?search_query=' + query, '_blank');
+    })
+    .catch(err => alert('No se pudo cargar la lista de canciones: ' + err));
+}
+
+/* --- Iniciar: cargar consultas en DOMContentLoaded si consultorio visible --- */
+document.addEventListener('DOMContentLoaded', function() {
+  // si la sección consultorio está activa al inicio, cargar
+  const active = document.querySelector('section.active');
+  if (active && active.id === 'consultorio') cargarConsultas();
+});
+</script>
+
 </body>
 </html>
