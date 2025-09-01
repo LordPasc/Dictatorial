@@ -1,63 +1,63 @@
-Camilo JosÈ Cela 	 La familia de Pascual Duarte				
+Camilo Jos√© Cela 	 La familia de Pascual Duarte				
 Miguel de Unamuno 	 Niebla				
-Ernest Hemingway 	 AdiÛs a las armas				
+Ernest Hemingway 	 Adi√≥s a las armas				
 William Faulkner 	 Mientras agonizo				
 John Steinbeck 	 Tortilla Flat				
 Sherwood Anderson 	 Winesburg, Ohio				
-Luis Berenguer 	 El mundo de Juan LobÛn				
+Luis Berenguer 	 El mundo de Juan Lob√≥n				
 Umberto Eco 	 El nombre de la rosa				
-Julio Cort·zar 	 Rayuela				
-Gabriel GarcÌa M·rquez 	 Cien aÒos de soledad				
+Julio Cort√°zar 	 Rayuela				
+Gabriel Garc√≠a M√°rquez 	 Cien a√±os de soledad				
 Mario Vargas Llosa 	 La guerra del fin del mundo				
 Richard Matheson 	 La casa infernal				
-Octave Mirbeau 	 El jardÌn de los suplicios				
+Octave Mirbeau 	 El jard√≠n de los suplicios				
 Iceberg Slim 	 Pimp				
 Charles Bukowski 	 Factotum				
-Antonio MuÒoz Molina 	 La lluvia amarilla				
-Juan Benet 	 Volver·s a RegiÛn				
-JosÈ Saramago 	 Ensayo sobre la ceguera				
-JosÈ Luis Sampedro 	 La sonrisa etrusca				
-PÌo Baroja 	 Las noches del Buen Retiro				
-Ian Gibson 	 El vicio inglÈs				
+Antonio Mu√±oz Molina 	 La lluvia amarilla				
+Juan Benet 	 Volver√°s a Regi√≥n				
+Jos√© Saramago 	 Ensayo sobre la ceguera				
+Jos√© Luis Sampedro 	 La sonrisa etrusca				
+P√≠o Baroja 	 Las noches del Buen Retiro				
+Ian Gibson 	 El vicio ingl√©s				
 Jim Goad 	 Manifiesto redneck				
-Gonzalo Torrente Ballester 	 CrÛnica del rey pasmado				
+Gonzalo Torrente Ballester 	 Cr√≥nica del rey pasmado				
 Mario Cavattore 	 El inseminador				
 David Mazzucchelli 	 Asterios Polyp				
 Hari Kunzru 	 El transformista				
 Li Yu 	 La alfombrilla de los goces y los rezos				
-NiccolÚ Machiavelli 	 El prÌncipe				
+Niccol√≤ Machiavelli 	 El pr√≠ncipe				
 Ryu Murakami 	 Sopa de miso				
-Wenceslao Fern·ndez FlÛrez 	 El bosque animado				
-Cela, Camilo JosÈ 	 Madera de boj				
-Cela, Camilo JosÈ 	 La colmena				
+Wenceslao Fern√°ndez Fl√≥rez 	 El bosque animado				
+Cela, Camilo Jos√© 	 Madera de boj				
+Cela, Camilo Jos√© 	 La colmena				
 Driss Amed 	 Una vida llena de agujeros				
 Antonio Pigafetta 	 Primer viaje en torno del globo				
 Octave Mirbeau 	 El abate Caire				
 William Faulkner 	 Luz de agosto				
-John Fante 	 Preg˙ntale al polvo				
-Hubert Selby Jr. 	 ⁄ltima salida: Brooklyn				
-Henry Miller 	 TrÛpico de C·ncer				
-Ana MarÌa Matute 	 Los hijos muertos				
-Juan Goytisolo 	 SeÒas de identidad				
-JosÈ Donoso 	 El obsceno p·jaro de la noche				
+John Fante 	 Preg√∫ntale al polvo				
+Hubert Selby Jr. 	 √öltima salida: Brooklyn				
+Henry Miller 	 Tr√≥pico de C√°ncer				
+Ana Mar√≠a Matute 	 Los hijos muertos				
+Juan Goytisolo 	 Se√±as de identidad				
+Jos√© Donoso 	 El obsceno p√°jaro de la noche				
 Alfredo Bryce Echenique 	 Un mundo para Julius				
-Juan Rulfo 	 Pedro P·ramo				
+Juan Rulfo 	 Pedro P√°ramo				
 Clarice Lispector 	 La hora de la estrella				
-Patrick S¸skind 	 El perfume				
-Truman Capote 	 A sangre frÌa				
-Flannery OíConnor 	 Un hombre bueno es difÌcil de encontrar				
-Carson McCullers 	 El corazÛn es un cazador solitario				
-Michel Houellebecq 	 SumisiÛn				
+Patrick S√ºskind 	 El perfume				
+Truman Capote 	 A sangre fr√≠a				
+Flannery O‚ÄôConnor 	 Un hombre bueno es dif√≠cil de encontrar				
+Carson McCullers 	 El coraz√≥n es un cazador solitario				
+Michel Houellebecq 	 Sumisi√≥n				
 Bret Easton Ellis 	 American Psycho				
 Chuck Palahniuk 	 El club de la lucha				
 Thomas Pynchon 	 El arco iris de gravedad				
 Don DeLillo 	 Ruido de fondo				
-William Golding 	 El seÒor de las moscas				
-JosÈ Luis Peixoto 	 Cuerpo limpio				
-Javier MarÌas 	 CorazÛn tan blanco				
-Enrique Anderson Imbert 	 La casa del ·ngel				
+William Golding 	 El se√±or de las moscas				
+Jos√© Luis Peixoto 	 Cuerpo limpio				
+Javier Mar√≠as 	 Coraz√≥n tan blanco				
+Enrique Anderson Imbert 	 La casa del √°ngel				
 Horacio Quiroga 	 Cuentos de la selva				
-Juan JosÈ Mill·s 	 El mundo				
+Juan Jos√© Mill√°s 	 El mundo				
 Robert Musil 	 El hombre sin atributos				
 Albert Camus 	 El extranjero				
 Fyodor Dostoyevsky 	 Crimen y castigo				
@@ -65,7 +65,7 @@ F. Scott Fitzgerald 	 El gran Gatsby
 Jack London 	 Colmillo blanco				
 Herman Melville 	 Bartleby, el escribiente				
 Edgar Allan Poe 	 Cuentos completos				
-Nathanael West 	 El dÌa de la langosta				
+Nathanael West 	 El d√≠a de la langosta				
 Richard Wright 	 Hijo nativo				
 Ralph Ellison 	 El hombre invisible				
 James Baldwin 	 Otra vez la misma historia				
@@ -74,18 +74,18 @@ Zora Neale Hurston 	 Sus ojos miraban a Dios
 Carson McCullers 	 Reflejos en un ojo dorado				
 Graham Greene 	 El poder y la gloria				
 Evelyn Waugh 	 Retorno a Brideshead				
-William Styron 	 La decisiÛn de Sophie				
-Anthony Burgess 	 La naranja mec·nica				
-Flannery OíConnor 	 El rÌo				
+William Styron 	 La decisi√≥n de Sophie				
+Anthony Burgess 	 La naranja mec√°nica				
+Flannery O‚ÄôConnor 	 El r√≠o				
 Saul Bellow 	 Henderson el rainero				
 Norman Mailer 	 Los desnudos y los muertos				
 John Cheever 	 Falconer				
 Vladimir Nabokov 	 Lolita				
-Ian McEwan 	 ExpiaciÛn				
-Kazuo Ishiguro 	 Los restos del dÌa				
+Ian McEwan 	 Expiaci√≥n				
+Kazuo Ishiguro 	 Los restos del d√≠a				
 Haruki Murakami 	 Tokio blues (Norwegian Wood)				
 Don DeLillo 	 Submundo				
-Thomas Mann 	 La montaÒa m·gica				
+Thomas Mann 	 La monta√±a m√°gica				
 H. P. Lovecraft 	 La llamada de Cthulhu				
 Richard Wright 	 La clave del negro				
 Ralph Ellison 	 Shadow and Act				
@@ -96,178 +96,178 @@ Franz Kafka 	 La metamorfosis
 George Orwell 	1984				
 Aldous Huxley 	 Un mundo feliz				
 Miguel Delibes 	 Los santos inocentes				
-Juan GarcÌa Ponce 	 La casa en la playa				
-Juan JosÈ Saer 	 El entenado				
+Juan Garc√≠a Ponce 	 La casa en la playa				
+Juan Jos√© Saer 	 El entenado				
 Roberto Arlt 	 Los siete locos				
-Manuel V·zquez Montalb·n 	 Los mares del Sur				
+Manuel V√°zquez Montalb√°n 	 Los mares del Sur				
 Antonio Di Benedetto 	 Zama				
 Juan Carlos Onetti 	 El astillero				
-Adolfo Bioy Casares 	 La invenciÛn de Morel				
-Julio RamÛn Ribeyro 	 Los gallinazos sin plumas				
-JosÈ Revueltas 	 El apando				
-Carlos Monsiv·is 	 DÌas de guardar				
+Adolfo Bioy Casares 	 La invenci√≥n de Morel				
+Julio Ram√≥n Ribeyro 	 Los gallinazos sin plumas				
+Jos√© Revueltas 	 El apando				
+Carlos Monsiv√°is 	 D√≠as de guardar				
 Manuel Mujica Lainez 	 Bomarzo				
 Ricardo Piglia 	 Plata quemada				
-Juan Benet 	 Una meditaciÛn				
-JosÈ Donoso 	 CoronaciÛn				
-Ana MarÌa Matute 	 Primera memoria				
-Carmen MartÌn Gaite 	 Entre visillos				
+Juan Benet 	 Una meditaci√≥n				
+Jos√© Donoso 	 Coronaci√≥n				
+Ana Mar√≠a Matute 	 Primera memoria				
+Carmen Mart√≠n Gaite 	 Entre visillos				
 Rosa Montero 	 La loca de la casa				
-Juan JosÈ Mill·s 	 El desorden de tu nombre				
-Javier MarÌas 	 MaÒana en la batalla piensa en mÌ				
-CÈsar Aira 	 El tilo				
-Alberto MÈndez 	 Los girasoles ciegos				
-Luis Mateo DÌez 	 La fuente de la edad				
+Juan Jos√© Mill√°s 	 El desorden de tu nombre				
+Javier Mar√≠as 	 Ma√±ana en la batalla piensa en m√≠				
+C√©sar Aira 	 El tilo				
+Alberto M√©ndez 	 Los girasoles ciegos				
+Luis Mateo D√≠ez 	 La fuente de la edad				
 Francisco Umbral 	 Mortal y rosa				
-Luis Goytisolo 	 AntagonÌa				
+Luis Goytisolo 	 Antagon√≠a				
 Juan Rulfo 	 El llano en llamas				
 Carlos Fuentes 	 La muerte de Artemio Cruz				
-JosÈ Luis Sampedro 	 El rÌo que nos lleva				
-JosÈ MarÌa Merino 	 La mujer de sombra				
-Rosa Montero 	 CrÛnica del desamor				
-Antonio Gala 	 La pasiÛn turca				
-Camilo JosÈ Cela 	 Viaje a la Alcarria				
+Jos√© Luis Sampedro 	 El r√≠o que nos lleva				
+Jos√© Mar√≠a Merino 	 La mujer de sombra				
+Rosa Montero 	 Cr√≥nica del desamor				
+Antonio Gala 	 La pasi√≥n turca				
+Camilo Jos√© Cela 	 Viaje a la Alcarria				
 Miguel Delibes 	 El camino				
-Rafael S·nchez Ferlosio 	 El Jarama				
-Ignacio MartÌnez de PisÛn 	 Enterrar a los muertos				
+Rafael S√°nchez Ferlosio 	 El Jarama				
+Ignacio Mart√≠nez de Pis√≥n 	 Enterrar a los muertos				
 Manuel Chaves Nogales 	 A sangre y fuego				
-Luis Mateo DÌez 	 El espÌritu del p·ramo				
-Julio Cort·zar 	 Bestiario				
-Juan JosÈ Mill·s 	 El mundo				
-Juan Goytisolo 	 Paisajes despuÈs de la batalla				
+Luis Mateo D√≠ez 	 El esp√≠ritu del p√°ramo				
+Julio Cort√°zar 	 Bestiario				
+Juan Jos√© Mill√°s 	 El mundo				
+Juan Goytisolo 	 Paisajes despu√©s de la batalla				
 Javier Tomeo 	 La estupidez				
-CÈsar MallorquÌ 	 La catedral				
-Juan JosÈ Saer 	 Cicatrices				
+C√©sar Mallorqu√≠ 	 La catedral				
+Juan Jos√© Saer 	 Cicatrices				
 Antonio Tabucchi 	 Sostiene Pereira				
-JosÈ Lezama Lima 	 Paradiso				
-Roberto BolaÒo 	 Los detectives salvajes				
-Roberto BolaÒo 	2666				
+Jos√© Lezama Lima 	 Paradiso				
+Roberto Bola√±o 	 Los detectives salvajes				
+Roberto Bola√±o 	2666				
 Jorge Luis Borges 	 Ficciones				
 Jorge Luis Borges 	 El Aleph				
 Adolfo Bioy Casares 	 Dormir al sol				
 Manuel Mujica Lainez 	 El laberinto				
-Ricardo Piglia 	 CrÌtica y ficciÛn				
-CÈsar Aira 	 Una novela china				
-Juan JosÈ Saer 	 La mayor				
-Juan Carlos Onetti 	 Juntacad·veres				
+Ricardo Piglia 	 Cr√≠tica y ficci√≥n				
+C√©sar Aira 	 Una novela china				
+Juan Jos√© Saer 	 La mayor				
+Juan Carlos Onetti 	 Juntacad√°veres				
 Alejo Carpentier 	 El reino de este mundo				
-Gabriel GarcÌa M·rquez 	 El otoÒo del patriarca				
+Gabriel Garc√≠a M√°rquez 	 El oto√±o del patriarca				
 Mario Vargas Llosa 	 La ciudad y los perros				
 Carlos Fuentes 	 Terra Nostra				
-Juan Rulfo 	 Pedro P·ramo				
-Isabel Allende 	 La casa de los espÌritus				
+Juan Rulfo 	 Pedro P√°ramo				
+Isabel Allende 	 La casa de los esp√≠ritus				
 Laura Esquivel 	 Como agua para chocolate				
-JosÈ Saramago 	 El aÒo de la muerte de Ricardo Reis				
-JosÈ Saramago 	 Ensayo sobre la lucidez				
-JosÈ Luis Peixoto 	 Cuerpo presente				
+Jos√© Saramago 	 El a√±o de la muerte de Ricardo Reis				
+Jos√© Saramago 	 Ensayo sobre la lucidez				
+Jos√© Luis Peixoto 	 Cuerpo presente				
 Ricardo Piglia 	 El camino de Ida				
-CÈsar Aira 	 El llanto				
-Antonio MuÒoz Molina 	 Plenilunio				
-Luis Mateo DÌez 	 Los vivos y los muertos				
+C√©sar Aira 	 El llanto				
+Antonio Mu√±oz Molina 	 Plenilunio				
+Luis Mateo D√≠ez 	 Los vivos y los muertos				
 Francisco Umbral 	 Las ninfas				
-Camilo JosÈ Cela 	 Mazurca para dos muertos				
+Camilo Jos√© Cela 	 Mazurca para dos muertos				
 Juan Benet 	 Herrumbrosas lanzas				
-Julio RamÛn Ribeyro 	 La palabra del mudo				
-JosÈ Donoso 	 El lugar sin lÌmites				
-Ana MarÌa Matute 	 Olvidado rey Gud˙				
-Carmen MartÌn Gaite 	 El cuarto de atr·s				
-Javier MarÌas 	 Los enamoramientos				
-CÈsar MallorquÌ 	 El sueÒo de BerlÌn				
-Juan JosÈ Mill·s 	 Dos mujeres en Praga				
-Juan Goytisolo 	 Campos de NÌjar				
+Julio Ram√≥n Ribeyro 	 La palabra del mudo				
+Jos√© Donoso 	 El lugar sin l√≠mites				
+Ana Mar√≠a Matute 	 Olvidado rey Gud√∫				
+Carmen Mart√≠n Gaite 	 El cuarto de atr√°s				
+Javier Mar√≠as 	 Los enamoramientos				
+C√©sar Mallorqu√≠ 	 El sue√±o de Berl√≠n				
+Juan Jos√© Mill√°s 	 Dos mujeres en Praga				
+Juan Goytisolo 	 Campos de N√≠jar				
 Ricardo Piglia 	 Blanco nocturno				
-Juan JosÈ Saer 	 Glosa				
+Juan Jos√© Saer 	 Glosa				
 Antonio Tabucchi 	 Requiem				
-JosÈ MarÌa Merino 	 El lugar sin lÌmites				
-Luis Mateo DÌez 	 La ruina del cielo				
-JosÈ Luis Peixoto 	 Nadie como t˙				
-CÈsar Aira 	 La prueba				
+Jos√© Mar√≠a Merino 	 El lugar sin l√≠mites				
+Luis Mateo D√≠ez 	 La ruina del cielo				
+Jos√© Luis Peixoto 	 Nadie como t√∫				
+C√©sar Aira 	 La prueba				
 Manuel Mujica Lainez 	 Bomarzo				
 Roberto Arlt 	 El juguete rabioso				
 Juan Carlos Onetti 	 La vida breve				
-Adolfo Bioy Casares 	 El sueÒo de los hÈroes				
-Julio Cort·zar 	 Final del juego				
-Gabriel GarcÌa M·rquez 	 CrÛnica de una muerte anunciada				
-Mario Vargas Llosa 	 PantaleÛn y las visitadoras				
+Adolfo Bioy Casares 	 El sue√±o de los h√©roes				
+Julio Cort√°zar 	 Final del juego				
+Gabriel Garc√≠a M√°rquez 	 Cr√≥nica de una muerte anunciada				
+Mario Vargas Llosa 	 Pantale√≥n y las visitadoras				
 Carlos Fuentes 	 Gringo viejo				
 Isabel Allende 	 Eva Luna				
 Laura Esquivel 	 La ley del amor				
-JosÈ Saramago 	 El evangelio seg˙n Jesucristo				
-Juan JosÈ Mill·s 	 El mundo				
-CÈsar Aira 	 La prueba				
+Jos√© Saramago 	 El evangelio seg√∫n Jesucristo				
+Juan Jos√© Mill√°s 	 El mundo				
+C√©sar Aira 	 La prueba				
 Juan Benet 	 Herrumbrosas lanzas				
-Roberto BolaÒo 	 Estrella distante				
-Roberto BolaÒo 	 Nocturno de Chile				
-Ricardo Piglia 	 RespiraciÛn artificial				
-JosÈ Luis Sampedro 	 El rÌo que nos lleva				
-Luis Mateo DÌez 	 La ruina del cielo				
-Camilo JosÈ Cela 	 Viaje a la Alcarria				
+Roberto Bola√±o 	 Estrella distante				
+Roberto Bola√±o 	 Nocturno de Chile				
+Ricardo Piglia 	 Respiraci√≥n artificial				
+Jos√© Luis Sampedro 	 El r√≠o que nos lleva				
+Luis Mateo D√≠ez 	 La ruina del cielo				
+Camilo Jos√© Cela 	 Viaje a la Alcarria				
 Miguel Delibes 	 El camino				
-Rafael S·nchez Ferlosio 	 El Jarama				
+Rafael S√°nchez Ferlosio 	 El Jarama				
 Manuel Chaves Nogales 	 A sangre y fuego				
-Javier MarÌas 	 CorazÛn tan blanco				
-Juan Goytisolo 	 SeÒas de identidad				
-Ana MarÌa Matute 	 Los hijos muertos				
-Carmen MartÌn Gaite 	 Entre visillos				
+Javier Mar√≠as 	 Coraz√≥n tan blanco				
+Juan Goytisolo 	 Se√±as de identidad				
+Ana Mar√≠a Matute 	 Los hijos muertos				
+Carmen Mart√≠n Gaite 	 Entre visillos				
 Rosa Montero 	 La loca de la casa				
 Juan Carlos Onetti 	 El astillero				
-Juan Rulfo 	 Pedro P·ramo				
-Adolfo Bioy Casares 	 La invenciÛn de Morel				
+Juan Rulfo 	 Pedro P√°ramo				
+Adolfo Bioy Casares 	 La invenci√≥n de Morel				
 Manuel Mujica Lainez 	 Bomarzo				
-JosÈ Donoso 	 El obsceno p·jaro de la noche				
+Jos√© Donoso 	 El obsceno p√°jaro de la noche				
 Roberto Arlt 	 Los lanzallamas				
-Julio RamÛn Ribeyro 	 Los gallinazos sin plumas				
+Julio Ram√≥n Ribeyro 	 Los gallinazos sin plumas				
 Juan Carlos Onetti 	 La vida breve				
 Alejo Carpentier 	 El siglo de las luces				
-Gabriel GarcÌa M·rquez 	 El coronel no tiene quien le escriba				
-Mario Vargas Llosa 	 La tÌa Julia y el escribidor				
+Gabriel Garc√≠a M√°rquez 	 El coronel no tiene quien le escriba				
+Mario Vargas Llosa 	 La t√≠a Julia y el escribidor				
 Carlos Fuentes 	 La muerte de Artemio Cruz				
-JosÈ Saramago 	 El aÒo de la muerte de Ricardo Reis				
-JosÈ Saramago 	 Ensayo sobre la lucidez				
-Isabel Allende 	 La casa de los espÌritus				
+Jos√© Saramago 	 El a√±o de la muerte de Ricardo Reis				
+Jos√© Saramago 	 Ensayo sobre la lucidez				
+Isabel Allende 	 La casa de los esp√≠ritus				
 Laura Esquivel 	 Como agua para chocolate				
-Juan JosÈ Saer 	 El entenado				
-CÈsar Aira 	 El llanto				
-Antonio MuÒoz Molina 	 El invierno en Lisboa				
+Juan Jos√© Saer 	 El entenado				
+C√©sar Aira 	 El llanto				
+Antonio Mu√±oz Molina 	 El invierno en Lisboa				
 Francisco Umbral 	 Mortal y rosa				
-Camilo JosÈ Cela 	 La colmena				
+Camilo Jos√© Cela 	 La colmena				
 William Faulkner 	 El ruido y la furia				
-Ernest Hemingway 	 Por quiÈn doblan las campanas				
-John Steinbeck 	 Al este del EdÈn				
+Ernest Hemingway 	 Por qui√©n doblan las campanas				
+John Steinbeck 	 Al este del Ed√©n				
 Sherwood Anderson 	 Winesburg, Ohio				
 Ryu Murakami 	 Sopa de miso				
-Octave Mirbeau 	 El jardÌn de los suplicios				
+Octave Mirbeau 	 El jard√≠n de los suplicios				
 Iceberg Slim 	 Pimp				
 Li Yu 	 La alfombrilla de los goces y los rezos				
-NiccolÚ Machiavelli 	 El prÌncipe				
+Niccol√≤ Machiavelli 	 El pr√≠ncipe				
 Richard Matheson 	 La casa infernal				
 Driss Amed 	 Una vida llena de agujeros				
 Antonio Pigafetta 	 Primer viaje en torno del globo				
-PÌo Baroja 	 Las noches del Buen Retiro				
-Ian Gibson 	 El vicio inglÈs				
+P√≠o Baroja 	 Las noches del Buen Retiro				
+Ian Gibson 	 El vicio ingl√©s				
 Jim Goad 	 Manifiesto redneck				
-Gonzalo Torrente Ballester 	 CrÛnica del rey pasmado				
+Gonzalo Torrente Ballester 	 Cr√≥nica del rey pasmado				
 Mario Cavattore 	 El inseminador				
 David Mazzucchelli 	 Asterios Polyp				
 Hari Kunzru 	 El transformista				
-Wenceslao Fern·ndez FlÛrez 	 El bosque animado				
-Camilo JosÈ Cela 	 Madera de boj				
+Wenceslao Fern√°ndez Fl√≥rez 	 El bosque animado				
+Camilo Jos√© Cela 	 Madera de boj				
 Miguel Delibes 	 Los santos inocentes				
 Francisco Umbral 	 Las ninfas				
-John Fante 	 Preg˙ntale al polvo				
-Hubert Selby Jr. 	 ⁄ltima salida: Brooklyn				
-Henry Miller 	 TrÛpico de C·ncer				
-Ana MarÌa Matute 	 Primera memoria				
-Juan JosÈ Mill·s 	 El desorden de tu nombre				
+John Fante 	 Preg√∫ntale al polvo				
+Hubert Selby Jr. 	 √öltima salida: Brooklyn				
+Henry Miller 	 Tr√≥pico de C√°ncer				
+Ana Mar√≠a Matute 	 Primera memoria				
+Juan Jos√© Mill√°s 	 El desorden de tu nombre				
 Javier Cercas 	 Soldados de Salamina				
-Carlos Ruiz ZafÛn 	 La sombra del viento				
-JosÈ Luis MartÌn Descalzo 	 El regreso				
-Juan JosÈ Flores 	 La casa de Adela				
-Juan Benet 	 Volver·s a RegiÛn				
-JosÈ Donoso 	 CoronaciÛn				
-Rosa Montero 	 CrÛnica del desamor				
-Antonio Gala 	 La pasiÛn turca				
-Enrique Anderson Imbert 	 La casa del ·ngel				
+Carlos Ruiz Zaf√≥n 	 La sombra del viento				
+Jos√© Luis Mart√≠n Descalzo 	 El regreso				
+Juan Jos√© Flores 	 La casa de Adela				
+Juan Benet 	 Volver√°s a Regi√≥n				
+Jos√© Donoso 	 Coronaci√≥n				
+Rosa Montero 	 Cr√≥nica del desamor				
+Antonio Gala 	 La pasi√≥n turca				
+Enrique Anderson Imbert 	 La casa del √°ngel				
 Horacio Quiroga 	 Cuentos de la selva				
 Robert Musil 	 El hombre sin atributos				
 Albert Camus 	 El extranjero				
@@ -276,187 +276,187 @@ F. Scott Fitzgerald 	 El gran Gatsby
 Jack London 	 Colmillo blanco				
 Herman Melville 	 Bartleby, el escribiente				
 Edgar Allan Poe 	 Cuentos completos				
-Nathanael West 	 El dÌa de la langosta				
+Nathanael West 	 El d√≠a de la langosta				
 Richard Wright 	 Hijo nativo				
 Ralph Ellison 	 El hombre invisible				
 James Baldwin 	 Otra vez la misma historia				
 Toni Morrison 	 Beloved				
 Zora Neale Hurston 	 Sus ojos miraban a Dios				
-Carson McCullers 	 El corazÛn es un cazador solitario				
+Carson McCullers 	 El coraz√≥n es un cazador solitario				
 Graham Greene 	 El poder y la gloria				
 Evelyn Waugh 	 Retorno a Brideshead				
-William Styron 	 La decisiÛn de Sophie				
-Anthony Burgess 	 La naranja mec·nica				
+William Styron 	 La decisi√≥n de Sophie				
+Anthony Burgess 	 La naranja mec√°nica				
 Saul Bellow 	 Henderson el rainero				
 Norman Mailer 	 Los desnudos y los muertos				
 John Cheever 	 Falconer				
 Vladimir Nabokov 	 Lolita				
-Ian McEwan 	 ExpiaciÛn				
-Kazuo Ishiguro 	 Los restos del dÌa				
+Ian McEwan 	 Expiaci√≥n				
+Kazuo Ishiguro 	 Los restos del d√≠a				
 Haruki Murakami 	 Tokio blues (Norwegian Wood)				
 Don DeLillo 	 Submundo				
-Thomas Mann 	 La montaÒa m·gica				
+Thomas Mann 	 La monta√±a m√°gica				
 H. P. Lovecraft 	 La llamada de Cthulhu				
 George Orwell 	1984				
 Aldous Huxley 	 Un mundo feliz				
 Miguel Delibes 	 El hereje				
-Juan JosÈ Mill·s 	 Dos mujeres en Praga				
-CÈsar Aira 	 El tilo				
-Antonio MuÒoz Molina 	 Plenilunio				
-Luis Mateo DÌez 	 La fuente de la edad				
+Juan Jos√© Mill√°s 	 Dos mujeres en Praga				
+C√©sar Aira 	 El tilo				
+Antonio Mu√±oz Molina 	 Plenilunio				
+Luis Mateo D√≠ez 	 La fuente de la edad				
 Francisco Umbral 	 Las ninfas				
-Camilo JosÈ Cela 	 Mazurca para dos muertos				
-Juan Benet 	 Una meditaciÛn				
-Julio RamÛn Ribeyro 	 La palabra del mudo				
-JosÈ Donoso 	 El lugar sin lÌmites				
-Ana MarÌa Matute 	 Olvidado rey Gud˙				
-Carmen MartÌn Gaite 	 El cuarto de atr·s				
-Javier MarÌas 	 Los enamoramientos				
-CÈsar MallorquÌ 	 La catedral				
+Camilo Jos√© Cela 	 Mazurca para dos muertos				
+Juan Benet 	 Una meditaci√≥n				
+Julio Ram√≥n Ribeyro 	 La palabra del mudo				
+Jos√© Donoso 	 El lugar sin l√≠mites				
+Ana Mar√≠a Matute 	 Olvidado rey Gud√∫				
+Carmen Mart√≠n Gaite 	 El cuarto de atr√°s				
+Javier Mar√≠as 	 Los enamoramientos				
+C√©sar Mallorqu√≠ 	 La catedral				
 Antonio Tabucchi 	 Sostiene Pereira				
-JosÈ Lezama Lima 	 Paradiso				
-Roberto BolaÒo 	 Los detectives salvajes				
-Roberto BolaÒo 	2666				
+Jos√© Lezama Lima 	 Paradiso				
+Roberto Bola√±o 	 Los detectives salvajes				
+Roberto Bola√±o 	2666				
 Jorge Luis Borges 	 Ficciones				
 Jorge Luis Borges 	 El Aleph				
 Adolfo Bioy Casares 	 Dormir al sol				
 Manuel Mujica Lainez 	 El laberinto				
-Ricardo Piglia 	 CrÌtica y ficciÛn				
-CÈsar Aira 	 Una novela china				
-Juan JosÈ Saer 	 La mayor				
-Juan Carlos Onetti 	 Juntacad·veres				
+Ricardo Piglia 	 Cr√≠tica y ficci√≥n				
+C√©sar Aira 	 Una novela china				
+Juan Jos√© Saer 	 La mayor				
+Juan Carlos Onetti 	 Juntacad√°veres				
 Alejo Carpentier 	 El reino de este mundo				
-Gabriel GarcÌa M·rquez 	 El otoÒo del patriarca				
-Mario Vargas Llosa 	 ConversaciÛn en La Catedral				
+Gabriel Garc√≠a M√°rquez 	 El oto√±o del patriarca				
+Mario Vargas Llosa 	 Conversaci√≥n en La Catedral				
 Carlos Fuentes 	 Terra Nostra				
 Isabel Allende 	 Eva Luna				
 Laura Esquivel 	 La ley del amor				
-JosÈ Saramago 	 El evangelio seg˙n Jesucristo				
-JosÈ Saramago 	 Todos los nombres				
-Juan JosÈ Mill·s 	 El mundo				
-CÈsar Aira 	 La prueba				
+Jos√© Saramago 	 El evangelio seg√∫n Jesucristo				
+Jos√© Saramago 	 Todos los nombres				
+Juan Jos√© Mill√°s 	 El mundo				
+C√©sar Aira 	 La prueba				
 Juan Benet 	 Herrumbrosas lanzas				
 Roberto Arlt 	 El juguete rabioso				
 Manuel Chaves Nogales 	 A sangre y fuego				
-Javier MarÌas 	 MaÒana en la batalla piensa en mÌ				
-Juan Goytisolo 	 Paisajes despuÈs de la batalla				
+Javier Mar√≠as 	 Ma√±ana en la batalla piensa en m√≠				
+Juan Goytisolo 	 Paisajes despu√©s de la batalla				
 Ricardo Piglia 	 Blanco nocturno				
-Juan JosÈ Saer 	 Glosa				
+Juan Jos√© Saer 	 Glosa				
 Antonio Tabucchi 	 Requiem				
-JosÈ MarÌa Merino 	 El lugar sin lÌmites				
-Luis Mateo DÌez 	 Los vivos y los muertos				
-JosÈ Luis Peixoto 	 Nadie como t˙				
-CÈsar Aira 	 El llanto				
+Jos√© Mar√≠a Merino 	 El lugar sin l√≠mites				
+Luis Mateo D√≠ez 	 Los vivos y los muertos				
+Jos√© Luis Peixoto 	 Nadie como t√∫				
+C√©sar Aira 	 El llanto				
 Manuel Mujica Lainez 	 Bomarzo				
 Roberto Arlt 	 Los siete locos				
 Juan Carlos Onetti 	 La vida breve				
-Adolfo Bioy Casares 	 El sueÒo de los hÈroes				
-Julio Cort·zar 	 Final del juego				
-Gabriel GarcÌa M·rquez 	 CrÛnica de una muerte anunciada				
-Mario Vargas Llosa 	 PantaleÛn y las visitadoras				
+Adolfo Bioy Casares 	 El sue√±o de los h√©roes				
+Julio Cort√°zar 	 Final del juego				
+Gabriel Garc√≠a M√°rquez 	 Cr√≥nica de una muerte anunciada				
+Mario Vargas Llosa 	 Pantale√≥n y las visitadoras				
 Carlos Fuentes 	 Gringo viejo				
 Isabel Allende 	 Paula				
 Laura Esquivel 	 Tan veloz como el deseo				
-JosÈ Saramago 	 La balsa de piedra				
-Juan JosÈ Mill·s 	 El mundo				
-CÈsar Aira 	 La prueba				
+Jos√© Saramago 	 La balsa de piedra				
+Juan Jos√© Mill√°s 	 El mundo				
+C√©sar Aira 	 La prueba				
 Juan Benet 	 Herrumbrosas lanzas				
-Roberto BolaÒo 	 Estrella distante				
-Roberto BolaÒo 	 Nocturno de Chile				
-Ricardo Piglia 	 RespiraciÛn artificial				
-JosÈ Luis Sampedro 	 La sonrisa etrusca				
-Luis Mateo DÌez 	 La ruina del cielo				
-Camilo JosÈ Cela 	 Viaje a la Alcarria				
+Roberto Bola√±o 	 Estrella distante				
+Roberto Bola√±o 	 Nocturno de Chile				
+Ricardo Piglia 	 Respiraci√≥n artificial				
+Jos√© Luis Sampedro 	 La sonrisa etrusca				
+Luis Mateo D√≠ez 	 La ruina del cielo				
+Camilo Jos√© Cela 	 Viaje a la Alcarria				
 Miguel Delibes 	 El camino				
-Rafael S·nchez Ferlosio 	 El Jarama				
+Rafael S√°nchez Ferlosio 	 El Jarama				
 Manuel Chaves Nogales 	 A sangre y fuego				
-Javier MarÌas 	 CorazÛn tan blanco				
-Juan Goytisolo 	 SeÒas de identidad				
-Ana MarÌa Matute 	 Los hijos muertos				
-Carmen MartÌn Gaite 	 Entre visillos				
+Javier Mar√≠as 	 Coraz√≥n tan blanco				
+Juan Goytisolo 	 Se√±as de identidad				
+Ana Mar√≠a Matute 	 Los hijos muertos				
+Carmen Mart√≠n Gaite 	 Entre visillos				
 Rosa Montero 	 La loca de la casa				
 Juan Carlos Onetti 	 El astillero				
 Juan Rulfo 	 El llano en llamas				
-Adolfo Bioy Casares 	 La invenciÛn de Morel				
+Adolfo Bioy Casares 	 La invenci√≥n de Morel				
 Manuel Mujica Lainez 	 Bomarzo				
-JosÈ Donoso 	 El obsceno p·jaro de la noche				
+Jos√© Donoso 	 El obsceno p√°jaro de la noche				
 Roberto Arlt 	 Los lanzallamas				
-Julio RamÛn Ribeyro 	 La palabra del mudo				
-Juan Carlos Onetti 	 La muerte y la niÒa				
+Julio Ram√≥n Ribeyro 	 La palabra del mudo				
+Juan Carlos Onetti 	 La muerte y la ni√±a				
 Alejo Carpentier 	 El siglo de las luces				
-Gabriel GarcÌa M·rquez 	 Memoria de mis putas tristes				
-Mario Vargas Llosa 	 Travesuras de la niÒa mala				
-Carlos Fuentes 	 CristÛbal Nonato				
-Isabel Allende 	 InÈs del alma mÌa				
+Gabriel Garc√≠a M√°rquez 	 Memoria de mis putas tristes				
+Mario Vargas Llosa 	 Travesuras de la ni√±a mala				
+Carlos Fuentes 	 Crist√≥bal Nonato				
+Isabel Allende 	 In√©s del alma m√≠a				
 Laura Esquivel 	 Como agua para chocolate				k
-JosÈ Saramago 	 Ensayo sobre la ceguera				
-JosÈ Saramago 	 Ensayo sobre la lucidez				
-Juan JosÈ Mill·s 	 El mundo				
-CÈsar Aira 	 Una novela china				
-Juan Benet 	 Volver·s a RegiÛn				
-Roberto BolaÒo 	 Los detectives salvajes				
-Roberto BolaÒo 	2666				
+Jos√© Saramago 	 Ensayo sobre la ceguera				
+Jos√© Saramago 	 Ensayo sobre la lucidez				
+Juan Jos√© Mill√°s 	 El mundo				
+C√©sar Aira 	 Una novela china				
+Juan Benet 	 Volver√°s a Regi√≥n				
+Roberto Bola√±o 	 Los detectives salvajes				
+Roberto Bola√±o 	2666				
 Ricardo Piglia 	 Blanco nocturno				
-Juan JosÈ Saer 	 Glosa				
+Juan Jos√© Saer 	 Glosa				
 Antonio Tabucchi 	 Sostiene Pereira				
-JosÈ MarÌa Merino 	 El lugar sin lÌmites				
-Luis Mateo DÌez 	 Los vivos y los muertos				
-JosÈ Luis Peixoto 	 Nadie como t˙				
-CÈsar Aira 	 El llanto				
+Jos√© Mar√≠a Merino 	 El lugar sin l√≠mites				
+Luis Mateo D√≠ez 	 Los vivos y los muertos				
+Jos√© Luis Peixoto 	 Nadie como t√∫				
+C√©sar Aira 	 El llanto				
 Manuel Mujica Lainez 	 Bomarzo				
 Roberto Arlt 	 El juguete rabioso				
 Juan Carlos Onetti 	 La vida breve				
-Adolfo Bioy Casares 	 El sueÒo de los hÈroes				
-Julio Cort·zar 	 Final del juego				
-Gabriel GarcÌa M·rquez 	 CrÛnica de una muerte anunciada				
-Mario Vargas Llosa 	 PantaleÛn y las visitadoras				
+Adolfo Bioy Casares 	 El sue√±o de los h√©roes				
+Julio Cort√°zar 	 Final del juego				
+Gabriel Garc√≠a M√°rquez 	 Cr√≥nica de una muerte anunciada				
+Mario Vargas Llosa 	 Pantale√≥n y las visitadoras				
 Carlos Fuentes 	 Gringo viejo				
 Isabel Allende 	 Paula				
 Laura Esquivel 	 Tan veloz como el deseo				
-JosÈ Saramago 	 La balsa de piedra				
-Juan JosÈ Mill·s 	 Dos mujeres en Praga				
-CÈsar Aira 	 El tilo				
-Antonio MuÒoz Molina 	 El invierno en Lisboa				
-Luis Mateo DÌez 	 La fuente de la edad				
+Jos√© Saramago 	 La balsa de piedra				
+Juan Jos√© Mill√°s 	 Dos mujeres en Praga				
+C√©sar Aira 	 El tilo				
+Antonio Mu√±oz Molina 	 El invierno en Lisboa				
+Luis Mateo D√≠ez 	 La fuente de la edad				
 Francisco Umbral 	 Mortal y rosa				
-Camilo JosÈ Cela 	 La colmena				
+Camilo Jos√© Cela 	 La colmena				
 William Faulkner 	 El ruido y la furia				
-Ernest Hemingway 	 AdiÛs a las armas				
+Ernest Hemingway 	 Adi√≥s a las armas				
 John Steinbeck 	 Tortilla Flat				
 Sherwood Anderson 	 Winesburg, Ohio				
 Ryu Murakami 	 Sopa de miso				
-Octave Mirbeau 	 El jardÌn de los suplicios				
+Octave Mirbeau 	 El jard√≠n de los suplicios				
 Iceberg Slim 	 Pimp				
 Li Yu 	 La alfombrilla de los goces y los rezos				
-NiccolÚ Machiavelli 	 El prÌncipe				
+Niccol√≤ Machiavelli 	 El pr√≠ncipe				
 Richard Matheson 	 La casa infernal				
 Driss Amed 	 Una vida llena de agujeros				
 Antonio Pigafetta 	 Primer viaje en torno del globo				
-PÌo Baroja 	 Las noches del Buen Retiro				
-Ian Gibson 	 El vicio inglÈs				
+P√≠o Baroja 	 Las noches del Buen Retiro				
+Ian Gibson 	 El vicio ingl√©s				
 Jim Goad 	 Manifiesto redneck				
-Gonzalo Torrente Ballester 	 CrÛnica del rey pasmado				
+Gonzalo Torrente Ballester 	 Cr√≥nica del rey pasmado				
 Mario Cavattore 	 El inseminador				
 David Mazzucchelli 	 Asterios Polyp				
 Hari Kunzru 	 El transformista				
-Wenceslao Fern·ndez FlÛrez 	 El bosque animado				
-Camilo JosÈ Cela 	 Madera de boj				
+Wenceslao Fern√°ndez Fl√≥rez 	 El bosque animado				
+Camilo Jos√© Cela 	 Madera de boj				
 Miguel Delibes 	 Los santos inocentes				
 Francisco Umbral 	 Las ninfas				
-John Fante 	 Preg˙ntale al polvo				
-Hubert Selby Jr. 	 ⁄ltima salida: Brooklyn				
-Henry Miller 	 TrÛpico de C·ncer				
-Ana MarÌa Matute 	 Primera memoria				
-Juan JosÈ Mill·s 	 El desorden de tu nombre				
+John Fante 	 Preg√∫ntale al polvo				
+Hubert Selby Jr. 	 √öltima salida: Brooklyn				
+Henry Miller 	 Tr√≥pico de C√°ncer				
+Ana Mar√≠a Matute 	 Primera memoria				
+Juan Jos√© Mill√°s 	 El desorden de tu nombre				
 Javier Cercas 	 Soldados de Salamina				
-Carlos Ruiz ZafÛn 	 La sombra del viento				
-JosÈ Luis MartÌn Descalzo 	 El regreso				
-Juan JosÈ Flores 	 La casa de Adela				
-Juan Benet 	 Volver·s a RegiÛn				
-JosÈ Donoso 	 CoronaciÛn				
-Rosa Montero 	 CrÛnica del desamor				
-Antonio Gala 	 La pasiÛn turca				
-Enrique Anderson Imbert 	 La casa del ·ngel				
+Carlos Ruiz Zaf√≥n 	 La sombra del viento				
+Jos√© Luis Mart√≠n Descalzo 	 El regreso				
+Juan Jos√© Flores 	 La casa de Adela				
+Juan Benet 	 Volver√°s a Regi√≥n				
+Jos√© Donoso 	 Coronaci√≥n				
+Rosa Montero 	 Cr√≥nica del desamor				
+Antonio Gala 	 La pasi√≥n turca				
+Enrique Anderson Imbert 	 La casa del √°ngel				
 Horacio Quiroga 	 Cuentos de la selva				
 Robert Musil 	 El hombre sin atributos				
 Albert Camus 	 El extranjero				
@@ -465,17 +465,17 @@ F. Scott Fitzgerald 	 El gran Gatsby
 Jack London 	 Colmillo blanco				
 Herman Melville 	 Bartleby, el escribiente				
 Edgar Allan Poe 	 Cuentos completos				
-Nathanael West 	 El dÌa de la langosta				
+Nathanael West 	 El d√≠a de la langosta				
 Richard Wright 	 Hijo nativo				
 Ralph Ellison 	 El hombre invisible				
 James Baldwin 	 Otra vez la misma historia				
 Toni Morrison 	 Beloved				
 Zora Neale Hurston 	 Sus ojos miraban a Dios				
-Carson McCullers 	 El corazÛn es un cazador solitario				
+Carson McCullers 	 El coraz√≥n es un cazador solitario				
 Graham Greene 	 El poder y la gloria				
 Evelyn Waugh 	 Retorno a Brideshead				
-William Styron 	 La decisiÛn de Sophie				
-Anthony Burgess 	 La naranja mec·nica				
+William Styron 	 La decisi√≥n de Sophie				
+Anthony Burgess 	 La naranja mec√°nica				
 Saul Bellow 	 Henderson el rainero				
 Norman Mailer 	 Los desnudos y los muertos				
 John Cheever 	 Falconer				
