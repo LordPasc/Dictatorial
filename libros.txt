@@ -1,0 +1,487 @@
+Camilo José Cela 	 La familia de Pascual Duarte				
+Miguel de Unamuno 	 Niebla				
+Ernest Hemingway 	 Adiós a las armas				
+William Faulkner 	 Mientras agonizo				
+John Steinbeck 	 Tortilla Flat				
+Sherwood Anderson 	 Winesburg, Ohio				
+Luis Berenguer 	 El mundo de Juan Lobón				
+Umberto Eco 	 El nombre de la rosa				
+Julio Cortázar 	 Rayuela				
+Gabriel García Márquez 	 Cien años de soledad				
+Mario Vargas Llosa 	 La guerra del fin del mundo				
+Richard Matheson 	 La casa infernal				
+Octave Mirbeau 	 El jardín de los suplicios				
+Iceberg Slim 	 Pimp				
+Charles Bukowski 	 Factotum				
+Antonio Muñoz Molina 	 La lluvia amarilla				
+Juan Benet 	 Volverás a Región				
+José Saramago 	 Ensayo sobre la ceguera				
+José Luis Sampedro 	 La sonrisa etrusca				
+Pío Baroja 	 Las noches del Buen Retiro				
+Ian Gibson 	 El vicio inglés				
+Jim Goad 	 Manifiesto redneck				
+Gonzalo Torrente Ballester 	 Crónica del rey pasmado				
+Mario Cavattore 	 El inseminador				
+David Mazzucchelli 	 Asterios Polyp				
+Hari Kunzru 	 El transformista				
+Li Yu 	 La alfombrilla de los goces y los rezos				
+Niccolò Machiavelli 	 El príncipe				
+Ryu Murakami 	 Sopa de miso				
+Wenceslao Fernández Flórez 	 El bosque animado				
+Cela, Camilo José 	 Madera de boj				
+Cela, Camilo José 	 La colmena				
+Driss Amed 	 Una vida llena de agujeros				
+Antonio Pigafetta 	 Primer viaje en torno del globo				
+Octave Mirbeau 	 El abate Caire				
+William Faulkner 	 Luz de agosto				
+John Fante 	 Pregúntale al polvo				
+Hubert Selby Jr. 	 Última salida: Brooklyn				
+Henry Miller 	 Trópico de Cáncer				
+Ana María Matute 	 Los hijos muertos				
+Juan Goytisolo 	 Señas de identidad				
+José Donoso 	 El obsceno pájaro de la noche				
+Alfredo Bryce Echenique 	 Un mundo para Julius				
+Juan Rulfo 	 Pedro Páramo				
+Clarice Lispector 	 La hora de la estrella				
+Patrick Süskind 	 El perfume				
+Truman Capote 	 A sangre fría				
+Flannery O’Connor 	 Un hombre bueno es difícil de encontrar				
+Carson McCullers 	 El corazón es un cazador solitario				
+Michel Houellebecq 	 Sumisión				
+Bret Easton Ellis 	 American Psycho				
+Chuck Palahniuk 	 El club de la lucha				
+Thomas Pynchon 	 El arco iris de gravedad				
+Don DeLillo 	 Ruido de fondo				
+William Golding 	 El señor de las moscas				
+José Luis Peixoto 	 Cuerpo limpio				
+Javier Marías 	 Corazón tan blanco				
+Enrique Anderson Imbert 	 La casa del ángel				
+Horacio Quiroga 	 Cuentos de la selva				
+Juan José Millás 	 El mundo				
+Robert Musil 	 El hombre sin atributos				
+Albert Camus 	 El extranjero				
+Fyodor Dostoyevsky 	 Crimen y castigo				
+F. Scott Fitzgerald 	 El gran Gatsby				
+Jack London 	 Colmillo blanco				
+Herman Melville 	 Bartleby, el escribiente				
+Edgar Allan Poe 	 Cuentos completos				
+Nathanael West 	 El día de la langosta				
+Richard Wright 	 Hijo nativo				
+Ralph Ellison 	 El hombre invisible				
+James Baldwin 	 Otra vez la misma historia				
+Toni Morrison 	 Beloved				
+Zora Neale Hurston 	 Sus ojos miraban a Dios				
+Carson McCullers 	 Reflejos en un ojo dorado				
+Graham Greene 	 El poder y la gloria				
+Evelyn Waugh 	 Retorno a Brideshead				
+William Styron 	 La decisión de Sophie				
+Anthony Burgess 	 La naranja mecánica				
+Flannery O’Connor 	 El río				
+Saul Bellow 	 Henderson el rainero				
+Norman Mailer 	 Los desnudos y los muertos				
+John Cheever 	 Falconer				
+Vladimir Nabokov 	 Lolita				
+Ian McEwan 	 Expiación				
+Kazuo Ishiguro 	 Los restos del día				
+Haruki Murakami 	 Tokio blues (Norwegian Wood)				
+Don DeLillo 	 Submundo				
+Thomas Mann 	 La montaña mágica				
+H. P. Lovecraft 	 La llamada de Cthulhu				
+Richard Wright 	 La clave del negro				
+Ralph Ellison 	 Shadow and Act				
+William Faulkner 	 El ruido y la furia				
+Albert Camus 	 La peste				
+Franz Kafka 	 El proceso				
+Franz Kafka 	 La metamorfosis				
+George Orwell 	1984				
+Aldous Huxley 	 Un mundo feliz				
+Miguel Delibes 	 Los santos inocentes				
+Juan García Ponce 	 La casa en la playa				
+Juan José Saer 	 El entenado				
+Roberto Arlt 	 Los siete locos				
+Manuel Vázquez Montalbán 	 Los mares del Sur				
+Antonio Di Benedetto 	 Zama				
+Juan Carlos Onetti 	 El astillero				
+Adolfo Bioy Casares 	 La invención de Morel				
+Julio Ramón Ribeyro 	 Los gallinazos sin plumas				
+José Revueltas 	 El apando				
+Carlos Monsiváis 	 Días de guardar				
+Manuel Mujica Lainez 	 Bomarzo				
+Ricardo Piglia 	 Plata quemada				
+Juan Benet 	 Una meditación				
+José Donoso 	 Coronación				
+Ana María Matute 	 Primera memoria				
+Carmen Martín Gaite 	 Entre visillos				
+Rosa Montero 	 La loca de la casa				
+Juan José Millás 	 El desorden de tu nombre				
+Javier Marías 	 Mañana en la batalla piensa en mí				
+César Aira 	 El tilo				
+Alberto Méndez 	 Los girasoles ciegos				
+Luis Mateo Díez 	 La fuente de la edad				
+Francisco Umbral 	 Mortal y rosa				
+Luis Goytisolo 	 Antagonía				
+Juan Rulfo 	 El llano en llamas				
+Carlos Fuentes 	 La muerte de Artemio Cruz				
+José Luis Sampedro 	 El río que nos lleva				
+José María Merino 	 La mujer de sombra				
+Rosa Montero 	 Crónica del desamor				
+Antonio Gala 	 La pasión turca				
+Camilo José Cela 	 Viaje a la Alcarria				
+Miguel Delibes 	 El camino				
+Rafael Sánchez Ferlosio 	 El Jarama				
+Ignacio Martínez de Pisón 	 Enterrar a los muertos				
+Manuel Chaves Nogales 	 A sangre y fuego				
+Luis Mateo Díez 	 El espíritu del páramo				
+Julio Cortázar 	 Bestiario				
+Juan José Millás 	 El mundo				
+Juan Goytisolo 	 Paisajes después de la batalla				
+Javier Tomeo 	 La estupidez				
+César Mallorquí 	 La catedral				
+Juan José Saer 	 Cicatrices				
+Antonio Tabucchi 	 Sostiene Pereira				
+José Lezama Lima 	 Paradiso				
+Roberto Bolaño 	 Los detectives salvajes				
+Roberto Bolaño 	2666				
+Jorge Luis Borges 	 Ficciones				
+Jorge Luis Borges 	 El Aleph				
+Adolfo Bioy Casares 	 Dormir al sol				
+Manuel Mujica Lainez 	 El laberinto				
+Ricardo Piglia 	 Crítica y ficción				
+César Aira 	 Una novela china				
+Juan José Saer 	 La mayor				
+Juan Carlos Onetti 	 Juntacadáveres				
+Alejo Carpentier 	 El reino de este mundo				
+Gabriel García Márquez 	 El otoño del patriarca				
+Mario Vargas Llosa 	 La ciudad y los perros				
+Carlos Fuentes 	 Terra Nostra				
+Juan Rulfo 	 Pedro Páramo				
+Isabel Allende 	 La casa de los espíritus				
+Laura Esquivel 	 Como agua para chocolate				
+José Saramago 	 El año de la muerte de Ricardo Reis				
+José Saramago 	 Ensayo sobre la lucidez				
+José Luis Peixoto 	 Cuerpo presente				
+Ricardo Piglia 	 El camino de Ida				
+César Aira 	 El llanto				
+Antonio Muñoz Molina 	 Plenilunio				
+Luis Mateo Díez 	 Los vivos y los muertos				
+Francisco Umbral 	 Las ninfas				
+Camilo José Cela 	 Mazurca para dos muertos				
+Juan Benet 	 Herrumbrosas lanzas				
+Julio Ramón Ribeyro 	 La palabra del mudo				
+José Donoso 	 El lugar sin límites				
+Ana María Matute 	 Olvidado rey Gudú				
+Carmen Martín Gaite 	 El cuarto de atrás				
+Javier Marías 	 Los enamoramientos				
+César Mallorquí 	 El sueño de Berlín				
+Juan José Millás 	 Dos mujeres en Praga				
+Juan Goytisolo 	 Campos de Níjar				
+Ricardo Piglia 	 Blanco nocturno				
+Juan José Saer 	 Glosa				
+Antonio Tabucchi 	 Requiem				
+José María Merino 	 El lugar sin límites				
+Luis Mateo Díez 	 La ruina del cielo				
+José Luis Peixoto 	 Nadie como tú				
+César Aira 	 La prueba				
+Manuel Mujica Lainez 	 Bomarzo				
+Roberto Arlt 	 El juguete rabioso				
+Juan Carlos Onetti 	 La vida breve				
+Adolfo Bioy Casares 	 El sueño de los héroes				
+Julio Cortázar 	 Final del juego				
+Gabriel García Márquez 	 Crónica de una muerte anunciada				
+Mario Vargas Llosa 	 Pantaleón y las visitadoras				
+Carlos Fuentes 	 Gringo viejo				
+Isabel Allende 	 Eva Luna				
+Laura Esquivel 	 La ley del amor				
+José Saramago 	 El evangelio según Jesucristo				
+Juan José Millás 	 El mundo				
+César Aira 	 La prueba				
+Juan Benet 	 Herrumbrosas lanzas				
+Roberto Bolaño 	 Estrella distante				
+Roberto Bolaño 	 Nocturno de Chile				
+Ricardo Piglia 	 Respiración artificial				
+José Luis Sampedro 	 El río que nos lleva				
+Luis Mateo Díez 	 La ruina del cielo				
+Camilo José Cela 	 Viaje a la Alcarria				
+Miguel Delibes 	 El camino				
+Rafael Sánchez Ferlosio 	 El Jarama				
+Manuel Chaves Nogales 	 A sangre y fuego				
+Javier Marías 	 Corazón tan blanco				
+Juan Goytisolo 	 Señas de identidad				
+Ana María Matute 	 Los hijos muertos				
+Carmen Martín Gaite 	 Entre visillos				
+Rosa Montero 	 La loca de la casa				
+Juan Carlos Onetti 	 El astillero				
+Juan Rulfo 	 Pedro Páramo				
+Adolfo Bioy Casares 	 La invención de Morel				
+Manuel Mujica Lainez 	 Bomarzo				
+José Donoso 	 El obsceno pájaro de la noche				
+Roberto Arlt 	 Los lanzallamas				
+Julio Ramón Ribeyro 	 Los gallinazos sin plumas				
+Juan Carlos Onetti 	 La vida breve				
+Alejo Carpentier 	 El siglo de las luces				
+Gabriel García Márquez 	 El coronel no tiene quien le escriba				
+Mario Vargas Llosa 	 La tía Julia y el escribidor				
+Carlos Fuentes 	 La muerte de Artemio Cruz				
+José Saramago 	 El año de la muerte de Ricardo Reis				
+José Saramago 	 Ensayo sobre la lucidez				
+Isabel Allende 	 La casa de los espíritus				
+Laura Esquivel 	 Como agua para chocolate				
+Juan José Saer 	 El entenado				
+César Aira 	 El llanto				
+Antonio Muñoz Molina 	 El invierno en Lisboa				
+Francisco Umbral 	 Mortal y rosa				
+Camilo José Cela 	 La colmena				
+William Faulkner 	 El ruido y la furia				
+Ernest Hemingway 	 Por quién doblan las campanas				
+John Steinbeck 	 Al este del Edén				
+Sherwood Anderson 	 Winesburg, Ohio				
+Ryu Murakami 	 Sopa de miso				
+Octave Mirbeau 	 El jardín de los suplicios				
+Iceberg Slim 	 Pimp				
+Li Yu 	 La alfombrilla de los goces y los rezos				
+Niccolò Machiavelli 	 El príncipe				
+Richard Matheson 	 La casa infernal				
+Driss Amed 	 Una vida llena de agujeros				
+Antonio Pigafetta 	 Primer viaje en torno del globo				
+Pío Baroja 	 Las noches del Buen Retiro				
+Ian Gibson 	 El vicio inglés				
+Jim Goad 	 Manifiesto redneck				
+Gonzalo Torrente Ballester 	 Crónica del rey pasmado				
+Mario Cavattore 	 El inseminador				
+David Mazzucchelli 	 Asterios Polyp				
+Hari Kunzru 	 El transformista				
+Wenceslao Fernández Flórez 	 El bosque animado				
+Camilo José Cela 	 Madera de boj				
+Miguel Delibes 	 Los santos inocentes				
+Francisco Umbral 	 Las ninfas				
+John Fante 	 Pregúntale al polvo				
+Hubert Selby Jr. 	 Última salida: Brooklyn				
+Henry Miller 	 Trópico de Cáncer				
+Ana María Matute 	 Primera memoria				
+Juan José Millás 	 El desorden de tu nombre				
+Javier Cercas 	 Soldados de Salamina				
+Carlos Ruiz Zafón 	 La sombra del viento				
+José Luis Martín Descalzo 	 El regreso				
+Juan José Flores 	 La casa de Adela				
+Juan Benet 	 Volverás a Región				
+José Donoso 	 Coronación				
+Rosa Montero 	 Crónica del desamor				
+Antonio Gala 	 La pasión turca				
+Enrique Anderson Imbert 	 La casa del ángel				
+Horacio Quiroga 	 Cuentos de la selva				
+Robert Musil 	 El hombre sin atributos				
+Albert Camus 	 El extranjero				
+Fyodor Dostoyevsky 	 Crimen y castigo				
+F. Scott Fitzgerald 	 El gran Gatsby				
+Jack London 	 Colmillo blanco				
+Herman Melville 	 Bartleby, el escribiente				
+Edgar Allan Poe 	 Cuentos completos				
+Nathanael West 	 El día de la langosta				
+Richard Wright 	 Hijo nativo				
+Ralph Ellison 	 El hombre invisible				
+James Baldwin 	 Otra vez la misma historia				
+Toni Morrison 	 Beloved				
+Zora Neale Hurston 	 Sus ojos miraban a Dios				
+Carson McCullers 	 El corazón es un cazador solitario				
+Graham Greene 	 El poder y la gloria				
+Evelyn Waugh 	 Retorno a Brideshead				
+William Styron 	 La decisión de Sophie				
+Anthony Burgess 	 La naranja mecánica				
+Saul Bellow 	 Henderson el rainero				
+Norman Mailer 	 Los desnudos y los muertos				
+John Cheever 	 Falconer				
+Vladimir Nabokov 	 Lolita				
+Ian McEwan 	 Expiación				
+Kazuo Ishiguro 	 Los restos del día				
+Haruki Murakami 	 Tokio blues (Norwegian Wood)				
+Don DeLillo 	 Submundo				
+Thomas Mann 	 La montaña mágica				
+H. P. Lovecraft 	 La llamada de Cthulhu				
+George Orwell 	1984				
+Aldous Huxley 	 Un mundo feliz				
+Miguel Delibes 	 El hereje				
+Juan José Millás 	 Dos mujeres en Praga				
+César Aira 	 El tilo				
+Antonio Muñoz Molina 	 Plenilunio				
+Luis Mateo Díez 	 La fuente de la edad				
+Francisco Umbral 	 Las ninfas				
+Camilo José Cela 	 Mazurca para dos muertos				
+Juan Benet 	 Una meditación				
+Julio Ramón Ribeyro 	 La palabra del mudo				
+José Donoso 	 El lugar sin límites				
+Ana María Matute 	 Olvidado rey Gudú				
+Carmen Martín Gaite 	 El cuarto de atrás				
+Javier Marías 	 Los enamoramientos				
+César Mallorquí 	 La catedral				
+Antonio Tabucchi 	 Sostiene Pereira				
+José Lezama Lima 	 Paradiso				
+Roberto Bolaño 	 Los detectives salvajes				
+Roberto Bolaño 	2666				
+Jorge Luis Borges 	 Ficciones				
+Jorge Luis Borges 	 El Aleph				
+Adolfo Bioy Casares 	 Dormir al sol				
+Manuel Mujica Lainez 	 El laberinto				
+Ricardo Piglia 	 Crítica y ficción				
+César Aira 	 Una novela china				
+Juan José Saer 	 La mayor				
+Juan Carlos Onetti 	 Juntacadáveres				
+Alejo Carpentier 	 El reino de este mundo				
+Gabriel García Márquez 	 El otoño del patriarca				
+Mario Vargas Llosa 	 Conversación en La Catedral				
+Carlos Fuentes 	 Terra Nostra				
+Isabel Allende 	 Eva Luna				
+Laura Esquivel 	 La ley del amor				
+José Saramago 	 El evangelio según Jesucristo				
+José Saramago 	 Todos los nombres				
+Juan José Millás 	 El mundo				
+César Aira 	 La prueba				
+Juan Benet 	 Herrumbrosas lanzas				
+Roberto Arlt 	 El juguete rabioso				
+Manuel Chaves Nogales 	 A sangre y fuego				
+Javier Marías 	 Mañana en la batalla piensa en mí				
+Juan Goytisolo 	 Paisajes después de la batalla				
+Ricardo Piglia 	 Blanco nocturno				
+Juan José Saer 	 Glosa				
+Antonio Tabucchi 	 Requiem				
+José María Merino 	 El lugar sin límites				
+Luis Mateo Díez 	 Los vivos y los muertos				
+José Luis Peixoto 	 Nadie como tú				
+César Aira 	 El llanto				
+Manuel Mujica Lainez 	 Bomarzo				
+Roberto Arlt 	 Los siete locos				
+Juan Carlos Onetti 	 La vida breve				
+Adolfo Bioy Casares 	 El sueño de los héroes				
+Julio Cortázar 	 Final del juego				
+Gabriel García Márquez 	 Crónica de una muerte anunciada				
+Mario Vargas Llosa 	 Pantaleón y las visitadoras				
+Carlos Fuentes 	 Gringo viejo				
+Isabel Allende 	 Paula				
+Laura Esquivel 	 Tan veloz como el deseo				
+José Saramago 	 La balsa de piedra				
+Juan José Millás 	 El mundo				
+César Aira 	 La prueba				
+Juan Benet 	 Herrumbrosas lanzas				
+Roberto Bolaño 	 Estrella distante				
+Roberto Bolaño 	 Nocturno de Chile				
+Ricardo Piglia 	 Respiración artificial				
+José Luis Sampedro 	 La sonrisa etrusca				
+Luis Mateo Díez 	 La ruina del cielo				
+Camilo José Cela 	 Viaje a la Alcarria				
+Miguel Delibes 	 El camino				
+Rafael Sánchez Ferlosio 	 El Jarama				
+Manuel Chaves Nogales 	 A sangre y fuego				
+Javier Marías 	 Corazón tan blanco				
+Juan Goytisolo 	 Señas de identidad				
+Ana María Matute 	 Los hijos muertos				
+Carmen Martín Gaite 	 Entre visillos				
+Rosa Montero 	 La loca de la casa				
+Juan Carlos Onetti 	 El astillero				
+Juan Rulfo 	 El llano en llamas				
+Adolfo Bioy Casares 	 La invención de Morel				
+Manuel Mujica Lainez 	 Bomarzo				
+José Donoso 	 El obsceno pájaro de la noche				
+Roberto Arlt 	 Los lanzallamas				
+Julio Ramón Ribeyro 	 La palabra del mudo				
+Juan Carlos Onetti 	 La muerte y la niña				
+Alejo Carpentier 	 El siglo de las luces				
+Gabriel García Márquez 	 Memoria de mis putas tristes				
+Mario Vargas Llosa 	 Travesuras de la niña mala				
+Carlos Fuentes 	 Cristóbal Nonato				
+Isabel Allende 	 Inés del alma mía				
+Laura Esquivel 	 Como agua para chocolate				k
+José Saramago 	 Ensayo sobre la ceguera				
+José Saramago 	 Ensayo sobre la lucidez				
+Juan José Millás 	 El mundo				
+César Aira 	 Una novela china				
+Juan Benet 	 Volverás a Región				
+Roberto Bolaño 	 Los detectives salvajes				
+Roberto Bolaño 	2666				
+Ricardo Piglia 	 Blanco nocturno				
+Juan José Saer 	 Glosa				
+Antonio Tabucchi 	 Sostiene Pereira				
+José María Merino 	 El lugar sin límites				
+Luis Mateo Díez 	 Los vivos y los muertos				
+José Luis Peixoto 	 Nadie como tú				
+César Aira 	 El llanto				
+Manuel Mujica Lainez 	 Bomarzo				
+Roberto Arlt 	 El juguete rabioso				
+Juan Carlos Onetti 	 La vida breve				
+Adolfo Bioy Casares 	 El sueño de los héroes				
+Julio Cortázar 	 Final del juego				
+Gabriel García Márquez 	 Crónica de una muerte anunciada				
+Mario Vargas Llosa 	 Pantaleón y las visitadoras				
+Carlos Fuentes 	 Gringo viejo				
+Isabel Allende 	 Paula				
+Laura Esquivel 	 Tan veloz como el deseo				
+José Saramago 	 La balsa de piedra				
+Juan José Millás 	 Dos mujeres en Praga				
+César Aira 	 El tilo				
+Antonio Muñoz Molina 	 El invierno en Lisboa				
+Luis Mateo Díez 	 La fuente de la edad				
+Francisco Umbral 	 Mortal y rosa				
+Camilo José Cela 	 La colmena				
+William Faulkner 	 El ruido y la furia				
+Ernest Hemingway 	 Adiós a las armas				
+John Steinbeck 	 Tortilla Flat				
+Sherwood Anderson 	 Winesburg, Ohio				
+Ryu Murakami 	 Sopa de miso				
+Octave Mirbeau 	 El jardín de los suplicios				
+Iceberg Slim 	 Pimp				
+Li Yu 	 La alfombrilla de los goces y los rezos				
+Niccolò Machiavelli 	 El príncipe				
+Richard Matheson 	 La casa infernal				
+Driss Amed 	 Una vida llena de agujeros				
+Antonio Pigafetta 	 Primer viaje en torno del globo				
+Pío Baroja 	 Las noches del Buen Retiro				
+Ian Gibson 	 El vicio inglés				
+Jim Goad 	 Manifiesto redneck				
+Gonzalo Torrente Ballester 	 Crónica del rey pasmado				
+Mario Cavattore 	 El inseminador				
+David Mazzucchelli 	 Asterios Polyp				
+Hari Kunzru 	 El transformista				
+Wenceslao Fernández Flórez 	 El bosque animado				
+Camilo José Cela 	 Madera de boj				
+Miguel Delibes 	 Los santos inocentes				
+Francisco Umbral 	 Las ninfas				
+John Fante 	 Pregúntale al polvo				
+Hubert Selby Jr. 	 Última salida: Brooklyn				
+Henry Miller 	 Trópico de Cáncer				
+Ana María Matute 	 Primera memoria				
+Juan José Millás 	 El desorden de tu nombre				
+Javier Cercas 	 Soldados de Salamina				
+Carlos Ruiz Zafón 	 La sombra del viento				
+José Luis Martín Descalzo 	 El regreso				
+Juan José Flores 	 La casa de Adela				
+Juan Benet 	 Volverás a Región				
+José Donoso 	 Coronación				
+Rosa Montero 	 Crónica del desamor				
+Antonio Gala 	 La pasión turca				
+Enrique Anderson Imbert 	 La casa del ángel				
+Horacio Quiroga 	 Cuentos de la selva				
+Robert Musil 	 El hombre sin atributos				
+Albert Camus 	 El extranjero				
+Fyodor Dostoyevsky 	 Crimen y castigo				
+F. Scott Fitzgerald 	 El gran Gatsby				
+Jack London 	 Colmillo blanco				
+Herman Melville 	 Bartleby, el escribiente				
+Edgar Allan Poe 	 Cuentos completos				
+Nathanael West 	 El día de la langosta				
+Richard Wright 	 Hijo nativo				
+Ralph Ellison 	 El hombre invisible				
+James Baldwin 	 Otra vez la misma historia				
+Toni Morrison 	 Beloved				
+Zora Neale Hurston 	 Sus ojos miraban a Dios				
+Carson McCullers 	 El corazón es un cazador solitario				
+Graham Greene 	 El poder y la gloria				
+Evelyn Waugh 	 Retorno a Brideshead				
+William Styron 	 La decisión de Sophie				
+Anthony Burgess 	 La naranja mecánica				
+Saul Bellow 	 Henderson el rainero				
+Norman Mailer 	 Los desnudos y los muertos				
+John Cheever 	 Falconer				
+Vladimir Nabokov 	 Ada o el ardor				
+Ian McEwan 	 Chesil Beach				
+Kazuo Ishiguro 	 Nunca me abandones				
+Haruki Murakami 	 Kafka en la orilla				
+Don DeLillo 	 Libra				
+Thomas Mann 	 Muerte en Venecia				
