@@ -22,6 +22,10 @@ button, input[type='submit'] { background:#d02121; color:#fff; border:none; bord
 button:hover, input[type='submit']:hover { background:#fff; color:#d02121; border:1.5px solid #d02121; box-shadow:0 5px 24px #e04242cc; }
 #respuestasConsultorio ul { padding-left:1.5em; }
 #respuestasConsultorio li { margin-bottom:10px; }
+#resultado-libro { display:inline-block; margin-left:10px; vertical-align:middle; }
+.libro-item { display:flex; gap:10px; }
+.autor { font-weight:bold; min-width:200px; }
+.titulo { font-style:italic; }
 @keyframes fadeIn { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
 </style>
 </head>
@@ -46,12 +50,12 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
 <section id="libros">
 <h2>Libros</h2>
 <p>Sección de libros. Posible búsqueda aleatoria entre 1000 párrafos con estricta condicionalidad.</p>
+<button id="buscar-libro-btn">Buscar libro</button>
+<div id="resultado-libro"></div>
 </section>
 
-<!-- Consultorio -->
 <section id="consultorio">
   <h2>Consultorio</h2>
-
   <form id="formConsultorio" onsubmit="enviarConsultorio(event)" autocomplete="off">
     <label>Nombre:</label>
     <input type="text" name="nombre" id="nombre" required>
@@ -61,7 +65,6 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
     <textarea name="consulta" id="consulta" rows="5" required></textarea>
     <button type="submit" id="submitBtn">Enviar Consulta</button>
   </form>
-
   <div id="respuestasConsultorio">
     <h3>Consultas recibidas</h3>
     <ul id="listaConsultas"></ul>
@@ -95,6 +98,26 @@ function propuestaMusical() {
     })
     .catch(err=>alert('No se pudo cargar la lista de canciones: '+err));
 }
+
+/* --- Búsqueda de libros aleatoria --- */
+document.getElementById('buscar-libro-btn').addEventListener('click', async () => {
+    const resultado = document.getElementById('resultado-libro');
+    resultado.innerHTML = 'Cargando...';
+    try {
+        const response = await fetch('libros.txt');
+        if(!response.ok) throw new Error('No se pudo cargar el archivo');
+        const texto = await response.text();
+        const libros = texto.split('\n').filter(l=>l.trim()!=='');
+        const libroAleatorio = libros[Math.floor(Math.random()*libros.length)];
+        const partes = libroAleatorio.split('\t');
+        const autor = partes[0] || '';
+        const titulo = partes[1] || '';
+        resultado.innerHTML = `<div class="libro-item"><span class="autor">${autor}</span><span class="titulo">${titulo}</span></div>`;
+    } catch(err){
+        resultado.textContent='Error al cargar el libro';
+        console.error(err);
+    }
+});
 
 /* --- Consultorio --- */
 const GAS_URL = 'https://script.google.com/macros/s/AKfycbzUxDODbaM54FXwEoWs75qKHrhfwrmHHefxUjSZE_TaO7jmuzpTkRRSKadV-tqaXJvC/exec';
@@ -153,7 +176,6 @@ function abrirFollar() {
   const contenido = `
     <h2>Documento de Consentimiento</h2>
     <p>Este documento asegura que todas las partes involucradas en cualquier acto sexual explícito lo hacen de manera consensuada, libre y voluntaria, conforme a la Ley Orgánica 10/2022, de 6 de septiembre, conocida como la "Ley del Sí es Sí".</p>
-    
     <h3>Declaración de Consentimiento</h3>
     <ol>
       <li><strong>Identificación de las Partes:</strong><br>
@@ -165,27 +187,20 @@ function abrirFollar() {
       <li><strong>Consentimiento Libre y Voluntario:</strong><br>Todas las partes participan libre y voluntariamente, sin coacción o presión.</li>
       <li><strong>Entendimiento de la Ley del Sí es Sí:</strong><br>Las partes han leído y entendido la Ley Orgánica 10/2022 y actuarán conforme a ella.</li>
     </ol>
-    
     <h3>Firma</h3>
     <ul>
       <li>Parte A: Nombre: <input type="text" maxlength="25" style="width:250px;"> DNI: <input type="text" maxlength="9" style="width:110px;"> Consiento <input type="checkbox" style="transform:scale(1.3); margin-left:5px;"></li>
       <li>Parte B: Nombre: <input type="text" maxlength="25" style="width:250px;"> DNI: <input type="text" maxlength="9" style="width:110px;"> Consiento <input type="checkbox" style="transform:scale(1.3); margin-left:5px;"></li>
       <li>Parte C: Nombre: <input type="text" maxlength="25" style="width:250px;"> DNI: <input type="text" maxlength="9" style="width:110px;"> Consiento <input type="checkbox" style="transform:scale(1.3); margin-left:5px;"></li>
     </ul>
-
     <h3>Enviar a otro correo electrónico</h3>
     <label for="emailDestino">Enviar a la siguiente dirección de correo electrónico:</label><br>
     <input type="email" id="emailDestino" placeholder="correo@ejemplo.com" style="width: calc(100% - 120px); display:inline-block; margin-right:6px;">
     <button type="button" id="btnEnviarEmail" style="display:inline-block; padding:6px 12px; font-size:1em;">Enviar</button>
-
     <script>
       document.getElementById('btnEnviarEmail').addEventListener('click', function() {
         const email = document.getElementById('emailDestino').value.trim();
-        if(!email) {
-          alert('Introduce un correo electrónico válido.');
-          return;
-        }
-
+        if(!email) { alert('Introduce un correo electrónico válido.'); return; }
         const partes = [];
         document.querySelectorAll('ul li').forEach((li, index) => {
           const nombre = li.querySelectorAll('input[type="text"]')[0]?.value.trim() || '-';
@@ -193,14 +208,12 @@ function abrirFollar() {
           const consent = li.querySelector('input[type="checkbox"]').checked ? 'Sí' : 'No';
           partes.push(\`Parte \${String.fromCharCode(65+index)}: Nombre: \${nombre}, DNI: \${dni}, Consiento: \${consent}\`);
         });
-
         const cuerpo = encodeURIComponent('Documento de Consentimiento:\\n\\n' + partes.join('\\n'));
         const asunto = encodeURIComponent('Documento de Consentimiento');
         window.location.href = 'mailto:' + email + '?subject=' + asunto + '&body=' + cuerpo;
       });
     <\/script>
   `;
-
   const ventana = window.open("", "Consentimiento", "width=" + screen.width + ",height=" + screen.height + ",scrollbars=yes,resizable=yes");
   ventana.document.write(contenido);
   ventana.document.close();
