@@ -28,45 +28,42 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
 .titulo { font-style:italic; }
 @keyframes fadeIn { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
 
-/* Ventana derecha Libros */
-#ventana-derecha-libro {
-  position: fixed;
-  top: 80px;
-  right: 20px;
-  width: 320px;
-  height: 420px;
-  padding: 15px;
-  background-color: rgba(26,19,19,0.95);
-  color: #fff;
-  border: 2px solid #d02121;
-  border-radius: 10px;
-  overflow-y: auto;
-  box-shadow: 0 4px 20px rgba(208,30,61,0.7);
-  z-index: 9999;
-  display: none;
+/* --- Modal Libros (overlay + responsive) --- */
+#overlay-libro{
+  position:fixed; inset:0; width:100%; height:100%;
+  background:rgba(0,0,0,.7);
+  display:none; justify-content:center; align-items:center;
+  z-index:9998;
 }
-#ventana-derecha-libro button.cerrar {
-  float: right;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.4em;
-  cursor: pointer;
+#ventana-derecha-libro{
+  background:#1c1c1c; color:#fff;
+  padding:20px; border-radius:16px;
+  max-width:90%; width:400px; max-height:80%;
+  overflow-y:auto; position:relative;
+  box-shadow:0 8px 25px rgba(0,0,0,.6);
+  display:none; z-index:9999;
+  animation:modalFade .24s ease-out;
 }
-
-/* Responsive móvil */
-@media (max-width: 768px) {
-  #ventana-derecha-libro {
-    top: 0;
-    right: 0;
-    width: 95%;
-    max-width: 400px;
-    height: 90%;
-    max-height: 600px;
-    border-radius: 10px;
-    padding: 15px;
-    background: rgba(0,0,0,0.95);
-    overflow-y: auto;
+#ventana-derecha-libro button.cerrar{
+  position:absolute; top:12px; right:14px;
+  background:none; border:none; color:#fff;
+  font-size:22px; cursor:pointer;
+}
+@keyframes modalFade{
+  from{ transform:scale(.96); opacity:0; }
+  to{ transform:scale(1); opacity:1; }
+}
+@media (max-width:768px){
+  #overlay-libro{ align-items:flex-end; }
+  #ventana-derecha-libro{
+    width:100%; max-width:100%;
+    height:70%; max-height:70%;
+    border-radius:16px 16px 0 0;
+    animation:slideUp .28s ease-out;
+  }
+  @keyframes slideUp{
+    from{ transform:translateY(100%); opacity:0; }
+    to{ transform:translateY(0); opacity:1; }
   }
 }
 </style>
@@ -115,13 +112,16 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
 
 <section id="Follar">
 <h2>Consentimiento</h2>
-<p>¿Estás harto de desaprovechar las pocas oportunidades que tienes para mojar el churro por miedo a que te enchironen? ¿Quieres follar pero estás acojonado por si te hacen un Errejón? Si no eres un mal tipo y tan solo eres un pringado feo o con mala suerte, aquí tienes un formulario que te puede servir de ayuda si algún día te vieses en la tesitura.</p>
+<p>Documento de consentimiento según Ley Orgánica 10/2022.</p>
 <button onclick="abrirFollar()">Abrir Documento de Consentimiento</button>
 </section>
 
-<div id="ventana-derecha-libro">
-  <button class="cerrar" onclick="document.getElementById('ventana-derecha-libro').style.display='none'">✖</button>
-  <div id="contenido-libro"></div>
+<!-- Overlay + Modal Libros -->
+<div id="overlay-libro" onclick="cerrarModal()">
+  <div id="ventana-derecha-libro" onclick="event.stopPropagation()">
+    <button class="cerrar" onclick="cerrarModal()">✖</button>
+    <div id="contenido-libro"></div>
+  </div>
 </div>
 
 <script>
@@ -137,7 +137,6 @@ function propuestaMusical() {
     .then(r=>r.text())
     .then(data=>{
       const lineas=data.split('\n').filter(l=>l.trim()!=='');
-
       const random=lineas[Math.floor(Math.random()*lineas.length)];
       const partes=random.split('\t');
       const artista=partes[0], cancion=partes[1];
@@ -147,35 +146,44 @@ function propuestaMusical() {
     .catch(err=>alert('No se pudo cargar la lista de canciones: '+err));
 }
 
+/* --- Modal Libros --- */
+function abrirModal(){
+  document.getElementById('overlay-libro').style.display='flex';
+  document.getElementById('ventana-derecha-libro').style.display='block';
+}
+function cerrarModal(){
+  document.getElementById('overlay-libro').style.display='none';
+  document.getElementById('ventana-derecha-libro').style.display='none';
+}
+
 /* --- Búsqueda de libros desde libros.txt --- */
 document.getElementById('buscar-libro-btn').addEventListener('click', async () => {
-    const resultado = document.getElementById('resultado-libro');
-    resultado.innerHTML = 'Cargando...';
-    const ventana = document.getElementById('ventana-derecha-libro');
-    const contenido = document.getElementById('contenido-libro');
+  const resultado = document.getElementById('resultado-libro');
+  resultado.innerHTML = 'Cargando...';
+  const contenido = document.getElementById('contenido-libro');
 
-    try {
-        const response = await fetch('libros.txt');
-        if(!response.ok) throw new Error('No se pudo cargar el archivo');
-        const texto = await response.text();
-        const libros = texto.split('\n').filter(l=>l.trim()!=='');
-        const libroAleatorio = libros[Math.floor(Math.random()*libros.length)];
-        const partes = libroAleatorio.split('\t');
-        const autor = partes[0] || '';
-        const titulo = partes[1] || '';
-        const sinopsisLocal = partes[2] || 'Sinopsis no disponible';
-        const bioLocal = partes[3] || 'Bio del autor no disponible';
+  try {
+    const response = await fetch('libros.txt');
+    if(!response.ok) throw new Error('No se pudo cargar el archivo');
+    const texto = await response.text();
+    const libros = texto.split('\n').filter(l=>l.trim()!=='');
+    const libroAleatorio = libros[Math.floor(Math.random()*libros.length)];
+    const partes = libroAleatorio.split('\t');
+    const autor = partes[0] || '';
+    const titulo = partes[1] || '';
+    const sinopsisLocal = partes[2] || 'Sinopsis no disponible';
+    const bioLocal = partes[3] || 'Bio del autor no disponible';
 
-        resultado.innerHTML = `<div class="libro-item"><span class="autor">${autor}</span> - <span class="titulo">${titulo}</span></div>`;
-        contenido.innerHTML = `<h3>${titulo}</h3>
-            <p><strong>Autor:</strong> ${autor}</p>
-            <p><strong>Sinopsis:</strong> ${sinopsisLocal}</p>
-            <p><strong>Bio del autor:</strong> ${bioLocal}</p>`;
-        ventana.style.display='block';
-    } catch(err){
-        resultado.textContent='Error al cargar el libro';
-        console.error(err);
-    }
+    resultado.innerHTML = `<div class="libro-item"><span class="autor">${autor}</span> - <span class="titulo">${titulo}</span></div>`;
+    contenido.innerHTML = `<h3>${titulo}</h3>
+        <p><strong>Autor:</strong> ${autor}</p>
+        <p><strong>Sinopsis:</strong> ${sinopsisLocal}</p>
+        <p><strong>Bio del autor:</strong> ${bioLocal}</p>`;
+    abrirModal();
+  } catch(err){
+    resultado.textContent='Error al cargar el libro';
+    console.error(err);
+  }
 });
 
 /* --- Consultorio --- */
@@ -230,7 +238,7 @@ function enviarConsultorio(event){
 
 document.addEventListener('DOMContentLoaded', cargarConsultas);
 
-/* --- Follar --- */
+/* --- Follar (versión original completa) --- */
 function abrirFollar() {
   const contenido = `
     <style>
