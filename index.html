@@ -6,37 +6,152 @@
 <title>Evento Musical Nº8</title>
 <link href="https://fonts.googleapis.com/css?family=Metal+Mania:400|Roboto:400,700&display=swap" rel="stylesheet">
 <style>
-body { font-family: 'Roboto', Arial, sans-serif; background: linear-gradient(135deg, #18191a 75%, #330505 100%); color:#f4f4f4; margin:0; padding:0; min-height:100vh; }
-header { background: linear-gradient(90deg,#1a1a1a 70%, #960909 100%); padding:26px 0 18px 0; text-align:center; box-shadow:0 6px 32px rgba(80,0,0,0.16); border-bottom:4px solid #c10d0d; margin-bottom:0; position:relative; }
-header h1 { font-family: 'Metal Mania', cursive, Arial, sans-serif; margin:0; font-size:2.8em; color:#fff; letter-spacing:1.5px; text-shadow:0 4px 22px #d02121,1px 1px 0 #000; }
-nav { margin-top:16px; margin-bottom:-5px; }
-nav button { font-family: 'Metal Mania', Arial, sans-serif; font-size:1.1em; background:#300606; color:#fff; border:1px solid #aa2b2b; border-radius:22px; margin:0 8px; padding:10px 22px; cursor:pointer; transition:background 0.2s,color 0.18s,border 0.15s; box-shadow:0 2px 10px #d6262699; outline:none; }
-nav button:hover, nav button:active { background:#c10d0d; color:#fff; border:1.5px solid #c10d0d; box-shadow:0 5px 20px #fa757599; }
-section { padding:27px 24px; border-bottom:1px solid #201113; border-radius:10px; background:rgba(26,19,19,0.83); max-width:700px; margin:28px auto 33px auto; box-shadow:0 7px 40px rgba(145,15,15,0.095); display:none; animation:fadeIn 0.7s; }
-section.active { display:block; }
-section h2 { font-family: 'Metal Mania', cursive, Arial, sans-serif; color:#d02121; font-size:2em; margin-top:0; text-shadow:0 1px 13px #a31634,1px 1px 0 #222; border-bottom:1.5px solid #d02121; padding-bottom:7px; margin-bottom:23px; }
-section p, section label, section textarea, section input, section select { font-family: 'Roboto', Arial, sans-serif; font-size:1em; line-height:1.6; }
-input, textarea, select { margin:5px 0 13px 0; padding:7px 9px; width:100%; border:1.8px solid #a21221; border-radius:6px; background:#211111; color:#fff; font-size:1em; font-family:'Roboto', Arial, sans-serif; box-shadow:0 2px 7px #d01e3dad inset; transition:border .2s, box-shadow .2s; }
-input:focus, textarea:focus, select:focus { border:2px solid #fff; box-shadow:0 0 12px #e04242cc; outline:none; }
-button, input[type='submit'] { background:#d02121; color:#fff; border:none; border-radius:7px; box-shadow:0 2px 14px #e04242cc; font-size:1.1em; letter-spacing:1.2px; font-family:'Metal Mania', Arial, sans-serif; padding:12px 24px; cursor:pointer; margin-top:6px; transition:all 0.22s; }
-button:hover, input[type='submit']:hover { background:#fff; color:#d02121; border:1.5px solid #d02121; box-shadow:0 5px 24px #e04242cc; }
-#respuestasConsultorio ul { padding-left:1.5em; }
-#respuestasConsultorio li { margin-bottom:10px; }
+/* GENERAL */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #18191a 75%, #330505 100%);
+  color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+header {
+  background: linear-gradient(90deg,#1a1a1a 70%, #960909 100%);
+  padding: 18px 2vw 12px 2vw;
+  text-align: center;
+  box-shadow: 0 6px 32px rgba(80,0,0,0.16);
+  border-bottom: 4px solid #c10d0d;
+  margin-bottom: 0;
+  position: relative;
+}
+header h1 {
+  font-family: 'Metal Mania', cursive, Arial, sans-serif;
+  margin: 0;
+  font-size: 2em;
+  letter-spacing: 1.5px;
+  color: #fff;
+  text-shadow: 0 4px 22px #d02121,1px 1px 0 #000;
+  word-break: break-word;
+}
+nav {
+  margin: 18px 0 0 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 7px;
+}
+
+/* Menú adaptativo botones */
+nav button {
+  font-family: 'Metal Mania', Arial, sans-serif;
+  font-size: 1em;
+  background: #300606;
+  color: #fff;
+  border: 1px solid #aa2b2b;
+  border-radius: 22px;
+  margin: 0 5px 7px 0;
+  padding: 9px 15px;
+  min-width: 110px;
+  cursor: pointer;
+  transition:background 0.2s, color 0.18s, border 0.15s;
+  box-shadow: 0 2px 10px #d6262699;
+  outline:none;
+  display: inline-block;
+}
+
+nav button:active, nav button:hover {
+  background: #c10d0d;
+  color: #fff;
+  border: 1.5px solid #c10d0d;
+  box-shadow: 0 5px 20px #fa757599;
+}
+section {
+  padding: 24px 5vw;
+  border-bottom: 1px solid #201113;
+  border-radius: 10px;
+  background: rgba(26,19,19,0.83);
+  max-width: 700px;
+  margin: 28px auto 33px auto;
+  box-shadow: 0 7px 40px rgba(145,15,15,0.095);
+  display: none;
+  animation: fadeIn 0.7s;
+}
+section.active {
+  display: block;
+}
+section h2 {
+  font-family: 'Metal Mania', cursive, Arial, sans-serif;
+  color: #d02121;
+  font-size: 1.4em;
+  margin-top: 0;
+  text-shadow: 0 1px 13px #a31634,1px 1px 0 #222;
+  border-bottom: 1.5px solid #d02121;
+  padding-bottom: 7px;
+  margin-bottom: 20px;
+  word-break: break-word;
+}
+section p, section label, section textarea, section input, section select {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.55;
+}
+input, textarea, select {
+  margin: 5px 0 13px 0;
+  padding: 8px 9px;
+  width: 100%;
+  border: 1.5px solid #a21221;
+  border-radius: 6px;
+  background: #211111;
+  color: #fff;
+  font-size: 1em;
+  font-family: 'Roboto', Arial, sans-serif;
+  box-shadow: 0 2px 7px #d01e3dad inset;
+  transition: border .2s, box-shadow .2s;
+  box-sizing: border-box;
+}
+input:focus, textarea:focus, select:focus {
+  border:2px solid #fff;
+  box-shadow:0 0 12px #e04242cc;
+  outline:none;
+}
+button, input[type='submit'] {
+  background:#d02121;
+  color:#fff;
+  border:none;
+  border-radius:7px;
+  box-shadow:0 2px 14px #e04242cc;
+  font-size:1.05em;
+  letter-spacing:1.1px;
+  font-family:'Metal Mania', Arial, sans-serif;
+  padding:11px 19px;
+  cursor:pointer;
+  margin-top:4px;
+  transition:all 0.20s;
+  min-width: 75px;
+}
+button:hover, input[type='submit']:hover {
+  background:#fff;
+  color:#d02121;
+  border:1.5px solid #d02121;
+  box-shadow:0 5px 24px #e04242cc;
+}
 #resultado-libro { display:inline-block; margin-left:10px; vertical-align:middle; }
-.libro-item { display:flex; gap:10px; }
-.autor { font-weight:bold; min-width:200px; }
-.titulo { font-style:italic; }
+.libro-item { display:flex; flex-wrap:wrap; gap:8px; }
+.autor { font-weight:bold; min-width:100px; }
+.titulo { font-style:italic; word-break:break-word; }
+
 @keyframes fadeIn { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
 
-/* Ventana derecha Libros */
+/* Responsive ventana derecha libros */
 #ventana-derecha-libro {
   position: fixed;
   top: 80px;
   right: 20px;
   width: 320px;
   height: 420px;
-  padding: 15px;
-  background-color: rgba(26,19,19,0.95);
+  padding: 12px;
+  background-color: rgba(26,19,19,0.97);
   color: #fff;
   border: 2px solid #d02121;
   border-radius: 10px;
@@ -50,26 +165,38 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
   background: none;
   border: none;
   color: #fff;
-  font-size: 1.4em;
+  font-size: 1.5em;
   cursor: pointer;
+  margin-bottom: 6px;
 }
 
-/* Responsive móvil */
+/* Mejoras extra móvil */
+@media (max-width: 1000px) {
+  header, section { max-width: 98vw; }
+}
 @media (max-width: 768px) {
-  #ventana-derecha-libro {
+  header h1 { font-size: 1.35em; }
+  nav button { font-size: 0.98em; min-width: 95px; padding: 8px 8px; }
+  section { padding: 17px 6vw; margin: 17px auto 24px auto; }
+  #ventana-derecha-libro { 
     top: 0;
     right: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     border-radius: 0;
-    padding: 20px;
-    background: rgba(0,0,0,0.95);
+    box-shadow: none;
+    padding: 7vw 5vw 5vw 5vw;
+    font-size: 0.99em;
   }
 }
+@media (max-width: 500px) {
+  section, header { padding-left: 3vw; padding-right: 3vw;}
+  section h2 { font-size: 1.08em;}
+}
+
 </style>
 </head>
 <body>
-
 <header>
 <h1>EVENTO MUSICAL Nº8</h1>
 <nav>
@@ -79,20 +206,17 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
   <button onclick="mostrarSeccion('Follar')">Follar</button>
 </nav>
 </header>
-
 <section id="musica" class="active">
 <h2>Música</h2>
 <p>Hartos de tanta mierda como nos meten por los ojos, oídos y demás orificios, Evento Musical Nº8 se ha tomado la molestia de seleccionar 1000 canciones de Rock. La excelencia en la selección ha sido exquisita.</p>
 <button onclick="propuestaMusical()">Propuesta Musical</button>
 </section>
-
 <section id="libros">
 <h2>Libros</h2>
 <p>Sección de libros. Posible búsqueda aleatoria entre libros almacenados en libros.txt.</p>
 <button id="buscar-libro-btn">Buscar libro</button>
 <div id="resultado-libro"></div>
 </section>
-
 <section id="consultorio">
   <h2>Consultorio</h2>
   <form id="formConsultorio" onsubmit="enviarConsultorio(event)" autocomplete="off">
@@ -109,25 +233,21 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
     <ul id="listaConsultas"></ul>
   </div>
 </section>
-
 <section id="Follar">
 <h2>Consentimiento</h2>
 <p>Documento de consentimiento según Ley Orgánica 10/2022.</p>
 <button onclick="abrirFollar()">Abrir Documento de Consentimiento</button>
 </section>
-
 <div id="ventana-derecha-libro">
   <button class="cerrar" onclick="document.getElementById('ventana-derecha-libro').style.display='none'">✖</button>
   <div id="contenido-libro"></div>
 </div>
-
 <script>
 /* --- Mostrar Sección --- */
 function mostrarSeccion(id){
   document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
-
 /* --- Propuesta Musical --- */
 function propuestaMusical() {
   fetch('canciones.txt')
@@ -136,20 +256,18 @@ function propuestaMusical() {
       const lineas=data.split('\n').filter(l=>l.trim()!=='');
       const random=lineas[Math.floor(Math.random()*lineas.length)];
       const partes=random.split('\t');
-      const artista=partes[0], cancion=partes[1];
+      const artista=partes, cancion=partes[1];
       const query=encodeURIComponent(artista+' '+cancion);
       window.open('https://www.youtube.com/results?search_query='+query,'_blank');
     })
     .catch(err=>alert('No se pudo cargar la lista de canciones: '+err));
 }
-
 /* --- Búsqueda de libros desde libros.txt --- */
 document.getElementById('buscar-libro-btn').addEventListener('click', async () => {
     const resultado = document.getElementById('resultado-libro');
     resultado.innerHTML = 'Cargando...';
     const ventana = document.getElementById('ventana-derecha-libro');
     const contenido = document.getElementById('contenido-libro');
-
     try {
         const response = await fetch('libros.txt');
         if(!response.ok) throw new Error('No se pudo cargar el archivo');
@@ -157,11 +275,10 @@ document.getElementById('buscar-libro-btn').addEventListener('click', async () =
         const libros = texto.split('\n').filter(l=>l.trim()!=='');
         const libroAleatorio = libros[Math.floor(Math.random()*libros.length)];
         const partes = libroAleatorio.split('\t');
-        const autor = partes[0] || '';
+        const autor = partes || '';
         const titulo = partes[1] || '';
-        const sinopsisLocal = partes[2] || 'Sinopsis no disponible';
-        const bioLocal = partes[3] || 'Bio del autor no disponible';
-
+        const sinopsisLocal = partes[4] || 'Sinopsis no disponible';
+        const bioLocal = partes[2] || 'Bio del autor no disponible';
         resultado.innerHTML = `<div class="libro-item"><span class="autor">${autor}</span> - <span class="titulo">${titulo}</span></div>`;
         contenido.innerHTML = `<h3>${titulo}</h3>
             <p><strong>Autor:</strong> ${autor}</p>
@@ -173,10 +290,8 @@ document.getElementById('buscar-libro-btn').addEventListener('click', async () =
         console.error(err);
     }
 });
-
 /* --- Consultorio --- */
 const GAS_URL = 'https://script.google.com/macros/s/AKfycbzUxDODbaM54FXwEoWs75qKHrhfwrmHHefxUjSZE_TaO7jmuzpTkRRSKadV-tqaXJvC/exec';
-
 function cargarConsultas() {
   fetch(GAS_URL)
     .then(res => res.json())
@@ -193,7 +308,6 @@ function cargarConsultas() {
     })
     .catch(err => console.error('Error cargando consultas:', err));
 }
-
 function enviarConsultorio(event){
   event.preventDefault();
   const form=event.target;
@@ -201,7 +315,6 @@ function enviarConsultorio(event){
   const email=form.email.value.trim();
   const consulta=form.consulta.value.trim();
   if(!nombre || !consulta) return alert('Nombre y consulta son obligatorios');
-
   const data = new URLSearchParams({nombre, email, consulta});
   fetch(GAS_URL, {
     method:'POST',
@@ -223,20 +336,32 @@ function enviarConsultorio(event){
     alert('Error al enviar la consulta.');
   });
 }
-
 document.addEventListener('DOMContentLoaded', cargarConsultas);
-
 /* --- Follar --- */
 function abrirFollar() {
   const contenido = `
+    <style>
+      .consent-input {
+        font-size: 1.1em;
+        padding: 10px;
+        margin: 6px 0;
+        border: 1px solid #aaa;
+        border-radius: 6px;
+        width: 99%;
+        box-sizing: border-box;
+      }
+      @media (max-width: 600px) {
+        .consent-input { font-size: 1em; }
+      }
+    </style>
     <h2>Documento de Consentimiento</h2>
     <p>Este documento asegura que todas las partes involucradas en cualquier acto sexual explícito lo hacen de manera consensuada, libre y voluntaria, conforme a la Ley Orgánica 10/2022, de 6 de septiembre, conocida como la "Ley del Sí es Sí".</p>
     <h3>Declaración de Consentimiento</h3>
     <ol>
       <li><strong>Identificación de las Partes:</strong><br>
-        Parte A: <input type="text" maxlength="25" placeholder="Nombre Parte A" style="width:250px;"><br>
-        Parte B: <input type="text" maxlength="25" placeholder="Nombre Parte B" style="width:250px;"><br>
-        Parte C (si hubiese trío): <input type="text" maxlength="25" placeholder="Nombre Parte C" style="width:250px;">
+        Parte A: <input type="text" maxlength="25" class="consent-input" placeholder="Nombre Parte A"><br>
+        Parte B: <input type="text" maxlength="25" class="consent-input" placeholder="Nombre Parte B"><br>
+        Parte C (si hubiese trío): <input type="text" maxlength="25" class="consent-input" placeholder="Nombre Parte C">
       </li>
       <li><strong>Mayoría de Edad:</strong><br>Todas las partes declaran ser mayores de 18 años.</li>
       <li><strong>Consentimiento Libre y Voluntario:</strong><br>Todas las partes participan libre y voluntariamente, sin coacción o presión.</li>
@@ -244,21 +369,29 @@ function abrirFollar() {
     </ol>
     <h3>Firma</h3>
     <ul>
-      <li>Parte A: Nombre: <input type="text" maxlength="25" style="width:250px;"> DNI: <input type="text" maxlength="9" style="width:110px;"> Consiento <input type="checkbox" style="transform:scale(1.3); margin-left:5px;"></li>
-      <li>Parte B: Nombre: <input type="text" maxlength="25" style="width:250px;"> DNI: <input type="text" maxlength="9" style="width:110px;"> Consiento <input type="checkbox" style="transform:scale(1.3); margin-left:5px;"></li>
-      <li>Parte C: Nombre: <input type="text" maxlength="25" style="width:250px;"> DNI: <input type="text" maxlength="9" style="width:110px;"> Consiento <input type="checkbox" style="transform:scale(1.3); margin-left:5px;"></li>
+      <li>Parte A: Nombre: <input type="text" maxlength="25" class="consent-input"> 
+      DNI: <input type="text" maxlength="9" class="consent-input"> 
+      Consiento <input type="checkbox" style="transform:scale(1.3); margin-left:5px;"></li>
+      
+      <li>Parte B: Nombre: <input type="text" maxlength="25" class="consent-input"> 
+      DNI: <input type="text" maxlength="9" class="consent-input"> 
+      Consiento <input type="checkbox" style="transform:scale(1.3); margin-left:5px;"></li>
+      
+      <li>Parte C: Nombre: <input type="text" maxlength="25" class="consent-input"> 
+      DNI: <input type="text" maxlength="9" class="consent-input"> 
+      Consiento <input type="checkbox" style="transform:scale(1.3); margin-left:5px;"></li>
     </ul>
     <h3>Enviar a otro correo electrónico</h3>
     <label for="emailDestino">Enviar a la siguiente dirección de correo electrónico:</label><br>
-    <input type="email" id="emailDestino" placeholder="correo@ejemplo.com" style="width: calc(100% - 120px); display:inline-block; margin-right:6px;">
-    <button type="button" id="btnEnviarEmail" style="display:inline-block; padding:6px 12px; font-size:1em;">Enviar</button>
+    <input type="email" id="emailDestino" maxlength="25" class="consent-input" placeholder="correo@ejemplo.com">
+    <button type="button" id="btnEnviarEmail" style="display:inline-block; padding:10px 18px; font-size:1.08em; margin-top:10px;">Enviar</button>
     <script>
       document.getElementById('btnEnviarEmail').addEventListener('click', function() {
         const email = document.getElementById('emailDestino').value.trim();
         if(!email) { alert('Introduce un correo electrónico válido.'); return; }
         const partes = [];
         document.querySelectorAll('ul li').forEach((li, index) => {
-          const nombre = li.querySelectorAll('input[type="text"]')[0]?.value.trim() || '-';
+          const nombre = li.querySelectorAll('input[type="text"]')?.value.trim() || '-';
           const dni = li.querySelectorAll('input[type="text"]')[1]?.value.trim() || '-';
           const consent = li.querySelector('input[type="checkbox"]').checked ? 'Sí' : 'No';
           partes.push(\`Parte \${String.fromCharCode(65+index)}: Nombre: \${nombre}, DNI: \${dni}, Consiento: \${consent}\`);
