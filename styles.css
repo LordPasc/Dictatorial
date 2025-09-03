@@ -1,0 +1,26 @@
+body { font-family: 'Roboto', Arial, sans-serif; background: linear-gradient(135deg, #18191a 75%, #330505 100%); color:#f4f4f4; margin:0; padding:0; min-height:100vh; }
+header { background: linear-gradient(90deg,#1a1a1a 70%, #960909 100%); padding:26px 0 18px 0; text-align:center; box-shadow:0 6px 32px rgba(80,0,0,0.16); border-bottom:4px solid #c10d0d; margin-bottom:0; position:relative; }
+header h1 { font-family: 'Metal Mania', cursive, Arial, sans-serif; margin:0; font-size:2.8em; color:#fff; letter-spacing:1.5px; text-shadow:0 4px 22px #d02121,1px 1px 0 #000; }
+nav { margin-top:16px; margin-bottom:-5px; }
+nav button { font-family: 'Metal Mania', Arial, sans-serif; font-size:1.1em; background:#300606; color:#fff; border:1px solid #aa2b2b; border-radius:22px; margin:0 8px; padding:10px 22px; cursor:pointer; transition:background 0.2s,color 0.18s,border 0.15s; box-shadow:0 2px 10px #d6262699; outline:none; }
+nav button:hover, nav button:active { background:#c10d0d; color:#fff; border:1.5px solid #c10d0d; box-shadow:0 5px 20px #fa757599; }
+section { padding:27px 24px; border-bottom:1px solid #201113; border-radius:10px; background:rgba(26,19,19,0.83); max-width:700px; margin:28px auto 33px auto; box-shadow:0 7px 40px rgba(145,15,15,0.095); display:none; animation:fadeIn 0.7s; }
+section.active { display:block; }
+section h2 { font-family: 'Metal Mania', cursive, Arial, sans-serif; color:#d02121; font-size:2em; margin-top:0; text-shadow:0 1px 13px #a31634,1px 1px 0 #222; border-bottom:1.5px solid #d02121; padding-bottom:7px; margin-bottom:23px; }
+section p, section label, section textarea, section input, section select { font-family: 'Roboto', Arial, sans-serif; font-size:1em; line-height:1.6; }
+input, textarea, select { margin:5px 0 13px 0; padding:7px 9px; width:100%; border:1.8px solid #a21221; border-radius:6px; background:#211111; color:#fff; font-size:1em; font-family:'Roboto', Arial, sans-serif; box-shadow:0 2px 7px #d01e3dad inset; transition:border .2s, box-shadow .2s; }
+input:focus, textarea:focus, select:focus { border:2px solid #fff; box-shadow:0 0 12px #e04242cc; outline:none; }
+button, input[type='submit'] { background:#d02121; color:#fff; border:none; border-radius:7px; box-shadow:0 2px 14px #e04242cc; font-size:1.1em; letter-spacing:1.2px; font-family:'Metal Mania', Arial, sans-serif; padding:12px 24px; cursor:pointer; margin-top:6px; transition:all 0.22s; }
+button:hover, input[type='submit']:hover { background:#fff; color:#d02121; border:1.5px solid #d02121; box-shadow:0 5px 24px #e04242cc; }
+#respuestasConsultorio ul { padding-left:1.5em; }
+#respuestasConsultorio li { margin-bottom:10px; }
+#resultado-libro { display:inline-block; margin-left:10px; vertical-align:middle; }
+.libro-item { display:flex; gap:10px; }
+.autor { font-weight:bold; min-width:200px; }
+.titulo { font-style:italic; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
+#overlay-libro{ position:fixed; inset:0; width:100%; height:100%; background:rgba(0,0,0,.7); display:none; justify-content:center; align-items:center; z-index:9998; }
+#ventana-derecha-libro{ background:#1c1c1c; color:#fff; padding:20px; border-radius:16px; max-width:90%; width:400px; max-height:80%; overflow-y:auto; position:relative; box-shadow:0 8px 25px rgba(0,0,0,.6); display:none; z-index:9999; animation:modalFade .24s ease-out; }
+#ventana-derecha-libro button.cerrar{ position:absolute; top:12px; right:14px; background:none; border:none; color:#fff; font-size:22px; cursor:pointer; }
+@keyframes modalFade{ from{ transform:scale(.96); opacity:0; } to{ transform:scale(1); opacity:1; } }
+@media (max-width:768px){ #overlay-libro{ align-items:flex-end; } #ventana-derecha-libro{ width:100%; max-width:100%; height:70%; max-height:70%; border-radius:16px 16px 0 0; animation:slideUp .28s ease-out; } @keyframes slideUp{ from{ transform:translateY(100%); opacity:0; } to{ transform:translateY(0); opacity:1; } } }
