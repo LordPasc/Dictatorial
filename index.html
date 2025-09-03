@@ -22,46 +22,22 @@ button, input[type='submit'] { background:#d02121; color:#fff; border:none; bord
 button:hover, input[type='submit']:hover { background:#fff; color:#d02121; border:1.5px solid #d02121; box-shadow:0 5px 24px #e04242cc; }
 #respuestasConsultorio ul { padding-left:1.5em; }
 #respuestasConsultorio li { margin-bottom:10px; }
-#resultado-libro, #resultado-pelicula { display:inline-block; margin-left:10px; vertical-align:middle; }
+#resultado-libro, #resultado-pelicula, #resultado-diccionario { display:inline-block; margin-left:10px; vertical-align:middle; }
 .libro-item { display:flex; gap:10px; }
 .autor { font-weight:bold; min-width:200px; }
 .titulo { font-style:italic; }
 @keyframes fadeIn { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
 
-/* --- Modal Libros --- */
-#overlay-libro, #overlay-pelicula{
-  position:fixed; inset:0; width:100%; height:100%;
-  background:rgba(0,0,0,.7);
-  display:none; justify-content:center; align-items:center;
-  z-index:9998;
-}
-#ventana-derecha-libro, #ventana-derecha-pelicula{
-  background:#1c1c1c; color:#fff;
-  padding:20px; border-radius:16px;
-  max-width:90%; width:400px; max-height:80%;
-  overflow-y:auto; position:relative;
-  box-shadow:0 8px 25px rgba(0,0,0,.6);
-  display:none; z-index:9999;
-  animation:modalFade .24s ease-out;
-}
-#ventana-derecha-libro button.cerrar, #ventana-derecha-pelicula button.cerrar{
-  position:absolute; top:12px; right:14px;
-  background:none; border:none; color:#fff;
-  font-size:22px; cursor:pointer;
-}
+/* --- Modal General --- */
+.overlay { position:fixed; inset:0; width:100%; height:100%; background:rgba(0,0,0,.7); display:none; justify-content:center; align-items:center; z-index:9998; }
+.modal { background:#1c1c1c; color:#fff; padding:20px; border-radius:16px; max-width:90%; width:400px; max-height:80%; overflow-y:auto; position:relative; box-shadow:0 8px 25px rgba(0,0,0,.6); display:none; z-index:9999; animation:modalFade .24s ease-out; }
+.modal button.cerrar { position:absolute; top:12px; right:14px; background:none; border:none; color:#fff; font-size:22px; cursor:pointer; }
 @media (max-width:768px){
-  #overlay-libro, #overlay-pelicula{ align-items:flex-end; }
-  #ventana-derecha-libro, #ventana-derecha-pelicula{
-    width:100%; max-width:100%;
-    height:70%; max-height:70%;
-    border-radius:16px 16px 0 0;
-    animation:slideUp .28s ease-out;
-  }
+  .overlay{ align-items:flex-end; }
+  .modal{ width:100%; max-width:100%; height:70%; max-height:70%; border-radius:16px 16px 0 0; animation:slideUp .28s ease-out; }
 }
-
-/* --- Diccionario --- */
-#diccionario-btns { display:flex; gap:15px; justify-content:center; margin-top:15px; }
-#diccionario-btns button { font-size:1em; padding:10px 20px; }
+@keyframes modalFade{ from{ transform:scale(.96); opacity:0; } to{ transform:scale(1); opacity:1; } }
+@keyframes slideUp{ from{ transform:translateY(100%); opacity:0; } to{ transform:translateY(0); opacity:1; } }
 </style>
 </head>
 <body>
@@ -122,26 +98,44 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
 </section>
 
 <section id="diccionario">
-<h2>Diccionario Mongoplédico</h2>
-<div id="diccionario-btns">
-  <button onclick="verDiccionario()">Ver diccionario</button>
-  <button onclick="agregarPalabra()">Añadir palabra</button>
-</div>
-<p id="diccionario-status" style="text-align:center; margin-top:15px;"></p>
+<h2>Diccionario</h2>
+<p>Sección interactiva para el Diccionario Mongoplédico.</p>
+<button onclick="verDiccionario()">Ver diccionario</button>
+<button onclick="abrirModalDiccionario()">Añadir palabra</button>
+<div id="resultado-diccionario"></div>
 </section>
 
 <!-- Modals -->
-<div id="overlay-libro" onclick="cerrarModal()">
-  <div id="ventana-derecha-libro" onclick="event.stopPropagation()">
+<div id="overlay-libro" class="overlay" onclick="cerrarModal()">
+  <div id="ventana-derecha-libro" class="modal" onclick="event.stopPropagation()">
     <button class="cerrar" onclick="cerrarModal()">✖</button>
     <div id="contenido-libro"></div>
   </div>
 </div>
 
-<div id="overlay-pelicula" onclick="cerrarModalPelicula()">
-  <div id="ventana-derecha-pelicula" onclick="event.stopPropagation()">
+<div id="overlay-pelicula" class="overlay" onclick="cerrarModalPelicula()">
+  <div id="ventana-derecha-pelicula" class="modal" onclick="event.stopPropagation()">
     <button class="cerrar" onclick="cerrarModalPelicula()">✖</button>
     <div id="contenido-pelicula"></div>
+  </div>
+</div>
+
+<div id="overlay-diccionario" class="overlay" onclick="cerrarModalDiccionario()">
+  <div id="ventana-derecha-diccionario-view" class="modal" onclick="event.stopPropagation()">
+    <button class="cerrar" onclick="cerrarModalDiccionario()">✖</button>
+    <div id="contenido-diccionario">Cargando diccionario...</div>
+  </div>
+</div>
+
+<div id="overlay-diccionario-add" class="overlay" onclick="cerrarModalDiccionarioAdd()">
+  <div id="ventana-derecha-diccionario-add" class="modal" onclick="event.stopPropagation()">
+    <button class="cerrar" onclick="cerrarModalDiccionarioAdd()">✖</button>
+    <h3>Añadir palabra</h3>
+    <label>Palabra:</label>
+    <input type="text" id="palabra" required>
+    <label>Descripción:</label>
+    <textarea id="descripcion" rows="4" required></textarea>
+    <button onclick="añadirPalabra()">Añadir</button>
   </div>
 </div>
 
@@ -223,10 +217,10 @@ document.getElementById('buscar-pelicula-btn').addEventListener('click', async (
 });
 
 /* --- Consultorio --- */
-const GAS_URL_CONSULTORIO = 'https://script.google.com/macros/s/AKfycbzUxDODbaM54FXwEoWs75qKHrhfwrmHHefxUjSZE_TaO7jmuzpTkRRSKadV-tqaXJvC/exec';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbzUxDODbaM54FXwEoWs75qKHrhfwrmHHefxUjSZE_TaO7jmuzpTkRRSKadV-tqaXJvC/exec';
 
 function cargarConsultas() {
-  fetch(GAS_URL_CONSULTORIO)
+  fetch(GAS_URL)
     .then(res => res.json())
     .then(resp => {
       if(resp.status === 'OK'){
@@ -251,7 +245,7 @@ function enviarConsultorio(event){
   if(!nombre || !consulta) return alert('Nombre y consulta son obligatorios');
 
   const data = new URLSearchParams({nombre, email, consulta});
-  fetch(GAS_URL_CONSULTORIO, {
+  fetch(GAS_URL, {
     method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded'},
     body:data
@@ -274,46 +268,59 @@ function enviarConsultorio(event){
 
 document.addEventListener('DOMContentLoaded', cargarConsultas);
 
-/* --- Diccionario Mongoplédico --- */
-const GAS_URL_DICCIONARIO = 'https://script.google.com/macros/s/AKfycbxA8MlfFoBw4_6cV63NzWjDOWfwvGQBh6Et-r5wN2YCnngYgvVt0P8E8pjMR78emZ0CQQ/exec';
+/* --- Diccionario --- */
+const GAS_URL_DIC = 'https://script.google.com/macros/s/AKfycbxA8MlfFoBw4_6cV63NzWjDOWfwvGQBh6Et-r5wN2YCnngYgvVt0P8E8pjMR78emZ0CQQ/exec';
 
-async function verDiccionario(){
-  try {
-    const resp = await fetch(GAS_URL_DICCIONARIO);
-    const data = await resp.json();
-    if(data.status !== 'OK') throw new Error(data.message || 'Error desconocido');
-    const total = data.diccionario.length;
-    const contenido = data.diccionario.map(d => `<li><strong>${d.palabra}:</strong> ${d.descripcion}</li>`).join('');
-    const nuevaVentana = window.open('', '_blank');
-    nuevaVentana.document.write(`<h2>Diccionario Mongoplédico (${total} palabras)</h2><ul>${contenido}</ul>`);
-    nuevaVentana.document.close();
-  } catch(err){
-    alert('Error cargando diccionario: '+err.message);
-    console.error(err);
-  }
+function abrirModalDiccionario(){
+  document.getElementById('overlay-diccionario-add').style.display='flex';
+  document.getElementById('ventana-derecha-diccionario-add').style.display='block';
 }
 
-function agregarPalabra(){
-  const palabra = prompt('Introduce la palabra:')?.trim();
-  if(!palabra) return alert('Palabra vacía');
-  const descripcion = prompt('Introduce la descripción:')?.trim();
-  if(!descripcion) return alert('Descripción vacía');
+function cerrarModalDiccionarioAdd(){
+  document.getElementById('overlay-diccionario-add').style.display='none';
+  document.getElementById('ventana-derecha-diccionario-add').style.display='none';
+}
 
-  const data = new URLSearchParams({palabra, descripcion});
-  fetch(GAS_URL_DICCIONARIO, {
-    method:'POST',
-    headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:data
-  })
-  .then(res=>res.json())
-  .then(resp=>{
-    if(resp.status==='OK') alert('Palabra añadida correctamente');
-    else alert('Error: '+resp.message);
-  })
-  .catch(err=>{
-    alert('Error al añadir palabra: '+err.message);
-    console.error(err);
-  });
+function abrirModalDiccionarioView(){
+  document.getElementById('overlay-diccionario').style.display='flex';
+  document.getElementById('ventana-derecha-diccionario-view').style.display='block';
+}
+
+function cerrarModalDiccionario(){
+  document.getElementById('overlay-diccionario').style.display='none';
+  document.getElementById('ventana-derecha-diccionario-view').style.display='none';
+}
+
+function añadirPalabra(){
+  const palabra=document.getElementById('palabra').value.trim();
+  const descripcion=document.getElementById('descripcion').value.trim();
+  if(!palabra || !descripcion){ alert('Ambos campos son obligatorios'); return; }
+  const data=new URLSearchParams({palabra, descripcion});
+  fetch(GAS_URL_DIC, { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:data })
+    .then(res=>res.json())
+    .then(resp=>{
+      if(resp.status==='OK'){
+        alert('Palabra añadida correctamente');
+        document.getElementById('palabra').value='';
+        document.getElementById('descripcion').value='';
+        cerrarModalDiccionarioAdd();
+      } else alert('Error: '+resp.message);
+    }).catch(err=>{ console.error(err); alert('Error al añadir palabra'); });
+}
+
+function verDiccionario(){
+  abrirModalDiccionarioView();
+  const contenido=document.getElementById('contenido-diccionario');
+  contenido.textContent='Cargando diccionario...';
+  fetch(GAS_URL_DIC)
+    .then(res=>res.json())
+    .then(resp=>{
+      if(resp.status==='OK'){
+        const diccionario=resp.diccionario;
+        contenido.innerHTML=`<h3>Total de palabras: ${diccionario.length}</h3><ul>${diccionario.map(d=>`<li><strong>${d.palabra}:</strong> ${d.descripcion}</li>`).join('')}</ul>`;
+      } else contenido.textContent='Error cargando diccionario: '+resp.message;
+    })
+    .catch(err=>{ contenido.textContent='Error cargando diccionario'; console.error(err); });
 }
 </script>
 
