@@ -22,20 +22,20 @@ button, input[type='submit'] { background:#d02121; color:#fff; border:none; bord
 button:hover, input[type='submit']:hover { background:#fff; color:#d02121; border:1.5px solid #d02121; box-shadow:0 5px 24px #e04242cc; }
 #respuestasConsultorio ul { padding-left:1.5em; }
 #respuestasConsultorio li { margin-bottom:10px; }
-#resultado-libro { display:inline-block; margin-left:10px; vertical-align:middle; }
+#resultado-libro, #resultado-cine, #resultado-diccionario { display:inline-block; margin-left:10px; vertical-align:middle; }
 .libro-item { display:flex; gap:10px; }
 .autor { font-weight:bold; min-width:200px; }
 .titulo { font-style:italic; }
 @keyframes fadeIn { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
 
-/* --- Modal Libros (overlay + responsive) --- */
-#overlay-libro{
+/* --- Modal Genérico (Libros, Cine, Diccionario) --- */
+#overlay-modal{
   position:fixed; inset:0; width:100%; height:100%;
   background:rgba(0,0,0,.7);
   display:none; justify-content:center; align-items:center;
   z-index:9998;
 }
-#ventana-derecha-libro{
+#ventana-modal{
   background:#1c1c1c; color:#fff;
   padding:20px; border-radius:16px;
   max-width:90%; width:400px; max-height:80%;
@@ -44,7 +44,7 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
   display:none; z-index:9999;
   animation:modalFade .24s ease-out;
 }
-#ventana-derecha-libro button.cerrar{
+#ventana-modal button.cerrar{
   position:absolute; top:12px; right:14px;
   background:none; border:none; color:#fff;
   font-size:22px; cursor:pointer;
@@ -54,8 +54,8 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
   to{ transform:scale(1); opacity:1; }
 }
 @media (max-width:768px){
-  #overlay-libro{ align-items:flex-end; }
-  #ventana-derecha-libro{
+  #overlay-modal{ align-items:flex-end; }
+  #ventana-modal{
     width:100%; max-width:100%;
     height:70%; max-height:70%;
     border-radius:16px 16px 0 0;
@@ -66,28 +66,6 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
     to{ transform:translateY(0); opacity:1; }
   }
 }
-
-/* --- Modal Diccionario --- */
-#overlay-diccionario{
-  position:fixed; inset:0; width:100%; height:100%;
-  background:rgba(0,0,0,.7);
-  display:none; justify-content:center; align-items:center;
-  z-index:9998;
-}
-#ventana-derecha-diccionario{
-  background:#1c1c1c; color:#fff;
-  padding:20px; border-radius:16px;
-  max-width:90%; width:400px; max-height:80%;
-  overflow-y:auto; position:relative;
-  box-shadow:0 8px 25px rgba(0,0,0,.6);
-  display:none; z-index:9999;
-  animation:modalFade .24s ease-out;
-}
-#ventana-derecha-diccionario button.cerrar{
-  position:absolute; top:12px; right:14px;
-  background:none; border:none; color:#fff;
-  font-size:22px; cursor:pointer;
-}
 </style>
 </head>
 <body>
@@ -97,18 +75,21 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
 <nav>
   <button onclick="mostrarSeccion('musica')">Música</button>
   <button onclick="mostrarSeccion('libros')">Libros</button>
+  <button onclick="mostrarSeccion('cine')">Cine</button>
+  <button onclick="mostrarSeccion('diccionario')">Diccionario</button>
   <button onclick="mostrarSeccion('consultorio')">Consultorio</button>
   <button onclick="mostrarSeccion('Follar')">Follar</button>
-  <button onclick="mostrarSeccion('diccionario')">Diccionario</button>
 </nav>
 </header>
 
+<!-- Sección Música -->
 <section id="musica" class="active">
 <h2>Música</h2>
 <p>Hartos de tanta mierda como nos meten por los ojos, oídos y demás orificios, Evento Musical Nº8 se ha tomado la molestia de seleccionar 1000 canciones de Rock. La excelencia en la selección ha sido exquisita.</p>
 <button onclick="propuestaMusical()">Propuesta Musical</button>
 </section>
 
+<!-- Sección Libros -->
 <section id="libros">
 <h2>Libros</h2>
 <p>Sección de libros. Posible búsqueda aleatoria entre libros almacenados en libros.txt.</p>
@@ -116,6 +97,24 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
 <div id="resultado-libro"></div>
 </section>
 
+<!-- Sección Cine -->
+<section id="cine">
+<h2>Cine</h2>
+<p>Sección de películas. Posible búsqueda aleatoria sobre peliculas.txt.</p>
+<button id="buscar-pelicula-btn">Propuesta de película</button>
+<div id="resultado-cine"></div>
+</section>
+
+<!-- Sección Diccionario -->
+<section id="diccionario">
+<h2>Diccionario Mongoplédico</h2>
+<p>Sección interactiva para consultar o añadir palabras al diccionario.</p>
+<button id="ver-diccionario-btn">Ver diccionario</button>
+<button id="agregar-palabra-btn">Añadir palabra</button>
+<div id="resultado-diccionario"></div>
+</section>
+
+<!-- Sección Consultorio -->
 <section id="consultorio">
   <h2>Consultorio</h2>
   <form id="formConsultorio" onsubmit="enviarConsultorio(event)" autocomplete="off">
@@ -133,32 +132,18 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
   </div>
 </section>
 
+<!-- Sección Follar/Consentimiento -->
 <section id="Follar">
 <h2>Consentimiento</h2>
 <p>Documento de consentimiento según Ley Orgánica 10/2022.</p>
 <button onclick="window.open('consentimiento.html', '_blank')">Abrir Documento de Consentimiento</button>
 </section>
 
-<section id="diccionario">
-<h2>Diccionario Mongoplédico</h2>
-<p>Sección interactiva. Puedes ver el diccionario completo o añadir nuevas palabras.</p>
-<button id="ver-diccionario-btn">Ver diccionario</button>
-<button id="añadir-palabra-btn">Añadir palabra</button>
-</section>
-
-<!-- Overlay + Modal Libros -->
-<div id="overlay-libro" onclick="cerrarModalLibro()">
-  <div id="ventana-derecha-libro" onclick="event.stopPropagation()">
-    <button class="cerrar" onclick="cerrarModalLibro()">✖</button>
-    <div id="contenido-libro"></div>
-  </div>
-</div>
-
-<!-- Overlay + Modal Diccionario -->
-<div id="overlay-diccionario" onclick="cerrarModalDiccionario()">
-  <div id="ventana-derecha-diccionario" onclick="event.stopPropagation()">
-    <button class="cerrar" onclick="cerrarModalDiccionario()">✖</button>
-    <div id="contenido-diccionario"></div>
+<!-- Overlay Modal Genérico -->
+<div id="overlay-modal" onclick="cerrarModal()">
+  <div id="ventana-modal" onclick="event.stopPropagation()">
+    <button class="cerrar" onclick="cerrarModal()">✖</button>
+    <div id="contenido-modal"></div>
   </div>
 </div>
 
@@ -184,15 +169,21 @@ function propuestaMusical() {
     .catch(err=>alert('No se pudo cargar la lista de canciones: '+err));
 }
 
-/* --- Modal Libros --- */
-function abrirModalLibro(){ document.getElementById('overlay-libro').style.display='flex'; document.getElementById('ventana-derecha-libro').style.display='block'; }
-function cerrarModalLibro(){ document.getElementById('overlay-libro').style.display='none'; document.getElementById('ventana-derecha-libro').style.display='none'; }
+/* --- Modal Genérico --- */
+function abrirModal(html='') {
+  document.getElementById('contenido-modal').innerHTML = html;
+  document.getElementById('overlay-modal').style.display='flex';
+  document.getElementById('ventana-modal').style.display='block';
+}
+function cerrarModal(){
+  document.getElementById('overlay-modal').style.display='none';
+  document.getElementById('ventana-modal').style.display='none';
+}
 
-/* --- Búsqueda de libros --- */
+/* --- Libros --- */
 document.getElementById('buscar-libro-btn').addEventListener('click', async () => {
   const resultado = document.getElementById('resultado-libro');
   resultado.innerHTML = 'Cargando...';
-  const contenido = document.getElementById('contenido-libro');
   try {
     const response = await fetch('libros.txt');
     if(!response.ok) throw new Error('No se pudo cargar el archivo');
@@ -205,64 +196,99 @@ document.getElementById('buscar-libro-btn').addEventListener('click', async () =
     const sinopsisLocal = partes[2] || 'Sinopsis no disponible';
     const bioLocal = partes[3] || 'Bio del autor no disponible';
     resultado.innerHTML = `<div class="libro-item"><span class="autor">${autor}</span> - <span class="titulo">${titulo}</span></div>`;
-    contenido.innerHTML = `<h3>${titulo}</h3><p><strong>Autor:</strong> ${autor}</p><p><strong>Sinopsis:</strong> ${sinopsisLocal}</p><p><strong>Bio:</strong> ${bioLocal}</p>`;
-    abrirModalLibro();
+    abrirModal(`<h3>${titulo}</h3>
+        <p><strong>Autor:</strong> ${autor}</p>
+        <p><strong>Sinopsis:</strong> ${sinopsisLocal}</p>
+        <p><strong>Bio:</strong> ${bioLocal}</p>`);
   } catch(err){
     resultado.textContent='Error al cargar el libro';
     console.error(err);
   }
 });
 
-/* --- Modal Diccionario --- */
-function abrirModalDiccionario(){ document.getElementById('overlay-diccionario').style.display='flex'; document.getElementById('ventana-derecha-diccionario').style.display='block'; }
-function cerrarModalDiccionario(){ document.getElementById('overlay-diccionario').style.display='none'; document.getElementById('ventana-derecha-diccionario').style.display='none'; }
+/* --- Cine --- */
+document.getElementById('buscar-pelicula-btn').addEventListener('click', async () => {
+  const resultado = document.getElementById('resultado-cine');
+  resultado.innerHTML = 'Cargando...';
+  try {
+    const response = await fetch('peliculas.txt');
+    if(!response.ok) throw new Error('No se pudo cargar el archivo');
+    const texto = await response.text();
+    const lineas = texto.split('\n').filter(l=>l.trim()!=='');
+    const linea = lineas[Math.floor(Math.random()*lineas.length)];
+    const partes = linea.split('\t');
+    const titulo = partes[0] || '';
+    const director = partes[1] || '';
+    const resumen = partes[2] || 'Resumen no disponible';
+    resultado.innerHTML = `<strong>${titulo}</strong> - ${director}`;
+    abrirModal(`<h3>${titulo}</h3>
+      <p><strong>Director:</strong> ${director}</p>
+      <p><strong>Resumen:</strong> ${resumen}</p>`);
+  } catch(err){
+    resultado.textContent='Error al cargar la película';
+    console.error(err);
+  }
+});
 
 /* --- Diccionario Mongoplédico --- */
-const GAS_DICCIONARIO_URL = 'https://script.google.com/macros/s/AKfycbzVRAhSlbgEesZ3350sESgq5Zbl9d68vWn3d5TF1Z1CZR6Sluz4gqfZc17kT7UimhPmlg/exec';
+const DICT_URL = 'https://script.google.com/macros/s/AKfycbzVRAhSlbgEesZ3350sESgq5Zbl9d68vWn3d5TF1Z1CZR6Sluz4gqfZc17kT7UimhPmlg/exec';
 
-document.getElementById('ver-diccionario-btn').addEventListener('click', () => {
-  fetch(GAS_DICCIONARIO_URL)
-    .then(res => res.json())
-    .then(resp => {
-      if(resp.status==='OK'){
-        const contenido = document.getElementById('contenido-diccionario');
-        contenido.innerHTML='<h3>Diccionario Mongoplédico</h3><ul>'+resp.palabras.map(p=>`<li><strong>${p.palabra}</strong>: ${p.descripcion} (${p.fecha})</li>`).join('')+'</ul>';
-        abrirModalDiccionario();
-      }
-    })
-    .catch(err=>console.error('Error cargando diccionario:',err));
+document.getElementById('ver-diccionario-btn').addEventListener('click', async () => {
+  try{
+    const resp = await fetch(DICT_URL);
+    const data = await resp.json();
+    if(data.status==='OK'){
+      let html='<h3>Diccionario Mongoplédico</h3><ul>';
+      data.diccionario.forEach(d=>{
+        html+=`<li><strong>${d.Palabra}</strong>: ${d.Descripcion} <em>(${d.Fecha})</em></li>`;
+      });
+      html+='</ul>';
+      abrirModal(html);
+    } else { alert('Error al cargar el diccionario'); }
+  } catch(err){ console.error(err); alert('Error al acceder al diccionario'); }
 });
 
-document.getElementById('añadir-palabra-btn').addEventListener('click', () => {
-  const palabra = prompt('Palabra:').trim();
-  if(!palabra) return alert('Palabra vacía.');
-  const descripcion = prompt('Descripción:').trim();
-  if(!descripcion) return alert('Descripción vacía.');
-  const data = new URLSearchParams({palabra, descripcion});
-  fetch(GAS_DICCIONARIO_URL, {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:data})
-    .then(res=>res.json())
-    .then(resp=>{
-      if(resp.status==='OK'){ alert('Palabra añadida correctamente.'); } 
-      else { alert('Error añadiendo palabra: '+resp.message); }
-    })
-    .catch(err=>console.error(err));
+document.getElementById('agregar-palabra-btn').addEventListener('click', () => {
+  const html=`<h3>Añadir palabra</h3>
+    <label>Palabra:</label><input type="text" id="nuevaPalabra">
+    <label>Descripcion:</label><textarea id="descripcionPalabra"></textarea>
+    <button onclick="enviarPalabra()">Guardar</button>`;
+  abrirModal(html);
 });
+
+async function enviarPalabra(){
+  const palabra=document.getElementById('nuevaPalabra').value.trim();
+  const descripcion=document.getElementById('descripcionPalabra').value.trim();
+  if(!palabra || !descripcion){ return alert('Ambos campos son obligatorios'); }
+  try{
+    const data = new URLSearchParams({palabra, descripcion});
+    const resp = await fetch(DICT_URL, {method:'POST', body:data});
+    const json = await resp.json();
+    if(json.status==='OK'){ alert('Palabra añadida correctamente'); cerrarModal(); }
+    else alert('Error al añadir palabra');
+  } catch(err){ console.error(err); alert('Error al añadir palabra'); }
+}
 
 /* --- Consultorio --- */
 const GAS_URL = 'https://script.google.com/macros/s/AKfycbzUxDODbaM54FXwEoWs75qKHrhfwrmHHefxUjSZE_TaO7jmuzpTkRRSKadV-tqaXJvC/exec';
+
 function cargarConsultas() {
-  fetch(GAS_URL).then(res=>res.json()).then(resp=>{
-    if(resp.status==='OK'){
-      const ul = document.getElementById('listaConsultas');
-      ul.innerHTML='';
-      resp.consultas.forEach(c => {
-        const li=document.createElement('li');
-        li.innerHTML=`<strong>${c.nombre} (${c.email}):</strong> ${c.consulta}`;
-        ul.appendChild(li);
-      });
-    }
-  }).catch(err=>console.error('Error cargando consultas:', err));
+  fetch(GAS_URL)
+    .then(res => res.json())
+    .then(resp => {
+      if(resp.status === 'OK'){
+        const ul = document.getElementById('listaConsultas');
+        ul.innerHTML='';
+        resp.consultas.forEach(c => {
+          const li=document.createElement('li');
+          li.innerHTML=`<strong>${c.nombre} (${c.email}):</strong> ${c.consulta}`;
+          ul.appendChild(li);
+        });
+      }
+    })
+    .catch(err => console.error('Error cargando consultas:', err));
 }
+
 function enviarConsultorio(event){
   event.preventDefault();
   const form=event.target;
@@ -270,13 +296,29 @@ function enviarConsultorio(event){
   const email=form.email.value.trim();
   const consulta=form.consulta.value.trim();
   if(!nombre || !consulta) return alert('Nombre y consulta son obligatorios');
-  const data = new URLSearchParams({nombre,email,consulta});
-  fetch(GAS_URL,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data})
-  .then(res=>res.json()).then(resp=>{
-    if(resp.status==='OK'){ cargarConsultas(); form.reset(); alert('Consulta enviada y almacenada correctamente.'); }
-    else { alert('Error guardando la consulta: '+resp.message); }
-  }).catch(err=>{ console.error(err); alert('Error al enviar la consulta.'); });
+
+  const data = new URLSearchParams({nombre, email, consulta});
+  fetch(GAS_URL, {
+    method:'POST',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:data
+  })
+  .then(res => res.json())
+  .then(resp => {
+    if(resp.status==='OK'){
+      cargarConsultas();
+      form.reset();
+      alert('Consulta enviada y almacenada correctamente.');
+    } else {
+      alert('Error guardando la consulta: '+resp.message);
+    }
+  })
+  .catch(err=>{
+    console.error(err);
+    alert('Error al enviar la consulta.');
+  });
 }
+
 document.addEventListener('DOMContentLoaded', cargarConsultas);
 </script>
 </body>
