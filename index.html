@@ -58,8 +58,10 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
     animation:slideUp .28s ease-out;
   }
 }
-@keyframes modalFade{ from{ transform:scale(.96); opacity:0; } to{ transform:scale(1); opacity:1; } }
-@keyframes slideUp{ from{ transform:translateY(100%); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+
+/* --- Diccionario --- */
+#diccionario-btns { display:flex; gap:15px; justify-content:center; margin-top:15px; }
+#diccionario-btns button { font-size:1em; padding:10px 20px; }
 </style>
 </head>
 <body>
@@ -72,6 +74,7 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
   <button onclick="mostrarSeccion('cine')">Cine</button>
   <button onclick="mostrarSeccion('consultorio')">Consultorio</button>
   <button onclick="mostrarSeccion('Follar')">Follar</button>
+  <button onclick="mostrarSeccion('diccionario')">Diccionario</button>
 </nav>
 </header>
 
@@ -116,6 +119,15 @@ button:hover, input[type='submit']:hover { background:#fff; color:#d02121; borde
 <h2>Consentimiento</h2>
 <p>Documento de consentimiento según Ley Orgánica 10/2022.</p>
 <button onclick="window.open('consentimiento.html', '_blank')">Abrir Documento de Consentimiento</button>
+</section>
+
+<section id="diccionario">
+<h2>Diccionario Mongoplédico</h2>
+<div id="diccionario-btns">
+  <button onclick="verDiccionario()">Ver diccionario</button>
+  <button onclick="agregarPalabra()">Añadir palabra</button>
+</div>
+<p id="diccionario-status" style="text-align:center; margin-top:15px;"></p>
 </section>
 
 <!-- Modals -->
@@ -211,10 +223,10 @@ document.getElementById('buscar-pelicula-btn').addEventListener('click', async (
 });
 
 /* --- Consultorio --- */
-const GAS_URL = 'https://script.google.com/macros/s/AKfycbzUxDODbaM54FXwEoWs75qKHrhfwrmHHefxUjSZE_TaO7jmuzpTkRRSKadV-tqaXJvC/exec';
+const GAS_URL_CONSULTORIO = 'https://script.google.com/macros/s/AKfycbzUxDODbaM54FXwEoWs75qKHrhfwrmHHefxUjSZE_TaO7jmuzpTkRRSKadV-tqaXJvC/exec';
 
 function cargarConsultas() {
-  fetch(GAS_URL)
+  fetch(GAS_URL_CONSULTORIO)
     .then(res => res.json())
     .then(resp => {
       if(resp.status === 'OK'){
@@ -239,7 +251,7 @@ function enviarConsultorio(event){
   if(!nombre || !consulta) return alert('Nombre y consulta son obligatorios');
 
   const data = new URLSearchParams({nombre, email, consulta});
-  fetch(GAS_URL, {
+  fetch(GAS_URL_CONSULTORIO, {
     method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded'},
     body:data
@@ -261,6 +273,48 @@ function enviarConsultorio(event){
 }
 
 document.addEventListener('DOMContentLoaded', cargarConsultas);
+
+/* --- Diccionario Mongoplédico --- */
+const GAS_URL_DICCIONARIO = 'https://script.google.com/macros/s/AKfycbxA8MlfFoBw4_6cV63NzWjDOWfwvGQBh6Et-r5wN2YCnngYgvVt0P8E8pjMR78emZ0CQQ/exec';
+
+async function verDiccionario(){
+  try {
+    const resp = await fetch(GAS_URL_DICCIONARIO);
+    const data = await resp.json();
+    if(data.status !== 'OK') throw new Error(data.message || 'Error desconocido');
+    const total = data.diccionario.length;
+    const contenido = data.diccionario.map(d => `<li><strong>${d.palabra}:</strong> ${d.descripcion}</li>`).join('');
+    const nuevaVentana = window.open('', '_blank');
+    nuevaVentana.document.write(`<h2>Diccionario Mongoplédico (${total} palabras)</h2><ul>${contenido}</ul>`);
+    nuevaVentana.document.close();
+  } catch(err){
+    alert('Error cargando diccionario: '+err.message);
+    console.error(err);
+  }
+}
+
+function agregarPalabra(){
+  const palabra = prompt('Introduce la palabra:')?.trim();
+  if(!palabra) return alert('Palabra vacía');
+  const descripcion = prompt('Introduce la descripción:')?.trim();
+  if(!descripcion) return alert('Descripción vacía');
+
+  const data = new URLSearchParams({palabra, descripcion});
+  fetch(GAS_URL_DICCIONARIO, {
+    method:'POST',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:data
+  })
+  .then(res=>res.json())
+  .then(resp=>{
+    if(resp.status==='OK') alert('Palabra añadida correctamente');
+    else alert('Error: '+resp.message);
+  })
+  .catch(err=>{
+    alert('Error al añadir palabra: '+err.message);
+    console.error(err);
+  });
+}
 </script>
 
 </body>
