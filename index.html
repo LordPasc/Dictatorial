@@ -2,40 +2,53 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Evento Musical Nº8</title>
-  <link
-    href="https://fonts.googleapis.com/css?family=Metal+Mania:400|Roboto:400,700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css?family=Metal+Mania:400|Roboto:400,700&display=swap" rel="stylesheet" />
   <style>
-    /* --- Pantalla inicio --- */
+    /* Adaptación completa para móvil y escritorio */
+
+    /* Base para cuerpo */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      background: #121212;
+      color: #eee;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: "Roboto", Arial, sans-serif;
+    }
+
+    /* Pantalla inicio */
     .pantalla-inicio {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      background: linear-gradient(135deg, #18191a 75%, #330505 100%);
+      background: linear-gradient(135deg, #1b1b1b 80%, #660909 100%);
       position: fixed;
       inset: 0;
       z-index: 9999;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
     }
     .pantalla-inicio h1 {
       font-family: "Metal Mania", cursive, Arial, sans-serif;
+      font-size: 2.2em;
+      margin-bottom: 18px;
+      text-shadow: 0 4px 20px #d02121, 1px 1px 0 #000;
       color: #fff;
-      font-size: 2.4em;
-      margin-bottom: 24px;
-      text-align: center;
-      text-shadow: 0 4px 22px #d02121, 1px 1px 0 #000;
     }
     .pantalla-inicio button {
       background: #d02121;
       color: #fff;
       border: none;
-      border-radius: 8px;
-      font-size: 1.5em;
-      padding: 16px 36px;
+      border-radius: 10px;
+      font-size: 1.3em;
+      padding: 14px 28px;
       font-family: "Metal Mania", Arial, sans-serif;
       cursor: pointer;
       transition: background 0.2s;
@@ -44,196 +57,213 @@
       background: #960909;
     }
 
-    /* --- Header y menú hamburguesa --- */
+    /* Header y menú hamburguesa */
     header {
-      background: linear-gradient(90deg, #1a1a1a 70%, #960909 100%);
-      box-shadow: 0 6px 32px rgba(80, 0, 0, 0.16);
-      border-bottom: 4px solid #c10d0d;
-      margin-bottom: 0;
-      position: relative;
+      background: linear-gradient(90deg, #222 80%, #a00 100%);
+      box-shadow: 0 4px 18px rgba(100, 0, 0, 0.4);
+      border-bottom: 3px solid #d02121;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px 0 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1100;
     }
     header h1 {
       font-family: "Metal Mania", cursive, Arial, sans-serif;
-      margin: 0;
-      font-size: 2.1em;
-      color: #fff;
-      letter-spacing: 1.5px;
-      text-shadow: 0 4px 22px #d02121, 1px 1px 0 #000;
-      text-align: center;
-      flex-grow: 1;
+      font-size: 1.8em;
+      letter-spacing: 1px;
       user-select: none;
+      margin: 0;
+      flex-grow: 1;
+      padding-left: 50px; /* espacio para menú */
+      color: #fff;
+      text-shadow: 0 4px 22px #d02121, 1px 1px 0 #000;
     }
     .menu-hamburguesa {
       position: absolute;
-      top: 22px;
-      left: 22px;
-      z-index: 1100;
-      display: block;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1101;
     }
     .hamburguesa-btn {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       background: none;
       border: none;
       cursor: pointer;
-      z-index: 1101;
       padding: 0;
+      z-index: 1101;
     }
     .hamburguesa-bar {
       width: 28px;
-      height: 4px;
+      height: 3px;
       background: #fff;
       border-radius: 2px;
-      margin: 4px 0;
+      margin: 5px 0;
       transition: 0.3s;
     }
     .menu-navegacion {
       display: none;
       position: fixed;
-      left: 0;
       top: 0;
-      width: 80vw;
-      max-width: 320px;
+      left: 0;
       height: 100vh;
-      padding-top: 70px;
-      background: #1a1a1a;
-      box-shadow: 4px 0 24px #300606cc;
+      width: 85vw;
+      max-width: 320px;
+      padding-top: 65px;
+      background: #2a1a1a;
+      box-shadow: 4px 0 24px rgba(48, 6, 6, 0.85);
       flex-direction: column;
-      gap: 20px;
-      z-index: 1099;
-      transition: transform 0.2s;
+      gap: 16px;
+      z-index: 1100;
+      overflow-y: auto;
       user-select: none;
+      transition: transform 0.3s ease;
+      box-sizing: border-box;
     }
     .menu-navegacion.show {
       display: flex;
     }
     .menu-navegacion button {
       font-family: "Metal Mania", Arial, sans-serif;
-      font-size: 1.1em;
+      font-size: 1.2em;
       color: #fff;
-      background: none;
+      background: transparent;
       border: none;
-      padding: 15px 24px;
+      padding: 16px 20px;
       text-align: left;
       border-bottom: 1px solid #aa2b2b;
       cursor: pointer;
       transition: background 0.2s, color 0.18s;
-      user-select: none;
     }
-    .menu-navegacion button:hover {
-      background: #c10d0d;
+    .menu-navegacion button:hover,
+    .menu-navegacion button:focus {
+      background: #bf1f1f;
+      outline: none;
       color: #fff;
     }
 
-    /* Secciones y estilos existentes */
+    /* Secciones */
     section {
-      padding: 27px 24px;
-      border-bottom: 1px solid #201113;
-      border-radius: 10px;
-      background: rgba(26, 19, 19, 0.83);
-      max-width: 700px;
-      margin: 28px auto 33px auto;
-      box-shadow: 0 7px 40px rgba(145, 15, 15, 0.095);
+      max-width: 100%;
+      margin: 20px 10px;
+      padding: 18px 16px;
+      border-radius: 12px;
+      background: #330a0a;
+      box-shadow: 0 5px 25px rgba(160, 18, 22, 0.3);
       display: none;
       animation: fadeIn 0.7s;
+      box-sizing: border-box;
     }
     section.active {
       display: block;
     }
     section h2 {
       font-family: "Metal Mania", cursive, Arial, sans-serif;
+      font-size: 1.5em;
       color: #d02121;
-      font-size: 2em;
       margin-top: 0;
+      margin-bottom: 20px;
       text-shadow: 0 1px 13px #a31634, 1px 1px 0 #222;
-      border-bottom: 1.5px solid #d02121;
-      padding-bottom: 7px;
-      margin-bottom: 23px;
+      border-bottom: 2px solid #d02121;
+      padding-bottom: 6px;
     }
-    section p,
-    section label,
-    section textarea,
-    section input,
-    section select {
+    section p, section label, section textarea, section input, section select {
       font-family: "Roboto", Arial, sans-serif;
       font-size: 1em;
       line-height: 1.6;
+      color: #eee;
     }
-    input,
-    textarea,
-    select {
+
+    /* Formularios */
+    input, textarea, select {
       margin: 5px 0 13px 0;
-      padding: 7px 9px;
+      padding: 10px 14px;
       width: 100%;
-      border: 1.8px solid #a21221;
-      border-radius: 6px;
-      background: #211111;
-      color: #fff;
+      border: 1.5px solid #b62222;
+      border-radius: 8px;
+      background: #221010;
+      color: #eee;
       font-size: 1em;
-      font-family: "Roboto", Arial, sans-serif;
-      box-shadow: 0 2px 7px #d01e3dad inset;
+      box-shadow: inset 0 1px 6px #b52323;
       transition: border 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
     }
-    input:focus,
-    textarea:focus,
-    select:focus {
-      border: 2px solid #fff;
-      box-shadow: 0 0 12px #e04242cc;
+    input:focus, textarea:focus, select:focus {
+      border-color: #fff;
+      box-shadow: 0 0 10px #ff4f4f;
       outline: none;
     }
-    button,
-    input[type="submit"] {
+
+    /* Botones */
+    button, input[type="submit"] {
       background: #d02121;
       color: #fff;
       border: none;
-      border-radius: 7px;
-      box-shadow: 0 2px 14px #e04242cc;
+      border-radius: 10px;
+      box-shadow: 0 3px 16px #e44141cc;
       font-size: 1.1em;
       letter-spacing: 1.2px;
       font-family: "Metal Mania", Arial, sans-serif;
-      padding: 12px 24px;
+      padding: 12px 0;
       cursor: pointer;
       margin-top: 6px;
+      width: 100%;
       transition: all 0.22s;
+      box-sizing: border-box;
     }
-    button:hover,
-    input[type="submit"]:hover {
+    button:hover, input[type="submit"]:hover,
+    button:focus, input[type="submit"]:focus {
       background: #fff;
       color: #d02121;
       border: 1.5px solid #d02121;
       box-shadow: 0 5px 24px #e04242cc;
+      outline: none;
     }
+
+    /* Listas */
     #respuestasConsultorio ul {
       padding-left: 1.5em;
     }
     #respuestasConsultorio li {
       margin-bottom: 10px;
+      word-wrap: break-word;
     }
-    #resultado-libro,
-    #resultado-pelicula,
-    #resultado-diccionario {
+
+    /* Resultado libro, película y diccionario */
+    #resultado-libro, #resultado-pelicula, #resultado-diccionario {
       display: inline-block;
       margin-left: 10px;
       vertical-align: middle;
+      word-wrap: break-word;
+      max-width: 80vw;
+      color: #fff;
     }
+
+    /* Libro item layout */
     .libro-item {
       display: flex;
       gap: 10px;
+      flex-wrap: wrap;
+      color: #fff;
     }
     .autor {
       font-weight: bold;
-      min-width: 200px;
+      min-width: 120px;
+      color: #f5bcbc;
     }
     .titulo {
       font-style: italic;
+      color: #f0dcdc;
     }
+
+    /* Animaciones */
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -245,31 +275,34 @@
       }
     }
 
-    /* --- Modals y overlays existentes (puedes integrar tu CSS) --- */
+    /* Overlay y modal */
     .overlay {
       position: fixed;
       inset: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0,0,0,0.75);
       display: none;
       justify-content: center;
       align-items: center;
+      padding: 10px;
+      box-sizing: border-box;
       z-index: 9998;
     }
+    .overlay.show {
+      display: flex;
+    }
     .modal {
-      background: #1c1c1c;
-      color: #fff;
-      padding: 20px;
+      background: #2a1a1a;
+      color: #eee;
+      padding: 20px 16px;
       border-radius: 16px;
-      max-width: 90%;
-      width: 400px;
-      max-height: 80%;
+      max-width: 95%;
+      max-height: 70vh;
       overflow-y: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
       position: relative;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-      display: none;
-      z-index: 9999;
+      box-sizing: border-box;
       animation: modalFade 0.24s ease-out;
     }
     .modal button.cerrar {
@@ -282,19 +315,8 @@
       font-size: 22px;
       cursor: pointer;
     }
-    @media (max-width: 768px) {
-      .overlay {
-        align-items: flex-end;
-      }
-      .modal {
-        width: 100%;
-        max-width: 100%;
-        height: 70%;
-        max-height: 70%;
-        border-radius: 16px 16px 0 0;
-        animation: slideUp 0.28s ease-out;
-      }
-    }
+
+    /* Animación modal fade */
     @keyframes modalFade {
       from {
         transform: scale(0.96);
@@ -305,14 +327,37 @@
         opacity: 1;
       }
     }
-    @keyframes slideUp {
-      from {
-        transform: translateY(100%);
-        opacity: 0;
+
+    /* Media queries para móviles pequeños */
+    @media (max-width: 480px) {
+      .pantalla-inicio h1 {
+        font-size: 1.8em;
       }
-      to {
-        transform: translateY(0);
-        opacity: 1;
+      header h1 {
+        font-size: 1.4em;
+        padding-left: 45px;
+      }
+      .menu-hamburguesa {
+        left: 5px;
+      }
+      .hamburguesa-btn {
+        width: 32px;
+        height: 32px;
+      }
+      .hamburguesa-bar {
+        height: 2.5px;
+      }
+      .menu-navegacion {
+        width: 90vw;
+        max-width: none;
+      }
+      section {
+        margin: 15px 5px;
+        padding: 14px 12px;
+      }
+      button, input[type="submit"] {
+        font-size: 1em;
+        padding: 12px 0;
       }
     }
   </style>
@@ -324,7 +369,7 @@
     <button onclick="entrarWeb()">Entrar</button>
   </div>
 
-  <!-- Header y menú hamburguesa ocultos al inicio -->
+  <!-- Header y menú hamburguesa -->
   <header id="encabezadoApp" style="display: none;">
     <div class="menu-hamburguesa">
       <button
@@ -348,26 +393,17 @@
       <button onclick="mostrarSeccion('musica'); cerrarMenu();">Música</button>
       <button onclick="mostrarSeccion('libros'); cerrarMenu();">Libros</button>
       <button onclick="mostrarSeccion('cine'); cerrarMenu();">Cine</button>
-      <button onclick="mostrarSeccion('consultorio'); cerrarMenu();"
-        >Consultorio</button
-      >
+      <button onclick="mostrarSeccion('consultorio'); cerrarMenu();">Consultorio</button>
       <button onclick="mostrarSeccion('Follar'); cerrarMenu();">Follar</button>
-      <button onclick="mostrarSeccion('diccionario'); cerrarMenu();"
-        >Diccionario</button
-      >
+      <button onclick="mostrarSeccion('diccionario'); cerrarMenu();">Diccionario</button>
     </nav>
   </header>
 
-  <!-- Contenido principal oculto al inicio -->
+  <!-- Contenido principal -->
   <div class="main-content" id="mainContent" style="display: none;">
-
-    <!-- Sección de bienvenida -->
     <section id="inicio" class="active">
       <h2>Bienvenido</h2>
-      <p>
-        Esta aplicación contiene las siguientes secciones accesibles desde el
-        menú hamburguesa:
-      </p>
+      <p>Esta aplicación contiene las siguientes secciones accesibles desde el menú hamburguesa:</p>
       <ul>
         <li>Música</li>
         <li>Libros</li>
@@ -378,42 +414,31 @@
       </ul>
       <p>Usa el menú para navegar entre ellas.</p>
     </section>
-
     <section id="musica">
       <h2>Música</h2>
-      <p>
-        Hartos de tanta mierda como nos meten por los ojos, oídos y demás
-        orificios, Evento Musical Nº8 se ha tomado la molestia de seleccionar
-        1000 canciones de Rock. La excelencia en la selección ha sido exquisita.
-      </p>
+      <p>Hartos de tanta mierda como nos meten por los ojos, oídos y demás orificios, Evento Musical Nº8 se ha tomado la molestia de seleccionar 1000 canciones de Rock. La excelencia en la selección ha sido exquisita.</p>
       <button onclick="propuestaMusical()">Propuesta Musical</button>
     </section>
     <section id="libros">
       <h2>Libros</h2>
-      <p>
-        Sección de libros. Posible búsqueda aleatoria entre libros almacenados
-        en libros.txt.
-      </p>
+      <p>Sección de libros. Posible búsqueda aleatoria entre libros almacenados en libros.txt.</p>
       <button id="buscar-libro-btn">Buscar libro</button>
       <div id="resultado-libro"></div>
     </section>
     <section id="cine">
       <h2>Cine</h2>
-      <p>
-        Sección de cine. Posible búsqueda aleatoria entre películas almacenadas
-        en peliculas.txt.
-      </p>
+      <p>Sección de cine. Posible búsqueda aleatoria entre películas almacenadas en peliculas.txt.</p>
       <button id="buscar-pelicula-btn">Propuesta de película</button>
       <div id="resultado-pelicula"></div>
     </section>
     <section id="consultorio">
       <h2>Consultorio</h2>
       <form id="formConsultorio" onsubmit="enviarConsultorio(event)" autocomplete="off">
-        <label>Nombre:</label>
+        <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" id="nombre" required />
-        <label>Email:</label>
+        <label for="email">Email:</label>
         <input type="email" name="email" id="email" required />
-        <label>Consulta:</label>
+        <label for="consulta">Consulta:</label>
         <textarea name="consulta" id="consulta" rows="5" required></textarea>
         <button type="submit" id="submitBtn">Enviar Consulta</button>
       </form>
@@ -425,9 +450,7 @@
     <section id="Follar">
       <h2>Consentimiento</h2>
       <p>Documento de consentimiento según Ley Orgánica 10/2022.</p>
-      <button onclick="window.open('consentimiento.html', '_blank')">
-        Abrir Documento de Consentimiento
-      </button>
+      <button onclick="window.open('consentimiento.html', '_blank')">Abrir Documento de Consentimiento</button>
     </section>
     <section id="diccionario">
       <h2>Diccionario</h2>
@@ -437,56 +460,32 @@
       <div id="resultado-diccionario"></div>
     </section>
 
-    <!-- Aquí copiar los divs y modals de tu código original -->
-    <!-- Modal libro -->
+    <!-- Modals con overlay -->
     <div id="overlay-libro" class="overlay" onclick="cerrarModal()">
       <div id="ventana-derecha-libro" class="modal" onclick="event.stopPropagation()">
         <button class="cerrar" onclick="cerrarModal()">✖</button>
         <div id="contenido-libro"></div>
       </div>
     </div>
-    <!-- Modal película -->
     <div id="overlay-pelicula" class="overlay" onclick="cerrarModalPelicula()">
-      <div
-        id="ventana-derecha-pelicula"
-        class="modal"
-        onclick="event.stopPropagation()"
-      >
+      <div id="ventana-derecha-pelicula" class="modal" onclick="event.stopPropagation()">
         <button class="cerrar" onclick="cerrarModalPelicula()">✖</button>
         <div id="contenido-pelicula"></div>
       </div>
     </div>
-    <!-- Modal diccionario view -->
-    <div
-      id="overlay-diccionario"
-      class="overlay"
-      onclick="cerrarModalDiccionario()"
-    >
-      <div
-        id="ventana-derecha-diccionario-view"
-        class="modal"
-        onclick="event.stopPropagation()"
-      >
+    <div id="overlay-diccionario" class="overlay" onclick="cerrarModalDiccionario()">
+      <div id="ventana-derecha-diccionario-view" class="modal" onclick="event.stopPropagation()">
         <button class="cerrar" onclick="cerrarModalDiccionario()">✖</button>
         <div id="contenido-diccionario">Cargando diccionario...</div>
       </div>
     </div>
-    <!-- Modal diccionario add -->
-    <div
-      id="overlay-diccionario-add"
-      class="overlay"
-      onclick="cerrarModalDiccionarioAdd()"
-    >
-      <div
-        id="ventana-derecha-diccionario-add"
-        class="modal"
-        onclick="event.stopPropagation()"
-      >
+    <div id="overlay-diccionario-add" class="overlay" onclick="cerrarModalDiccionarioAdd()">
+      <div id="ventana-derecha-diccionario-add" class="modal" onclick="event.stopPropagation()">
         <button class="cerrar" onclick="cerrarModalDiccionarioAdd()">✖</button>
         <h3>Añadir palabra</h3>
-        <label>Palabra:</label>
+        <label for="palabra">Palabra:</label>
         <input type="text" id="palabra" required />
-        <label>Descripción:</label>
+        <label for="descripcion">Descripción:</label>
         <textarea id="descripcion" rows="4" required></textarea>
         <button onclick="añadirPalabra()">Añadir</button>
       </div>
@@ -494,35 +493,32 @@
   </div>
 
   <script>
-    // --- Pantalla de inicio ---
+    // Cubrir funcionalidades tal como estaban
+
+    // Pantalla de inicio
     function entrarWeb() {
       document.getElementById("pantallaInicio").style.display = "none";
       document.getElementById("encabezadoApp").style.display = "";
       document.getElementById("mainContent").style.display = "";
-      mostrarSeccion("inicio"); // Mostrar sección bienvenida al entrar
+      mostrarSeccion("inicio");
     }
 
-    // --- Menú hamburguesa ---
+    // Menú hamburguesa
     const botonMenu = document.getElementById("abrirMenu");
     const menuNavegacion = document.getElementById("menuNavegacion");
-
     botonMenu.addEventListener("click", function () {
-      const expanded =
-        botonMenu.getAttribute("aria-expanded") === "true" || false;
+      const expanded = botonMenu.getAttribute("aria-expanded") === "true" || false;
       botonMenu.setAttribute("aria-expanded", !expanded);
       menuNavegacion.classList.toggle("show");
     });
-
     function cerrarMenu() {
       botonMenu.setAttribute("aria-expanded", "false");
       menuNavegacion.classList.remove("show");
     }
 
-    // --- Mostrar Sección ---
+    // Mostrar sección
     function mostrarSeccion(id) {
-      document.querySelectorAll("section").forEach((sec) =>
-        sec.classList.remove("active")
-      );
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
       if (id === "inicio") {
         document.getElementById("inicio").classList.add("active");
       } else {
@@ -531,115 +527,103 @@
       }
     }
 
-    // --- Propuesta Musical ---
+    // Propuesta musical
     function propuestaMusical() {
       fetch("canciones.txt")
-        .then((r) => r.text())
-        .then((data) => {
-          const lineas = data.split("\n").filter((l) => l.trim() !== "");
+        .then(r => r.text())
+        .then(data => {
+          const lineas = data.split("\n").filter(l => l.trim() !== "");
           const random = lineas[Math.floor(Math.random() * lineas.length)];
           const partes = random.split("\t");
-          const artista = partes[0],
-            cancion = partes[1];
+          const artista = partes[0], cancion = partes[1];
           const query = encodeURIComponent(artista + " " + cancion);
-          window.open(
-            "https://www.youtube.com/results?search_query=" + query,
-            "_blank"
-          );
+          window.open("https://www.youtube.com/results?search_query=" + query, "_blank");
         })
-        .catch((err) =>
-          alert("No se pudo cargar la lista de canciones: " + err)
-        );
+        .catch(err => alert("No se pudo cargar la lista de canciones: " + err));
     }
 
-    // --- Modal Libros ---
+    // Modal Libros
     function abrirModal() {
-      document.getElementById("overlay-libro").style.display = "flex";
+      document.getElementById("overlay-libro").classList.add("show");
       document.getElementById("ventana-derecha-libro").style.display = "block";
     }
     function cerrarModal() {
-      document.getElementById("overlay-libro").style.display = "none";
+      document.getElementById("overlay-libro").classList.remove("show");
       document.getElementById("ventana-derecha-libro").style.display = "none";
     }
-    document
-      .getElementById("buscar-libro-btn")
-      .addEventListener("click", async () => {
-        const resultado = document.getElementById("resultado-libro");
-        resultado.innerHTML = "Cargando...";
-        const contenido = document.getElementById("contenido-libro");
-        try {
-          const response = await fetch("libros.txt");
-          if (!response.ok) throw new Error("No se pudo cargar el archivo");
-          const texto = await response.text();
-          const libros = texto.split("\n").filter((l) => l.trim() !== "");
-          const libroAleatorio = libros[Math.floor(Math.random() * libros.length)];
-          const partes = libroAleatorio.split("\t");
-          const autor = partes[0] || "";
-          const titulo = partes[1] || "";
-          const sinopsisLocal = partes[2] || "Sinopsis no disponible";
-          const bioLocal = partes[3] || "Bio del autor no disponible";
-          resultado.innerHTML = `<div class="libro-item"><span class="autor">${autor}</span> - <span class="titulo">${titulo}</span></div>`;
-          contenido.innerHTML = `<h3>${titulo}</h3><p><strong>Autor:</strong> ${autor}</p><p><strong>Sinopsis:</strong> ${sinopsisLocal}</p><p><strong>Bio:</strong> ${bioLocal}</p>`;
-          abrirModal();
-        } catch (err) {
-          resultado.textContent = "Error al cargar el libro";
-          console.error(err);
-        }
-      });
+    document.getElementById("buscar-libro-btn").addEventListener("click", async () => {
+      const resultado = document.getElementById("resultado-libro");
+      resultado.textContent = "Cargando...";
+      const contenido = document.getElementById("contenido-libro");
+      try {
+        const response = await fetch("libros.txt");
+        if (!response.ok) throw new Error("No se pudo cargar el archivo");
+        const texto = await response.text();
+        const libros = texto.split("\n").filter(l => l.trim() !== "");
+        const libroAleatorio = libros[Math.floor(Math.random() * libros.length)];
+        const partes = libroAleatorio.split("\t");
+        const autor = partes[0] || "";
+        const titulo = partes[1] || "";
+        const sinopsisLocal = partes[2] || "Sinopsis no disponible";
+        const bioLocal = partes[3] || "Bio del autor no disponible";
+        resultado.innerHTML = `<div class="libro-item"><span class="autor">${autor}</span> - <span class="titulo">${titulo}</span></div>`;
+        contenido.innerHTML = `<h3>${titulo}</h3><p><strong>Autor:</strong> ${autor}</p><p><strong>Sinopsis:</strong> ${sinopsisLocal}</p><p><strong>Bio:</strong> ${bioLocal}</p>`;
+        abrirModal();
+      } catch (err) {
+        resultado.textContent = "Error al cargar el libro";
+        console.error(err);
+      }
+    });
 
-    // --- Modal Películas ---
+    // Modal Películas
     function abrirModalPelicula() {
-      document.getElementById("overlay-pelicula").style.display = "flex";
+      document.getElementById("overlay-pelicula").classList.add("show");
       document.getElementById("ventana-derecha-pelicula").style.display = "block";
     }
     function cerrarModalPelicula() {
-      document.getElementById("overlay-pelicula").style.display = "none";
+      document.getElementById("overlay-pelicula").classList.remove("show");
       document.getElementById("ventana-derecha-pelicula").style.display = "none";
     }
-    document
-      .getElementById("buscar-pelicula-btn")
-      .addEventListener("click", async () => {
-        const resultado = document.getElementById("resultado-pelicula");
-        resultado.innerHTML = "Cargando...";
-        const contenido = document.getElementById("contenido-pelicula");
-        try {
-          const response = await fetch("peliculas.txt");
-          if (!response.ok) throw new Error("No se pudo cargar el archivo");
-          const texto = await response.text();
-          const peliculas = texto.split("\n").filter((l) => l.trim() !== "");
-          const peliculaAleatoria =
-            peliculas[Math.floor(Math.random() * peliculas.length)];
-          const partes = peliculaAleatoria.split("\t");
-          const titulo = partes[0] || "";
-          const director = partes[1] || "";
-          const resumen = partes[2] || "Resumen no disponible";
-          resultado.innerHTML = `<div class="libro-item"><span class="titulo">${titulo}</span></div>`;
-          contenido.innerHTML = `<h3>${titulo}</h3><p><strong>Director:</strong> ${director}</p><p><strong>Resumen:</strong> ${resumen}</p>`;
-          abrirModalPelicula();
-        } catch (err) {
-          resultado.textContent = "Error al cargar la película";
-          console.error(err);
-        }
-      });
+    document.getElementById("buscar-pelicula-btn").addEventListener("click", async () => {
+      const resultado = document.getElementById("resultado-pelicula");
+      resultado.textContent = "Cargando...";
+      const contenido = document.getElementById("contenido-pelicula");
+      try {
+        const response = await fetch("peliculas.txt");
+        if (!response.ok) throw new Error("No se pudo cargar el archivo");
+        const texto = await response.text();
+        const peliculas = texto.split("\n").filter(l => l.trim() !== "");
+        const peliculaAleatoria = peliculas[Math.floor(Math.random() * peliculas.length)];
+        const partes = peliculaAleatoria.split("\t");
+        const titulo = partes[0] || "";
+        const director = partes[1] || "";
+        const resumen = partes[2] || "Resumen no disponible";
+        resultado.innerHTML = `<div class="libro-item"><span class="titulo">${titulo}</span></div>`;
+        contenido.innerHTML = `<h3>${titulo}</h3><p><strong>Director:</strong> ${director}</p><p><strong>Resumen:</strong> ${resumen}</p>`;
+        abrirModalPelicula();
+      } catch (err) {
+        resultado.textContent = "Error al cargar la película";
+        console.error(err);
+      }
+    });
 
-    // --- Consultorio ---
-    const GAS_URL =
-      "https://script.google.com/macros/s/AKfycbzUxDODbaM54FXwEoWs75qKHrhfwrmHHefxUjSZE_TaO7jmuzpTkRRSKadV-tqaXJvC/exec";
+    // Consultorio
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbzUxDODbaM54FXwEoWs75qKHrhfwrmHHefxUjSZE_TaO7jmuzpTkRRSKadV-tqaXJvC/exec";
     function cargarConsultas() {
       fetch(GAS_URL)
-        .then((res) => res.json())
-        .then((resp) => {
+        .then(res => res.json())
+        .then(resp => {
           if (resp.status === "OK") {
             const ul = document.getElementById("listaConsultas");
             ul.innerHTML = "";
-            resp.consultas.forEach((c) => {
+            resp.consultas.forEach(c => {
               const li = document.createElement("li");
               li.innerHTML = `<strong>${c.nombre} (${c.email}):</strong> ${c.consulta}`;
               ul.appendChild(li);
             });
           }
         })
-        .catch((err) => console.error("Error cargando consultas:", err));
+        .catch(err => console.error("Error cargando consultas:", err));
     }
     function enviarConsultorio(event) {
       event.preventDefault();
@@ -654,8 +638,8 @@
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: data,
       })
-        .then((res) => res.json())
-        .then((resp) => {
+        .then(res => res.json())
+        .then(resp => {
           if (resp.status === "OK") {
             cargarConsultas();
             form.reset();
@@ -664,30 +648,29 @@
             alert("Error guardando la consulta: " + resp.message);
           }
         })
-        .catch((err) => {
+        .catch(err => {
           console.error(err);
           alert("Error al enviar la consulta.");
         });
     }
     document.addEventListener("DOMContentLoaded", cargarConsultas);
 
-    // --- Diccionario ---
-    const GAS_URL_DIC =
-      "https://script.google.com/macros/s/AKfycbxA8MlfFoBw4_6cV63NzWjDOWfwvGQBh6Et-r5wN2YCnngYgvVt0P8E8pjMR78emZ0CQQ/exec";
+    // Diccionario
+    const GAS_URL_DIC = "https://script.google.com/macros/s/AKfycbxA8MlfFoBw4_6cV63NzWjDOWfwvGQBh6Et-r5wN2YCnngYgvVt0P8E8pjMR78emZ0CQQ/exec";
     function abrirModalDiccionario() {
-      document.getElementById("overlay-diccionario-add").style.display = "flex";
+      document.getElementById("overlay-diccionario-add").classList.add("show");
       document.getElementById("ventana-derecha-diccionario-add").style.display = "block";
     }
     function cerrarModalDiccionarioAdd() {
-      document.getElementById("overlay-diccionario-add").style.display = "none";
+      document.getElementById("overlay-diccionario-add").classList.remove("show");
       document.getElementById("ventana-derecha-diccionario-add").style.display = "none";
     }
     function abrirModalDiccionarioView() {
-      document.getElementById("overlay-diccionario").style.display = "flex";
+      document.getElementById("overlay-diccionario").classList.add("show");
       document.getElementById("ventana-derecha-diccionario-view").style.display = "block";
     }
     function cerrarModalDiccionario() {
-      document.getElementById("overlay-diccionario").style.display = "none";
+      document.getElementById("overlay-diccionario").classList.remove("show");
       document.getElementById("ventana-derecha-diccionario-view").style.display = "none";
     }
     function añadirPalabra() {
@@ -703,8 +686,8 @@
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: data,
       })
-        .then((res) => res.json())
-        .then((resp) => {
+        .then(res => res.json())
+        .then(resp => {
           if (resp.status === "OK") {
             alert("Palabra añadida correctamente");
             document.getElementById("palabra").value = "";
@@ -712,7 +695,7 @@
             cerrarModalDiccionarioAdd();
           } else alert("Error: " + resp.message);
         })
-        .catch((err) => {
+        .catch(err => {
           console.error(err);
           alert("Error al añadir palabra");
         });
@@ -722,16 +705,14 @@
       const contenido = document.getElementById("contenido-diccionario");
       contenido.textContent = "Cargando diccionario...";
       fetch(GAS_URL_DIC)
-        .then((res) => res.json())
-        .then((resp) => {
+        .then(res => res.json())
+        .then(resp => {
           if (resp.status === "OK") {
             const diccionario = resp.diccionario;
-            contenido.innerHTML = `<h3>Total de palabras: ${diccionario.length}</h3><ul>${diccionario
-              .map((d) => `<li><strong>${d.palabra}:</strong> ${d.descripcion}</li>`)
-              .join("")}</ul>`;
+            contenido.innerHTML = `<h3>Total de palabras: ${diccionario.length}</h3><ul>${diccionario.map(d => `<li><strong>${d.palabra}:</strong> ${d.descripcion}</li>`).join("")}</ul>`;
           } else contenido.textContent = "Error cargando diccionario: " + resp.message;
         })
-        .catch((err) => {
+        .catch(err => {
           contenido.textContent = "Error cargando diccionario";
           console.error(err);
         });
