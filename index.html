@@ -365,7 +365,7 @@
 <body>
   <div class="pantalla-inicio" id="pantallaInicio">
     <h1>EVENTO MUSICAL Nº8</h1>
-    <button onclick="entrarWeb()">Entrar</button>
+    <button onclick="entrarWeb()">Adelante...</button>
   </div>
 
   <header id="encabezadoApp" style="display: none;">
@@ -399,8 +399,8 @@
 
   <div class="main-content" id="mainContent" style="display: none;">
     <section id="inicio" class="active">
-      <h2>Bienvenido</h2>
-      <p>Esta aplicación contiene las siguientes secciones accesibles desde el menú hamburguesa:</p>
+      <h2>Portal del conocimiento</h2>
+      <p>Bienvenidos a Evento Musical Nº8. Desde esta atalaya podéis consultar diferentes secciones, accesibles desde el menú. Son las siguientes:</p>
       <ul>
         <li>Música</li>
         <li>Libros</li>
@@ -409,27 +409,27 @@
         <li>Follar</li>
         <li>Diccionario</li>
       </ul>
-      <p>Usa el menú para navegar entre ellas.</p>
+      <p>Haced buen uso de ellas y procurad no caer en las garras de la adicción</p>
     </section>
     <section id="musica">
       <h2>Música</h2>
-      <p>Hartos de tanta mierda como nos meten por los ojos, oídos y demás orificios, Evento Musical Nº8 se ha tomado la molestia de seleccionar 1000 canciones de Rock. La excelencia en la selección ha sido exquisita.</p>
+      <p>Cansados de tanta mierda como nos meten por los ojos, oídos y demás orificios, Evento Musical Nº8 se ha tomado la molestia de seleccionar 1000 canciones de Rock. La excelencia en la selección ha sido exquisita. Un simple click en el botón y se desplegará ante vosotros la esencia del Rock, Hard Rock, Heavy Rock, o Protometal</p>
       <button onclick="propuestaMusical()">Propuesta Musical</button>
     </section>
     <section id="libros">
       <h2>Libros</h2>
-      <p>Sección de libros. Posible búsqueda aleatoria entre libros almacenados en libros.txt.</p>
+      <p>¿Eres un analfabeto funcional y necesitas disimularlo? O simplemente eres gilipollas y cada vez que eliges un libro la cagas. Aquí resolvemos ese problema accediendo a través del azar a una cuidada selección de títulos. Simplemente déjate llevar y dedícate a otra cosa que se suponga que haces mejor</p>
       <button id="buscar-libro-btn">Buscar libro</button>
       <div id="resultado-libro"></div>
     </section>
     <section id="cine">
       <h2>Cine</h2>
-      <p>Sección de cine. Posible búsqueda aleatoria entre películas almacenadas en peliculas.txt.</p>
+      <p>Desde Evento Musical suponemos que si eres tan inutil para elegir libros, de la misma forma lo serás para hacerlo con una película. Si te has cargado muchas de sofá por no saber qué pelicula ver y elegir basura, te recetamos algo para ese dolor</p>
       <button id="buscar-pelicula-btn">Propuesta de película</button>
       <div id="resultado-pelicula"></div>
     </section>
     <section id="consultorio">
-      <h2>Consultorio</h2>
+      <h2>¿Eres un pringao o simplemente eres imbécil y no sabes qué hacer? Manda tu consulta al Gran Huan Khan, él te mostrará el camino </h2>
       <form id="formConsultorio" onsubmit="enviarConsultorio(event)" autocomplete="off">
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" id="nombre" required />
@@ -446,12 +446,12 @@
     </section>
     <section id="Follar">
       <h2>Consentimiento</h2>
-      <p>Documento de consentimiento según Ley Orgánica 10/2022.</p>
+      <p>¿Estás harto de no follar? ¿Acojonado por si una ver surje la oportunidad y te hacen un Errejón? Nuestro formulario es la respuesta ante esta situación. No servirá para nada legalmente, pero lo mismo te sirve de excusa para acabar follando</p>
       <button onclick="window.open('consentimiento.html', '_blank')">Abrir Documento de Consentimiento</button>
     </section>
     <section id="diccionario">
       <h2>Diccionario</h2>
-      <p>Sección interactiva para el Diccionario Mongoplédico.</p>
+      <p>Diccionario Mongoplédico para aprender la jerga dictatorial.</p>
       <button onclick="verDiccionario()">Ver diccionario</button>
       <button onclick="abrirModalDiccionario()">Añadir palabra</button>
       <div id="resultado-diccionario"></div>
