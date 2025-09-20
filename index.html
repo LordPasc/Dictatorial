@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Evento Musical Nº8</title>
   <link href="https://fonts.googleapis.com/css?family=Metal+Mania:400|Roboto:400,700&display=swap" rel="stylesheet" />
+  <!-- MANIFEST PARA PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1b1b1b" />
   <style>
     body, html {
       margin: 0;
@@ -16,7 +19,6 @@
       -moz-osx-font-smoothing: grayscale;
       font-family: "Roboto", Arial, sans-serif;
     }
-
     .pantalla-inicio {
       display: flex;
       flex-direction: column;
@@ -52,7 +54,6 @@
     .pantalla-inicio button:hover {
       background: #960909;
     }
-
     header {
       background: linear-gradient(90deg, #222 80%, #a00 100%);
       box-shadow: 0 4px 18px rgba(100, 0, 0, 0.4);
@@ -143,7 +144,6 @@
       outline: none;
       color: #fff;
     }
-
     section {
       max-width: 100%;
       margin: 20px 10px;
@@ -174,7 +174,6 @@
       line-height: 1.6;
       color: #eee;
     }
-
     input, textarea, select {
       margin: 5px 0 13px 0;
       padding: 10px 14px;
@@ -193,7 +192,6 @@
       box-shadow: 0 0 10px #ff4f4f;
       outline: none;
     }
-
     button, input[type="submit"] {
       background: #d02121;
       color: #fff;
@@ -218,7 +216,6 @@
       box-shadow: 0 5px 24px #e04242cc;
       outline: none;
     }
-
     #respuestasConsultorio ul {
       padding-left: 1.5em;
     }
@@ -226,7 +223,6 @@
       margin-bottom: 10px;
       word-wrap: break-word;
     }
-
     #resultado-libro, #resultado-pelicula, #resultado-diccionario {
       display: inline-block;
       margin-left: 10px;
@@ -235,7 +231,6 @@
       max-width: 80vw;
       color: #fff;
     }
-
     .libro-item {
       display: flex;
       gap: 10px;
@@ -251,7 +246,6 @@
       font-style: italic;
       color: #f0dcdc;
     }
-
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -262,7 +256,6 @@
         transform: translateY(0);
       }
     }
-
     .overlay {
       position: fixed;
       inset: 0;
@@ -317,7 +310,6 @@
       color: #eee;
       word-break: break-word;
     }
-
     @keyframes modalFade {
       from {
         transform: scale(0.96);
@@ -328,7 +320,6 @@
         opacity: 1;
       }
     }
-
     @media (max-width: 480px) {
       .pantalla-inicio h1 {
         font-size: 1.8em;
@@ -360,14 +351,51 @@
         padding: 12px 0;
       }
     }
+    /* Extra PARA INSTALAR PWA */
+    #pwa-install {
+      display: none;
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #d02121;
+      color: #fff;
+      padding: 14px 34px;
+      font-size: 1.13em;
+      border-radius: 12px;
+      z-index: 12000;
+      box-shadow: 0 3px 16px #e44141cc;
+      font-family: "Metal Mania", Arial, sans-serif;
+    }
+    #pwa-install button {
+      margin-left: 18px;
+      background: #fff;
+      color: #d02121;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 18px;
+      font-size: 1em;
+      font-family: "Metal Mania", Arial, sans-serif;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    #pwa-install button:hover {
+      background: #d02121;
+      color: #fff;
+      border: 1.5px solid #fff;
+    }
   </style>
 </head>
 <body>
+  <!-- PWA INSTALL BUTTON -->
+  <div id="pwa-install">
+    ¿Instalar Evento Musical Nº8 como app de escritorio?
+    <button id="btnPwaInstalar">Instalar</button>
+  </div>
   <div class="pantalla-inicio" id="pantallaInicio">
     <h1>EVENTO MUSICAL Nº8</h1>
     <button onclick="entrarWeb()">Adelante...</button>
   </div>
-
   <header id="encabezadoApp" style="display: none;">
     <div class="menu-hamburguesa">
       <button
@@ -396,7 +424,6 @@
       <button onclick="mostrarSeccion('diccionario'); cerrarMenu();">Diccionario</button>
     </nav>
   </header>
-
   <div class="main-content" id="mainContent" style="display: none;">
     <section id="inicio" class="active">
       <h2>Portal del conocimiento</h2>
@@ -446,7 +473,7 @@
     </section>
     <section id="Follar">
       <h2>Consentimiento</h2>
-      <p>¿Estás harto de no follar? ¿Acojonado por si una vez surje la oportunidad y te hacen un Errejón? Nuestro formulario es la respuesta ante esta situación. No servirá para nada legalmente, pero lo mismo te sirve de excusa para acabar follando</p>
+      <p>¿Estás harto de no follar? ¿Acojonado por si una ver surje la oportunidad y te hacen un Errejón? Nuestro formulario es la respuesta ante esta situación. No servirá para nada legalmente, pero lo mismo te sirve de excusa para acabar follando</p>
       <button onclick="window.open('consentimiento.html', '_blank')">Abrir Documento de Consentimiento</button>
     </section>
     <section id="diccionario">
@@ -456,7 +483,6 @@
       <button onclick="abrirModalDiccionario()">Añadir palabra</button>
       <div id="resultado-diccionario"></div>
     </section>
-
     <div id="overlay-libro" class="overlay" onclick="cerrarModal()">
       <div id="ventana-derecha-libro" class="modal" onclick="event.stopPropagation()">
         <button class="cerrar" onclick="cerrarModal()">✖</button>
@@ -487,15 +513,40 @@
       </div>
     </div>
   </div>
-
   <script>
+    // ----------- PWA: Manifest, SW y Install Prompt -----------
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function() {
+        navigator.serviceWorker.register("service-worker.js").catch(function(e){
+          console.warn("SW registration failed", e);
+        });
+      });
+    }
+    let deferredPrompt;
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById("pwa-install").style.display = "block";
+    });
+    document.getElementById("btnPwaInstalar").addEventListener("click", async () => {
+      document.getElementById("pwa-install").style.display = "none";
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        await deferredPrompt.userChoice;
+        deferredPrompt = null;
+      }
+    });
+    window.addEventListener("appinstalled", () => {
+      document.getElementById("pwa-install").style.display = "none";
+    });
+
+    // ---------------------------------- TU JS ORIGINAL ----------------------------------
     function entrarWeb() {
       document.getElementById("pantallaInicio").style.display = "none";
       document.getElementById("encabezadoApp").style.display = "";
       document.getElementById("mainContent").style.display = "";
       mostrarSeccion("inicio");
     }
-
     const botonMenu = document.getElementById("abrirMenu");
     const menuNavegacion = document.getElementById("menuNavegacion");
     botonMenu.addEventListener("click", function () {
@@ -507,7 +558,6 @@
       botonMenu.setAttribute("aria-expanded", "false");
       menuNavegacion.classList.remove("show");
     }
-
     function mostrarSeccion(id) {
       document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
       if (id === "inicio") {
@@ -517,7 +567,6 @@
         document.getElementById(id).classList.add("active");
       }
     }
-
     function propuestaMusical() {
       fetch("canciones.txt")
         .then(r => r.text())
@@ -531,7 +580,6 @@
         })
         .catch(err => alert("No se pudo cargar la lista de canciones: " + err));
     }
-
     function abrirModal() {
       document.getElementById("overlay-libro").classList.add("show");
       document.getElementById("ventana-derecha-libro").style.display = "block";
@@ -563,7 +611,6 @@
         console.error(err);
       }
     });
-
     function abrirModalPelicula() {
       document.getElementById("overlay-pelicula").classList.add("show");
       document.getElementById("ventana-derecha-pelicula").style.display = "block";
@@ -594,7 +641,6 @@
         console.error(err);
       }
     });
-
     const GAS_URL = "https://script.google.com/macros/s/AKfycbzUxDODbaM54FXwEoWs75qKHrhfwrmHHefxUjSZE_TaO7jmuzpTkRRSKadV-tqaXJvC/exec";
     function cargarConsultas() {
       fetch(GAS_URL)
@@ -641,7 +687,6 @@
         });
     }
     document.addEventListener("DOMContentLoaded", cargarConsultas);
-
     const GAS_URL_DIC = "https://script.google.com/macros/s/AKfycbxA8MlfFoBw4_6cV63NzWjDOWfwvGQBh6Et-r5wN2YCnngYgvVt0P8E8pjMR78emZ0CQQ/exec";
     function abrirModalDiccionario() {
       document.getElementById("overlay-diccionario-add").classList.add("show");

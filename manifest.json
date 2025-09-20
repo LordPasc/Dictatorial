@@ -1,0 +1,21 @@
+{
+  "name": "Evento Musical Nº8",
+  "short_name": "Evento Nº8",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1b1b1b",
+  "theme_color": "#d02121",
+  "description": "Portal musical, libros, cine y más.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
