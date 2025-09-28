@@ -15,219 +15,212 @@
 
 <link href="https://fonts.googleapis.com/css?family=Metal+Mania:400|Roboto:400,700&display=swap" rel="stylesheet" />
 <style>
-/* --- Estilos originales sin cambios --- */
-body, html { margin:0; padding:0; font-size:16px; background:#121212; color:#eee; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; font-family:"Roboto",Arial,sans-serif; }
-.pantalla-inicio { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; background:linear-gradient(135deg,#1b1b1b 80%,#660909 100%); position:fixed; inset:0; z-index:9999; padding:20px; box-sizing:border-box; text-align:center; }
-.pantalla-inicio h1 { font-family:"Metal Mania",cursive,Arial,sans-serif; font-size:2.2em; margin-bottom:18px; text-shadow:0 4px 20px #d02121,1px 1px 0 #000; color:#fff; }
-.pantalla-inicio button { background:#d02121; color:#fff; border:none; border-radius:10px; font-size:1.3em; padding:14px 28px; font-family:"Metal Mania",Arial,sans-serif; cursor:pointer; transition:background 0.2s; margin:8px 0; }
-.pantalla-inicio button:hover { background:#960909; }
-/* --- Header y menú --- */
-header { background:linear-gradient(90deg,#222 80%,#a00 100%); box-shadow:0 4px 18px rgba(100,0,0,0.4); border-bottom:3px solid #d02121; padding:15px 20px; display:flex; align-items:center; justify-content:center; position:sticky; top:0; z-index:1100; }
-header h1 { font-family:"Metal Mania",cursive,Arial,sans-serif; font-size:1.8em; letter-spacing:1px; user-select:none; margin:0; flex-grow:1; padding-left:50px; color:#fff; text-shadow:0 4px 22px #d02121,1px 1px 0 #000; }
-.menu-hamburguesa { position:absolute; left:10px; top:50%; transform:translateY(-50%); z-index:1101; }
-.hamburguesa-btn { display:flex; flex-direction:column; justify-content:center; width:36px; height:36px; background:none; border:none; cursor:pointer; padding:0; z-index:1101; }
-.hamburguesa-bar { width:28px; height:3px; background:#fff; border-radius:2px; margin:5px 0; transition:0.3s; }
-.menu-navegacion { display:none; position:fixed; top:0; left:0; height:100vh; width:85vw; max-width:320px; padding-top:65px; background:#2a1a1a; box-shadow:4px 0 24px rgba(48,6,6,0.85); flex-direction:column; gap:16px; z-index:1100; overflow-y:auto; user-select:none; transition:transform 0.3s ease; box-sizing:border-box; }
+body, html { margin: 0; padding: 0; font-size: 16px; background: #121212; color: #eee; font-family: "Roboto", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+.pantalla-inicio { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: linear-gradient(135deg, #1b1b1b 80%, #660909 100%); position: fixed; inset: 0; z-index: 9999; padding: 20px; text-align: center; }
+.pantalla-inicio h1 { font-family: "Metal Mania", cursive, Arial, sans-serif; font-size: 2.2em; margin-bottom: 18px; text-shadow: 0 4px 20px #d02121, 1px 1px 0 #000; color: #fff; }
+.pantalla-inicio button { background: #d02121; color: #fff; border: none; border-radius: 10px; font-size: 1.3em; padding: 14px 28px; font-family: "Metal Mania", Arial, sans-serif; cursor: pointer; transition: background 0.2s; margin: 6px 0;}
+.pantalla-inicio button:hover { background: #960909; }
+
+header { background: linear-gradient(90deg, #222 80%, #a00 100%); box-shadow: 0 4px 18px rgba(100,0,0,0.4); border-bottom: 3px solid #d02121; padding: 15px 20px; display: flex; align-items: center; justify-content: center; position: sticky; top: 0; z-index: 1100;}
+header h1 { font-family: "Metal Mania", cursive, Arial, sans-serif; font-size: 1.8em; letter-spacing: 1px; margin: 0; flex-grow: 1; padding-left: 50px; color:#fff; text-shadow:0 4px 22px #d02121,1px 1px 0 #000;}
+.menu-hamburguesa { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 1101; }
+.hamburguesa-btn { display:flex; flex-direction: column; justify-content:center; width:36px; height:36px; background:none; border:none; cursor:pointer; padding:0; }
+.hamburguesa-bar { width:28px; height:3px; background:#fff; border-radius:2px; margin:5px 0; transition:0.3s;}
+.menu-navegacion { display:none; position: fixed; top:0; left:0; height:100vh; width:85vw; max-width:320px; padding-top:65px; background:#2a1a1a; box-shadow:4px 0 24px rgba(48,6,6,0.85); flex-direction: column; gap:16px; z-index:1100; overflow-y:auto; transition: transform 0.3s ease;}
 .menu-navegacion.show { display:flex; }
-.menu-navegacion button { font-family:"Metal Mania",Arial,sans-serif; font-size:1.2em; color:#fff; background:transparent; border:none; padding:16px 20px; text-align:left; border-bottom:1px solid #aa2b2b; cursor:pointer; transition:background 0.2s, color 0.18s; }
-.menu-navegacion button:hover,.menu-navegacion button:focus { background:#bf1f1f; outline:none; color:#fff; }
+.menu-navegacion button { font-family: "Metal Mania", Arial, sans-serif; font-size:1.2em; color:#fff; background:transparent; border:none; padding:16px 20px; text-align:left; border-bottom:1px solid #aa2b2b; cursor:pointer;}
+.menu-navegacion button:hover, .menu-navegacion button:focus { background:#bf1f1f; outline:none; color:#fff;}
 
-/* --- Secciones --- */
-section { max-width:100%; margin:20px 10px; padding:18px 16px; border-radius:12px; background:#330a0a; box-shadow:0 5px 25px rgba(160,18,22,0.3); display:none; animation:fadeIn 0.7s; box-sizing:border-box; }
-section.active { display:block; }
-section h2 { font-family:"Metal Mania",cursive,Arial,sans-serif; font-size:1.5em; color:#d02121; margin-top:0; margin-bottom:20px; text-shadow:0 1px 13px #a31634,1px 1px 0 #222; border-bottom:2px solid #d02121; padding-bottom:6px; }
-section p,section label,section textarea,section input,section select { font-family:"Roboto",Arial,sans-serif; font-size:1em; line-height:1.6; color:#eee; }
-input,textarea,select { margin:5px 0 13px 0; padding:10px 14px; width:100%; border:1.5px solid #b62222; border-radius:8px; background:#221010; color:#eee; font-size:1em; box-shadow:inset 0 1px 6px #b52323; transition:border 0.2s, box-shadow 0.2s; box-sizing:border-box; }
-input:focus,textarea:focus,select:focus { border-color:#fff; box-shadow:0 0 10px #ff4f4f; outline:none; }
-button,input[type="submit"] { background:#d02121; color:#fff; border:none; border-radius:10px; box-shadow:0 3px 16px #e44141cc; font-size:1.1em; letter-spacing:1.2px; font-family:"Metal Mania",Arial,sans-serif; padding:12px 0; cursor:pointer; margin-top:6px; width:100%; transition:all 0.22s; box-sizing:border-box; }
-button:hover,input[type="submit"]:hover,button:focus,input[type="submit"]:focus { background:#fff; color:#d02121; border:1.5px solid #d02121; box-shadow:0 5px 24px #e04242cc; outline:none; }
+section { max-width:100%; margin:20px 10px; padding:18px 16px; border-radius:12px; background:#330a0a; box-shadow:0 5px 25px rgba(160,18,22,0.3); display:none; animation:fadeIn 0.7s; box-sizing:border-box;}
+section.active { display:block;}
+section h2 { font-family: "Metal Mania", cursive, Arial, sans-serif; font-size:1.5em; color:#d02121; margin-top:0; margin-bottom:20px; text-shadow:0 1px 13px #a31634,1px 1px 0 #222; border-bottom:2px solid #d02121; padding-bottom:6px;}
+section p,label,textarea,input,select { font-family:"Roboto", Arial, sans-serif; font-size:1em; line-height:1.6; color:#eee;}
+
+input, textarea, select { margin:5px 0 13px 0; padding:10px 14px; width:100%; border:1.5px solid #b62222; border-radius:8px; background:#221010; color:#eee; font-size:1em; box-shadow:inset 0 1px 6px #b52323; box-sizing:border-box; }
+input:focus, textarea:focus, select:focus { border-color:#fff; box-shadow:0 0 10px #ff4f4f; outline:none; }
+button,input[type="submit"] { background:#d02121; color:#fff; border:none; border-radius:10px; font-size:1.1em; letter-spacing:1.2px; font-family:"Metal Mania", Arial, sans-serif; padding:12px 0; cursor:pointer; margin-top:6px; width:100%; box-sizing:border-box; }
+button:hover,input[type="submit"]:hover, button:focus,input[type="submit"]:focus { background:#fff; color:#d02121; border:1.5px solid #d02121; outline:none; }
 #respuestasConsultorio ul { padding-left:1.5em; }
-#respuestasConsultorio li { margin-bottom:10px; word-wrap:break-word; }
-#resultado-libro,#resultado-pelicula,#resultado-diccionario { display:inline-block; margin-left:10px; vertical-align:middle; word-wrap:break-word; max-width:80vw; color:#fff; }
-.libro-item { display:flex; gap:10px; flex-wrap:wrap; color:#fff; }
-.autor { font-weight:bold; min-width:120px; color:#f5bcbc; }
-.titulo { font-style:italic; color:#f0dcdc; }
-@keyframes fadeIn { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
-
-/* --- Overlay y modales --- */
-.overlay { position:fixed; inset:0; width:100%; height:100%; background:rgba(0,0,0,0.75); display:none; justify-content:center; align-items:center; padding:10px; box-sizing:border-box; z-index:9998; }
+#respuestasConsultorio li { margin-bottom:10px; word-wrap: break-word; }
+#resultado-libro,#resultado-pelicula,#resultado-diccionario { display:inline-block; margin-left:10px; vertical-align:middle; word-wrap: break-word; max-width:80vw; color:#fff;}
+.libro-item { display:flex; gap:10px; flex-wrap:wrap; color:#fff;}
+.autor { font-weight:bold; min-width:120px; color:#f5bcbc;}
+.titulo { font-style:italic; color:#f0dcdc;}
+@keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+.overlay { position:fixed; inset:0; width:100%; height:100%; background:rgba(0,0,0,0.75); display:none; justify-content:center; align-items:center; padding:10px; z-index:9998;}
 .overlay.show { display:flex; }
-.modal { background:#2a1a1a; color:#eee; padding:20px 16px; border-radius:16px; max-width:95%; max-height:70vh; overflow-y:auto; box-shadow:0 10px 30px rgba(0,0,0,0.7); position:relative; box-sizing:border-box; animation:modalFade 0.24s ease-out; }
-.modal button.cerrar { width:30px; height:30px; padding:0; line-height:30px; text-align:center; position:absolute; top:10px; right:10px; background:none; border:none; color:#fff; font-size:22px; cursor:pointer; z-index:10; }
-.modal h3,.modal h2 { padding-right:50px; margin-top:0; margin-bottom:16px; position:relative; z-index:1; color:#eee; word-break:break-word; }
-@keyframes modalFade { from { transform:scale(0.96); opacity:0;} to { transform:scale(1); opacity:1;} }
+.modal { background:#2a1a1a; color:#eee; padding:20px 16px; border-radius:16px; max-width:95%; max-height:70vh; overflow-y:auto; box-shadow:0 10px 30px rgba(0,0,0,0.7); position:relative; box-sizing:border-box; animation:modalFade 0.24s ease-out;}
+.modal button.cerrar { width:30px; height:30px; padding:0; line-height:30px; text-align:center; position:absolute; top:10px; right:10px; background:none; border:none; color:#fff; font-size:22px; cursor:pointer; z-index:10;}
+.modal h3,.modal h2 { padding-right:50px; margin-top:0; margin-bottom:16px; color:#eee; word-break:break-word; position:relative; z-index:1; }
+@keyframes modalFade { from { transform: scale(0.96); opacity:0; } to { transform: scale(1); opacity:1; } }
 
-/* --- Responsive --- */
-@media(max-width:480px){.pantalla-inicio h1{font-size:1.8em;}.menu-hamburguesa{left:5px;}.hamburguesa-btn{width:32px;height:32px;}.hamburguesa-bar{height:2.5px;}.menu-navegacion{width:90vw;max-width:none;}section{margin:15px 5px;padding:14px 12px;}button,input[type="submit"]{font-size:1em;padding:12px 0;}}
-
-/* Botón PWA instalar */
-#instalarApp { display:none; position:fixed; bottom:20px; right:20px; background:#d02121; color:#fff; border:none; border-radius:10px; padding:12px 18px; font-size:1em; font-family:"Metal Mania",Arial,sans-serif; cursor:pointer; box-shadow:0 6px 22px rgba(0,0,0,0.5); z-index:12000; }
-#instalarApp:active{transform:translateY(1px);}
+#overlay-login, #overlay-registro { position:fixed; inset:0; width:100%; height:100%; background:rgba(0,0,0,0.85); display:none; justify-content:center; align-items:center; z-index:9999;}
+.modal-login { background:#2a1a1a; padding:20px; border-radius:16px; width:90%; max-width:400px; color:#eee; text-align:center; box-sizing:border-box; }
+.modal-login input { margin:10px 0; }
+.modal-login button { width:100%; margin:6px 0;}
 </style>
 </head>
 <body>
 
+<!-- Pantalla inicio con login -->
 <div class="pantalla-inicio" id="pantallaInicio">
-  <h1>EVENTO MUSICAL Nº8</h1>
-  <button onclick="abrirLogin()">Acceso socios</button>
-  <button onclick="abrirRegistro()">Registrarse como socio</button>
-  <button onclick="accesoInvitado()">Invitados</button>
+<h1>EVENTO MUSICAL Nº8</h1>
+<button onclick="abrirLoginSocio()">Acceso socios</button>
+<button onclick="abrirRegistroSocio()">Registrarse como socio</button>
+<button onclick="entrarInvitado()">Invitados</button>
 </div>
 
+<!-- Header y menú -->
 <header id="encabezadoApp" style="display:none;">
-  <div class="menu-hamburguesa">
-    <button class="hamburguesa-btn" id="abrirMenu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuNavegacion">
-      <span class="hamburguesa-bar"></span>
-      <span class="hamburguesa-bar"></span>
-      <span class="hamburguesa-bar"></span>
-    </button>
-  </div>
-  <h1>EVENTO MUSICAL Nº8</h1>
-  <nav class="menu-navegacion" id="menuNavegacion" aria-label="Navegación principal">
-    <button onclick="mostrarSeccion('musica'); cerrarMenu();">Música</button>
-    <button onclick="mostrarSeccion('libros'); cerrarMenu();">Libros</button>
-    <button onclick="mostrarSeccion('cine'); cerrarMenu();">Cine</button>
-    <button onclick="mostrarSeccion('consultorio'); cerrarMenu();">Consultorio</button>
-    <button id="btnFollar" onclick="mostrarSeccion('Follar'); cerrarMenu();">Follar</button>
-    <button onclick="mostrarSeccion('diccionario'); cerrarMenu();">Diccionario</button>
-  </nav>
+<div class="menu-hamburguesa">
+<button class="hamburguesa-btn" id="abrirMenu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuNavegacion">
+<span class="hamburguesa-bar"></span>
+<span class="hamburguesa-bar"></span>
+<span class="hamburguesa-bar"></span>
+</button>
+</div>
+<h1 id="nombreUsuarioHeader">EVENTO MUSICAL Nº8</h1>
+<nav class="menu-navegacion" id="menuNavegacion" aria-label="Navegación principal">
+<button onclick="mostrarSeccion('musica'); cerrarMenu();">Música</button>
+<button onclick="mostrarSeccion('libros'); cerrarMenu();">Libros</button>
+<button onclick="mostrarSeccion('cine'); cerrarMenu();">Cine</button>
+<button onclick="mostrarSeccion('consultorio'); cerrarMenu();">Consultorio</button>
+<button id="btnFollar" onclick="mostrarSeccion('Follar'); cerrarMenu();">Follar</button>
+<button onclick="mostrarSeccion('diccionario'); cerrarMenu();">Diccionario</button>
+</nav>
 </header>
 
-<!-- Secciones principales -->
-<section id="musica"><h2>Música</h2><p>Contenido de música...</p></section>
-<section id="libros"><h2>Libros</h2><p>Contenido de libros...</p></section>
-<section id="cine"><h2>Cine</h2><p>Contenido de cine...</p></section>
-<section id="consultorio"><h2>Consultorio</h2>
-  <form id="formConsultorio">
-    <label for="nombreConsultorio">Nombre:</label>
-    <input type="text" id="nombreConsultorio" name="nombreConsultorio" required>
-    <label for="mensajeConsultorio">Mensaje:</label>
-    <textarea id="mensajeConsultorio" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-  <div id="respuestasConsultorio"><ul></ul></div>
+<div class="main-content" id="mainContent" style="display:none;">
+<section id="inicio" class="active">
+<h2>Portal del conocimiento</h2>
+<p>Bienvenidos a Evento Musical Nº8. Desde esta atalaya podéis consultar diferentes secciones, accesibles desde el menú. Son las siguientes:</p>
+<ul>
+<li>Música</li><li>Libros</li><li>Cine</li><li>Consultorio</li><li>Diccionario</li>
+<li id="liFollar" style="display:none;">Follar (solo socios)</li>
+</ul>
 </section>
-<section id="Follar"><h2>Follar</h2><p>Contenido solo para socios.</p></section>
-<section id="diccionario"><h2>Diccionario</h2><p>Contenido del diccionario...</p></section>
 
-<!-- Modales -->
-<div class="overlay" id="modalLogin">
-  <div class="modal">
-    <button class="cerrar" onclick="cerrarModal('modalLogin')">&times;</button>
-    <h3>Acceso Socios</h3>
-    <form id="formLogin">
-      <label for="usuario">Usuario:</label>
-      <input type="text" id="usuario" required>
-      <label for="clave">Clave:</label>
-      <input type="password" id="clave" required>
-      <button type="submit">Entrar</button>
-    </form>
-  </div>
+<section id="musica"><h2>Música</h2><p>Sección de música...</p></section>
+<section id="libros"><h2>Libros</h2><p>Sección de libros...</p></section>
+<section id="cine"><h2>Cine</h2><p>Sección de cine...</p></section>
+<section id="consultorio"><h2>Consultorio</h2>
+<form id="formConsultorio">
+<label>Tu consulta:</label>
+<textarea id="consulta" rows="4" required></textarea>
+<label>Nombre (opcional para firmar):</label>
+<input type="text" id="nombreConsulta">
+<label>Email (opcional)</label>
+<input type="email" id="emailConsulta">
+<input type="submit" value="Enviar consulta">
+</form>
+<div id="respuestasConsultorio"><ul></ul></div>
+</section>
+<section id="Follar"><h2>Follar (solo socios)</h2><p>Contenido exclusivo para socios.</p></section>
+<section id="diccionario"><h2>Diccionario</h2><p>Sección de diccionario...</p></section>
 </div>
 
-<div class="overlay" id="modalRegistro">
-  <div class="modal">
-    <button class="cerrar" onclick="cerrarModal('modalRegistro')">&times;</button>
-    <h3>Registro de Socio</h3>
-    <form id="formRegistro">
-      <label for="nuevoUsuario">Usuario:</label>
-      <input type="text" id="nuevoUsuario" required>
-      <label for="nuevaClave">Clave:</label>
-      <input type="password" id="nuevaClave" required>
-      <label for="rol">Rol:</label>
-      <select id="rol">
-        <option value="socio">Socio</option>
-        <option value="admin">Admin</option>
-      </select>
-      <button type="submit">Registrarse</button>
-    </form>
-  </div>
+<!-- Overlay login y registro -->
+<div id="overlay-login">
+<div class="modal-login">
+<h2>Acceso Socios</h2>
+<input type="text" id="usuarioLogin" placeholder="Usuario" required>
+<input type="password" id="passwordLogin" placeholder="Contraseña" required>
+<button onclick="loginSocio()">Entrar</button>
+<button onclick="cerrarLogin()">Cerrar</button>
+</div>
 </div>
 
-<button id="instalarApp">Instalar App</button>
+<div id="overlay-registro">
+<div class="modal-login">
+<h2>Registro Socio</h2>
+<input type="text" id="usuarioRegistro" placeholder="Usuario" required>
+<input type="password" id="passwordRegistro" placeholder="Contraseña" required>
+<button onclick="registrarSocio()">Registrarse</button>
+<button onclick="cerrarRegistro()">Cerrar</button>
+</div>
+</div>
 
 <script>
-/* --- Funciones menú --- */
-const menuBtn = document.getElementById("abrirMenu");
-const menuNav = document.getElementById("menuNavegacion");
-menuBtn.addEventListener("click", ()=> {
-  menuNav.classList.toggle("show");
-  menuBtn.setAttribute("aria-expanded", menuNav.classList.contains("show"));
+// Funciones menú hamburguesa
+const btnMenu = document.getElementById("abrirMenu");
+const navMenu = document.getElementById("menuNavegacion");
+btnMenu.addEventListener("click", ()=>{
+navMenu.classList.toggle("show");
+btnMenu.setAttribute("aria-expanded", navMenu.classList.contains("show"));
 });
-function cerrarMenu(){ menuNav.classList.remove("show"); menuBtn.setAttribute("aria-expanded","false"); }
+function cerrarMenu(){navMenu.classList.remove("show"); btnMenu.setAttribute("aria-expanded","false");}
 
-/* --- Mostrar secciones --- */
+// Funciones de secciones
 function mostrarSeccion(id){
-  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
-  const sec=document.getElementById(id);
-  if(sec) sec.classList.add("active");
+document.querySelectorAll("section").forEach(sec=>sec.classList.remove("active"));
+const sec=document.getElementById(id);
+if(sec) sec.classList.add("active");
 }
 
-/* --- Modales --- */
-function abrirLogin(){ document.getElementById("modalLogin").classList.add("show"); }
-function abrirRegistro(){ document.getElementById("modalRegistro").classList.add("show"); }
-function cerrarModal(id){ document.getElementById(id).classList.remove("show"); }
-
-/* --- Pantalla inicio y acceso --- */
-let usuarioActual=null;
-function accesoInvitado(){
-  usuarioActual="Invitado";
-  iniciarApp();
-}
-function iniciarApp(){
-  document.getElementById("pantallaInicio").style.display="none";
-  document.getElementById("encabezadoApp").style.display="flex";
-  if(usuarioActual!=="socio") document.getElementById("btnFollar").style.display="none";
+// Flow inicio
+function entrarInvitado(){
+document.getElementById("pantallaInicio").style.display="none";
+document.getElementById("encabezadoApp").style.display="flex";
+document.getElementById("mainContent").style.display="block";
+document.getElementById("liFollar").style.display="none";
+document.getElementById("btnFollar").style.display="none";
+document.getElementById("nombreUsuarioHeader").textContent="Evento Musical Nº8 - Invitado";
 }
 
-/* --- Login --- */
-document.getElementById("formLogin").addEventListener("submit",async e=>{
-  e.preventDefault();
-  const usuario=document.getElementById("usuario").value;
-  const clave=document.getElementById("clave").value;
-  try{
-    const res=await fetch("https://script.google.com/macros/s/AKfycbw6rCfXF6k9JSU1EfwRpWNT3Ui8rFSmdQynYNGga8Hs9Nttu_Md-4b_um3xXWmIOk1L2g/exec?accion=login&usuario="+encodeURIComponent(usuario)+"&clave="+encodeURIComponent(clave));
-    const data=await res.json();
-    if(data.success){ usuarioActual=usuario; cerrarModal("modalLogin"); iniciarApp(); }
-    else alert("Usuario o clave incorrecta.");
-  }catch(err){ console.error(err); alert("Error al conectar con el servidor."); }
-});
+function abrirLoginSocio(){
+document.getElementById("overlay-login").style.display="flex";
+}
 
-/* --- Registro --- */
-document.getElementById("formRegistro").addEventListener("submit",async e=>{
-  e.preventDefault();
-  const usuario=document.getElementById("nuevoUsuario").value;
-  const clave=document.getElementById("nuevaClave").value;
-  const rol=document.getElementById("rol").value;
-  try{
-    const res=await fetch("https://script.google.com/macros/s/AKfycbw6rCfXF6k9JSU1EfwRpWNT3Ui8rFSmdQynYNGga8Hs9Nttu_Md-4b_um3xXWmIOk1L2g/exec?accion=registro&usuario="+encodeURIComponent(usuario)+"&clave="+encodeURIComponent(clave)+"&rol="+encodeURIComponent(rol));
-    const data=await res.json();
-    if(data.success){ usuarioActual=usuario; cerrarModal("modalRegistro"); iniciarApp(); }
-    else alert("No se pudo registrar.");
-  }catch(err){ console.error(err); alert("Error al conectar con el servidor."); }
-});
+function cerrarLogin(){document.getElementById("overlay-login").style.display="none";}
+function abrirRegistroSocio(){document.getElementById("overlay-registro").style.display="flex";}
+function cerrarRegistro(){document.getElementById("overlay-registro").style.display="none";}
 
-/* --- Consultorio --- */
-document.getElementById("formConsultorio").addEventListener("submit",e=>{
-  e.preventDefault();
-  const nombre=document.getElementById("nombreConsultorio").value;
-  const mensaje=document.getElementById("mensajeConsultorio").value;
-  const lista=document.querySelector("#respuestasConsultorio ul");
-  const li=document.createElement("li");
-  li.textContent=`${usuarioActual?usuarioActual:nombre}: ${mensaje}`;
-  lista.appendChild(li);
-  document.getElementById("formConsultorio").reset();
-});
+// Google Apps Script URL
+const URL_SCRIPT = 'https://script.google.com/macros/s/AKfycbw6rCfXF6k9JSU1EfwRpWNT3Ui8rFSmdQynYNGga8Hs9Nttu_Md-4b_um3cXWmIOk1L2g/exec';
 
-/* --- PWA instalar --- */
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt',(e)=>{
-  e.preventDefault();
-  deferredPrompt=e;
-  document.getElementById("instalarApp").style.display="block";
-});
-document.getElementById("instalarApp").addEventListener('click',async ()=>{
-  if(deferredPrompt){ deferredPrompt.prompt(); const {outcome }=await deferredPrompt.userChoice; deferredPrompt=null; document.getElementById("instalarApp").style.display="none"; }
+// Registro Socio
+function registrarSocio(){
+const usuario=document.getElementById("usuarioRegistro").value.trim();
+const password=document.getElementById("passwordRegistro").value.trim();
+if(!usuario||!password){alert("Rellena usuario y contraseña"); return;}
+fetch(`${URL_SCRIPT}?accion=registro&usuario=${encodeURIComponent(usuario)}&password=${encodeURIComponent(password)}`)
+.then(res=>res.json()).then(data=>{
+if(data.resultado==='ok'){alert("Registro completado"); cerrarRegistro();}
+else alert("Error: "+data.mensaje);
+}).catch(err=>alert("Error de conexión"));
+}
+
+// Login Socio
+function loginSocio(){
+const usuario=document.getElementById("usuarioLogin").value.trim();
+const password=document.getElementById("passwordLogin").value.trim();
+if(!usuario||!password){alert("Rellena usuario y contraseña"); return;}
+fetch(`${URL_SCRIPT}?accion=login&usuario=${encodeURIComponent(usuario)}&password=${encodeURIComponent(password)}`)
+.then(res=>res.json()).then(data=>{
+if(data.resultado==='ok'){
+cerrarLogin();
+document.getElementById("pantallaInicio").style.display="none";
+document.getElementById("encabezadoApp").style.display="flex";
+document.getElementById("mainContent").style.display="block";
+document.getElementById("liFollar").style.display="block";
+document.getElementById("btnFollar").style.display="block";
+document.getElementById("nombreUsuarioHeader").textContent=`Evento Musical Nº8 - ${usuario}`;
+}else alert("Usuario o contraseña incorrectos");
+}).catch(err=>alert("Error de conexión"));
+}
+
+// Consultorio
+document.getElementById("formConsultorio").addEventListener("submit", e=>{
+e.preventDefault();
+const consulta=document.getElementById("consulta").value.trim();
+const nombre=document.getElementById("nombreConsulta").value.trim()||"Anónimo";
+const email=document.getElementById("emailConsulta").value.trim()||"";
+if(!consulta) return;
+const ul=document.querySelector("#respuestasConsultorio ul");
+const li=document.createElement("li");
+li.textContent=`${nombre}: ${consulta}`;
+ul.appendChild(li);
+document.getElementById("formConsultorio").reset();
 });
 </script>
 </body>
