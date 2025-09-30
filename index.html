@@ -549,18 +549,48 @@
       }
     }
 
+    // ---------------------------------------------------
+    // Integración con Google Sheet / Apps Script (canciones)
+    // URL proporcionada por ti:
+    const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbzZbnOnLC38tWppxHUBKPYmK1niVBoB4x9fOwQ8H7Qhy2ZW3fg-Sb2r66GX2J33XaR6Yg/exec";
+    // ---------------------------------------------------
+
     function propuestaMusical() {
-      fetch("canciones.txt")
-        .then(r => r.text())
+      fetch(GAS_URL_CANCIONES + "?action=getRandomCancion")
+        .then(r => {
+          if (!r.ok) throw new Error("Respuesta no OK: " + r.status);
+          return r.json();
+        })
         .then(data => {
-          const lineas = data.split("\n").filter(l => l.trim() !== "");
-          const random = lineas[Math.floor(Math.random() * lineas.length)];
-          const partes = random.split("\t");
-          const artista = partes[0], cancion = partes[1];
-          const query = encodeURIComponent(artista + " " + cancion);
+          // Soportar distintos formatos de respuesta del Apps Script:
+          // - { artista: "...", tema: "...", votos: ... }
+          // - { id: ..., titulo: "...", artista: "...", url: "...", votos: ... }
+          // - otros nombres posibles
+          const artista = data.artista || data.artist || data[2] || "";
+          const tema = data.tema || data.titulo || data.title || data[1] || "";
+          const url = data.url || data.URL || null;
+
+          if (url) {
+            // Si el Apps Script devuelve una URL directa, la abrimos
+            window.open(url, "_blank");
+            return;
+          }
+
+          const queryParts = [];
+          if (artista) queryParts.push(artista);
+          if (tema) queryParts.push(tema);
+          const query = encodeURIComponent(queryParts.join(" "));
+
+          if (!query) {
+            throw new Error("Respuesta inválida del servidor (sin artista/tema)");
+          }
+
           window.open("https://www.youtube.com/results?search_query=" + query, "_blank");
         })
-        .catch(err => alert("No se pudo cargar la lista de canciones: " + err));
+        .catch(err => {
+          console.error("Error en propuestaMusical:", err);
+          alert("No se pudo obtener la canción: " + (err.message || err));
+        });
     }
 
     function abrirModal() {
