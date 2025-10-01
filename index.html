@@ -1,1020 +1,215 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Evento Musical Nº8</title>
-
-  <!-- PWA: manifest y meta -->
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#121212" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <link rel="apple-touch-icon" href="icon-192.png" />
-
-  <link href="https://fonts.googleapis.com/css?family=Metal+Mania:400|Roboto:400,700&display=swap" rel="stylesheet" />
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-size: 16px;
-      background: #121212;
-      color: #eee;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-family: "Roboto", Arial, sans-serif;
-    }
-
-    .pantalla-inicio {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1b1b1b 80%, #660909 100%);
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      padding: 20px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-    .pantalla-inicio h1 {
-      font-family: "Metal Mania", cursive, Arial, sans-serif;
-      font-size: 2.2em;
-      margin-bottom: 18px;
-      text-shadow: 0 4px 20px #d02121, 1px 1px 0 #000;
-      color: #fff;
-    }
-    .pantalla-inicio button {
-      background: #d02121;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      font-size: 1.3em;
-      padding: 14px 28px;
-      font-family: "Metal Mania", Arial, sans-serif;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .pantalla-inicio button:hover {
-      background: #960909;
-    }
-
-    header {
-      background: linear-gradient(90deg, #222 80%, #a00 100%);
-      box-shadow: 0 4px 18px rgba(100, 0, 0, 0.4);
-      border-bottom: 3px solid #d02121;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: sticky;
-      top: 0;
-      z-index: 1100;
-    }
-    header h1 {
-      font-family: "Metal Mania", cursive, Arial, sans-serif;
-      font-size: 1.8em;
-      letter-spacing: 1px;
-      user-select: none;
-      margin: 0;
-      flex-grow: 1;
-      padding-left: 50px;
-      color: #fff;
-      text-shadow: 0 4px 22px #d02121, 1px 1px 0 #000;
-    }
-    .menu-hamburguesa {
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1101;
-    }
-    .hamburguesa-btn {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 1101;
-    }
-    .hamburguesa-bar {
-      width: 28px;
-      height: 3px;
-      background: #fff;
-      border-radius: 2px;
-      margin: 5px 0;
-      transition: 0.3s;
-    }
-    .menu-navegacion {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 85vw;
-      max-width: 320px;
-      padding-top: 65px;
-      background: #2a1a1a;
-      box-shadow: 4px 0 24px rgba(48, 6, 6, 0.85);
-      flex-direction: column;
-      gap: 16px;
-      z-index: 1100;
-      overflow-y: auto;
-      user-select: none;
-      transition: transform 0.3s ease;
-      box-sizing: border-box;
-    }
-    .menu-navegacion.show {
-      display: flex;
-    }
-    .menu-navegacion button {
-      font-family: "Metal Mania", Arial, sans-serif;
-      font-size: 1.2em;
-      color: #fff;
-      background: transparent;
-      border: none;
-      padding: 16px 20px;
-      text-align: left;
-      border-bottom: 1px solid #aa2b2b;
-      cursor: pointer;
-      transition: background 0.2s, color 0.18s;
-    }
-    .menu-navegacion button:hover,
-    .menu-navegacion button:focus {
-      background: #bf1f1f;
-      outline: none;
-      color: #fff;
-    }
-
-    section {
-      max-width: 100%;
-      margin: 20px 10px;
-      padding: 18px 16px;
-      border-radius: 12px;
-      background: #330a0a;
-      box-shadow: 0 5px 25px rgba(160, 18, 22, 0.3);
-      display: none;
-      animation: fadeIn 0.7s;
-      box-sizing: border-box;
-    }
-    section.active {
-      display: block;
-    }
-    section h2 {
-      font-family: "Metal Mania", cursive, Arial, sans-serif;
-      font-size: 1.5em;
-      color: #d02121;
-      margin-top: 0;
-      margin-bottom: 20px;
-      text-shadow: 0 1px 13px #a31634, 1px 1px 0 #222;
-      border-bottom: 2px solid #d02121;
-      padding-bottom: 6px;
-    }
-    section p, section label, section textarea, section input, section select {
-      font-family: "Roboto", Arial, sans-serif;
-      font-size: 1em;
-      line-height: 1.6;
-      color: #eee;
-    }
-
-    input, textarea, select {
-      margin: 5px 0 13px 0;
-      padding: 10px 14px;
-      width: 100%;
-      border: 1.5px solid #b62222;
-      border-radius: 8px;
-      background: #221010;
-      color: #eee;
-      font-size: 1em;
-      box-shadow: inset 0 1px 6px #b52323;
-      transition: border 0.2s, box-shadow 0.2s;
-      box-sizing: border-box;
-    }
-    input:focus, textarea:focus, select:focus {
-      border-color: #fff;
-      box-shadow: 0 0 10px #ff4f4f;
-      outline: none;
-    }
-
-    button, input[type="submit"] {
-      background: #d02121;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 3px 16px #e44141cc;
-      font-size: 1.1em;
-      letter-spacing: 1.2px;
-      font-family: "Metal Mania", Arial, sans-serif;
-      padding: 12px 0;
-      cursor: pointer;
-      margin-top: 6px;
-      width: 100%;
-      transition: all 0.22s;
-      box-sizing: border-box;
-    }
-    button:hover, input[type="submit"]:hover,
-    button:focus, input[type="submit"]:focus {
-      background: #fff;
-      color: #d02121;
-      border: 1.5px solid #d02121;
-      box-shadow: 0 5px 24px #e04242cc;
-      outline: none;
-    }
-
-    #respuestasConsultorio ul {
-      padding-left: 1.5em;
-    }
-    #respuestasConsultorio li {
-      margin-bottom: 10px;
-      word-wrap: break-word;
-    }
-
-    #resultado-libro, #resultado-pelicula, #resultado-diccionario {
-      display: inline-block;
-      margin-left: 10px;
-      vertical-align: middle;
-      word-wrap: break-word;
-      max-width: 80vw;
-      color: #fff;
-    }
-
-    .libro-item {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      color: #fff;
-    }
-    .autor {
-      font-weight: bold;
-      min-width: 120px;
-      color: #f5bcbc;
-    }
-    .titulo {
-      font-style: italic;
-      color: #f0dcdc;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .overlay {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.75);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-      box-sizing: border-box;
-      z-index: 9998;
-    }
-    .overlay.show {
-      display: flex;
-    }
-    .modal {
-      background: #2a1a1a;
-      color: #eee;
-      padding: 20px 16px;
-      border-radius: 16px;
-      max-width: 95%;
-      max-height: 70vh;
-      overflow-y: auto;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-      position: relative;
-      box-sizing: border-box;
-      animation: modalFade 0.24s ease-out;
-    }
-    .modal button.cerrar {
-      width: 30px;
-      height: 30px;
-      padding: 0;
-      line-height: 30px;
-      text-align: center;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 22px;
-      cursor: pointer;
-      z-index: 10;
-    }
-    .modal h3, .modal h2 {
-      padding-right: 50px;
-      margin-top: 0;
-      margin-bottom: 16px;
-      position: relative;
-      z-index: 1;
-      color: #eee;
-      word-break: break-word;
-    }
-
-    @keyframes modalFade {
-      from {
-        transform: scale(0.96);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .pantalla-inicio h1 {
-        font-size: 1.8em;
-      }
-      header h1 {
-        font-size: 1.4em;
-        padding-left: 45px;
-      }
-      .menu-hamburguesa {
-        left: 5px;
-      }
-      .hamburguesa-btn {
-        width: 32px;
-        height: 32px;
-      }
-      .hamburguesa-bar {
-        height: 2.5px;
-      }
-      .menu-navegacion {
-        width: 90vw;
-        max-width: none;
-      }
-      section {
-        margin: 15px 5px;
-        padding: 14px 12px;
-      }
-      button, input[type="submit"] {
-        font-size: 1em;
-        padding: 12px 0;
-      }
-    }
-
-    /* Botón PWA instalar (añadido) */
-    #instalarApp {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #d02121;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      padding: 12px 18px;
-      font-size: 1em;
-      font-family: "Metal Mania", Arial, sans-serif;
-      cursor: pointer;
-      box-shadow: 0 6px 22px rgba(0,0,0,0.5);
-      z-index: 12000;
-    }
-    #instalarApp:active { transform: translateY(1px); }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Evento Musical Nº8</title>
+<!-- PWA: manifest y meta -->
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#121212" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<link href="https://fonts.googleapis.com/css?family=Metal+Mania:400|Roboto:400,700&display=swap" rel="stylesheet" />
+<style>
+/* --- Estilos generales (mantengo como tu versión) --- */
+body, html { margin:0; padding:0; font-size:16px; background:#121212; color:#eee; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; font-family:"Roboto",Arial,sans-serif; }
+.pantalla-inicio { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; background:linear-gradient(135deg,#1b1b1b 80%,#660909 100%); position:fixed; inset:0; z-index:9999; padding:20px; box-sizing:border-box; text-align:center; }
+.pantalla-inicio h1 { font-family:"Metal Mania", cursive, Arial, sans-serif; font-size:2.2em; margin-bottom:18px; text-shadow:0 4px 20px #d02121,1px 1px 0 #000; color:#fff; }
+.pantalla-inicio button { background:#d02121; color:#fff; border:none; border-radius:10px; font-size:1.3em; padding:14px 28px; font-family:"Metal Mania", Arial, sans-serif; cursor:pointer; transition: background 0.2s; }
+.pantalla-inicio button:hover { background:#960909; }
+header { background:linear-gradient(90deg,#222 80%,#a00 100%); box-shadow:0 4px 18px rgba(100,0,0,0.4); border-bottom:3px solid #d02121; padding:15px 20px; display:flex; align-items:center; justify-content:center; position:sticky; top:0; z-index:1100; }
+header h1 { font-family:"Metal Mania", cursive, Arial, sans-serif; font-size:1.8em; letter-spacing:1px; user-select:none; margin:0; flex-grow:1; padding-left:50px; color:#fff; text-shadow:0 4px 22px #d02121,1px 1px 0 #000; }
+.menu-hamburguesa { position:absolute; left:10px; top:50%; transform:translateY(-50%); z-index:1101; }
+.hamburguesa-btn { display:flex; flex-direction:column; justify-content:center; width:36px; height:36px; background:none; border:none; cursor:pointer; padding:0; z-index:1101; }
+.hamburguesa-bar { width:28px; height:3px; background:#fff; border-radius:2px; margin:5px 0; transition:0.3s; }
+.menu-navegacion { display:none; position:fixed; top:0; left:0; height:100vh; width:85vw; max-width:320px; padding-top:65px; background:#2a1a1a; box-shadow:4px 0 24px rgba(48,6,6,0.85); flex-direction:column; gap:16px; z-index:1100; overflow-y:auto; user-select:none; transition: transform 0.3s ease; box-sizing:border-box; }
+.menu-navegacion.show { display:flex; }
+.menu-navegacion button { font-family:"Metal Mania", Arial, sans-serif; font-size:1.2em; color:#fff; background:transparent; border:none; padding:16px 20px; text-align:left; border-bottom:1px solid #aa2b2b; cursor:pointer; transition: background 0.2s, color 0.18s; }
+.menu-navegacion button:hover, .menu-navegacion button:focus { background:#bf1f1f; outline:none; color:#fff; }
+section { max-width:100%; margin:20px 10px; padding:18px 16px; border-radius:12px; background:#330a0a; box-shadow:0 5px 25px rgba(160,18,22,0.3); display:none; animation:fadeIn 0.7s; box-sizing:border-box; }
+section.active { display:block; }
+section h2 { font-family:"Metal Mania", cursive, Arial, sans-serif; font-size:1.5em; color:#d02121; margin-top:0; margin-bottom:20px; text-shadow:0 1px 13px #a31634,1px 1px 0 #222; border-bottom:2px solid #d02121; padding-bottom:6px; }
+section p, section label, section textarea, section input, section select { font-family:"Roboto", Arial, sans-serif; font-size:1em; line-height:1.6; color:#eee; }
+input, textarea, select { margin:5px 0 13px 0; padding:10px 14px; width:100%; border:1.5px solid #b62222; border-radius:8px; background:#221010; color:#eee; font-size:1em; box-shadow:inset 0 1px 6px #b52323; transition:border 0.2s, box-shadow 0.2s; box-sizing:border-box; }
+input:focus, textarea:focus, select:focus { border-color:#fff; box-shadow:0 0 10px #ff4f4f; outline:none; }
+button, input[type="submit"] { background:#d02121; color:#fff; border:none; border-radius:10px; box-shadow:0 3px 16px #e44141cc; font-size:1.1em; letter-spacing:1.2px; font-family:"Metal Mania", Arial, sans-serif; padding:12px 0; cursor:pointer; margin-top:6px; width:100%; transition:all 0.22s; box-sizing:border-box; }
+button:hover, input[type="submit"]:hover, button:focus, input[type="submit"]:focus { background:#fff; color:#d02121; border:1.5px solid #d02121; box-shadow:0 5px 24px #e04242cc; outline:none; }
+#respuestasConsultorio ul { padding-left:1.5em; }
+#respuestasConsultorio li { margin-bottom:10px; word-wrap:break-word; }
+#resultado-libro, #resultado-pelicula, #resultado-diccionario { display:inline-block; margin-left:10px; vertical-align:middle; word-wrap:break-word; max-width:80vw; color:#fff; }
+.libro-item { display:flex; gap:10px; flex-wrap:wrap; color:#fff; }
+.autor { font-weight:bold; min-width:120px; color:#f5bcbc; }
+.titulo { font-style:italic; color:#f0dcdc; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+.overlay { position:fixed; inset:0; width:100%; height:100%; background:rgba(0,0,0,0.75); display:none; justify-content:center; align-items:center; padding:10px; box-sizing:border-box; z-index:9998; }
+.overlay.show { display:flex; }
+.modal { background:#2a1a1a; color:#eee; padding:20px 16px; border-radius:16px; max-width:95%; max-height:70vh; overflow-y:auto; box-shadow:0 10px 30px rgba(0,0,0,0.7); position:relative; box-sizing:border-box; animation:modalFade 0.24s ease-out; }
+.modal button.cerrar { width:30px; height:30px; padding:0; line-height:30px; text-align:center; position:absolute; top:10px; right:10px; background:none; border:none; color:#fff; font-size:22px; cursor:pointer; z-index:10; }
+.modal h3, .modal h2 { padding-right:50px; margin-top:0; margin-bottom:16px; position:relative; z-index:1; color:#eee; word-break:break-word; }
+@keyframes modalFade { from { transform:scale(0.96); opacity:0; } to { transform:scale(1); opacity:1; } }
+@media (max-width:480px) {
+  .pantalla-inicio h1 { font-size:1.8em; }
+  header h1 { font-size:1.4em; padding-left:45px; }
+  .menu-hamburguesa { left:5px; }
+  .hamburguesa-btn { width:32px; height:32px; }
+  .hamburguesa-bar { height:2.5px; }
+  .menu-navegacion { width:90vw; max-width:none; }
+  section { margin:15px 5px; padding:14px 12px; }
+  button, input[type="submit"] { font-size:1em; padding:12px 0; }
+}
+/* Botón PWA instalar (añadido) */
+#instalarApp { display:none; position:fixed; bottom:20px; right:20px; background:#d02121; color:#fff; border:none; border-radius:10px; padding:12px 18px; font-size:1em; font-family:"Metal Mania", Arial, sans-serif; cursor:pointer; box-shadow:0 6px 22px rgba(0,0,0,0.5); z-index:12000; }
+#instalarApp:active { transform:translateY(1px); }
+</style>
 </head>
 <body>
-  <div class="pantalla-inicio" id="pantallaInicio">
-    <h1>EVENTO MUSICAL Nº8</h1>
-    <button onclick="entrarWeb()">Adelante...</button>
-  </div>
 
-  <header id="encabezadoApp" style="display: none;">
-    <div class="menu-hamburguesa">
-      <button
-        class="hamburguesa-btn"
-        id="abrirMenu"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="menuNavegacion"
-      >
-        <span class="hamburguesa-bar"></span>
-        <span class="hamburguesa-bar"></span>
-        <span class="hamburguesa-bar"></span>
-      </button>
-    </div>
-    <h1>EVENTO MUSICAL Nº8</h1>
-    <nav
-      class="menu-navegacion"
-      id="menuNavegacion"
-      aria-label="Navegación principal"
-    >
-      <button onclick="mostrarSeccion('musica'); cerrarMenu();">Música</button>
-      <button onclick="mostrarSeccion('libros'); cerrarMenu();">Libros</button>
-      <button onclick="mostrarSeccion('cine'); cerrarMenu();">Cine</button>
-      <button onclick="mostrarSeccion('consultorio'); cerrarMenu();">Consultorio</button>
-      <button onclick="mostrarSeccion('Follar'); cerrarMenu();">Follar</button>
-      <button onclick="mostrarSeccion('diccionario'); cerrarMenu();">Diccionario</button>
-    </nav>
-  </header>
+<div class="pantalla-inicio" id="pantallaInicio">
+<h1>EVENTO MUSICAL Nº8</h1>
+<button onclick="entrarWeb()">Adelante...</button>
+</div>
 
-  <div class="main-content" id="mainContent" style="display: none;">
-    <section id="inicio" class="active">
-      <h2>Portal del conocimiento</h2>
-      <p>Bienvenidos a Evento Musical Nº8. Desde esta atalaya podéis consultar diferentes secciones, accesibles desde el menú. Son las siguientes:</p>
-      <ul>
-        <li>Música</li>
-        <li>Libros</li>
-        <li>Cine</li>
-        <li>Consultorio</li>
-        <li>Follar</li>
-        <li>Diccionario</li>
-      </ul>
-      <p>Haced buen uso de ellas y procurad no caer en las garras de la adicción</p>
-    </section>
+<header id="encabezadoApp" style="display: none;">
+<div class="menu-hamburguesa">
+  <button class="hamburguesa-btn" id="abrirMenu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuNavegacion">
+    <span class="hamburguesa-bar"></span>
+    <span class="hamburguesa-bar"></span>
+    <span class="hamburguesa-bar"></span>
+  </button>
+</div>
+<h1>EVENTO MUSICAL Nº8</h1>
+<nav class="menu-navegacion" id="menuNavegacion" aria-label="Navegación principal">
+  <button onclick="mostrarSeccion('musica'); cerrarMenu();">Música</button>
+  <button onclick="mostrarSeccion('libros'); cerrarMenu();">Libros</button>
+  <button onclick="mostrarSeccion('cine'); cerrarMenu();">Cine</button>
+  <button onclick="mostrarSeccion('consultorio'); cerrarMenu();">Consultorio</button>
+  <button onclick="mostrarSeccion('Follar'); cerrarMenu();">Follar</button>
+  <button onclick="mostrarSeccion('diccionario'); cerrarMenu();">Diccionario</button>
+</nav>
+</header>
 
-    <section id="musica">
-      <h2>Música</h2>
-      <p>Cansados de tanta mierda como nos meten por los ojos, oídos y demás orificios, Evento Musical Nº8 se ha tomado la molestia de seleccionar 1000 canciones de Rock. La excelencia en la selección ha sido exquisita. Un simple click en el botón y se desplegará ante vosotros la esencia del Rock, Hard Rock, Heavy Rock, o Protometal</p>
-      <button onclick="propuestaMusical()">Propuesta Musical</button>
-      <!-- Nuevo botón solicitado: abre el listado desde la Sheet -->
-      <button onclick="mostrarListadoCanciones()">Listado de canciones</button>
-    </section>
+<div class="main-content" id="mainContent" style="display: none;">
 
-    <!-- Nueva sección que mostrará el listado recuperado desde la Sheet -->
-    <section id="listadoCanciones" aria-live="polite">
-      <h2>Listado de canciones (desde Google Sheet)</h2>
-      <p id="texto-listado">Aquí se mostrará el listado de la hoja <em>Canciones</em> de Drive.</p>
-      <div id="tabla-canciones-container" style="margin-top:12px;"></div>
-      <button onclick="mostrarSeccion('musica')">Volver a Música</button>
-    </section>
+<!-- Secciones principales -->
+<section id="inicio" class="active">
+<h2>Portal del conocimiento</h2>
+<p>Bienvenidos a Evento Musical Nº8. Desde esta atalaya podéis consultar diferentes secciones, accesibles desde el menú. Son las siguientes:</p>
+<ul>
+  <li>Música</li>
+  <li>Libros</li>
+  <li>Cine</li>
+  <li>Consultorio</li>
+  <li>Follar</li>
+  <li>Diccionario</li>
+</ul>
+<p>Haced buen uso de ellas y procurad no caer en las garras de la adicción</p>
+</section>
 
-    <section id="libros">
-      <h2>Libros</h2>
-      <p>¿Eres un analfabeto funcional y necesitas disimularlo? O simplemente eres gilipollas y cada vez que eliges un libro la cagas. Aquí resolvemos ese problema accediendo a través del azar a una cuidada selección de títulos. Simplemente déjate llevar y dedícate a otra cosa que se suponga que haces mejor</p>
-      <button id="buscar-libro-btn">Buscar libro</button>
-      <div id="resultado-libro"></div>
-    </section>
-    <section id="cine">
-      <h2>Cine</h2>
-      <p>Desde Evento Musical suponemos que si eres tan inutil para elegir libros, de la misma forma lo serás para hacerlo con una película. Si te has cargado muchas tardes de sofá por no saber qué pelicula ver y elegir basura, te recetamos algo para ese dolor</p>
-      <button id="buscar-pelicula-btn">Propuesta de película</button>
-      <div id="resultado-pelicula"></div>
-    </section>
-    <section id="consultorio">
-      <h2>¿Eres un pringao o simplemente eres imbécil y no sabes qué hacer? Manda tu consulta al Gran Huan Khan, él te mostrará el camino </h2>
-      <form id="formConsultorio" onsubmit="enviarConsultorio(event)" autocomplete="off">
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre" required />
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required />
-        <label for="consulta">Consulta:</label>
-        <textarea name="consulta" id="consulta" rows="5" required></textarea>
-        <button type="submit" id="submitBtn">Enviar Consulta</button>
-      </form>
-      <div id="respuestasConsultorio">
-        <h3>Consultas recibidas</h3>
-        <ul id="listaConsultas"></ul>
-      </div>
-    </section>
-    <section id="Follar">
-      <h2>Consentimiento</h2>
-      <p>¿Estás harto de no follar? ¿Acojonado por si una ver surje la oportunidad y te hacen un Errejón? Nuestro formulario es la respuesta ante esta situación. No servirá para nada legalmente, pero lo mismo te sirve de excusa para acabar follando</p>
-      <button onclick="window.open('consentimiento.html', '_blank')">Abrir Documento de Consentimiento</button>
-    </section>
-    <section id="diccionario">
-      <h2>Diccionario</h2>
-      <p>Diccionario Mongoplédico para aprender la jerga dictatorial.</p>
-      <button onclick="verDiccionario()">Ver diccionario</button>
-      <button onclick="abrirModalDiccionario()">Añadir palabra</button>
-      <div id="resultado-diccionario"></div>
-    </section>
+<section id="musica">
+<h2>Música</h2>
+<p>Cansados de tanta mierda como nos meten por los ojos, oídos y demás orificios, Evento Musical Nº8 se ha tomado la molestia de seleccionar 1000 canciones de Rock. La excelencia en la selección ha sido exquisita. Un simple click en el botón y se desplegará ante vosotros la esencia del Rock, Hard Rock, Heavy Rock, o Protometal</p>
+<button onclick="propuestaMusical()">Propuesta Musical</button>
+<!-- Botón listado canciones -->
+<button onclick="mostrarListadoCanciones()">Listado de canciones</button>
+</section>
 
-    <div id="overlay-libro" class="overlay" onclick="cerrarModal()">
-      <div id="ventana-derecha-libro" class="modal" onclick="event.stopPropagation()">
-        <button class="cerrar" onclick="cerrarModal()">✖</button>
-        <div id="contenido-libro"></div>
-      </div>
-    </div>
-    <div id="overlay-pelicula" class="overlay" onclick="cerrarModalPelicula()">
-      <div id="ventana-derecha-pelicula" class="modal" onclick="event.stopPropagation()">
-        <button class="cerrar" onclick="cerrarModalPelicula()">✖</button>
-        <div id="contenido-pelicula"></div>
-      </div>
-    </div>
-    <div id="overlay-diccionario" class="overlay" onclick="cerrarModalDiccionario()">
-      <div id="ventana-derecha-diccionario-view" class="modal" onclick="event.stopPropagation()">
-        <button class="cerrar" onclick="cerrarModalDiccionario()">✖</button>
-        <div id="contenido-diccionario">Cargando diccionario...</div>
-      </div>
-    </div>
-    <div id="overlay-diccionario-add" class="overlay" onclick="cerrarModalDiccionarioAdd()">
-      <div id="ventana-derecha-diccionario-add" class="modal" onclick="event.stopPropagation()">
-        <button class="cerrar" onclick="cerrarModalDiccionarioAdd()">✖</button>
-        <h3>Añadir palabra</h3>
-        <label for="palabra">Palabra:</label>
-        <input type="text" id="palabra" required />
-        <label for="descripcion">Descripción:</label>
-        <textarea id="descripcion" rows="4" required></textarea>
-        <button onclick="añadirPalabra()">Añadir</button>
-      </div>
-    </div>
-  </div>
+<section id="listadoCanciones" aria-live="polite">
+<h2>Listado de canciones (desde Google Sheet)</h2>
+<p id="texto-listado">Aquí se mostrará el listado de la hoja <em>Canciones</em> de Drive.</p>
+<div id="tabla-canciones-container" style="margin-top:12px;"></div>
+<button onclick="mostrarSeccion('musica')">Volver a Música</button>
+</section>
 
-  <!-- Botón de instalación PWA -->
-  <button id="instalarApp" aria-hidden="true">Instalar aplicación</button>
+<!-- Aquí se incluirían otras secciones: libros, cine, consultorio, etc. -->
 
-  <script>
-    function entrarWeb() {
-      document.getElementById("pantallaInicio").style.display = "none";
-      document.getElementById("encabezadoApp").style.display = "";
-      document.getElementById("mainContent").style.display = "";
-      mostrarSeccion("inicio");
-    }
+</div>
 
-    const botonMenu = document.getElementById("abrirMenu");
-    const menuNavegacion = document.getElementById("menuNavegacion");
-    botonMenu.addEventListener("click", function () {
-      const expanded = botonMenu.getAttribute("aria-expanded") === "true" || false;
-      botonMenu.setAttribute("aria-expanded", !expanded);
-      menuNavegacion.classList.toggle("show");
-    });
-    function cerrarMenu() {
-      botonMenu.setAttribute("aria-expanded", "false");
-      menuNavegacion.classList.remove("show");
-    }
+<script>
+/* ==== Funciones de navegación ==== */
+function entrarWeb() {
+  document.getElementById("pantallaInicio").style.display = "none";
+  document.getElementById("encabezadoApp").style.display = "";
+  document.getElementById("mainContent").style.display = "";
+  mostrarSeccion("inicio");
+}
 
-    function mostrarSeccion(id) {
-      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
-      if (id === "inicio") {
-        document.getElementById("inicio").classList.add("active");
-      } else {
-        document.getElementById("inicio").classList.remove("active");
-        document.getElementById(id).classList.add("active");
-      }
-    }
+function mostrarSeccion(id) {
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+  const sec = document.getElementById(id);
+  if(sec) sec.classList.add("active");
+}
 
-    function propuestaMusical() {
-      fetch("canciones.txt")
-        .then(r => r.text())
-        .then(data => {
-          const lineas = data.split("\n").filter(l => l.trim() !== "");
-          const random = lineas[Math.floor(Math.random() * lineas.length)];
-          const partes = random.split("\t");
-          const artista = partes[0], cancion = partes[1];
-          const query = encodeURIComponent(artista + " " + cancion);
-          window.open("https://www.youtube.com/results?search_query=" + query, "_blank");
-        })
-        .catch(err => alert("No se pudo cargar la lista de canciones: " + err));
-    }
+const menuBtn = document.getElementById("abrirMenu");
+const menuNav = document.getElementById("menuNavegacion");
+menuBtn.addEventListener("click",()=>{menuNav.classList.toggle("show"); menuBtn.setAttribute("aria-expanded",menuNav.classList.contains("show"));});
+function cerrarMenu(){menuNav.classList.remove("show"); menuBtn.setAttribute("aria-expanded","false");}
 
-    // ---------------------------------------------------
-    // Integración: URL de tu Apps Script para obtener el listado
-    const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbyNikEiiodluLAo6quEarSwDFB0Em416MrKiCLwDgbUs9_BD8uCiFi85uZ5M3GFvOa-ww/exec";
-    // ---------------------------------------------------
+/* ==== LISTADO DE CANCIONES + VOTAR ==== */
+const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbzZbnOnLC38tWppxHUBKPYmK1niVBoB4x9fOwQ8H7Qhy2ZW3fg-Sb2r66GX2J33XaR6Yg/exec";
 
-    // Muestra el listado recuperado desde la sheet **en una pestaña nueva**
-    function mostrarListadoCanciones() {
-      // Abrir ventana/pestaña nueva
-      const nuevaVentana = window.open("", "_blank");
+function mostrarListadoCanciones() {
+  const container = document.getElementById("tabla-canciones-container");
+  const texto = document.getElementById("texto-listado");
+  container.innerHTML = "";
+  texto.textContent = "Cargando listado desde Google Sheet...";
 
-      // HTML que se inyectará en la nueva pestaña
-      const html = `
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Listado de canciones</title>
-  <style>
-    body { font-family: Roboto, Arial, sans-serif; background:#121212; color:#eee; margin:0; padding:18px; }
-    h1 { font-family: "Metal Mania", cursive, Arial, sans-serif; color:#d02121; margin:0 0 12px 0; }
-    p { color:#ddd; }
-    table { width:100%; border-collapse:collapse; margin-top:12px; }
-    th, td { padding:8px; border-bottom:1px solid rgba(255,255,255,0.06); text-align:left; vertical-align:middle; }
-    th { color:#fff; border-bottom:2px solid #aa2b2b; }
-    button { background:#d02121; color:#fff; border:none; padding:6px 10px; border-radius:8px; cursor:pointer; }
-    button:active { transform:translateY(1px); }
-    input[type="number"] { width:60px; padding:6px; border-radius:6px; border:1px solid #b62222; background:#221010; color:#fff; }
-    .topbar { display:flex; gap:8px; align-items:center; margin-bottom:12px; }
-    .closeBtn { background:#444; }
-    .small { font-size:0.9em; color:#ccc; }
-  </style>
-</head>
-<body>
-  <div class="topbar">
-    <h1>Listado de canciones</h1>
-    <div style="flex:1"></div>
-    <button class="closeBtn" onclick="window.close()">Cerrar</button>
-  </div>
-  <p id="texto-listado">Cargando listado desde Google Sheet...</p>
-  <div id="tabla-canciones-container"></div>
-
-  <script>
-    const GAS = "${GAS_URL_CANCIONES}";
-
-    function manejarRespuestaFormato(resp) {
+  fetch(GAS_URL_CANCIONES + "?action=getListado")
+    .then(r => { if(!r.ok) throw new Error("Respuesta no OK: "+r.status); return r.json(); })
+    .then(resp => {
       let canciones = resp;
-      if (!Array.isArray(canciones)) {
-        if (resp && resp.canciones && Array.isArray(resp.canciones)) canciones = resp.canciones;
-        else return null;
+      if(!Array.isArray(canciones)) {
+        if(resp && resp.canciones && Array.isArray(resp.canciones)) canciones = resp.canciones;
+        else { texto.textContent="Formato inesperado del servidor"; mostrarSeccion('listadoCanciones'); return; }
       }
-      return canciones;
-    }
+      texto.textContent = `Total canciones: ${canciones.length}`;
+      if(canciones.length===0){container.textContent="No hay canciones"; mostrarSeccion('listadoCanciones'); return;}
 
-    function crearTabla(canciones) {
-      if (!canciones || canciones.length === 0) {
-        document.getElementById('tabla-canciones-container').textContent = "No hay canciones en la hoja.";
-        return;
-      }
+      const table=document.createElement('table'); table.style.width='100%'; table.style.borderCollapse='collapse';
+      const thead=document.createElement('thead'); const headRow=document.createElement('tr');
+      ['ID','Artista','Tema','Votos','Reproducir','Votar'].forEach(h=>{const th=document.createElement('th'); th.textContent=h; th.style.textAlign='left'; th.style.padding='8px'; th.style.borderBottom='1px solid #aa2b2b'; th.style.color='#fff'; headRow.appendChild(th);});
+      thead.appendChild(headRow); table.appendChild(thead);
 
-      const table = document.createElement('table');
-      const thead = document.createElement('thead');
-      const headRow = document.createElement('tr');
-      ['ID','Artista','Tema','Votos','Votar','Reproducir'].forEach(h => {
-        const th = document.createElement('th');
-        th.textContent = h;
-        headRow.appendChild(th);
-      });
-      thead.appendChild(headRow);
-      table.appendChild(thead);
+      const tbody=document.createElement('tbody');
+      canciones.forEach((c,idx)=>{
+        const artista=c.artista||c.Artista||c[0]||"";
+        const tema=c.tema||c.Tema||c.titulo||c[1]||"";
+        let votos=(c.votos!==undefined)?c.votos:(c.Votos!==undefined?c.Votos:0);
+        const url=c.url||c.URL||"";
 
-      const tbody = document.createElement('tbody');
+        const tr=document.createElement('tr');
+        const idCell=document.createElement('td'); idCell.textContent=(c.id!==undefined)?c.id:(c.ID!==undefined?c.ID:idx+1); idCell.style.padding='8px'; idCell.style.borderBottom='1px solid rgba(255,255,255,0.06)'; tr.appendChild(idCell);
+        const artistaCell=document.createElement('td'); artistaCell.textContent=artista; artistaCell.style.padding='8px'; artistaCell.style.borderBottom='1px solid rgba(255,255,255,0.06)'; tr.appendChild(artistaCell);
+        const temaCell=document.createElement('td'); temaCell.textContent=tema; temaCell.style.padding='8px'; temaCell.style.borderBottom='1px solid rgba(255,255,255,0.06)'; tr.appendChild(temaCell);
+        const votosCell=document.createElement('td'); votosCell.textContent=votos; votosCell.style.padding='8px'; votosCell.style.borderBottom='1px solid rgba(255,255,255,0.06)'; tr.appendChild(votosCell);
 
-      canciones.forEach((c, idx) => {
-        const artista = (c.artista || c.Artista || c[0] || c.artist || "") ;
-        const tema = (c.tema || c.Tema || c.titulo || c.title || c[1] || "");
-        const votos = (c.voto !== undefined) ? c.voto : (c.Votos !== undefined ? c.Votos : (c[2] !== undefined ? c[2] : 0));
-        const url = (c.url || c.URL || c[3] || "");
-        const id = (c.id !== undefined) ? c.id : (c.ID !== undefined ? c.ID : (c[0] !== undefined && !c.artista ? c[0] : idx + 1));
+        const playCell=document.createElement('td'); playCell.style.padding='8px'; playCell.style.borderBottom='1px solid rgba(255,255,255,0.06)';
+        const playBtn=document.createElement('button'); playBtn.type='button'; playBtn.textContent='▶'; playBtn.style.padding='6px 10px';
+        playBtn.addEventListener('click',()=>{ if(url) window.open(url,'_blank'); else window.open('https://www.youtube.com/results?search_query='+encodeURIComponent([artista,tema].filter(Boolean).join(' ')),'_blank'); });
+        playCell.appendChild(playBtn); tr.appendChild(playCell);
 
-        const tr = document.createElement('tr');
-
-        const idCell = document.createElement('td');
-        idCell.textContent = id;
-        tr.appendChild(idCell);
-
-        const artistaCell = document.createElement('td');
-        artistaCell.textContent = artista;
-        tr.appendChild(artistaCell);
-
-        const temaCell = document.createElement('td');
-        temaCell.textContent = tema;
-        tr.appendChild(temaCell);
-
-        const votosCell = document.createElement('td');
-        votosCell.textContent = votos;
-        votosCell.id = 'votos-' + id;
-        tr.appendChild(votosCell);
-
-        const votarCell = document.createElement('td');
-        const input = document.createElement('input');
-        input.type = 'number';
-        input.min = 0;
-        input.max = 10;
-        input.id = 'voto-' + id;
-        input.setAttribute('aria-label', 'Votar ' + tema + ' de ' + artista);
-        input.style.marginRight = '8px';
-        const votarBtn = document.createElement('button');
-        votarBtn.textContent = 'Votar';
-        votarBtn.addEventListener('click', function () { votar(id); });
-        votarCell.appendChild(input);
-        votarCell.appendChild(votarBtn);
-        tr.appendChild(votarCell);
-
-        const playCell = document.createElement('td');
-        const playBtn = document.createElement('button');
-        playBtn.type = 'button';
-        playBtn.textContent = '▶';
-        playBtn.addEventListener('click', () => {
-          if (url) {
-            window.open(url, '_blank');
-          } else {
-            const q = [artista, tema].filter(Boolean).join(' ').trim();
-            if (!q) {
-              alert('No hay datos suficientes para reproducir esta canción.');
-              return;
-            }
-            window.open('https://www.youtube.com/results?search_query=' + encodeURIComponent(q), '_blank');
-          }
+        const voteCell=document.createElement('td'); voteCell.style.padding='8px'; voteCell.style.borderBottom='1px solid rgba(255,255,255,0.06)';
+        const voteBtn=document.createElement('button'); voteBtn.type='button'; voteBtn.textContent='❤️ Votar'; voteBtn.style.padding='6px 10px';
+        voteBtn.addEventListener('click',()=>{
+          const songId=c.id||c.ID||idx+1;
+          fetch(GAS_URL_CANCIONES+"?action=vote&id="+songId)
+          .then(r=>r.json())
+          .then(respVote=>{
+            if(respVote.status==="OK"){votosCell.textContent=parseInt(votosCell.textContent||0)+1; alert("¡Voto registrado!");}
+            else{alert("Error al votar: "+respVote.message);}
+          }).catch(err=>{console.error(err); alert("Error votando canción");});
         });
-        playCell.appendChild(playBtn);
-        tr.appendChild(playCell);
+        voteCell.appendChild(voteBtn); tr.appendChild(voteCell);
 
         tbody.appendChild(tr);
       });
+      table.appendChild(tbody); container.innerHTML=""; container.appendChild(table); mostrarSeccion('listadoCanciones');
+    })
+    .catch(err=>{ container.innerHTML="<div style='color:#f88'>Error cargando listado: "+(err.message||err)+"</div>"; console.error(err); mostrarSeccion('listadoCanciones'); });
+}
+</script>
 
-      table.appendChild(tbody);
-      const container = document.getElementById('tabla-canciones-container');
-      container.innerHTML = '';
-      container.appendChild(table);
-    }
-
-    function cargarListado() {
-      document.getElementById('texto-listado').textContent = 'Cargando listado desde Google Sheet...';
-      fetch(GAS + '?action=getListado')
-        .then(r => {
-          if (!r.ok) throw new Error('Respuesta no OK: ' + r.status);
-          return r.json();
-        })
-        .then(resp => {
-          const canciones = manejarRespuestaFormato(resp);
-          if (!canciones) {
-            document.getElementById('texto-listado').textContent = 'Formato inesperado de la respuesta del servidor.';
-            return;
-          }
-          document.getElementById('texto-listado').textContent = 'Total canciones: ' + canciones.length;
-          crearTabla(canciones);
-        })
-        .catch(err => {
-          document.getElementById('tabla-canciones-container').innerHTML = "<div style='color:#f88'>Error cargando listado: " + (err.message || err) + "</div>";
-          console.error('Error al cargar listado desde Sheet:', err);
-        });
-    }
-
-    function votar(id) {
-      const input = document.getElementById('voto-' + id);
-      const valor = parseInt(input.value, 10);
-      if (isNaN(valor) || valor < 0 || valor > 10) {
-        alert('Introduce un número entre 0 y 10');
-        return;
-      }
-      fetch(GAS + '?action=votar&id=' + encodeURIComponent(id) + '&valor=' + encodeURIComponent(valor))
-        .then(r => {
-          if (!r.ok) throw new Error('Respuesta no OK: ' + r.status);
-          return r.json();
-        })
-        .then(resp => {
-          if (resp && resp.success) {
-            // Actualizar total mostrado
-            const votosCell = document.getElementById('votos-' + id);
-            if (votosCell) votosCell.textContent = resp.nuevoTotal;
-            input.value = '';
-          } else {
-            alert('Error al votar: ' + (resp && resp.error ? resp.error : JSON.stringify(resp)));
-          }
-        })
-        .catch(err => {
-          console.error('Error al enviar voto:', err);
-          alert('Error al enviar el voto. Revisa la consola.');
-        });
-    }
-
-    // Ejecutar carga al abrir la pestaña
-    window.addEventListener('DOMContentLoaded', cargarListado);
-  <\/script>
 </body>
 </html>
-`;
 
-      // Escribir y cerrar la nueva ventana
-      nuevaVentana.document.open();
-      nuevaVentana.document.write(html);
-      nuevaVentana.document.close();
-    }
-
-    function abrirModal() {
-      document.getElementById("overlay-libro").classList.add("show");
-      document.getElementById("ventana-derecha-libro").style.display = "block";
-    }
-    function cerrarModal() {
-      document.getElementById("overlay-libro").classList.remove("show");
-      document.getElementById("ventana-derecha-libro").style.display = "none";
-    }
-    document.getElementById("buscar-libro-btn").addEventListener("click", async () => {
-      const resultado = document.getElementById("resultado-libro");
-      resultado.textContent = "Cargando...";
-      const contenido = document.getElementById("contenido-libro");
-      try {
-        const response = await fetch("libros.txt");
-        if (!response.ok) throw new Error("No se pudo cargar el archivo");
-        const texto = await response.text();
-        const libros = texto.split("\n").filter(l => l.trim() !== "");
-        const libroAleatorio = libros[Math.floor(Math.random() * libros.length)];
-        const partes = libroAleatorio.split("\t");
-        const autor = partes[0] || "";
-        const titulo = partes[1] || "";
-        const sinopsisLocal = partes[2] || "Sinopsis no disponible";
-        const bioLocal = partes[3] || "Bio del autor no disponible";
-        resultado.innerHTML = `<div class="libro-item"><span class="autor">${autor}</span> - <span class="titulo">${titulo}</span></div>`;
-        contenido.innerHTML = `<h3>${titulo}</h3><p><strong>Autor:</strong> ${autor}</p><p><strong>Sinopsis:</strong> ${sinopsisLocal}</p><p><strong>Bio:</strong> ${bioLocal}</p>`;
-        abrirModal();
-      } catch (err) {
-        resultado.textContent = "Error al cargar el libro";
-        console.error(err);
-      }
-    });
-
-    function abrirModalPelicula() {
-      document.getElementById("overlay-pelicula").classList.add("show");
-      document.getElementById("ventana-derecha-pelicula").style.display = "block";
-    }
-    function cerrarModalPelicula() {
-      document.getElementById("overlay-pelicula").classList.remove("show");
-      document.getElementById("ventana-derecha-pelicula").style.display = "none";
-    }
-    document.getElementById("buscar-pelicula-btn").addEventListener("click", async () => {
-      const resultado = document.getElementById("resultado-pelicula");
-      resultado.textContent = "Cargando...";
-      const contenido = document.getElementById("contenido-pelicula");
-      try {
-        const response = await fetch("peliculas.txt");
-        if (!response.ok) throw new Error("No se pudo cargar el archivo");
-        const texto = await response.text();
-        const peliculas = texto.split("\n").filter(l => l.trim() !== "");
-        const peliculaAleatoria = peliculas[Math.floor(Math.random() * peliculas.length)];
-        const partes = peliculaAleatoria.split("\t");
-        const titulo = partes[0] || "";
-        const director = partes[1] || "";
-        const resumen = partes[2] || "Resumen no disponible";
-        resultado.innerHTML = `<div class="libro-item"><span class="titulo">${titulo}</span></div>`;
-        contenido.innerHTML = `<h3>${titulo}</h3><p><strong>Director:</strong> ${director}</p><p><strong>Resumen:</strong> ${resumen}</p>`;
-        abrirModalPelicula();
-      } catch (err) {
-        resultado.textContent = "Error al cargar la película";
-        console.error(err);
-      }
-    });
-
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbzUxDODbaM54FXwEoWs75qKHrhfwrmHHefxUjSZE_TaO7jmuzpTkRRSKadV-tqaXJvO/exec";
-    function cargarConsultas() {
-      fetch(GAS_URL)
-        .then(res => res.json())
-        .then(resp => {
-          if (resp.status === "OK") {
-            const ul = document.getElementById("listaConsultas");
-            ul.innerHTML = "";
-            resp.consultas.forEach(c => {
-              const li = document.createElement("li");
-              li.innerHTML = `<strong>${c.nombre} (${c.email}):</strong> ${c.consulta}`;
-              ul.appendChild(li);
-            });
-          }
-        })
-        .catch(err => console.error("Error cargando consultas:", err));
-    }
-    function enviarConsultorio(event) {
-      event.preventDefault();
-      const form = event.target;
-      const nombre = form.nombre.value.trim();
-      const email = form.email.value.trim();
-      const consulta = form.consulta.value.trim();
-      if (!nombre || !consulta) return alert("Nombre y consulta son obligatorios");
-      const data = new URLSearchParams({ nombre, email, consulta });
-      fetch(GAS_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: data,
-      })
-        .then(res => res.json())
-        .then(resp => {
-          if (resp.status === "OK") {
-            cargarConsultas();
-            form.reset();
-            alert("Consulta enviada y almacenada correctamente.");
-          } else {
-            alert("Error guardando la consulta: " + resp.message);
-          }
-        })
-        .catch(err => {
-          console.error(err);
-          alert("Error al enviar la consulta.");
-        });
-    }
-    document.addEventListener("DOMContentLoaded", cargarConsultas);
-
-    const GAS_URL_DIC = "https://script.google.com/macros/s/AKfycbxA8MlfFoBw4_6cV63NzWjDOWfwvGQBh6Et-r5wN2YCnngYgvVt0P8E8pjMR78emZ0CQQ/exec";
-    function abrirModalDiccionario() {
-      document.getElementById("overlay-diccionario-add").classList.add("show");
-      document.getElementById("ventana-derecha-diccionario-add").style.display = "block";
-    }
-    function cerrarModalDiccionarioAdd() {
-      document.getElementById("overlay-diccionario-add").classList.remove("show");
-      document.getElementById("ventana-derecha-diccionario-add").style.display = "none";
-    }
-    function abrirModalDiccionarioView() {
-      document.getElementById("overlay-diccionario").classList.add("show");
-      document.getElementById("ventana-derecha-diccionario-view").style.display = "block";
-    }
-    function cerrarModalDiccionario() {
-      document.getElementById("overlay-diccionario").classList.remove("show");
-      document.getElementById("ventana-derecha-diccionario-view").style.display = "none";
-    }
-    function añadirPalabra() {
-      const palabra = document.getElementById("palabra").value.trim();
-      const descripcion = document.getElementById("descripcion").value.trim();
-      if (!palabra || !descripcion) {
-        alert("Ambos campos son obligatorios");
-        return;
-      }
-      const data = new URLSearchParams({ palabra, descripcion });
-      fetch(GAS_URL_DIC, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: data,
-      })
-        .then(res => res.json())
-        .then(resp => {
-          if (resp.status === "OK") {
-            alert("Palabra añadida correctamente");
-            document.getElementById("palabra").value = "";
-            document.getElementById("descripcion").value = "";
-            cerrarModalDiccionarioAdd();
-          } else alert("Error: " + resp.message);
-        })
-        .catch(err => {
-          console.error(err);
-          alert("Error al añadir palabra");
-        });
-    }
-    function verDiccionario() {
-      abrirModalDiccionarioView();
-      const contenido = document.getElementById("contenido-diccionario");
-      contenido.textContent = "Cargando diccionario...";
-      fetch(GAS_URL_DIC)
-        .then(res => res.json())
-        .then(resp => {
-          if (resp.status === "OK") {
-            const diccionario = resp.diccionario;
-            contenido.innerHTML = `<h3>Total de palabras: ${diccionario.length}</h3><ul>${diccionario.map(d => `<li><strong>${d.palabra}:</strong> ${d.descripcion}</li>`).join("")}</ul>`;
-          } else contenido.textContent = "Error cargando diccionario: " + resp.message;
-        })
-        .catch(err => {
-          contenido.textContent = "Error cargando diccionario";
-          console.error(err);
-        });
-    }
-  </script>
-
-  <!-- PWA: registro service worker y manejo de instalación -->
-  <script>
-    // Registrar service worker al cargar la página
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(reg => console.log('Service Worker registrado:', reg.scope))
-          .catch(err => console.error('Error al registrar Service Worker:', err));
-      });
-    }
-
-    // Instalación PWA (beforeinstallprompt)
-    let deferredPrompt;
-    const instalarBtn = document.getElementById('instalarApp');
-
-    function isInStandaloneMode() {
-      return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
-    }
-
-    // Si ya estamos en modo standalone (instalado), ocultar botón
-    if (isInStandaloneMode() && instalarBtn) {
-      instalarBtn.style.display = 'none';
-      instalarBtn.setAttribute('aria-hidden', 'true');
-    }
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-      // Evita que el navegador muestre su banner automático
-      e.preventDefault();
-      deferredPrompt = e;
-      if (instalarBtn) {
-        instalarBtn.style.display = 'block';
-        instalarBtn.setAttribute('aria-hidden', 'false');
-      }
-    });
-
-    if (instalarBtn) {
-      instalarBtn.addEventListener('click', async () => {
-        if (!deferredPrompt) return;
-        // Ocultamos el botón mientras se muestra el prompt
-        instalarBtn.style.display = 'none';
-        try {
-          deferredPrompt.prompt();
-          const choiceResult = await deferredPrompt.userChoice;
-          console.log('Resultado prompt de instalación:', choiceResult);
-          // Después del resultado, limpiamos
-          deferredPrompt = null;
-        } catch (err) {
-          console.error('Error mostrando prompt de instalación:', err);
-        } finally {
-          if (instalarBtn) instalarBtn.style.display = 'none';
-        }
-      });
-    }
-
-    // Evento cuando la app queda instalada
-    window.addEventListener('appinstalled', (evt) => {
-      console.log('PWA instalada', evt);
-      if (instalarBtn) {
-        instalarBtn.style.display = 'none';
-        instalarBtn.setAttribute('aria-hidden', 'true');
-      }
-    });
-  </script>
-</body>
-</html>
