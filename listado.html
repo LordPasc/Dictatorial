@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Listado de Canciones - Evento Musical Nº8</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: #eee;
+    margin: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #aaa;
+    text-align: left;
+  }
+  th {
+    background: #330a0a;
+    color: #fff;
+  }
+  button {
+    background: #d02121;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #a11717;
+  }
+
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 12000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    background-color: #2a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    color: #eee;
+    box-shadow: 0 0 10px #d02121;
+  }
+  .modal-header {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+  .modal-footer {
+    margin-top: 15px;
+    text-align: right;
+  }
+  input[type=number] {
+    width: 60px;
+    font-size: 1.1em;
+    padding: 5px;
+    border: 1.5px solid #b62222;
+    border-radius: 8px;
+    background: #221010;
+    color: #eee;
+    box-shadow: inset 0 1px 6px #b52323;
+  }
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.4em;
+    color: #ddd;
+    cursor: pointer;
+    float: right;
+    line-height: 1;
+  }
+  .close-btn:hover {
+    color: #fff;
+  }
+  #message {
+    margin-top: 10px;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>Listado de Canciones - Evento Musical Nº8</h1>
+<p>Haz clic en el botón "Votar" para dar tu voto (0 a 10) a la canción.</p>
+
+<table id="tabla-canciones" aria-live="polite" aria-label="Listado de canciones">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Artista</th>
+      <th>Tema</th>
+      <th>Votos</th>
+      <th>Votar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="5">Cargando canciones...</td></tr>
+  </tbody>
+</table>
+
+<!-- Modal de votación -->
+<div class="modal" id="modalVoto" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" aria-describedby="modalDescripcion">
+  <div class="modal-content">
+    <button class="close-btn" aria-label="Cerrar modal" id="cerrarModal">&times;</button>
+    <div class="modal-header" id="modalTitulo">Votar canción</div>
+    <div id="modalDescripcion">Introduce tu voto entre 0 y 10:</div>
+    <input type="number" id="inputVoto" min="0" max="10" value="5" />
+    <div class="modal-footer">
+      <button id="enviarVotoBtn">Enviar voto</button>
+    </div>
+    <div id="message" role="alert" aria-live="assertive"></div>
+  </div>
+</div>
+
+<script>
+  const GAS_URL = "https://script.google.com/macros/s/AKfycbzZbnOnLC38tWppxHUBKPYmK1niVBoB4x9fOwQ8H7Qhy2ZW3fg-Sb2r66GX2J33XaR6Yg/exec";
+
+  const tablaBody = document.querySelector("#tabla-canciones tbody");
+  const modal = document.getElementById("modalVoto");
+  const cerrarModalBtn = document.getElementById("cerrarModal");
+  const enviarVotoBtn = document.getElementById("enviarVotoBtn");
+  const inputVoto = document.getElementById("inputVoto");
+  const mensaje = document.getElementById("message");
+
+  let canciones = [];
+  let cancionActual = null;
+
+  function cargarCanciones() {
+    fetch(GAS_URL + "?action=listado")
+      .then(res => {
+        if (!res.ok) throw new Error("Error al cargar listado");
+        return res.json();
+      })
+      .then(data => {
+        canciones = data;
+        mostrarTabla(canciones);
+      })
+      .catch(err => {
+        tablaBody.innerHTML = `<tr><td colspan="5" style="color:#f88">Error cargando canciones: ${err.message}</td></tr>`;
+      });
+  }
+
+  function mostrarTabla(canciones) {
+    if(canciones.length === 0) {
+      tablaBody.innerHTML = "<tr><td colspan='5'>No hay canciones en la hoja.</td></tr>";
+      return;
+    }
+    tablaBody.innerHTML = "";
+    canciones.forEach((c, idx) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${idx + 1}</td>
+        <td>${c.artista}</td>
+        <td>${c.tema}</td>
+        <td id="votos-${idx}">${c.votos}</td>
+        <td><button aria-label="Votar canción ${c.tema} de ${c.artista}" data-idx="${idx}" class="btnVotar">Votar</button></td>
+      `;
+      tablaBody.appendChild(tr);
+    });
+    // Asignar event listeners botones votar
+    document.querySelectorAll(".btnVotar").forEach(btn => {
+      btn.addEventListener("click", abrirModal);
+    });
+  }
+
+  function abrirModal(event) {
+    const idx = event.target.getAttribute("data-idx");
+    cancionActual = canciones[idx];
+    mensaje.textContent = "";
+    inputVoto.value = 5;
+    modal.style.display = "flex";
+    inputVoto.focus();
+  }
+
+  function cerrarModal() {
+    modal.style.display = "none";
+  }
+
+  cerrarModalBtn.addEventListener("click", cerrarModal);
+  window.addEventListener("click", e => {
+    if(e.target === modal) cerrarModal();
+  });
+
+  enviarVotoBtn.addEventListener("click", () => {
+    const voto = parseInt(inputVoto.value);
+    if(isNaN(voto) || voto < 0 || voto > 10) {
+      mensaje.textContent = "Por favor introduce un voto válido entre 0 y 10.";
+      return;
+    }
+    if(!cancionActual) {
+      mensaje.textContent = "Error: No se seleccionó una canción válida.";
+      return;
+    }
+    mensaje.textContent = "Enviando voto...";
+    // Enviar voto al Apps Script
+    const params = new URLSearchParams({
+      action: "votar",
+      artista: cancionActual.artista,
+      tema: cancionActual.tema,
+      valor: voto
+    });
+
+    fetch(GAS_URL + "?" + params.toString())
+      .then(res => res.json())
+      .then(resp => {
+        if(resp.success) {
+          mensaje.textContent = "¡Voto registrado correctamente!";
+          actualizarVotosTabla(resp.nuevoTotal);
+          // Actualizar en memoria
+          cancionActual.votos = resp.nuevoTotal;
+          setTimeout(cerrarModal, 1200);
+        } else {
+          mensaje.textContent = "Error al registrar voto: " + (resp.error || "Error desconocido");
+        }
+      })
+      .catch(err => {
+        mensaje.textContent = "Error enviando voto: " + err.message;
+      });
+  });
+
+  function actualizarVotosTabla(nuevoTotal) {
+    const idx = canciones.findIndex(c => c.artista === cancionActual.artista && c.tema === cancionActual.tema);
+    if(idx !== -1) {
+      const tdVotos = document.getElementById(`votos-${idx}`);
+      if(tdVotos) tdVotos.textContent = nuevoTotal;
+    }
+  }
+
+  cargarCanciones();
+</script>
+
+</body>
+</html>
