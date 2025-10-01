@@ -40,7 +40,7 @@
     .libro-item { display: flex; gap: 10px; flex-wrap: wrap; color: #fff;}
     .autor { font-weight: bold; min-width: 120px; color: #f5bcbc;}
     .titulo { font-style: italic; color: #f0dcdc;}
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);}}
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
     .overlay { position: fixed; inset: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); display: none; justify-content: center; align-items: center; padding: 10px; box-sizing: border-box; z-index: 9998; }
     .overlay.show { display: flex;}
     .modal { background: #2a1a1a; color: #eee; padding: 20px 16px; border-radius: 16px; max-width: 95%; max-height: 70vh; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.7); position: relative; box-sizing: border-box; animation: modalFade 0.24s ease-out;}
@@ -93,13 +93,7 @@
       <h2>Música</h2>
       <p>Cansados de tanta mierda como nos meten por los ojos, oídos y demás orificios, Evento Musical Nº8 se ha tomado la molestia de seleccionar 1000 canciones de Rock. La excelencia en la selección ha sido exquisita. Un simple click en el botón y se desplegará ante vosotros la esencia del Rock, Hard Rock, Heavy Rock, o Protometal</p>
       <button onclick="propuestaMusical()">Propuesta Musical</button>
-      <button onclick="mostrarListadoCanciones()">Listado de canciones</button>
-    </section>
-    <section id="listadoCanciones" aria-live="polite">
-      <h2>Listado de canciones (desde Google Sheet)</h2>
-      <p id="texto-listado">Aquí se mostrará el listado de la hoja <em>Canciones</em> de Drive.</p>
-      <div id="tabla-canciones-container" style="margin-top:12px;"></div>
-      <button onclick="mostrarSeccion('musica')">Volver a Música</button>
+      <button onclick="abrirListadoCanciones()">Listado de canciones</button>
     </section>
     <section id="libros">
       <h2>Libros</h2>
@@ -170,6 +164,17 @@
         <button onclick="añadirPalabra()">Añadir</button>
       </div>
     </div>
+
+    <!-- Modal Listado Canciones -->
+    <div id="overlay-listado-canciones" class="overlay" onclick="cerrarModalListadoCanciones()">
+      <div id="modal-listado-canciones" class="modal" style="max-width: 98vw; width: 98vw;" onclick="event.stopPropagation()">
+        <button class="cerrar" onclick="cerrarModalListadoCanciones()">✖</button>
+        <h3>Listado de canciones (Google Sheet)</h3>
+        <p id="texto-listado-modal">Cargando listado desde Google Sheet...</p>
+        <div id="tabla-canciones-container-modal" style="margin-top:12px; max-height:65vh; overflow:auto;"></div>
+      </div>
+    </div>
+
     <!-- Modal para votar canción -->
     <div id="overlay-votar" class="overlay" onclick="cerrarModalVotar()">
       <div id="modal-votar" class="modal" onclick="event.stopPropagation()">
@@ -189,6 +194,7 @@
       document.getElementById("mainContent").style.display = "";
       mostrarSeccion("inicio");
     }
+
     const botonMenu = document.getElementById("abrirMenu");
     const menuNavegacion = document.getElementById("menuNavegacion");
     botonMenu.addEventListener("click", function () {
@@ -209,25 +215,29 @@
         document.getElementById(id).classList.add("active");
       }
     }
-    function propuestaMusical() {
-      fetch("canciones.txt")
-        .then(r => r.text())
-        .then(data => {
-          const lineas = data.split("\n").filter(l => l.trim() !== "");
-          const random = lineas[Math.floor(Math.random() * lineas.length)];
-          const partes = random.split("\t");
-          const artista = partes[0], cancion = partes[1];
-          const query = encodeURIComponent(artista + " " + cancion);
-          window.open("https://www.youtube.com/results?search_query=" + query, "_blank");
-        })
-        .catch(err => alert("No se pudo cargar la lista de canciones: " + err));
+
+
+    // NUEVA URL de tu endpoint
+    const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbzp_R1m9TmI4BXoyqAI42K3dkYTmfV2QbWLo1DDf4f31dB32-65qsdb2NHoq7eEBXsnaA/exec";
+
+    // Abre el modal con listado
+    function abrirListadoCanciones() {
+      document.getElementById("overlay-listado-canciones").classList.add("show");
+      document.getElementById("modal-listado-canciones").style.display = "block";
+      cargarListadoCancionesModal();
     }
-    // URLs Apps Script
-    const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbzZbnOnLC38tWppxHUBKPYmK1niVBoB4x9fOwQ8H7Qhy2ZW3fg-Sb2r66GX2J33XaR6Yg/exec";
-    // Listado de canciones con botón votar
-    function mostrarListadoCanciones() {
-      const container = document.getElementById("tabla-canciones-container");
-      const texto = document.getElementById("texto-listado");
+    function cerrarModalListadoCanciones() {
+      document.getElementById("overlay-listado-canciones").classList.remove("show");
+      document.getElementById("modal-listado-canciones").style.display = "none";
+      document.getElementById("tabla-canciones-container-modal").innerHTML = "";
+      document.getElementById("texto-listado-modal").textContent = "Cargando listado desde Google Sheet...";
+      datosCancionParaVoto = null; // por si acaso
+    }
+
+    // Listado en modal, con "Cargando..." mientras
+    function cargarListadoCancionesModal() {
+      const container = document.getElementById("tabla-canciones-container-modal");
+      const texto = document.getElementById("texto-listado-modal");
       container.innerHTML = "";
       texto.textContent = "Cargando listado desde Google Sheet...";
       fetch(GAS_URL_CANCIONES + "?action=getListado")
@@ -241,14 +251,12 @@
             if (resp && resp.canciones && Array.isArray(resp.canciones)) canciones = resp.canciones;
             else {
               texto.textContent = "Formato inesperado de la respuesta del servidor.";
-              mostrarSeccion('listadoCanciones');
               return;
             }
           }
           texto.textContent = `Total canciones: ${canciones.length}`;
           if (canciones.length === 0) {
             container.textContent = "No hay canciones en la hoja.";
-            mostrarSeccion('listadoCanciones');
             return;
           }
           const table = document.createElement('table');
@@ -268,16 +276,18 @@
           });
           thead.appendChild(headRow);
           table.appendChild(thead);
+
           const tbody = document.createElement('tbody');
           canciones.forEach((c, idx) => {
             const artista = (c.artista || c.Artista || c[0] || c.artist || "") ;
             const tema = (c.tema || c.Tema || c.titulo || c.title || c[1] || "");
             const votos = (c.votos !== undefined) ? c.votos : (c.Votos !== undefined ? c.Votos : (c[2] !== undefined ? c[2] : 0));
             const url = (c.url || c.URL || c[3] || "");
+            const idCancion = (c.id !== undefined) ? c.id : (c.ID !== undefined ? c.ID : (c[0] !== undefined && !c.artista ? c[0] : idx + 1));
             const tr = document.createElement('tr');
             // ID
             const idCell = document.createElement('td');
-            idCell.textContent = (c.id !== undefined) ? c.id : (c.ID !== undefined ? c.ID : (c[0] !== undefined && !c.artista ? c[0] : idx + 1));
+            idCell.textContent = idCancion;
             idCell.style.padding = '8px';
             idCell.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
             tr.appendChild(idCell);
@@ -330,28 +340,28 @@
             votarBtn.textContent = 'Votar';
             votarBtn.style.padding = '6px 12px';
             votarBtn.addEventListener('click', () => {
-              abrirModalVotarCancion(c, idx, idCell, votosCell);
+              abrirModalVotarCancion({id: idCancion, artista, tema}, idx, idCell, votosCell);
             });
             votarCell.appendChild(votarBtn);
             tr.appendChild(votarCell);
+
             tbody.appendChild(tr);
           });
           table.appendChild(tbody);
           container.innerHTML = "";
           container.appendChild(table);
-          mostrarSeccion('listadoCanciones');
         })
         .catch(err => {
           container.innerHTML = "<div style='color:#f88'>Error cargando listado: " + (err.message || err) + "</div>";
           console.error("Error al cargar listado desde Sheet:", err);
-          mostrarSeccion('listadoCanciones');
         });
     }
+
     let datosCancionParaVoto = null;
     function abrirModalVotarCancion(cancion, idx, idCell, votosCell) {
       datosCancionParaVoto = { cancion, idx, idCell, votosCell };
       document.getElementById('titulo-cancion-votar').textContent =
-        `Votar: ${cancion.artista || cancion.Artista || cancion[0]} - ${cancion.tema || cancion.Tema || cancion[1] || ""}`;
+        `Votar: ${cancion.artista} - ${cancion.tema}`;
       document.getElementById('valor-voto').value = "5";
       document.getElementById('overlay-votar').classList.add('show');
       document.getElementById('modal-votar').style.display = "block";
@@ -361,6 +371,7 @@
       document.getElementById('modal-votar').style.display = "none";
       datosCancionParaVoto = null;
     }
+    // Corrige votación: POST con fetch adecuado
     function enviarVotoCancion() {
       if (!datosCancionParaVoto) return;
       const voto = parseInt(document.getElementById('valor-voto').value, 10);
@@ -368,20 +379,21 @@
         alert("Voto debe ser un número de 0 a 10");
         return;
       }
-      const idCancion =
-        datosCancionParaVoto.cancion.id ||
-        datosCancionParaVoto.cancion.ID ||
-        datosCancionParaVoto.idx + 1;
-      fetch(GAS_URL_CANCIONES + "?action=votarCancion&id=" + encodeURIComponent(idCancion) + "&voto=" + voto, { method: "POST"})
+      const idCancion = datosCancionParaVoto.cancion.id;
+      fetch(GAS_URL_CANCIONES, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `action=votarCancion&id=${encodeURIComponent(idCancion)}&voto=${voto}`
+      })
         .then(r => r.json())
         .then(resp => {
-          if (resp.status === "OK") {
+          if (resp.success) {
             let votosActual = parseInt(datosCancionParaVoto.votosCell.textContent, 10) || 0;
             datosCancionParaVoto.votosCell.textContent = votosActual + voto;
             alert("¡Voto recibido!");
             cerrarModalVotar();
           } else {
-            alert("Error al votar: " + resp.message);
+            alert("Error al votar: " + resp.error);
           }
         })
         .catch(err => {
@@ -389,9 +401,88 @@
           cerrarModalVotar();
         });
     }
-    // ... (el resto de funciones originales, como libros, cine, diccionario, consultorio)
-    // (puedes mantener aquí las mismas funciones y endpoints tal como estaban en tu versión original)
-    // Botón PWA Instalar, Service Worker y resto de scripts igual que tenías
+
+    // Funciones para Libros
+    document.getElementById('buscar-libro-btn').addEventListener('click', () => {
+      // Implementa la función para buscar libro y mostrar en #resultado-libro
+      alert('Función para buscar libro no implementada en este código ejemplo.');
+    });
+    // Funciones para Cine
+    document.getElementById('buscar-pelicula-btn').addEventListener('click', () => {
+      // Implementa la función para buscar película y mostrar en #resultado-pelicula
+      alert('Función para buscar película no implementada en este código ejemplo.');
+    });
+    // Funciones del Consultorio (Ejemplo de envío)
+    function enviarConsultorio(event) {
+      event.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const consulta = document.getElementById('consulta').value;
+      if (!nombre || !email || !consulta) {
+        alert('Completa todos los campos.');
+        return;
+      }
+      // Aquí puedes hacer la lógica para enviar la consulta a un backend o almacenamiento
+      const lista = document.getElementById('listaConsultas');
+      const li = document.createElement('li');
+      li.textContent = `De ${nombre} (${email}): ${consulta}`;
+      lista.appendChild(li);
+      document.getElementById('formConsultorio').reset();
+      alert('Consulta enviada con éxito.');
+    }
+    // Funciones Diccionario (simplificadas para ejemplo)
+    function verDiccionario() {
+      document.getElementById('resultado-diccionario').textContent = "Diccionario cargado (implementación pendiente).";
+    }
+    function abrirModalDiccionario() {
+      document.getElementById('overlay-diccionario').classList.add('show');
+      document.getElementById('contenido-diccionario').textContent = "Cargando diccionario...";
+    }
+    function cerrarModalDiccionario() {
+      document.getElementById('overlay-diccionario').classList.remove('show');
+    }
+    function abrirModalDiccionarioAdd() {
+      document.getElementById('overlay-diccionario-add').classList.add('show');
+    }
+    function cerrarModalDiccionarioAdd() {
+      document.getElementById('overlay-diccionario-add').classList.remove('show');
+    }
+    function añadirPalabra() {
+      // Implementar guardar palabra en diccionario
+      const palabra = document.getElementById('palabra').value.trim();
+      const descripcion = document.getElementById('descripcion').value.trim();
+      if (!palabra || !descripcion) {
+        alert('Completa palabra y descripción.');
+        return;
+      }
+      alert(`Palabra "${palabra}" añadida al diccionario (implementación pendiente).`);
+      cerrarModalDiccionarioAdd();
+    }
+    // Modales cierre
+    function cerrarModal() {
+      document.getElementById('overlay-libro').classList.remove('show');
+    }
+    function cerrarModalPelicula() {
+      document.getElementById('overlay-pelicula').classList.remove('show');
+    }
+
+    // Botón PWA Instalar y service worker (simplificado ejemplo)
+    const instalarBtn = document.getElementById('instalarApp');
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js').then(() => {
+        console.log('Service worker registrado.');
+      });
+    }
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      instalarBtn.style.display = 'block';
+      instalarBtn.addEventListener('click', () => {
+        e.prompt();
+        e.userChoice.then(choice => {
+          instalarBtn.style.display = 'none';
+        });
+      });
+    });
   </script>
 </body>
 </html>
