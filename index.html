@@ -216,11 +216,9 @@
       }
     }
 
+    // Nueva URL en tu endpoint
+    const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbyCc5nfID30kc7OXz9bA0pTeAAJ6aRHq8ySWvoQk1mBJSui9t6lbaOYarzYo9ft1VAEeg/exec";
 
-    // NUEVA URL de tu endpoint
-    const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbzp_R1m9TmI4BXoyqAI42K3dkYTmfV2QbWLo1DDf4f31dB32-65qsdb2NHoq7eEBXsnaA/exec";
-
-    // Abre el modal con listado
     function abrirListadoCanciones() {
       document.getElementById("overlay-listado-canciones").classList.add("show");
       document.getElementById("modal-listado-canciones").style.display = "block";
@@ -233,8 +231,6 @@
       document.getElementById("texto-listado-modal").textContent = "Cargando listado desde Google Sheet...";
       datosCancionParaVoto = null; // por si acaso
     }
-
-    // Listado en modal, con "Cargando..." mientras
     function cargarListadoCancionesModal() {
       const container = document.getElementById("tabla-canciones-container-modal");
       const texto = document.getElementById("texto-listado-modal");
@@ -276,7 +272,6 @@
           });
           thead.appendChild(headRow);
           table.appendChild(thead);
-
           const tbody = document.createElement('tbody');
           canciones.forEach((c, idx) => {
             const artista = (c.artista || c.Artista || c[0] || c.artist || "") ;
@@ -285,31 +280,26 @@
             const url = (c.url || c.URL || c[3] || "");
             const idCancion = (c.id !== undefined) ? c.id : (c.ID !== undefined ? c.ID : (c[0] !== undefined && !c.artista ? c[0] : idx + 1));
             const tr = document.createElement('tr');
-            // ID
             const idCell = document.createElement('td');
             idCell.textContent = idCancion;
             idCell.style.padding = '8px';
             idCell.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
             tr.appendChild(idCell);
-            // Artista
             const artistaCell = document.createElement('td');
             artistaCell.textContent = artista;
             artistaCell.style.padding = '8px';
             artistaCell.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
             tr.appendChild(artistaCell);
-            // Tema
             const temaCell = document.createElement('td');
             temaCell.textContent = tema;
             temaCell.style.padding = '8px';
             temaCell.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
             tr.appendChild(temaCell);
-            // Votos
             const votosCell = document.createElement('td');
             votosCell.textContent = votos;
             votosCell.style.padding = '8px';
             votosCell.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
             tr.appendChild(votosCell);
-            // Reproducir
             const playCell = document.createElement('td');
             playCell.style.padding = '8px';
             playCell.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
@@ -331,7 +321,6 @@
             });
             playCell.appendChild(playBtn);
             tr.appendChild(playCell);
-            // Votar
             const votarCell = document.createElement('td');
             votarCell.style.padding = '8px';
             votarCell.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
@@ -344,7 +333,6 @@
             });
             votarCell.appendChild(votarBtn);
             tr.appendChild(votarCell);
-
             tbody.appendChild(tr);
           });
           table.appendChild(tbody);
@@ -371,7 +359,6 @@
       document.getElementById('modal-votar').style.display = "none";
       datosCancionParaVoto = null;
     }
-    // Corrige votación: POST con fetch adecuado
     function enviarVotoCancion() {
       if (!datosCancionParaVoto) return;
       const voto = parseInt(document.getElementById('valor-voto').value, 10);
@@ -402,17 +389,13 @@
         });
     }
 
-    // Funciones para Libros
+    // Funciones placeholder
     document.getElementById('buscar-libro-btn').addEventListener('click', () => {
-      // Implementa la función para buscar libro y mostrar en #resultado-libro
-      alert('Función para buscar libro no implementada en este código ejemplo.');
+      alert('Función para buscar libro no implementada en este código.');
     });
-    // Funciones para Cine
     document.getElementById('buscar-pelicula-btn').addEventListener('click', () => {
-      // Implementa la función para buscar película y mostrar en #resultado-pelicula
-      alert('Función para buscar película no implementada en este código ejemplo.');
+      alert('Función para buscar película no implementada en este código.');
     });
-    // Funciones del Consultorio (Ejemplo de envío)
     function enviarConsultorio(event) {
       event.preventDefault();
       const nombre = document.getElementById('nombre').value;
@@ -422,7 +405,6 @@
         alert('Completa todos los campos.');
         return;
       }
-      // Aquí puedes hacer la lógica para enviar la consulta a un backend o almacenamiento
       const lista = document.getElementById('listaConsultas');
       const li = document.createElement('li');
       li.textContent = `De ${nombre} (${email}): ${consulta}`;
@@ -430,7 +412,6 @@
       document.getElementById('formConsultorio').reset();
       alert('Consulta enviada con éxito.');
     }
-    // Funciones Diccionario (simplificadas para ejemplo)
     function verDiccionario() {
       document.getElementById('resultado-diccionario').textContent = "Diccionario cargado (implementación pendiente).";
     }
@@ -448,25 +429,21 @@
       document.getElementById('overlay-diccionario-add').classList.remove('show');
     }
     function añadirPalabra() {
-      // Implementar guardar palabra en diccionario
       const palabra = document.getElementById('palabra').value.trim();
       const descripcion = document.getElementById('descripcion').value.trim();
       if (!palabra || !descripcion) {
         alert('Completa palabra y descripción.');
         return;
       }
-      alert(`Palabra "${palabra}" añadida al diccionario (implementación pendiente).`);
+      alert(`Palabra "${palabra}" añadida al diccionario (pendiente).`);
       cerrarModalDiccionarioAdd();
     }
-    // Modales cierre
     function cerrarModal() {
       document.getElementById('overlay-libro').classList.remove('show');
     }
     function cerrarModalPelicula() {
       document.getElementById('overlay-pelicula').classList.remove('show');
     }
-
-    // Botón PWA Instalar y service worker (simplificado ejemplo)
     const instalarBtn = document.getElementById('instalarApp');
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js').then(() => {
@@ -478,7 +455,7 @@
       instalarBtn.style.display = 'block';
       instalarBtn.addEventListener('click', () => {
         e.prompt();
-        e.userChoice.then(choice => {
+        e.userChoice.then(() => {
           instalarBtn.style.display = 'none';
         });
       });
