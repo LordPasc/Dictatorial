@@ -40,20 +40,133 @@
   </style>
 </head>
 <body>
-  <h1>Listado de Canciones - Evento Musical Nº8</h1>
-  <div id="mensaje">Cargando listado desde Google Sheet...</div>
-  <div id="tabla-container"></div>
-  <script>
-    const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbzZbnOnLC38tWppxHUBKPYmK1niVBoB4x9fOwQ8H7Qhy2ZW3fg-Sb2r66GX2J33XaR6Yg/exec";
+<h1>Listado de Canciones - Evento Musical Nº8</h1>
+<div id="mensaje">Cargando listado desde Google Sheet...</div>
+<div id="tabla-container"></div>
+<script>
+  const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbx4X9ruB-n11-uHV1OvrbnUMbastelyF7b9Yj-tt21FeWsAb6Q7gEr_yZlypBvA-vQEHA/exec";
 
-    function votarCancion(artista, tema) {
-      // Aquí va la implementación real para enviar votos a tu backend
-      alert(`Has votado por: ${artista} - ${tema}`);
-      // Ejemplo:
-      /*
-      fetch('TU_ENDPOINT_VOTOS', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        body: new URLSearchParams({ artista, tema })
-      }).then(res => res.json())
-        .then(resp => { if(resp.status==='OK') alert("¡Voto registrado!"); else alert
+  function votarCancion(artista, tema) {
+    // Implementa aquí la lógica real de envío de votos a tu backend
+    alert(`Has votado por: ${artista} - ${tema}`);
+    // Ejemplo para enviar voto:
+    /*
+    fetch('TU_ENDPOINT_VOTOS', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({ artista, tema })
+    })
+    .then(res => res.json())
+    .then(resp => {
+      if (resp.status === "OK") alert("¡Voto registrado!");
+      else alert("Error al votar: " + resp.message);
+    })
+    .catch(() => alert("No se pudo votar."));
+    */
+  }
+
+  function cargarListado() {
+    const mensaje = document.getElementById('mensaje');
+    const contenedor = document.getElementById('tabla-container');
+    mensaje.textContent = "Cargando listado desde Google Sheet...";
+    contenedor.innerHTML = "";
+
+    fetch(GAS_URL_CANCIONES + "?action=getListado")
+      .then(resp => {
+        if (!resp.ok) throw new Error("Respuesta no OK: " + resp.status);
+        return resp.json();
+      })
+      .then(data => {
+        let canciones = data;
+        if (!Array.isArray(canciones)) {
+          mensaje.textContent = "Formato inesperado de la respuesta del servidor.";
+          console.error("La respuesta no es un array:", data);
+          return;
+        }
+        if (canciones.length === 0) {
+          mensaje.textContent = "No hay canciones en la hoja.";
+          return;
+        }
+        mensaje.textContent = `Total canciones: ${canciones.length}`;
+
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const encabezado = ['#', 'Artista', 'Tema', 'Votos', 'Reproducir', 'Votar'];
+        const trHead = document.createElement('tr');
+        encabezado.forEach(h => {
+          const th = document.createElement('th');
+          th.textContent = h;
+          trHead.appendChild(th);
+        });
+        thead.appendChild(trHead);
+        table.appendChild(thead);
+
+        const tbody = document.createElement('tbody');
+        canciones.forEach((c, idx) => {
+          let artista, tema, votos, url;
+          if (Array.isArray(c)) {
+            [artista, tema, votos, url] = c;
+          } else {
+            artista = c.artista || c.Artista || c.artist || '';
+            tema = c.tema || c.Tema || c.titulo || c.title || '';
+            votos = c.votos || c.Votos || '';
+            url = c.url || c.URL || '';
+          }
+          const tr = document.createElement('tr');
+
+          const numTd = document.createElement('td');
+          numTd.textContent = idx + 1;
+          tr.appendChild(numTd);
+
+          const artistaTd = document.createElement('td');
+          artistaTd.textContent = artista;
+          tr.appendChild(artistaTd);
+
+          const temaTd = document.createElement('td');
+          temaTd.textContent = tema;
+          tr.appendChild(temaTd);
+
+          const votosTd = document.createElement('td');
+          votosTd.textContent = votos;
+          tr.appendChild(votosTd);
+
+          const playTd = document.createElement('td');
+          const playBtn = document.createElement('button');
+          playBtn.type = 'button';
+          playBtn.textContent = '▶';
+          playBtn.onclick = () => {
+            if (url) {
+              window.open(url, '_blank');
+            } else {
+              const q = [artista, tema].filter(Boolean).join(' ').trim();
+              if (!q) alert('No hay datos suficientes para reproducir esta canción.');
+              else window.open('https://www.youtube.com/results?search_query=' + encodeURIComponent(q), '_blank');
+            }
+          };
+          playTd.appendChild(playBtn);
+          tr.appendChild(playTd);
+
+          const votarTd = document.createElement('td');
+          const votarBtn = document.createElement('button');
+          votarBtn.type = 'button';
+          votarBtn.textContent = 'Votar';
+          votarBtn.onclick = () => votarCancion(artista, tema);
+          votarTd.appendChild(votarBtn);
+          tr.appendChild(votarTd);
+
+          tbody.appendChild(tr);
+        });
+
+        table.appendChild(tbody);
+        contenedor.appendChild(table);
+      })
+      .catch(e => {
+        mensaje.textContent = "Error cargando listado: " + (e.message || e);
+        console.error(e);
+      });
+  }
+
+  window.onload = cargarListado;
+</script>
+</body>
+</html>
