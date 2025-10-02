@@ -25,7 +25,6 @@
       -moz-osx-font-smoothing: grayscale;
       font-family: "Roboto", Arial, sans-serif;
     }
-
     .pantalla-inicio {
       display: flex;
       flex-direction: column;
@@ -61,7 +60,6 @@
     .pantalla-inicio button:hover {
       background: #960909;
     }
-
     header {
       background: linear-gradient(90deg, #222 80%, #a00 100%);
       box-shadow: 0 4px 18px rgba(100, 0, 0, 0.4);
@@ -152,7 +150,6 @@
       outline: none;
       color: #fff;
     }
-
     section {
       max-width: 100%;
       margin: 20px 10px;
@@ -183,7 +180,6 @@
       line-height: 1.6;
       color: #eee;
     }
-
     input, textarea, select {
       margin: 5px 0 13px 0;
       padding: 10px 14px;
@@ -202,7 +198,6 @@
       box-shadow: 0 0 10px #ff4f4f;
       outline: none;
     }
-
     button, input[type="submit"] {
       background: #d02121;
       color: #fff;
@@ -227,7 +222,6 @@
       box-shadow: 0 5px 24px #e04242cc;
       outline: none;
     }
-
     #respuestasConsultorio ul {
       padding-left: 1.5em;
     }
@@ -235,7 +229,6 @@
       margin-bottom: 10px;
       word-wrap: break-word;
     }
-
     #resultado-libro, #resultado-pelicula, #resultado-diccionario {
       display: inline-block;
       margin-left: 10px;
@@ -244,7 +237,6 @@
       max-width: 80vw;
       color: #fff;
     }
-
     .libro-item {
       display: flex;
       gap: 10px;
@@ -260,7 +252,6 @@
       font-style: italic;
       color: #f0dcdc;
     }
-
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -271,7 +262,6 @@
         transform: translateY(0);
       }
     }
-
     .overlay {
       position: fixed;
       inset: 0;
@@ -326,7 +316,6 @@
       color: #eee;
       word-break: break-word;
     }
-
     @keyframes modalFade {
       from {
         transform: scale(0.96);
@@ -337,7 +326,6 @@
         opacity: 1;
       }
     }
-
     @media (max-width: 480px) {
       .pantalla-inicio h1 {
         font-size: 1.8em;
@@ -369,7 +357,6 @@
         padding: 12px 0;
       }
     }
-
     /* Botón PWA instalar (añadido) */
     #instalarApp {
       display: none;
@@ -395,7 +382,6 @@
     <h1>EVENTO MUSICAL Nº8</h1>
     <button onclick="entrarWeb()">Adelante...</button>
   </div>
-
   <header id="encabezadoApp" style="display: none;">
     <div class="menu-hamburguesa">
       <button
@@ -424,7 +410,6 @@
       <button onclick="mostrarSeccion('diccionario'); cerrarMenu();">Diccionario</button>
     </nav>
   </header>
-
   <div class="main-content" id="mainContent" style="display: none;">
     <section id="inicio" class="active">
       <h2>Portal del conocimiento</h2>
@@ -439,24 +424,18 @@
       </ul>
       <p>Haced buen uso de ellas y procurad no caer en las garras de la adicción</p>
     </section>
-
     <section id="musica">
       <h2>Música</h2>
       <p>Cansados de tanta mierda como nos meten por los ojos, oídos y demás orificios, Evento Musical Nº8 se ha tomado la molestia de seleccionar 1000 canciones de Rock. La excelencia en la selección ha sido exquisita. Un simple click en el botón y se desplegará ante vosotros la esencia del Rock, Hard Rock, Heavy Rock, o Protometal</p>
       <button onclick="propuestaMusical()">Propuesta Musical</button>
-      <!-- Nuevo botón solicitado: abre el listado desde la Sheet -->
       <button onclick="window.open('listado.html', '_blank')">Listado de canciones</button>
-
     </section>
-
-    <!-- Nueva sección que mostrará el listado recuperado desde la Sheet -->
     <section id="listadoCanciones" aria-live="polite">
       <h2>Listado de canciones (desde Google Sheet)</h2>
       <p id="texto-listado">Aquí se mostrará el listado de la hoja <em>Canciones</em> de Drive.</p>
       <div id="tabla-canciones-container" style="margin-top:12px;"></div>
       <button onclick="mostrarSeccion('musica')">Volver a Música</button>
     </section>
-
     <section id="libros">
       <h2>Libros</h2>
       <p>¿Eres un analfabeto funcional y necesitas disimularlo? O simplemente eres gilipollas y cada vez que eliges un libro la cagas. Aquí resolvemos ese problema accediendo a través del azar a una cuidada selección de títulos. Simplemente déjate llevar y dedícate a otra cosa que se suponga que haces mejor</p>
@@ -497,7 +476,6 @@
       <button onclick="abrirModalDiccionario()">Añadir palabra</button>
       <div id="resultado-diccionario"></div>
     </section>
-
     <div id="overlay-libro" class="overlay" onclick="cerrarModal()">
       <div id="ventana-derecha-libro" class="modal" onclick="event.stopPropagation()">
         <button class="cerrar" onclick="cerrarModal()">✖</button>
@@ -528,10 +506,7 @@
       </div>
     </div>
   </div>
-
-  <!-- Botón de instalación PWA -->
   <button id="instalarApp" aria-hidden="true">Instalar aplicación</button>
-
   <script>
     function entrarWeb() {
       document.getElementById("pantallaInicio").style.display = "none";
@@ -539,7 +514,6 @@
       document.getElementById("mainContent").style.display = "";
       mostrarSeccion("inicio");
     }
-
     const botonMenu = document.getElementById("abrirMenu");
     const menuNavegacion = document.getElementById("menuNavegacion");
     botonMenu.addEventListener("click", function () {
@@ -551,7 +525,6 @@
       botonMenu.setAttribute("aria-expanded", "false");
       menuNavegacion.classList.remove("show");
     }
-
     function mostrarSeccion(id) {
       document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
       if (id === "inicio") {
@@ -561,7 +534,6 @@
         document.getElementById(id).classList.add("active");
       }
     }
-
     function propuestaMusical() {
       fetch("canciones.txt")
         .then(r => r.text())
@@ -576,18 +548,15 @@
         .catch(err => alert("No se pudo cargar la lista de canciones: " + err));
     }
 
-    // ---------------------------------------------------
-    // Integración: URL de tu Apps Script para obtener el listado
+    // URL de tu Apps Script para obtener el listado
     const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbzZbnOnLC38tWppxHUBKPYmK1niVBoB4x9fOwQ8H7Qhy2ZW3fg-Sb2r66GX2J33XaR6Yg/exec";
-    // ---------------------------------------------------
 
-    // Muestra el listado recuperado desde la sheet en la nueva sección 'listadoCanciones'
+    // Corregido: mostrar listado sin columna ID, tolera arrays u objetos
     function mostrarListadoCanciones() {
       const container = document.getElementById("tabla-canciones-container");
       const texto = document.getElementById("texto-listado");
       container.innerHTML = "";
       texto.textContent = "Cargando listado desde Google Sheet...";
-      // Hacemos la petición al Apps Script
       fetch(GAS_URL_CANCIONES + "?action=getListado")
         .then(r => {
           if (!r.ok) throw new Error("Respuesta no OK: " + r.status);
@@ -595,7 +564,6 @@
         })
         .then(resp => {
           let canciones = resp;
-          // Manejar posible envoltura { canciones: [...] }
           if (!Array.isArray(canciones)) {
             if (resp && resp.canciones && Array.isArray(resp.canciones)) canciones = resp.canciones;
             else {
@@ -610,16 +578,14 @@
             mostrarSeccion('listadoCanciones');
             return;
           }
-
-          // Crear tabla con DOM (evita problemas de escaping)
+          // Crear tabla (sin columna ID)
           const table = document.createElement('table');
           table.style.width = '100%';
           table.style.borderCollapse = 'collapse';
           table.style.marginTop = '8px';
-
           const thead = document.createElement('thead');
           const headRow = document.createElement('tr');
-          ['ID','Artista','Tema','Votos','Reproducir'].forEach(h => {
+          ['#', 'Artista', 'Tema', 'Votos', 'Reproducir'].forEach(h => {
             const th = document.createElement('th');
             th.textContent = h;
             th.style.textAlign = 'left';
@@ -630,57 +596,51 @@
           });
           thead.appendChild(headRow);
           table.appendChild(thead);
-
           const tbody = document.createElement('tbody');
 
           canciones.forEach((c, idx) => {
-            // Normalizar campos (compatible con diferentes formatos de respuesta)
-            const artista = (c.artista || c.Artista || c[0] || c.artist || "") ;
-            const tema = (c.tema || c.Tema || c.titulo || c.title || c[1] || "");
-            const votos = (c.votos !== undefined) ? c.votos : (c.Votos !== undefined ? c.Votos : (c[2] !== undefined ? c[2] : 0));
-            const url = (c.url || c.URL || c[3] || "");
-
+            // C es array o objeto
+            let artista, tema, votos, url;
+            if (Array.isArray(c)) {
+              [artista, tema, votos, url] = c;
+            } else {
+              artista = c.artista || c.Artista || c.artist || '';
+              tema = c.tema || c.Tema || c.titulo || c.title || '';
+              votos = c.votos || c.Votos || '';
+              url = c.url || c.URL || '';
+            }
             const tr = document.createElement('tr');
-
-            // ID (si existe, intentar obtener de varios lugares)
-            const idCell = document.createElement('td');
-            idCell.textContent = (c.id !== undefined) ? c.id : (c.ID !== undefined ? c.ID : (c[0] !== undefined && !c.artista ? c[0] : idx + 1));
-            idCell.style.padding = '8px';
-            idCell.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
-            tr.appendChild(idCell);
-
+            const numCell = document.createElement('td');
+            numCell.textContent = idx + 1;
+            numCell.style.padding = '8px';
+            numCell.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
+            tr.appendChild(numCell);
             const artistaCell = document.createElement('td');
             artistaCell.textContent = artista;
             artistaCell.style.padding = '8px';
             artistaCell.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
             tr.appendChild(artistaCell);
-
             const temaCell = document.createElement('td');
             temaCell.textContent = tema;
             temaCell.style.padding = '8px';
             temaCell.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
             tr.appendChild(temaCell);
-
             const votosCell = document.createElement('td');
             votosCell.textContent = votos;
             votosCell.style.padding = '8px';
             votosCell.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
             tr.appendChild(votosCell);
-
             const playCell = document.createElement('td');
             playCell.style.padding = '8px';
             playCell.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
-
             const playBtn = document.createElement('button');
             playBtn.type = 'button';
             playBtn.textContent = '▶';
             playBtn.style.padding = '6px 10px';
             playBtn.addEventListener('click', () => {
               if (url) {
-                // Si existe URL en la fila, abrirla
                 window.open(url, '_blank');
               } else {
-                // Si no hay URL, buscar Artista + Tema en YouTube
                 const q = [artista, tema].filter(Boolean).join(' ').trim();
                 if (!q) {
                   alert('No hay datos suficientes para reproducir esta canción.');
@@ -691,15 +651,12 @@
             });
             playCell.appendChild(playBtn);
             tr.appendChild(playCell);
-
             tbody.appendChild(tr);
           });
 
           table.appendChild(tbody);
-          // limpiar y añadir a contenedor
           container.innerHTML = "";
           container.appendChild(table);
-          // Mostrar la sección del listado
           mostrarSeccion('listadoCanciones');
         })
         .catch(err => {
@@ -881,10 +838,7 @@
         });
     }
   </script>
-
-  <!-- PWA: registro service worker y manejo de instalación -->
   <script>
-    // Registrar service worker al cargar la página
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('service-worker.js')
@@ -892,23 +846,16 @@
           .catch(err => console.error('Error al registrar Service Worker:', err));
       });
     }
-
-    // Instalación PWA (beforeinstallprompt)
     let deferredPrompt;
     const instalarBtn = document.getElementById('instalarApp');
-
     function isInStandaloneMode() {
       return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
     }
-
-    // Si ya estamos en modo standalone (instalado), ocultar botón
     if (isInStandaloneMode() && instalarBtn) {
       instalarBtn.style.display = 'none';
       instalarBtn.setAttribute('aria-hidden', 'true');
     }
-
     window.addEventListener('beforeinstallprompt', (e) => {
-      // Evita que el navegador muestre su banner automático
       e.preventDefault();
       deferredPrompt = e;
       if (instalarBtn) {
@@ -916,17 +863,14 @@
         instalarBtn.setAttribute('aria-hidden', 'false');
       }
     });
-
     if (instalarBtn) {
       instalarBtn.addEventListener('click', async () => {
         if (!deferredPrompt) return;
-        // Ocultamos el botón mientras se muestra el prompt
         instalarBtn.style.display = 'none';
         try {
           deferredPrompt.prompt();
           const choiceResult = await deferredPrompt.userChoice;
           console.log('Resultado prompt de instalación:', choiceResult);
-          // Después del resultado, limpiamos
           deferredPrompt = null;
         } catch (err) {
           console.error('Error mostrando prompt de instalación:', err);
@@ -935,8 +879,6 @@
         }
       });
     }
-
-    // Evento cuando la app queda instalada
     window.addEventListener('appinstalled', (evt) => {
       console.log('PWA instalada', evt);
       if (instalarBtn) {
