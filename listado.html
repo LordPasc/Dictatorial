@@ -37,26 +37,33 @@
     .table-wrapper {
       overflow-x: auto;
     }
+
+    /* Estilos de tabla acoplados */
     table {
       width: 100%;
       border-collapse: collapse;
+      margin-top: 12px;
+      table-layout: fixed;
       font-size: 0.9em;
       min-width: 350px;
     }
     th, td {
       padding: 8px;
-      border-bottom: 1px solid #aa2b2b;
+      border: 1px solid #aa2b2b;
       text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
       white-space: nowrap;
     }
     th {
       color: #d02121;
-      border-bottom: 2px solid #d02121;
-      background: #1b1b1b;
+      background: #121212;
+      font-weight: bold;
       position: sticky;
-      top: 54px; /* debajo del h1 y del mensaje */
+      top: 54px; /* debajo del h1 y mensaje */
       z-index: 4;
     }
+
     button {
       background: #d02121;
       color: #fff;
