@@ -1,5 +1,5 @@
 // Nombre y versión del caché
-const CACHE_NAME = 'evento-musical-v1'; // Cambia "v1" cada vez que actualices tu PWA
+const CACHE_NAME = 'evento-musical-v2'; // Cambia "v1" cada vez que actualices tu PWA
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
