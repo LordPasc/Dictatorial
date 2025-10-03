@@ -1,4 +1,4 @@
-const CACHE_NAME = "evento-musical-v3"; // Cambia la versión en cada actualización
+const CACHE_NAME = "evento-musical-v4"; // Cambia la versión en cada actualización
 const URLS_TO_CACHE = [
   "index.html",
   "styles.css",
@@ -34,16 +34,39 @@ self.addEventListener("activate", (event) => {
   self.clients.claim(); // Fuerza que los clientes actuales usen el nuevo SW
 });
 
-// Fetch con caché actualizado dinámicamente
+// Fetch con estrategia diferenciada
 self.addEventListener("fetch", (event) => {
+  const url = event.request.url;
+
+  // Para archivos críticos, usar Network First
+  if (
+    url.includes("index.html") ||
+    url.includes("script.js") ||
+    url.includes("manifest.json")
+  ) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          return caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, response.clone());
+            return response;
+          });
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // Para el resto, usar Cache then Network
   event.respondWith(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.match(event.request).then((cachedResponse) => {
-        const fetchPromise = fetch(event.request).then((networkResponse) => {
-          // Actualiza caché con la respuesta más reciente
-          cache.put(event.request, networkResponse.clone());
-          return networkResponse;
-        });
+        const fetchPromise = fetch(event.request)
+          .then((networkResponse) => {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          })
+          .catch(() => null); // Evitar fallo si la red no responde
         return cachedResponse || fetchPromise;
       });
     })
