@@ -157,7 +157,7 @@
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const trHead = document.createElement("tr");
-    ["#", "Artista", "Tema", "Votos", "Reproducir", "Votar"].forEach(h => {
+    ["#", "Artista", "Tema", "Puntos Lomlark", "Reproducir", "Votar"].forEach(h => {
       const th = document.createElement("th");
       th.textContent = h;
       trHead.appendChild(th);
@@ -178,7 +178,13 @@
         <td>${artista}</td>
         <td>${tema}</td>
         <td id="votos-${idx}">${votos}</td>
-        <td><button type="button" onclick="reproducir('${url}', '${artista}', '${tema}')">▶</button></td>
+        <td>
+          <button type="button"
+                  class="btn-reproducir"
+                  data-url="${url}"
+                  data-artista="${encodeURIComponent(artista)}"
+                  data-tema="${encodeURIComponent(tema)}">▶</button>
+        </td>
         <td><button type="button" onclick="abrirModalVoto(${idx})">Votar</button></td>
       `;
       tbody.appendChild(tr);
@@ -186,6 +192,24 @@
     table.appendChild(tbody);
     contenedor.innerHTML = "";
     contenedor.appendChild(table);
+
+    // Agregar listeners a los botones reproducir
+    document.querySelectorAll('.btn-reproducir').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const url = btn.dataset.url;
+        const artista = decodeURIComponent(btn.dataset.artista);
+        const tema = decodeURIComponent(btn.dataset.tema);
+
+        if (url) {
+          window.open(url, "_blank");
+        } else {
+          let q = [artista, tema].filter(Boolean).join(" ").trim();
+          q = q.replace(/['"&?#\/\\+%]/g, ""); // eliminar caracteres problemáticos
+          if (q) window.open("https://www.youtube.com/results?search_query=" + encodeURIComponent(q), "_blank");
+          else alert("No hay datos suficientes para reproducir la canción.");
+        }
+      });
+    });
   }
 
   // Cargar datos con JSONP
@@ -193,16 +217,6 @@
     const script = document.createElement("script");
     script.src = GAS_URL_CANCIONES + "?action=getListado&callback=callbackCanciones";
     document.body.appendChild(script);
-  }
-
-  // Reproducir canción
-  function reproducir(url, artista, tema) {
-    if (url) window.open(url, "_blank");
-    else {
-      const q = [artista, tema].filter(Boolean).join(" ").trim();
-      if (!q) alert("No hay datos suficientes para reproducir la canción.");
-      else window.open("https://www.youtube.com/results?search_query=" + encodeURIComponent(q), "_blank");
-    }
   }
 
   // Abrir modal para votar una canción por índice
@@ -224,7 +238,6 @@
       .then((resp) => {
         if (resp.status === "OK") {
           alert("Voto registrado correctamente.");
-          // Actualizar visualmente el voto en la tabla sumando
           for (let i = 0; i < listadoGlobal.length; i++) {
             if (
               listadoGlobal[i].artista === artista &&
