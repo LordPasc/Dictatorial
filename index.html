@@ -897,5 +897,16 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+
+<!-- Footer con versión -->
+<footer style="text-align:center; margin-top:20px; font-size:14px; color:#888;">
+  Versión actual: <span id="app-version"></span>
+</footer>
+
+<script>
+  // ⚡ Cambia este número en cada actualización
+  const APP_VERSION = "2.0.0";
+  document.getElementById("app-version").textContent = APP_VERSION;
+</script>
 </body>
 </html>
