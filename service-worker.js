@@ -1,5 +1,5 @@
 // Nombre y versión del caché
-const CACHE_NAME = 'evento-musical-2.0.0'; // Cambia la versión cada vez que actualices tu PWA
+const CACHE_NAME = 'evento-musical-3.0.0'; // Cambia la versión cada vez que actualices tu PWA
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
@@ -54,3 +54,4 @@ self.addEventListener('fetch', event => {
         .then(cachedResponse => cachedResponse || caches.match('/index.html')))
   );
 });
+
