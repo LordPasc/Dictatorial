@@ -90,7 +90,7 @@
 </head>
 <body>
 <h1>Listado de Canciones - Evento Musical Nº8</h1>
-<div id="mensaje">Cargando listado desde Google Sheet...</div>
+<div id="mensaje">Cargando todo lo bueno...</div>
 <div id="tabla-container"></div>
 
 <!-- Modal para votar -->
@@ -156,7 +156,7 @@ function callbackCanciones(json) {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const trHead = document.createElement("tr");
-  ["#", "Artista", "Tema", "Votos", "Reproducir", "Votar"].forEach(h => {
+  ["#", "Artista", "Tema", "Puntos Lomlarck", "Reproducir", "Votar"].forEach(h => {
     const th = document.createElement("th");
     th.textContent = h;
     trHead.appendChild(th);
@@ -259,3 +259,4 @@ window.onload = cargarDatosJSONP;
 </script>
 </body>
 </html>
+
