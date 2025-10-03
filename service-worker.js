@@ -1,5 +1,5 @@
 // Nombre y versión del caché
-const CACHE_NAME = 'evento-musical-v2'; // Cambia "v1" cada vez que actualices tu PWA
+const CACHE_NAME = 'evento-musical-v3'; // Cambia la versión cada vez que actualices tu PWA
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
@@ -11,6 +11,7 @@ const URLS_TO_CACHE = [
   // añade aquí todos los recursos esenciales, CSS, JS y otros archivos
 ];
 
+// Instalación del Service Worker y precacheo
 self.addEventListener('install', event => {
   console.log('[SW] Instalando Service Worker y precacheando...');
   event.waitUntil(
@@ -20,6 +21,7 @@ self.addEventListener('install', event => {
   );
 });
 
+// Activación del Service Worker y limpieza de cachés antiguos
 self.addEventListener('activate', event => {
   console.log('[SW] Activando Service Worker...');
   event.waitUntil(
@@ -37,15 +39,18 @@ self.addEventListener('activate', event => {
   return self.clients.claim();
 });
 
+// Intercepta solicitudes para servir contenido actualizado
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request)
-      .then(cachedResponse => cachedResponse || fetch(event.request))
-      .catch(() => {
-        // opcional: fallback si no hay conexión
-        if (event.request.destination === 'document') {
-          return caches.match('/index.html');
-        }
+    fetch(event.request)
+      .then(response => {
+        const responseClone = response.clone();
+        caches.open(CACHE_NAME).then(cache => {
+          cache.put(event.request, responseClone);
+        });
+        return response;
       })
+      .catch(() => caches.match(event.request)
+        .then(cachedResponse => cachedResponse || caches.match('/index.html')))
   );
 });
