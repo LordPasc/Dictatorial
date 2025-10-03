@@ -2,41 +2,75 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <title>Listado de Canciones - Evento Musical Nº8</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #121212;
       color: #eee;
-      margin: 10px;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      padding: 12px;
+      margin: 0;
+      font-size: 1.4em;
+      color: #d02121;
+      border-bottom: 2px solid #d02121;
+      background: #1b1b1b;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    #mensaje {
+      padding: 10px;
+      text-align: center;
+      font-size: 0.95em;
+      background: #1e1e1e;
+      border-bottom: 1px solid #aa2b2b;
+    }
+    #tabla-container {
+      padding: 8px;
+    }
+    .table-wrapper {
+      overflow-x: auto;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 12px;
+      font-size: 0.9em;
+      min-width: 350px;
     }
     th, td {
       padding: 8px;
       border-bottom: 1px solid #aa2b2b;
       text-align: left;
+      white-space: nowrap;
     }
     th {
       color: #d02121;
       border-bottom: 2px solid #d02121;
+      background: #1b1b1b;
+      position: sticky;
+      top: 54px; /* debajo del h1 y del mensaje */
+      z-index: 4;
     }
     button {
       background: #d02121;
       color: #fff;
       border: none;
-      border-radius: 8px;
-      padding: 6px 12px;
+      border-radius: 6px;
+      padding: 6px 10px;
       cursor: pointer;
       font-weight: bold;
+      font-size: 0.85em;
     }
     button:hover {
       background: #960909;
     }
+
     /* Modal styles */
     .modal {
       display: none;
@@ -51,20 +85,21 @@
     }
     .modal-content {
       background-color: #2a1a1a;
-      margin: 10% auto;
+      margin: 20vh auto;
       padding: 20px;
       border-radius: 10px;
-      width: 300px;
+      width: 90%;
+      max-width: 350px;
       color: #eee;
-      box-shadow: 0 0 10px #d02121;
+      box-shadow: 0 0 12px #d02121;
       font-family: Arial, sans-serif;
     }
     .modal-content label,
     .modal-content input {
       display: block;
       width: 100%;
-      margin-bottom: 15px;
-      font-size: 1.2em;
+      margin-bottom: 12px;
+      font-size: 1em;
     }
     .modal-content input[type="number"] {
       padding: 8px;
@@ -80,15 +115,35 @@
     }
     .modal-footer button {
       margin-left: 10px;
-      font-size: 1em;
-      padding: 8px 16px;
+      font-size: 0.9em;
+      padding: 6px 12px;
+    }
+
+    /* Mejoras para móvil */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.1em;
+        padding: 10px;
+      }
+      th, td {
+        padding: 6px;
+        font-size: 0.8em;
+      }
+      button {
+        padding: 5px 8px;
+        font-size: 0.8em;
+      }
     }
   </style>
 </head>
 <body>
 <h1>Listado de Canciones - Evento Musical Nº8</h1>
 <div id="mensaje">Cargando listado desde Google Sheet...</div>
-<div id="tabla-container"></div>
+<div id="tabla-container">
+  <div class="table-wrapper">
+    <!-- Aquí se cargará la tabla -->
+  </div>
+</div>
 
 <!-- Modal para votar -->
 <div id="modalVotar" class="modal">
@@ -110,19 +165,15 @@
   let listadoGlobal = [];
   let cancionSeleccionada = null;
 
-  // Mostrar modal
   function abrirModal() {
     document.getElementById("modalVotar").style.display = "block";
   }
-  // Ocultar modal
   function cerrarModal() {
     document.getElementById("modalVotar").style.display = "none";
     document.getElementById("input-voto").value = "";
   }
-
   document.getElementById("cancelarBtn").addEventListener("click", cerrarModal);
 
-  // Confirmar voto
   document.getElementById("confirmarBtn").addEventListener("click", () => {
     const input = document.getElementById("input-voto");
     const votoNum = parseInt(input.value);
@@ -139,11 +190,11 @@
     cerrarModal();
   });
 
-  // Función callback del JSONP
   function callbackCanciones(json) {
-    listadoGlobal = json; // guardamos globalmente para actualizar votos visualmente
+    listadoGlobal = json;
     const mensaje = document.getElementById("mensaje");
-    const contenedor = document.getElementById("tabla-container");
+    const contenedor = document.querySelector("#tabla-container .table-wrapper");
+
     if (!Array.isArray(json)) {
       mensaje.textContent = "Formato inesperado al cargar datos";
       return;
@@ -193,7 +244,6 @@
     contenedor.innerHTML = "";
     contenedor.appendChild(table);
 
-    // Agregar listeners a los botones reproducir
     document.querySelectorAll('.btn-reproducir').forEach(btn => {
       btn.addEventListener('click', () => {
         const url = btn.dataset.url;
@@ -204,7 +254,7 @@
           window.open(url, "_blank");
         } else {
           let q = [artista, tema].filter(Boolean).join(" ").trim();
-          q = q.replace(/['"&?#\/\\+%]/g, ""); // eliminar caracteres problemáticos
+          q = q.replace(/['"&?#\/\\+%]/g, "");
           if (q) window.open("https://www.youtube.com/results?search_query=" + encodeURIComponent(q), "_blank");
           else alert("No hay datos suficientes para reproducir la canción.");
         }
@@ -212,21 +262,19 @@
     });
   }
 
-  // Cargar datos con JSONP
   function cargarDatosJSONP() {
     const script = document.createElement("script");
     script.src = GAS_URL_CANCIONES + "?action=getListado&callback=callbackCanciones";
     document.body.appendChild(script);
   }
 
-  // Abrir modal para votar una canción por índice
   function abrirModalVoto(idx) {
     cancionSeleccionada = listadoGlobal[idx];
-    document.getElementById("modal-info").textContent = `Canción: "${cancionSeleccionada.tema}" de "${cancionSeleccionada.artista}"`;
+    document.getElementById("modal-info").textContent =
+      `Canción: "${cancionSeleccionada.tema}" de "${cancionSeleccionada.artista}"`;
     abrirModal();
   }
 
-  // Enviar voto al backend y actualizar la tabla visualmente
   function enviarVoto(artista, tema, voto) {
     const data = new URLSearchParams({ artista, tema, voto });
     fetch(GAS_URL_CANCIONES, {
@@ -239,14 +287,9 @@
         if (resp.status === "OK") {
           alert("Voto registrado correctamente.");
           for (let i = 0; i < listadoGlobal.length; i++) {
-            if (
-              listadoGlobal[i].artista === artista &&
-              listadoGlobal[i].tema === tema
-            ) {
-              listadoGlobal[i].votos =
-                (parseInt(listadoGlobal[i].votos) || 0) + parseInt(voto);
-              document.getElementById("votos-" + i).textContent =
-                listadoGlobal[i].votos;
+            if (listadoGlobal[i].artista === artista && listadoGlobal[i].tema === tema) {
+              listadoGlobal[i].votos = (parseInt(listadoGlobal[i].votos) || 0) + parseInt(voto);
+              document.getElementById("votos-" + i).textContent = listadoGlobal[i].votos;
               break;
             }
           }
