@@ -879,13 +879,14 @@
         }
       });
     }
-    window.addEventListener('appinstalled', (evt) => {
-      console.log('PWA instalada', evt);
-      if (instalarBtn) {
-        instalarBtn.style.display = 'none';
-        instalarBtn.setAttribute('aria-hidden', 'true');
-      }
-    });
-  </script>
+   // Evento appinstalled existente
+  window.addEventListener('appinstalled', (evt) => {
+    console.log('PWA instalada', evt);
+    if (instalarBtn) {
+      instalarBtn.style.display = 'none';
+      instalarBtn.setAttribute('aria-hidden', 'true');
+    }
+  });
+</script>
 </body>
 </html>
