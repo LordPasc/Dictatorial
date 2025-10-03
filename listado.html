@@ -2,82 +2,44 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Listado de Canciones - Evento Musical Nº8</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #121212;
       color: #eee;
-      margin: 0;
-      padding: 0;
+      margin: 10px;
     }
-    h1 {
-      text-align: center;
-      padding: 12px;
-      margin: 0;
-      font-size: 1.4em;
-      color: #d02121;
-      border-bottom: 2px solid #d02121;
-      background: #1b1b1b;
-      position: sticky;
-      top: 0;
-      z-index: 5;
-    }
-    #mensaje {
-      padding: 10px;
-      text-align: center;
-      font-size: 0.95em;
-      background: #1e1e1e;
-      border-bottom: 1px solid #aa2b2b;
-    }
-    #tabla-container {
-      padding: 8px;
-    }
-    .table-wrapper {
-      overflow-x: auto;
-    }
-
-    /* Estilos de tabla acoplados */
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 12px;
-      table-layout: fixed;
-      font-size: 0.9em;
-      min-width: 350px;
     }
     th, td {
       padding: 8px;
-      border: 1px solid #aa2b2b;
+      border-bottom: 1px solid #aa2b2b;
       text-align: left;
+      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      white-space: nowrap;
     }
     th {
       color: #d02121;
-      background: #121212;
-      font-weight: bold;
-      position: sticky;
-      top: 54px; /* debajo del h1 y mensaje */
-      z-index: 4;
+      border-bottom: 2px solid #d02121;
     }
-
     button {
       background: #d02121;
       color: #fff;
       border: none;
-      border-radius: 6px;
-      padding: 6px 10px;
+      border-radius: 8px;
+      padding: 6px 12px;
       cursor: pointer;
       font-weight: bold;
-      font-size: 0.85em;
     }
     button:hover {
       background: #960909;
     }
-
     /* Modal styles */
     .modal {
       display: none;
@@ -92,21 +54,20 @@
     }
     .modal-content {
       background-color: #2a1a1a;
-      margin: 20vh auto;
+      margin: 10% auto;
       padding: 20px;
       border-radius: 10px;
-      width: 90%;
-      max-width: 350px;
+      width: 300px;
       color: #eee;
-      box-shadow: 0 0 12px #d02121;
+      box-shadow: 0 0 10px #d02121;
       font-family: Arial, sans-serif;
     }
     .modal-content label,
     .modal-content input {
       display: block;
       width: 100%;
-      margin-bottom: 12px;
-      font-size: 1em;
+      margin-bottom: 15px;
+      font-size: 1.2em;
     }
     .modal-content input[type="number"] {
       padding: 8px;
@@ -122,35 +83,15 @@
     }
     .modal-footer button {
       margin-left: 10px;
-      font-size: 0.9em;
-      padding: 6px 12px;
-    }
-
-    /* Mejoras para móvil */
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.1em;
-        padding: 10px;
-      }
-      th, td {
-        padding: 6px;
-        font-size: 0.8em;
-      }
-      button {
-        padding: 5px 8px;
-        font-size: 0.8em;
-      }
+      font-size: 1em;
+      padding: 8px 16px;
     }
   </style>
 </head>
 <body>
 <h1>Listado de Canciones - Evento Musical Nº8</h1>
 <div id="mensaje">Cargando listado desde Google Sheet...</div>
-<div id="tabla-container">
-  <div class="table-wrapper">
-    <!-- Aquí se cargará la tabla -->
-  </div>
-</div>
+<div id="tabla-container"></div>
 
 <!-- Modal para votar -->
 <div id="modalVotar" class="modal">
@@ -167,147 +108,154 @@
 </div>
 
 <script>
-  const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbw4TCbkUleFKLYE352VI7jSSVjQIED42CneWDfrTmLZURZxOyJzPKYqFwjfxbuk69sWgw/exec";
+const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbw4TCbkUleFKLYE352VI7jSSVjQIED42CneWDfrTmLZURZxOyJzPKYqFwjfxbuk69sWgw/exec";
 
-  let listadoGlobal = [];
-  let cancionSeleccionada = null;
+let listadoGlobal = [];
+let cancionSeleccionada = null;
 
-  function abrirModal() {
-    document.getElementById("modalVotar").style.display = "block";
+function abrirModal() {
+  document.getElementById("modalVotar").style.display = "block";
+}
+function cerrarModal() {
+  document.getElementById("modalVotar").style.display = "none";
+  document.getElementById("input-voto").value = "";
+}
+
+document.getElementById("cancelarBtn").addEventListener("click", cerrarModal);
+
+document.getElementById("confirmarBtn").addEventListener("click", () => {
+  const input = document.getElementById("input-voto");
+  const votoNum = parseInt(input.value);
+  if (isNaN(votoNum) || votoNum < 1 || votoNum > 10) {
+    alert("Debe ingresar un número entre 1 y 10.");
+    return;
   }
-  function cerrarModal() {
-    document.getElementById("modalVotar").style.display = "none";
-    document.getElementById("input-voto").value = "";
-  }
-  document.getElementById("cancelarBtn").addEventListener("click", cerrarModal);
-
-  document.getElementById("confirmarBtn").addEventListener("click", () => {
-    const input = document.getElementById("input-voto");
-    const votoNum = parseInt(input.value);
-    if (isNaN(votoNum) || votoNum < 1 || votoNum > 10) {
-      alert("Debe ingresar un número entre 1 y 10.");
-      return;
-    }
-    if (!cancionSeleccionada) {
-      alert("Error: Canción no seleccionada.");
-      cerrarModal();
-      return;
-    }
-    enviarVoto(cancionSeleccionada.artista, cancionSeleccionada.tema, votoNum);
+  if (!cancionSeleccionada) {
+    alert("Error: Canción no seleccionada.");
     cerrarModal();
+    return;
+  }
+  enviarVoto(cancionSeleccionada.artista, cancionSeleccionada.tema, votoNum);
+  cerrarModal();
+});
+
+function callbackCanciones(json) {
+  listadoGlobal = json;
+  const mensaje = document.getElementById("mensaje");
+  const contenedor = document.getElementById("tabla-container");
+  if (!Array.isArray(json)) {
+    mensaje.textContent = "Formato inesperado al cargar datos";
+    return;
+  }
+  if (json.length === 0) {
+    mensaje.textContent = "No hay canciones en la hoja.";
+    return;
+  }
+  mensaje.textContent = `Total canciones: ${json.length}`;
+
+  const table = document.createElement("table");
+  const thead = document.createElement("thead");
+  const trHead = document.createElement("tr");
+  ["#", "Artista", "Tema", "Votos", "Reproducir", "Votar"].forEach(h => {
+    const th = document.createElement("th");
+    th.textContent = h;
+    trHead.appendChild(th);
+  });
+  thead.appendChild(trHead);
+  table.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+  json.forEach((c, idx) => {
+    const tr = document.createElement("tr");
+
+    const tdIndex = document.createElement("td");
+    tdIndex.textContent = idx + 1;
+    tr.appendChild(tdIndex);
+
+    const tdArtista = document.createElement("td");
+    tdArtista.textContent = c.artista || "";
+    tr.appendChild(tdArtista);
+
+    const tdTema = document.createElement("td");
+    tdTema.textContent = c.tema || "";
+    tr.appendChild(tdTema);
+
+    const tdVotos = document.createElement("td");
+    tdVotos.id = `votos-${idx}`;
+    tdVotos.textContent = c.votos || 0;
+    tr.appendChild(tdVotos);
+
+    const tdReproducir = document.createElement("td");
+    const btnReproducir = document.createElement("button");
+    btnReproducir.textContent = "▶";
+    btnReproducir.addEventListener("click", () => {
+      reproducir(c.url || "", c.artista || "", c.tema || "");
+    });
+    tdReproducir.appendChild(btnReproducir);
+    tr.appendChild(tdReproducir);
+
+    const tdVotar = document.createElement("td");
+    const btnVotar = document.createElement("button");
+    btnVotar.textContent = "Votar";
+    btnVotar.addEventListener("click", () => abrirModalVoto(idx));
+    tdVotar.appendChild(btnVotar);
+    tr.appendChild(tdVotar);
+
+    tbody.appendChild(tr);
   });
 
-  function callbackCanciones(json) {
-    listadoGlobal = json;
-    const mensaje = document.getElementById("mensaje");
-    const contenedor = document.querySelector("#tabla-container .table-wrapper");
+  table.appendChild(tbody);
+  contenedor.innerHTML = "";
+  contenedor.appendChild(table);
+}
 
-    if (!Array.isArray(json)) {
-      mensaje.textContent = "Formato inesperado al cargar datos";
-      return;
-    }
-    if (json.length === 0) {
-      mensaje.textContent = "No hay canciones en la hoja.";
-      return;
-    }
-    mensaje.textContent = `Total canciones: ${json.length}`;
+function cargarDatosJSONP() {
+  const script = document.createElement("script");
+  script.src = GAS_URL_CANCIONES + "?action=getListado&callback=callbackCanciones";
+  document.body.appendChild(script);
+}
 
-    const table = document.createElement("table");
-    const thead = document.createElement("thead");
-    const trHead = document.createElement("tr");
-    ["#", "Artista", "Tema", "Puntos Lomlark", "Reproducir", "Votar"].forEach(h => {
-      const th = document.createElement("th");
-      th.textContent = h;
-      trHead.appendChild(th);
-    });
-    thead.appendChild(trHead);
-    table.appendChild(thead);
-
-    const tbody = document.createElement("tbody");
-    json.forEach((c, idx) => {
-      let artista = c.artista || "";
-      let tema = c.tema || "";
-      let votos = c.votos || 0;
-      let url = c.url || "";
-
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td>${idx + 1}</td>
-        <td>${artista}</td>
-        <td>${tema}</td>
-        <td id="votos-${idx}">${votos}</td>
-        <td>
-          <button type="button"
-                  class="btn-reproducir"
-                  data-url="${url}"
-                  data-artista="${encodeURIComponent(artista)}"
-                  data-tema="${encodeURIComponent(tema)}">▶</button>
-        </td>
-        <td><button type="button" onclick="abrirModalVoto(${idx})">Votar</button></td>
-      `;
-      tbody.appendChild(tr);
-    });
-    table.appendChild(tbody);
-    contenedor.innerHTML = "";
-    contenedor.appendChild(table);
-
-    document.querySelectorAll('.btn-reproducir').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const url = btn.dataset.url;
-        const artista = decodeURIComponent(btn.dataset.artista);
-        const tema = decodeURIComponent(btn.dataset.tema);
-
-        if (url) {
-          window.open(url, "_blank");
-        } else {
-          let q = [artista, tema].filter(Boolean).join(" ").trim();
-          q = q.replace(/['"&?#\/\\+%]/g, "");
-          if (q) window.open("https://www.youtube.com/results?search_query=" + encodeURIComponent(q), "_blank");
-          else alert("No hay datos suficientes para reproducir la canción.");
-        }
-      });
-    });
+function reproducir(url, artista, tema) {
+  if (url) window.open(url, "_blank");
+  else {
+    const q = [artista, tema].filter(Boolean).join(" ").trim();
+    if (!q) alert("No hay datos suficientes para reproducir la canción.");
+    else window.open("https://www.youtube.com/results?search_query=" + encodeURIComponent(q), "_blank");
   }
+}
 
-  function cargarDatosJSONP() {
-    const script = document.createElement("script");
-    script.src = GAS_URL_CANCIONES + "?action=getListado&callback=callbackCanciones";
-    document.body.appendChild(script);
-  }
+function abrirModalVoto(idx) {
+  cancionSeleccionada = listadoGlobal[idx];
+  document.getElementById("modal-info").textContent = `Canción: "${cancionSeleccionada.tema}" de "${cancionSeleccionada.artista}"`;
+  abrirModal();
+}
 
-  function abrirModalVoto(idx) {
-    cancionSeleccionada = listadoGlobal[idx];
-    document.getElementById("modal-info").textContent =
-      `Canción: "${cancionSeleccionada.tema}" de "${cancionSeleccionada.artista}"`;
-    abrirModal();
-  }
-
-  function enviarVoto(artista, tema, voto) {
-    const data = new URLSearchParams({ artista, tema, voto });
-    fetch(GAS_URL_CANCIONES, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: data.toString(),
-    })
-      .then((res) => res.json())
-      .then((resp) => {
-        if (resp.status === "OK") {
-          alert("Voto registrado correctamente.");
-          for (let i = 0; i < listadoGlobal.length; i++) {
-            if (listadoGlobal[i].artista === artista && listadoGlobal[i].tema === tema) {
-              listadoGlobal[i].votos = (parseInt(listadoGlobal[i].votos) || 0) + parseInt(voto);
-              document.getElementById("votos-" + i).textContent = listadoGlobal[i].votos;
-              break;
-            }
+function enviarVoto(artista, tema, voto) {
+  const data = new URLSearchParams({ artista, tema, voto });
+  fetch(GAS_URL_CANCIONES, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: data.toString(),
+  })
+    .then(res => res.json())
+    .then(resp => {
+      if (resp.status === "OK") {
+        alert("Voto registrado correctamente.");
+        for (let i = 0; i < listadoGlobal.length; i++) {
+          if (listadoGlobal[i].artista === artista && listadoGlobal[i].tema === tema) {
+            listadoGlobal[i].votos = (parseInt(listadoGlobal[i].votos) || 0) + parseInt(voto);
+            document.getElementById("votos-" + i).textContent = listadoGlobal[i].votos;
+            break;
           }
-        } else {
-          alert("Error al registrar voto: " + resp.message);
         }
-      })
-      .catch(() => alert("Error enviando voto."));
-  }
+      } else {
+        alert("Error al registrar voto: " + resp.message);
+      }
+    })
+    .catch(() => alert("Error enviando voto."));
+}
 
-  window.onload = cargarDatosJSONP;
+window.onload = cargarDatosJSONP;
 </script>
 </body>
 </html>
