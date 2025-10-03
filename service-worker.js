@@ -1,4 +1,4 @@
-const CACHE_NAME = "evento-musical-v1";
+const CACHE_NAME = "evento-musical-v3"; // Cambia la versión en cada actualización
 const URLS_TO_CACHE = [
   "index.html",
   "styles.css",
@@ -14,10 +14,9 @@ const URLS_TO_CACHE = [
 
 // Instalación
 self.addEventListener("install", (event) => {
+  self.skipWaiting(); // Fuerza que este SW se active inmediatamente
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(URLS_TO_CACHE);
-    })
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(URLS_TO_CACHE))
   );
 });
 
@@ -32,13 +31,21 @@ self.addEventListener("activate", (event) => {
       );
     })
   );
+  self.clients.claim(); // Fuerza que los clientes actuales usen el nuevo SW
 });
 
-// Fetch con caché primero
+// Fetch con caché actualizado dinámicamente
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.match(event.request).then((cachedResponse) => {
+        const fetchPromise = fetch(event.request).then((networkResponse) => {
+          // Actualiza caché con la respuesta más reciente
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        });
+        return cachedResponse || fetchPromise;
+      });
     })
   );
 });
