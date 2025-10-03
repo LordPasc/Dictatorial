@@ -892,7 +892,22 @@
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('service-worker.js')
-      .then(reg => console.log('Service Worker registrado:', reg.scope))
+      .then(reg => {
+        console.log('Service Worker registrado:', reg.scope);
+
+        // Detectar nueva versión del SW
+        reg.addEventListener('updatefound', () => {
+          const newSW = reg.installing;
+          newSW.addEventListener('statechange', () => {
+            if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+              console.log('Nueva versión disponible, recargando...');
+              newSW.postMessage({ type: 'SKIP_WAITING' }); // forzar activación
+              window.location.reload(); // recargar página para usar la nueva versión
+            }
+          });
+        });
+
+      })
       .catch(err => console.error('Error al registrar Service Worker:', err));
   });
 }
@@ -905,9 +920,8 @@ if ('serviceWorker' in navigator) {
 
 <script>
   // ⚡ Cambia este número en cada actualización
-  const APP_VERSION = "3.0.0";
+  const APP_VERSION = "2.0.0";
   document.getElementById("app-version").textContent = APP_VERSION;
 </script>
 </body>
 </html>
-
