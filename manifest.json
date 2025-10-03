@@ -6,7 +6,7 @@
   "background_color": "#121212",
   "theme_color": "#121212",
   "orientation": "portrait",
-  "version": "1.0.0",   // <--- agrega esto
+  "version": "1.0.0",
   "icons": [
     {
       "src": "icon-192.png",
