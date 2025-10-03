@@ -1,4 +1,4 @@
-const CACHE_NAME = 'evento-musical-2.0.1'; // Cambia versión al actualizar la PWA
+const CACHE_NAME = 'evento-musical-4.0.1'; // Cambia versión al actualizar la PWA
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
