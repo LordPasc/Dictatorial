@@ -11,6 +11,22 @@
       color: #eee;
       margin: 10px;
     }
+    h1 {
+      margin-bottom: 8px;
+    }
+    input[type="text"] {
+      width: 100%;
+      max-width: 400px;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1.5px solid #b62222;
+      background: #221010;
+      color: #eee;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
@@ -90,7 +106,10 @@
 </head>
 <body>
 <h1>Listado de Canciones - Evento Musical Nº8</h1>
-<div id="mensaje">Cargando todo lo bueno...</div>
+<label for="buscador">🔍 Buscar canción o artista:</label>
+<input type="text" id="buscador" placeholder="Escribe para filtrar..." />
+
+<div id="mensaje">Cargando listado desde Google Sheet...</div>
 <div id="tabla-container"></div>
 
 <!-- Modal para votar -->
@@ -112,6 +131,7 @@ const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbw4TCbkUleFKL
 
 let listadoGlobal = [];
 let cancionSeleccionada = null;
+let textoBusqueda = "";
 
 function abrirModal() {
   document.getElementById("modalVotar").style.display = "block";
@@ -141,72 +161,114 @@ document.getElementById("confirmarBtn").addEventListener("click", () => {
 
 function callbackCanciones(json) {
   listadoGlobal = json;
+  renderizarListado(json);
+}
+
+function renderizarListado(json) {
   const mensaje = document.getElementById("mensaje");
   const contenedor = document.getElementById("tabla-container");
+
   if (!Array.isArray(json)) {
     mensaje.textContent = "Formato inesperado al cargar datos";
     return;
   }
   if (json.length === 0) {
     mensaje.textContent = "No hay canciones en la hoja.";
+    contenedor.innerHTML = "";
     return;
   }
+
   mensaje.textContent = `Total canciones: ${json.length}`;
 
-  const table = document.createElement("table");
-  const thead = document.createElement("thead");
-  const trHead = document.createElement("tr");
-  ["#", "Artista", "Tema", "Puntos Lomlarck", "Reproducir", "Votar"].forEach(h => {
-    const th = document.createElement("th");
-    th.textContent = h;
-    trHead.appendChild(th);
-  });
-  thead.appendChild(trHead);
-  table.appendChild(thead);
-
-  const tbody = document.createElement("tbody");
-  json.forEach((c, idx) => {
-    const tr = document.createElement("tr");
-
-    const tdIndex = document.createElement("td");
-    tdIndex.textContent = idx + 1;
-    tr.appendChild(tdIndex);
-
-    const tdArtista = document.createElement("td");
-    tdArtista.textContent = c.artista || "";
-    tr.appendChild(tdArtista);
-
-    const tdTema = document.createElement("td");
-    tdTema.textContent = c.tema || "";
-    tr.appendChild(tdTema);
-
-    const tdVotos = document.createElement("td");
-    tdVotos.id = `votos-${idx}`;
-    tdVotos.textContent = c.votos || 0;
-    tr.appendChild(tdVotos);
-
-    const tdReproducir = document.createElement("td");
-    const btnReproducir = document.createElement("button");
-    btnReproducir.textContent = "▶";
-    btnReproducir.addEventListener("click", () => {
-      reproducir(c.url || "", c.artista || "", c.tema || "");
-    });
-    tdReproducir.appendChild(btnReproducir);
-    tr.appendChild(tdReproducir);
-
-    const tdVotar = document.createElement("td");
-    const btnVotar = document.createElement("button");
-    btnVotar.textContent = "Votar";
-    btnVotar.addEventListener("click", () => abrirModalVoto(idx));
-    tdVotar.appendChild(btnVotar);
-    tr.appendChild(tdVotar);
-
-    tbody.appendChild(tr);
+  // Filtrar por texto de búsqueda
+  const filtrado = json.filter(c => {
+    const texto = (c.artista + " " + c.tema).toLowerCase();
+    return texto.includes(textoBusqueda.toLowerCase());
   });
 
-  table.appendChild(tbody);
+  // Agrupar por artista
+  const agrupado = {};
+  filtrado.forEach(c => {
+    const artista = c.artista || "Desconocido";
+    if (!agrupado[artista]) agrupado[artista] = [];
+    agrupado[artista].push(c);
+  });
+
   contenedor.innerHTML = "";
-  contenedor.appendChild(table);
+
+  Object.keys(agrupado)
+    .sort((a, b) => a.localeCompare(b, 'es'))
+    .forEach((artista) => {
+      const titulo = document.createElement("h2");
+      titulo.textContent = artista;
+      titulo.style.color = "#d02121";
+      titulo.style.borderBottom = "1px solid #d02121";
+      titulo.style.marginTop = "25px";
+      contenedor.appendChild(titulo);
+
+      const totalVotos = agrupado[artista].reduce((acc, c) => acc + (parseInt(c.votos) || 0), 0);
+      const subtitulo = document.createElement("div");
+      subtitulo.textContent = `Total de votos: ${totalVotos}`;
+      subtitulo.style.color = "#bbb";
+      subtitulo.style.marginBottom = "8px";
+      subtitulo.style.fontStyle = "italic";
+      contenedor.appendChild(subtitulo);
+
+      const table = document.createElement("table");
+      const thead = document.createElement("thead");
+      const trHead = document.createElement("tr");
+      ["#", "Tema", "Votos", "Reproducir", "Votar"].forEach(h => {
+        const th = document.createElement("th");
+        th.textContent = h;
+        trHead.appendChild(th);
+      });
+      thead.appendChild(trHead);
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      agrupado[artista].forEach((c, idx) => {
+        const globalIndex = listadoGlobal.indexOf(c);
+        const tr = document.createElement("tr");
+
+        const tdIndex = document.createElement("td");
+        tdIndex.textContent = idx + 1;
+        tr.appendChild(tdIndex);
+
+        const tdTema = document.createElement("td");
+        tdTema.textContent = c.tema || "";
+        tr.appendChild(tdTema);
+
+        const tdVotos = document.createElement("td");
+        tdVotos.id = `votos-${globalIndex}`;
+        tdVotos.textContent = c.votos || 0;
+        tr.appendChild(tdVotos);
+
+        const tdReproducir = document.createElement("td");
+        const btnReproducir = document.createElement("button");
+        btnReproducir.textContent = "▶";
+        btnReproducir.addEventListener("click", () => {
+          reproducir(c.url || "", c.artista || "", c.tema || "");
+        });
+        tdReproducir.appendChild(btnReproducir);
+        tr.appendChild(tdReproducir);
+
+        const tdVotar = document.createElement("td");
+        const btnVotar = document.createElement("button");
+        btnVotar.textContent = "Votar";
+        btnVotar.addEventListener("click", () => abrirModalVoto(globalIndex));
+        tdVotar.appendChild(btnVotar);
+        tr.appendChild(tdVotar);
+
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(tbody);
+      contenedor.appendChild(table);
+    });
+
+  if (Object.keys(agrupado).length === 0) {
+    contenedor.innerHTML = "<p>No hay coincidencias con la búsqueda.</p>";
+  }
 }
 
 function cargarDatosJSONP() {
@@ -244,10 +306,10 @@ function enviarVoto(artista, tema, voto) {
         for (let i = 0; i < listadoGlobal.length; i++) {
           if (listadoGlobal[i].artista === artista && listadoGlobal[i].tema === tema) {
             listadoGlobal[i].votos = (parseInt(listadoGlobal[i].votos) || 0) + parseInt(voto);
-            document.getElementById("votos-" + i).textContent = listadoGlobal[i].votos;
             break;
           }
         }
+        renderizarListado(listadoGlobal);
       } else {
         alert("Error al registrar voto: " + resp.message);
       }
@@ -255,8 +317,12 @@ function enviarVoto(artista, tema, voto) {
     .catch(() => alert("Error enviando voto."));
 }
 
+document.getElementById("buscador").addEventListener("input", (e) => {
+  textoBusqueda = e.target.value;
+  renderizarListado(listadoGlobal);
+});
+
 window.onload = cargarDatosJSONP;
 </script>
 </body>
 </html>
-
