@@ -272,7 +272,7 @@ function renderizarListado(json) {
       const table = document.createElement("table");
       const thead = document.createElement("thead");
       const trHead = document.createElement("tr");
-      ["#", "Tema", "Votos", "Reproducir", "Votar"].forEach(h => {
+      ["#", "Tema", "Ptos Lomlarck", "Reproducir", "Votar"].forEach(h => {
         const th = document.createElement("th");
         th.textContent = h;
         trHead.appendChild(th);
@@ -381,4 +381,5 @@ window.onload = cargarDatosJSONP;
 </script>
 </body>
 </html>
+
 
