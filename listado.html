@@ -14,7 +14,7 @@
     h1 {
       margin-bottom: 8px;
     }
-    input[type="text"] {
+    input[type="text"], input[type="number"] {
       width: 100%;
       max-width: 400px;
       padding: 8px;
@@ -36,9 +36,6 @@
       padding: 8px;
       border-bottom: 1px solid #aa2b2b;
       text-align: left;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
     th {
       color: #d02121;
@@ -78,21 +75,10 @@
       box-shadow: 0 0 10px #d02121;
       font-family: Arial, sans-serif;
     }
-    .modal-content label,
-    .modal-content input {
+    .modal-content label {
       display: block;
-      width: 100%;
-      margin-bottom: 15px;
-      font-size: 1.2em;
-    }
-    .modal-content input[type="number"] {
-      padding: 8px;
-      border-radius: 6px;
-      border: 1.5px solid #b62222;
-      background: #221010;
-      color: #eee;
+      margin-bottom: 5px;
       font-size: 1em;
-      box-sizing: border-box;
     }
     .modal-footer {
       text-align: right;
@@ -106,11 +92,33 @@
 </head>
 <body>
 <h1>Listado de Canciones - Evento Musical Nº8</h1>
+
+<!-- Botón de añadir canción -->
+<button id="abrirModalAdd">➕ Añadir canción</button>
+<br><br>
+
 <label for="buscador">🔍 Buscar canción o artista:</label>
 <input type="text" id="buscador" placeholder="Escribe para filtrar..." />
 
 <div id="mensaje">Cargando listado desde Google Sheet...</div>
 <div id="tabla-container"></div>
+
+<!-- Modal para añadir canción -->
+<div id="modalAdd" class="modal">
+  <div class="modal-content">
+    <h3>Añadir nueva canción</h3>
+    <label>Artista:</label>
+    <input type="text" id="inputArtista" placeholder="Nombre del artista" />
+    <label>Tema:</label>
+    <input type="text" id="inputTema" placeholder="Título de la canción" />
+    <label>Votos:</label>
+    <input type="number" id="inputVotos" min="0" value="0" />
+    <div class="modal-footer">
+      <button id="cancelarAddBtn">Cancelar</button>
+      <button id="confirmarAddBtn">Añadir</button>
+    </div>
+  </div>
+</div>
 
 <!-- Modal para votar -->
 <div id="modalVotar" class="modal">
@@ -127,12 +135,64 @@
 </div>
 
 <script>
-const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbw4TCbkUleFKLYE352VI7jSSVjQIED42CneWDfrTmLZURZxOyJzPKYqFwjfxbuk69sWgw/exec";
+const GAS_URL_CANCIONES = "https://script.google.com/macros/s/AKfycbyxGX_V_rdaa0jnSF45iOd5ThvVeVZnaR50fBVmXHGsIJ-X86VkXAf8cl_rqszteuK3kw/exec";
 
 let listadoGlobal = [];
 let cancionSeleccionada = null;
 let textoBusqueda = "";
 
+// ---------- MODAL AÑADIR CANCIÓN ----------
+const modalAdd = document.getElementById("modalAdd");
+const btnAbrirAdd = document.getElementById("abrirModalAdd");
+const btnCancelarAdd = document.getElementById("cancelarAddBtn");
+const btnConfirmarAdd = document.getElementById("confirmarAddBtn");
+
+btnAbrirAdd.addEventListener("click", () => {
+  modalAdd.style.display = "block";
+});
+btnCancelarAdd.addEventListener("click", () => {
+  modalAdd.style.display = "none";
+});
+
+btnConfirmarAdd.addEventListener("click", () => {
+  const artista = document.getElementById("inputArtista").value.trim();
+  const tema = document.getElementById("inputTema").value.trim();
+  const votos = document.getElementById("inputVotos").value.trim() || "0";
+
+  if (!artista || !tema) {
+    alert("Debes rellenar todos los campos obligatorios.");
+    return;
+  }
+
+  const data = new URLSearchParams({
+    action: "addCancion",
+    artista,
+    tema,
+    votos
+  });
+
+  fetch(GAS_URL_CANCIONES, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: data.toString(),
+  })
+  .then(res => res.json())
+  .then(resp => {
+    if (resp.status === "OK") {
+      alert("Canción añadida correctamente.");
+      modalAdd.style.display = "none";
+      document.getElementById("inputArtista").value = "";
+      document.getElementById("inputTema").value = "";
+      document.getElementById("inputVotos").value = "0";
+      cargarDatosJSONP(); // recarga el listado
+    } else {
+      alert("Error al añadir canción: " + resp.message);
+    }
+  })
+  .catch(() => alert("Error enviando datos."));
+});
+
+// ---------- RESTO DE FUNCIONES EXISTENTES ----------
 function abrirModal() {
   document.getElementById("modalVotar").style.display = "block";
 }
@@ -140,9 +200,7 @@ function cerrarModal() {
   document.getElementById("modalVotar").style.display = "none";
   document.getElementById("input-voto").value = "";
 }
-
 document.getElementById("cancelarBtn").addEventListener("click", cerrarModal);
-
 document.getElementById("confirmarBtn").addEventListener("click", () => {
   const input = document.getElementById("input-voto");
   const votoNum = parseInt(input.value);
@@ -179,14 +237,11 @@ function renderizarListado(json) {
   }
 
   mensaje.textContent = `Total canciones: ${json.length}`;
-
-  // Filtrar por texto de búsqueda
   const filtrado = json.filter(c => {
     const texto = (c.artista + " " + c.tema).toLowerCase();
     return texto.includes(textoBusqueda.toLowerCase());
   });
 
-  // Agrupar por artista
   const agrupado = {};
   filtrado.forEach(c => {
     const artista = c.artista || "Desconocido";
