@@ -424,18 +424,58 @@
       </ul>
       <p>Haced buen uso de ellas y procurad no caer en las garras de la adicción</p>
     </section>
-    <section id="musica">
-      <h2>Música</h2>
-      <p>Cansados de tanta mierda como nos meten por los ojos, oídos y demás orificios, Evento Musical Nº8 se ha tomado la molestia de seleccionar 1000 canciones de Rock. La excelencia en la selección ha sido exquisita. Un simple click en el botón y se desplegará ante vosotros la esencia del Rock, Hard Rock, Heavy Rock, o Protometal</p>
-      <button onclick="propuestaMusical()">Propuesta Musical</button>
-      <button onclick="window.open('listado.html', '_blank')">Listado de canciones</button>
-    </section>
-    <section id="listadoCanciones" aria-live="polite">
-      <h2>Listado de canciones (desde Google Sheet)</h2>
-      <p id="texto-listado">Aquí se mostrará el listado de la hoja <em>Canciones</em> de Drive.</p>
-      <div id="tabla-canciones-container" style="margin-top:12px;"></div>
-      <button onclick="mostrarSeccion('musica')">Volver a Música</button>
-    </section>
+
+ <section id="musica">
+  <h2>Música</h2>
+  <p>Cansados de tanta mierda como nos meten por los ojos, oídos y demás orificios, Evento Musical Nº8 se ha tomado la molestia de seleccionar 1000 canciones de Rock. La excelencia en la selección ha sido exquisita. Un simple click en el botón y se desplegará ante vosotros la esencia del Rock, Hard Rock, Heavy Rock, o Protometal</p>
+
+  <button onclick="propuestaMusical()">Propuesta Musical</button>
+  <button onclick="window.open('listado.html', '_blank')">Listado de canciones</button>
+  <button onclick="abrirLoginBartoloFy()">BartoloFy</button>
+</section>
+
+<!-- Modal de login para BartoloFy -->
+<div id="loginBartoloFy" class="overlay" onclick="cerrarLoginBartoloFy()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="cerrar" onclick="cerrarLoginBartoloFy()">✖</button>
+    <h3>Acceso a BartoloFy</h3>
+    <p>Introduce tus credenciales:</p>
+    <label for="bartUser">Usuario:</label>
+    <input type="text" id="bartUser" autocomplete="off" />
+    <label for="bartPass">Contraseña:</label>
+    <input type="password" id="bartPass" />
+    <button onclick="loginBartoloFy()">Entrar</button>
+  </div>
+</div>
+
+<script>
+  function abrirLoginBartoloFy() {
+    document.getElementById("loginBartoloFy").classList.add("show");
+  }
+  function cerrarLoginBartoloFy() {
+    document.getElementById("loginBartoloFy").classList.remove("show");
+  }
+  function loginBartoloFy() {
+    const u = document.getElementById("bartUser").value.trim();
+    const p = document.getElementById("bartPass").value.trim();
+    if (u === "f" && p === "f") {
+      localStorage.setItem("bartoloAuth", "true");
+      cerrarLoginBartoloFy();
+      window.open("BartoloFy.html", "_blank");
+    } else {
+      alert("Credenciales incorrectas. Acceso denegado.");
+    }
+  }
+  function accesoBartoloFy() {
+    const autorizado = localStorage.getItem("bartoloAuth") === "true";
+    if (autorizado) {
+      window.open("BartoloFy.html", "_blank");
+    } else {
+      abrirLoginBartoloFy();
+    }
+  }
+</script>
+
     <section id="libros">
       <h2>Libros</h2>
       <p>¿Eres un analfabeto funcional y necesitas disimularlo? O simplemente eres gilipollas y cada vez que eliges un libro la cagas. Aquí resolvemos ese problema accediendo a través del azar a una cuidada selección de títulos. Simplemente déjate llevar y dedícate a otra cosa que se suponga que haces mejor</p>
@@ -887,6 +927,41 @@
       instalarBtn.setAttribute('aria-hidden', 'true');
     }
   });
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => {
+        console.log('Service Worker registrado:', reg.scope);
+
+        // Detectar nueva versión del SW
+        reg.addEventListener('updatefound', () => {
+          const newSW = reg.installing;
+          newSW.addEventListener('statechange', () => {
+            if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+              console.log('Nueva versión disponible, recargando...');
+              newSW.postMessage({ type: 'SKIP_WAITING' }); // forzar activación
+              window.location.reload(); // recargar página para usar la nueva versión
+            }
+          });
+        });
+
+      })
+      .catch(err => console.error('Error al registrar Service Worker:', err));
+  });
+}
+</script>
+
+<!-- Footer con versión -->
+<footer style="text-align:center; margin-top:20px; font-size:14px; color:#888;">
+  Versión actual: <span id="app-version"></span>
+</footer>
+
+<script>
+  // ⚡ Cambia este número en cada actualización
+  const APP_VERSION = "4.0.0";
+  document.getElementById("app-version").textContent = APP_VERSION;
 </script>
 </body>
 </html>
