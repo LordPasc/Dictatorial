@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Subida masiva Spoty Casero</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: Arial; background:#111; color:#eee; text-align:center; padding:40px; }
+  button { padding:10px 20px; font-size:16px; margin:10px; }
+  #status { margin-top:20px; font-size:14px; white-space:pre-line; text-align:left; max-width:600px; margin:auto; }
+</style>
+</head>
+<body>
+<h2>Subida masiva de álbumes (MP3 + cover.jpg)</h2>
+<button id="btnSelectFolder">Seleccionar carpeta nodriza y subir</button>
+<div id="status"></div>
+
+<script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby1hoWCx0c0_HlxXhbpQxtF_txFErE7IzD4ektoavjISZTpHfYsDtNp-85Eo4vU-xvU0Q/exec'; // reemplaza con el de tu Apps Script
+
+// Recorre todas las carpetas sin recursión profunda (ideal para 3000+ archivos)
+async function getFilesIteratively(dirHandle) {
+  const files = [];
+  const dirs = [dirHandle];
+  while (dirs.length > 0) {
+    const current = dirs.shift();
+    for await (const entry of current.values()) {
+      if (entry.kind === "file") files.push(entry);
+      if (entry.kind === "directory") dirs.push(entry);
+    }
+  }
+  return files;
+}
+
+// Convierte archivo a base64
+async function leerArchivoBase64(handle) {
+  const file = await handle.getFile();
+  const buf = await file.arrayBuffer();
+  const base64 = btoa(String.fromCharCode(...new Uint8Array(buf)));
+  return `data:${file.type};base64,${base64}`;
+}
+
+async function subirLote(files, coverBase64, artista, album, batch = 10) {
+  const status = document.getElementById('status');
+  for (let i = 0; i < files.length; i += batch) {
+    const grupo = files.slice(i, i + batch);
+    for (const f of grupo) {
+      const mp3Base64 = await leerArchivoBase64(f);
+      const res = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify({
+          action: 'subirCancion',
+          nombreArchivo: f.name,
+          mp3Base64,
+          coverBase64,
+          artista,
+          album
+        }),
+        headers: {'Content-Type': 'application/json'}
+      });
+      const data = await res.json();
+      status.textContent += `✅ ${album} → ${f.name}\n`;
+      if (data.status !== 'OK') status.textContent += `⚠️ Error: ${data.message}\n`;
+    }
+  }
+}
+
+document.getElementById('btnSelectFolder').addEventListener('click', async () => {
+  const status = document.getElementById('status');
+  status.textContent = "Seleccionando carpeta nodriza...";
+  try {
+    // Selección de carpeta local
+    const nodrizaHandle = await window.showDirectoryPicker();
+    status.textContent = `Carpeta seleccionada: ${nodrizaHandle.name}\n`;
+    for await (const albumEntry of nodrizaHandle.values()) {
+      if (albumEntry.kind !== 'directory') continue;
+      const albumName = albumEntry.name;
+      status.textContent += `📀 Procesando álbum: ${albumName}\n`;
+
+      const albumFiles = [];
+      for await (const entry of albumEntry.values()) albumFiles.push(entry);
+      const mp3Files = albumFiles.filter(f => f.name.toLowerCase().endsWith('.mp3'));
+      const coverFile = albumFiles.find(f => f.name.toLowerCase() === 'cover.jpg' || f.name.toLowerCase() === 'cover.jpeg');
+
+      if (!coverFile) {
+        status.textContent += `⚠️ ${albumName} sin cover.jpg, omitido.\n`;
+        continue;
+      }
+
+      const coverBase64 = await leerArchivoBase64(coverFile);
+      await subirLote(mp3Files, coverBase64, nodrizaHandle.name, albumName);
+
+      status.textContent += `✅ Álbum ${albumName} completo.\n`;
+    }
+    status.textContent += "🎉 Subida masiva finalizada.";
+  } catch (e) {
+    status.textContent = "❌ Error o cancelación: " + e.message;
+    console.error(e);
+  }
+});
+</script>
+</body>
+</html>
