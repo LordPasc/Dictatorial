@@ -1,103 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Subida masiva Spoty Casero</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  body { font-family: Arial; background:#111; color:#eee; text-align:center; padding:40px; }
-  button { padding:10px 20px; font-size:16px; margin:10px; }
-  #status { margin-top:20px; font-size:14px; white-space:pre-line; text-align:left; max-width:600px; margin:auto; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SpotyDrive</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 16px;
+      background: #f4f4f4;
+      color: #222;
+    }
+    .artist {
+      font-weight: bold;
+      margin-top: 14px;
+      font-size: 1.2em;
+      color: #b00;
+    }
+    .album {
+      margin-left: 12px;
+      margin-top: 6px;
+      font-weight: bold;
+      color: #444;
+    }
+    .song {
+      margin-left: 28px;
+      cursor: pointer;
+      padding: 2px 0;
+    }
+    .song:hover {
+      color: #b00;
+      text-decoration: underline;
+    }
+    .cover {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      margin: 12px 0;
+      display: none;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #999;
+    }
+    .player {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: #fff;
+      border-top: 1px solid #ccc;
+      padding: 8px;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    #now {
+      flex: 1;
+      font-weight: bold;
+    }
+    audio {
+      flex: 2;
+      max-width: 600px;
+    }
+  </style>
 </head>
 <body>
-<h2>Subida masiva de álbumes (MP3 + cover.jpg)</h2>
-<button id="btnSelectFolder">Seleccionar carpeta nodriza y subir</button>
-<div id="status"></div>
+  <h2>🎵 Catálogo musical</h2>
+  <div id="catalog">Cargando catálogo...</div>
 
-<script>
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby1hoWCx0c0_HlxXhbpQxtF_txFErE7IzD4ektoavjISZTpHfYsDtNp-85Eo4vU-xvU0Q/exec'; // reemplaza con el de tu Apps Script
+  <div class="player">
+    <img id="coverImg" class="cover" alt="Portada">
+    <div id="now">Selecciona una canción</div>
+    <audio id="audio" controls preload="none"></audio>
+  </div>
 
-// Recorre todas las carpetas sin recursión profunda (ideal para 3000+ archivos)
-async function getFilesIteratively(dirHandle) {
-  const files = [];
-  const dirs = [dirHandle];
-  while (dirs.length > 0) {
-    const current = dirs.shift();
-    for await (const entry of current.values()) {
-      if (entry.kind === "file") files.push(entry);
-      if (entry.kind === "directory") dirs.push(entry);
+  <script>
+    const APPS_URL = 'https://script.google.com/macros/s/AKfycbxD98ophJrj3qIvpW6n7eZlsGoPiTtpSE4fFqs2PMLl_Rb3llvBDdyVJ35tQB0TSfQ/exec';
+
+    async function loadCatalog() {
+      try {
+        const res = await fetch(APPS_URL + '?action=list');
+        const data = await res.json();
+        renderCatalog(data);
+      } catch (err) {
+        document.getElementById('catalog').textContent = 'Error al cargar catálogo: ' + err.message;
+      }
     }
-  }
-  return files;
-}
 
-// Convierte archivo a base64
-async function leerArchivoBase64(handle) {
-  const file = await handle.getFile();
-  const buf = await file.arrayBuffer();
-  const base64 = btoa(String.fromCharCode(...new Uint8Array(buf)));
-  return `data:${file.type};base64,${base64}`;
-}
+    function renderCatalog(data) {
+      const container = document.getElementById('catalog');
+      container.innerHTML = '';
+      for (const artista in data) {
+        const da = document.createElement('div');
+        da.className = 'artist';
+        da.textContent = artista;
+        container.appendChild(da);
 
-async function subirLote(files, coverBase64, artista, album, batch = 10) {
-  const status = document.getElementById('status');
-  for (let i = 0; i < files.length; i += batch) {
-    const grupo = files.slice(i, i + batch);
-    for (const f of grupo) {
-      const mp3Base64 = await leerArchivoBase64(f);
-      const res = await fetch(SCRIPT_URL, {
-        method: 'POST',
-        body: JSON.stringify({
-          action: 'subirCancion',
-          nombreArchivo: f.name,
-          mp3Base64,
-          coverBase64,
-          artista,
-          album
-        }),
-        headers: {'Content-Type': 'application/json'}
-      });
-      const data = await res.json();
-      status.textContent += `✅ ${album} → ${f.name}\n`;
-      if (data.status !== 'OK') status.textContent += `⚠️ Error: ${data.message}\n`;
+        const albums = data[artista];
+        for (const album in albums) {
+          const dal = document.createElement('div');
+          dal.className = 'album';
+          dal.textContent = album;
+          container.appendChild(dal);
+
+          albums[album].forEach(song => {
+            const ds = document.createElement('div');
+            ds.className = 'song';
+            ds.textContent = song.title;
+            ds.onclick = () => playSong(song);
+            container.appendChild(ds);
+          });
+        }
+      }
     }
-  }
-}
 
-document.getElementById('btnSelectFolder').addEventListener('click', async () => {
-  const status = document.getElementById('status');
-  status.textContent = "Seleccionando carpeta nodriza...";
-  try {
-    // Selección de carpeta local
-    const nodrizaHandle = await window.showDirectoryPicker();
-    status.textContent = `Carpeta seleccionada: ${nodrizaHandle.name}\n`;
-    for await (const albumEntry of nodrizaHandle.values()) {
-      if (albumEntry.kind !== 'directory') continue;
-      const albumName = albumEntry.name;
-      status.textContent += `📀 Procesando álbum: ${albumName}\n`;
+    function playSong(song) {
+      const audio = document.getElementById('audio');
+      const cover = document.getElementById('coverImg');
+      const now = document.getElementById('now');
 
-      const albumFiles = [];
-      for await (const entry of albumEntry.values()) albumFiles.push(entry);
-      const mp3Files = albumFiles.filter(f => f.name.toLowerCase().endsWith('.mp3'));
-      const coverFile = albumFiles.find(f => f.name.toLowerCase() === 'cover.jpg' || f.name.toLowerCase() === 'cover.jpeg');
-
-      if (!coverFile) {
-        status.textContent += `⚠️ ${albumName} sin cover.jpg, omitido.\n`;
-        continue;
+      now.textContent = song.title;
+      if (song.cover) {
+        cover.src = song.cover.replace('view?usp=drivesdk', 'uc?export=view');
+        cover.style.display = 'block';
+      } else {
+        cover.style.display = 'none';
       }
 
-      const coverBase64 = await leerArchivoBase64(coverFile);
-      await subirLote(mp3Files, coverBase64, nodrizaHandle.name, albumName);
-
-      status.textContent += `✅ Álbum ${albumName} completo.\n`;
+      audio.src = APPS_URL + '?action=stream&fileId=' + encodeURIComponent(song.fileId);
+      audio.play().catch(console.warn);
     }
-    status.textContent += "🎉 Subida masiva finalizada.";
-  } catch (e) {
-    status.textContent = "❌ Error o cancelación: " + e.message;
-    console.error(e);
-  }
-});
-</script>
+
+    loadCatalog();
+  </script>
 </body>
 </html>
+``
